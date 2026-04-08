@@ -80,6 +80,12 @@ const SOLUTIONS_OVERVIEW = [
     desc: "Modernizing legacy systems, automating processes, and leveraging data analytics to position your organization for the future.",
     color: "#1ABC9C",
   },
+  {
+    icon: Cpu,
+    title: "AI & Intelligent Automation",
+    desc: "Machine learning, NLP, RPA, and predictive analytics solutions that automate workflows, surface insights, and unlock new business value.",
+    color: "#0A3D62",
+  },
 ];
 
 const SOLUTION_DETAILS = [
@@ -165,6 +171,20 @@ const SOLUTION_DETAILS = [
       "Data analytics and business intelligence dashboards",
       "Change management and adoption programs",
       "Digital strategy roadmap development",
+    ],
+  },
+  {
+    id: "ai",
+    icon: Cpu,
+    title: "AI & Intelligent Automation",
+    description:
+      "We help enterprises harness artificial intelligence and intelligent automation to streamline operations, surface predictive insights, and deliver smarter user experiences — from rapid prototyping to enterprise-scale deployment.",
+    features: [
+      "Machine learning model development & deployment",
+      "Natural language processing & conversational AI (chatbots, virtual agents)",
+      "Robotic process automation (RPA) & intelligent workflow orchestration",
+      "Predictive analytics, demand forecasting, and anomaly detection",
+      "AI integration with ERP, CRM, and existing enterprise systems",
     ],
   },
 ];
@@ -319,7 +339,7 @@ export default function SolutionsPage({ setPage }: SolutionsPageProps) {
               Comprehensive IT Solutions
             </h2>
             <p className="text-gray-500 max-w-2xl mx-auto text-base">
-              Six core solution areas engineered to address every dimension of
+              Seven core solution areas engineered to address every dimension of
               modern enterprise technology challenges.
             </p>
           </div>

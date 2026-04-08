@@ -1,14 +1,16 @@
 import { Button } from "@/components/ui/button";
 import {
   ArrowRight,
-  BarChart2,
-  Calendar,
-  CheckCircle2,
+  Bot,
+  Brain,
   ChevronRight,
-  ClipboardList,
+  Database,
   Home,
+  MessageSquare,
   Phone,
-  Users,
+  Plug,
+  Repeat,
+  TrendingUp,
 } from "lucide-react";
 import { useEffect } from "react";
 
@@ -47,93 +49,101 @@ function useScrollAnimation() {
 
 const CAPABILITIES = [
   {
-    icon: ClipboardList,
-    title: "Agile & Scrum Methodology",
-    desc: "Certified Scrum Masters and Agile coaches who tailor sprint cadences, ceremonies, and backlogs to your team's workflow.",
+    icon: Brain,
+    title: "AI Consulting & Strategy",
+    desc: "Roadmap and framework design to integrate AI across your enterprise for maximum ROI, tailored to your business objectives.",
   },
   {
-    icon: Users,
-    title: "PMP-Certified Project Managers",
-    desc: "Seasoned PMP-certified professionals who bring structured governance, discipline, and proven delivery track records.",
+    icon: Database,
+    title: "Machine Learning Development",
+    desc: "Custom ML models trained on your data for predictions, classification, and intelligent automation of complex business processes.",
   },
   {
-    icon: BarChart2,
-    title: "Risk & Change Management",
-    desc: "Identify, quantify, and mitigate risks proactively. Structured change control prevents scope creep and budget overruns.",
+    icon: MessageSquare,
+    title: "NLP & Conversational AI",
+    desc: "Chatbots, virtual assistants, and text analytics powered by large language models to enhance customer and employee experiences.",
   },
   {
-    icon: Calendar,
-    title: "Resource Planning & Allocation",
-    desc: "Optimize team capacity, balance workloads, and align resources with project priorities for maximum throughput.",
+    icon: Repeat,
+    title: "Process Automation (RPA)",
+    desc: "Eliminate repetitive tasks with intelligent robotic process automation workflows that integrate seamlessly into your existing systems.",
   },
   {
-    icon: Users,
-    title: "Stakeholder Communication",
-    desc: "Executive dashboards, status reports, and tailored communication strategies that keep every stakeholder informed and aligned.",
+    icon: TrendingUp,
+    title: "Predictive Analytics",
+    desc: "Data-driven forecasting models that surface actionable insights from complex datasets, enabling smarter, faster business decisions.",
   },
   {
-    icon: ClipboardList,
-    title: "PMO Setup & Governance",
-    desc: "Establish a Project Management Office with defined processes, templates, KPIs, and governance frameworks.",
+    icon: Plug,
+    title: "AI Integration & APIs",
+    desc: "Seamlessly connect AI services (OpenAI, Azure AI, AWS AI) into your existing systems for an accelerated innovation pipeline.",
   },
 ];
 
 const TECH = [
-  "Jira",
-  "Confluence",
-  "Microsoft Project",
-  "Smartsheet",
-  "Asana",
-  "Monday.com",
-  "Slack",
-  "Trello",
-  "Azure DevOps",
+  "Python",
+  "TensorFlow",
+  "PyTorch",
+  "OpenAI",
+  "LangChain",
+  "Hugging Face",
+  "Azure AI",
+  "AWS SageMaker",
+  "Apache Spark",
+  "Power BI",
 ];
 
 const PROCESS = [
   {
     step: "01",
-    title: "Initiate",
-    desc: "Define project scope, objectives, stakeholders, and success criteria. Establish the project charter and governance structure.",
+    title: "Discovery & Assessment",
+    desc: "Understand your business goals, data landscape, and identify high-impact AI opportunities across your organization.",
   },
   {
     step: "02",
-    title: "Plan",
-    desc: "Develop detailed work breakdown structures, schedules, budgets, risk registers, and communication plans.",
+    title: "AI Strategy & Roadmap",
+    desc: "Define use cases, data requirements, and success metrics to chart a clear path toward AI-driven transformation.",
   },
   {
     step: "03",
-    title: "Execute",
-    desc: "Mobilize the team, manage deliverables, track milestones, and facilitate Agile ceremonies or PMBOK processes.",
+    title: "Model Development",
+    desc: "Build, train, and rigorously validate custom AI models designed for your specific data and business requirements.",
   },
   {
     step: "04",
-    title: "Monitor",
-    desc: "Track KPIs, burn-down charts, and earned value metrics. Proactively address variances before they become issues.",
+    title: "Integration & Testing",
+    desc: "Deploy models into your systems with comprehensive testing, ensuring reliability, accuracy, and seamless user adoption.",
   },
   {
     step: "05",
-    title: "Close",
-    desc: "Formal project closure, lessons learned, knowledge transfer, and post-implementation review for continuous improvement.",
+    title: "Monitoring & Optimization",
+    desc: "Ongoing performance tracking, model retraining, and continuous improvement to keep your AI solutions operating at peak efficiency.",
   },
 ];
 
 const WHY = [
   {
-    title: "On-Time Delivery",
-    desc: "Our structured methodologies and proactive risk management have achieved on-time delivery for 97% of engagements.",
+    title: "Proven AI Expertise",
+    desc: "Our data scientists and AI engineers bring deep expertise in ML, NLP, and automation—delivering solutions that produce measurable ROI.",
   },
   {
-    title: "Budget Discipline",
-    desc: "Rigorous cost tracking, earned value analysis, and change control ensure projects stay within approved budgets.",
+    title: "Enterprise-Grade Security",
+    desc: "Every AI solution we build is designed with data privacy, compliance, and enterprise security best practices at the core.",
   },
   {
-    title: "Transparent Reporting",
-    desc: "Real-time dashboards and weekly executive summaries give you complete visibility into project health at all times.",
+    title: "End-to-End Delivery",
+    desc: "From strategy through deployment and monitoring, we own the full AI lifecycle so your team can focus on business outcomes.",
   },
 ];
 
-export default function ProjectManagementPage({ setPage }: Props) {
+const STATS = [
+  { value: "50+", label: "AI Projects Delivered" },
+  { value: "10x", label: "Avg. Efficiency Gain" },
+  { value: "Fortune 500", label: "Enterprise Ready" },
+  { value: "24/7", label: "Model Monitoring" },
+];
+
+export default function AIServicesPage({ setPage }: Props) {
   useScrollAnimation();
 
   return (
@@ -143,23 +153,83 @@ export default function ProjectManagementPage({ setPage }: Props) {
         className="relative py-28 overflow-hidden"
         style={{
           background:
-            "linear-gradient(135deg, #0A3D62 0%, #0d4f7c 60%, #1a6e5a 100%)",
+            "linear-gradient(135deg, #0A3D62 0%, #0d4f7c 60%, #0a5c4a 100%)",
         }}
       >
+        {/* Neural network SVG pattern overlay */}
+        <div className="absolute inset-0 opacity-10">
+          <svg
+            width="100%"
+            height="100%"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <defs>
+              <pattern
+                id="neural-grid"
+                x="0"
+                y="0"
+                width="80"
+                height="80"
+                patternUnits="userSpaceOnUse"
+              >
+                <circle cx="40" cy="40" r="2" fill="#1ABC9C" />
+                <circle cx="0" cy="0" r="1.5" fill="#ffffff" />
+                <circle cx="80" cy="0" r="1.5" fill="#ffffff" />
+                <circle cx="0" cy="80" r="1.5" fill="#ffffff" />
+                <circle cx="80" cy="80" r="1.5" fill="#ffffff" />
+                <line
+                  x1="0"
+                  y1="0"
+                  x2="40"
+                  y2="40"
+                  stroke="#1ABC9C"
+                  strokeWidth="0.5"
+                />
+                <line
+                  x1="80"
+                  y1="0"
+                  x2="40"
+                  y2="40"
+                  stroke="#1ABC9C"
+                  strokeWidth="0.5"
+                />
+                <line
+                  x1="0"
+                  y1="80"
+                  x2="40"
+                  y2="40"
+                  stroke="#1ABC9C"
+                  strokeWidth="0.5"
+                />
+                <line
+                  x1="80"
+                  y1="80"
+                  x2="40"
+                  y2="40"
+                  stroke="#1ABC9C"
+                  strokeWidth="0.5"
+                />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#neural-grid)" />
+          </svg>
+        </div>
         <div
-          className="absolute inset-0 opacity-10"
+          className="absolute inset-0 opacity-15"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 20% 50%, #1ABC9C 0%, transparent 50%), radial-gradient(circle at 80% 20%, #ffffff 0%, transparent 40%)",
+              "radial-gradient(circle at 15% 55%, #1ABC9C 0%, transparent 45%), radial-gradient(circle at 85% 20%, #ffffff 0%, transparent 35%)",
           }}
         />
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-6 relative">
+          {/* Breadcrumb */}
           <nav className="flex items-center gap-2 text-sm text-white/60 mb-8">
             <button
               type="button"
               onClick={() => setPage("home")}
               className="hover:text-white transition-colors flex items-center gap-1"
-              data-ocid="pm.home.link"
+              data-ocid="ai.home.link"
             >
               <Home className="w-3.5 h-3.5" /> Home
             </button>
@@ -168,105 +238,87 @@ export default function ProjectManagementPage({ setPage }: Props) {
               type="button"
               onClick={() => setPage("services")}
               className="hover:text-white transition-colors"
-              data-ocid="pm.services.link"
+              data-ocid="ai.services.link"
             >
               Services
             </button>
             <ChevronRight className="w-3.5 h-3.5" />
-            <span className="text-white">Project Management</span>
+            <span className="text-white">AI &amp; Automation</span>
           </nav>
+
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-2 mb-6">
-              <ClipboardList className="w-4 h-4 text-[#1ABC9C]" />
+              <Bot className="w-4 h-4 text-[#1ABC9C]" />
               <span className="text-white/90 text-sm font-medium">
-                Project Management Services
+                AI &amp; Automation Services
               </span>
             </div>
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-              Delivering Projects <br />
-              <span style={{ color: "#1ABC9C" }}>On Time, Every Time</span>
+              Intelligent Automation <br />
+              <span style={{ color: "#1ABC9C" }}>
+                for the Modern Enterprise
+              </span>
             </h1>
             <p className="text-xl text-white/80 mb-10 leading-relaxed">
-              Drive successful outcomes with Agile, PMBOK, and hybrid
-              methodologies—on time, within budget, and aligned to your
-              strategy.
+              Harness the power of AI, machine learning, and intelligent
+              automation to accelerate your business outcomes and stay ahead of
+              the competition.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 mb-10">
               <Button
                 onClick={() => setPage("home")}
                 className="px-8 py-3 text-base font-semibold rounded-xl"
                 style={{ backgroundColor: "#1ABC9C", color: "white" }}
-                data-ocid="pm.hero.primary_button"
+                data-ocid="ai.hero.primary_button"
               >
-                Get Started <ArrowRight className="w-4 h-4 ml-2" />
+                Get AI Consultation <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
               <Button
                 variant="outline"
-                onClick={() => setPage("home")}
+                onClick={() => setPage("services")}
                 className="px-8 py-3 text-base font-semibold rounded-xl border-white/30 text-white hover:bg-white/10"
-                data-ocid="pm.hero.secondary_button"
+                data-ocid="ai.hero.secondary_button"
               >
-                <Phone className="w-4 h-4 mr-2" /> Contact Us
+                View AI Solutions
               </Button>
+            </div>
+            {/* Trust badges */}
+            <div className="flex flex-wrap gap-6">
+              {[
+                "Fortune 500 Ready",
+                "Enterprise-Grade AI",
+                "Secure & Scalable",
+              ].map((badge) => (
+                <div
+                  key={badge}
+                  className="flex items-center gap-2 text-white/70 text-sm"
+                >
+                  <Bot className="w-4 h-4 text-[#1ABC9C]" />
+                  <span>{badge}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Value Props */}
-      <section className="py-20 bg-white">
+      {/* Stats Bar */}
+      <section className="py-14" style={{ backgroundColor: "#0A3D62" }}>
         <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-14 fade-in-up">
-            <p className="text-[#1ABC9C] font-semibold uppercase tracking-widest text-sm mb-3">
-              Why It Matters
-            </p>
-            <h2 className="text-4xl font-bold text-[#0A3D62] mb-4">
-              Project Success Is a Science
-            </h2>
-            <p className="text-gray-500 max-w-2xl mx-auto text-lg">
-              70% of projects fail. Ours don't. Our proven methodologies,
-              certified managers, and rigorous governance deliver results
-              consistently.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: ClipboardList,
-                title: "97% On-Time Rate",
-                desc: "Consistently delivering within scope and schedule across 500+ engagements.",
-              },
-              {
-                icon: BarChart2,
-                title: "15+ Years Experience",
-                desc: "Certified PMPs with deep domain expertise across IT, healthcare, and finance.",
-              },
-              {
-                icon: Users,
-                title: "24/7 Support",
-                desc: "Dedicated project support with real-time dashboards and executive reporting.",
-              },
-            ].map((item, i) => {
-              const Icon = item.icon;
-              return (
-                <div
-                  key={item.title}
-                  className="fade-in-up text-center p-8 rounded-2xl border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
-                  style={{ transitionDelay: `${i * 80}ms` }}
-                >
-                  <div
-                    className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-5"
-                    style={{ backgroundColor: "#0A3D62" }}
-                  >
-                    <Icon className="w-7 h-7 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-[#0A3D62] mb-2">
-                    {item.title}
-                  </h3>
-                  <p className="text-gray-600">{item.desc}</p>
-                </div>
-              );
-            })}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {STATS.map((s, i) => (
+              <div
+                key={s.label}
+                className="fade-in-up text-center"
+                style={{ transitionDelay: `${i * 80}ms` }}
+                data-ocid={`ai.stats.item.${i + 1}`}
+              >
+                <p className="text-3xl md:text-4xl font-bold text-white mb-1">
+                  {s.value}
+                </p>
+                <p className="text-[#1ABC9C] text-sm font-medium">{s.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -279,8 +331,12 @@ export default function ProjectManagementPage({ setPage }: Props) {
               What We Offer
             </p>
             <h2 className="text-4xl font-bold text-[#0A3D62] mb-4">
-              End-to-End Project Management Capabilities
+              Full-Spectrum AI Capabilities
             </h2>
+            <p className="text-gray-500 max-w-2xl mx-auto text-lg">
+              From strategy and consulting to custom model development and
+              deployment—we cover every dimension of enterprise AI.
+            </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {CAPABILITIES.map((cap, i) => {
@@ -290,7 +346,7 @@ export default function ProjectManagementPage({ setPage }: Props) {
                   key={cap.title}
                   className="fade-in-up bg-white p-7 rounded-2xl border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                   style={{ transitionDelay: `${i * 60}ms` }}
-                  data-ocid={`pm.capability.item.${i + 1}`}
+                  data-ocid={`ai.capability.item.${i + 1}`}
                 >
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
@@ -319,7 +375,7 @@ export default function ProjectManagementPage({ setPage }: Props) {
               Technology Stack
             </p>
             <h2 className="text-3xl font-bold text-[#0A3D62]">
-              Tools We Work With
+              Industry-Leading AI Tools &amp; Frameworks
             </h2>
           </div>
           <div className="flex flex-wrap justify-center gap-3 fade-in-up">
@@ -343,7 +399,7 @@ export default function ProjectManagementPage({ setPage }: Props) {
               Our Process
             </p>
             <h2 className="text-4xl font-bold text-[#0A3D62] mb-4">
-              Our Project Lifecycle
+              How We Deliver AI Solutions
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
@@ -352,7 +408,7 @@ export default function ProjectManagementPage({ setPage }: Props) {
                 key={p.step}
                 className="fade-in-up text-center"
                 style={{ transitionDelay: `${i * 80}ms` }}
-                data-ocid={`pm.process.item.${i + 1}`}
+                data-ocid={`ai.process.item.${i + 1}`}
               >
                 <div
                   className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-lg"
@@ -364,7 +420,7 @@ export default function ProjectManagementPage({ setPage }: Props) {
                   className="h-1 rounded-full mx-auto mb-4 w-12"
                   style={{ backgroundColor: "#1ABC9C" }}
                 />
-                <h3 className="font-bold text-[#0A3D62] text-lg mb-2">
+                <h3 className="font-bold text-[#0A3D62] text-base mb-2">
                   {p.title}
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
@@ -384,7 +440,7 @@ export default function ProjectManagementPage({ setPage }: Props) {
               Why Ekan
             </p>
             <h2 className="text-4xl font-bold text-[#0A3D62] mb-4">
-              Why Choose Ekan for Project Management
+              Why Choose Ekan for AI &amp; Automation
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -396,12 +452,9 @@ export default function ProjectManagementPage({ setPage }: Props) {
                   borderColor: "#1ABC9C",
                   transitionDelay: `${i * 80}ms`,
                 }}
-                data-ocid={`pm.why.item.${i + 1}`}
+                data-ocid={`ai.why.item.${i + 1}`}
               >
-                <CheckCircle2
-                  className="w-8 h-8 mb-4"
-                  style={{ color: "#1ABC9C" }}
-                />
+                <Brain className="w-8 h-8 mb-4" style={{ color: "#1ABC9C" }} />
                 <h3 className="text-xl font-bold text-[#0A3D62] mb-3">
                   {w.title}
                 </h3>
@@ -416,29 +469,30 @@ export default function ProjectManagementPage({ setPage }: Props) {
       <section className="py-20" style={{ backgroundColor: "#0A3D62" }}>
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold text-white mb-4">
-            Ready to Deliver Your Next Project?
+            Ready to Transform with AI?
           </h2>
           <p className="text-white/70 text-xl mb-10">
-            Let's align on scope, timeline, and success criteria. Free discovery
-            call—no obligation.
+            Schedule a free AI consultation with our experts today.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Button
               onClick={() => setPage("home")}
               className="px-10 py-3 text-base font-semibold rounded-xl"
               style={{ backgroundColor: "#1ABC9C", color: "white" }}
-              data-ocid="pm.cta.primary_button"
+              data-ocid="ai.cta.primary_button"
             >
-              Schedule a Call <ArrowRight className="w-4 h-4 ml-2" />
+              Schedule a Free AI Consultation{" "}
+              <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
-            <Button
-              variant="outline"
-              onClick={() => setPage("services")}
-              className="px-10 py-3 text-base font-semibold rounded-xl border-white/30 text-white hover:bg-white/10"
-              data-ocid="pm.cta.secondary_button"
-            >
-              View All Services
-            </Button>
+            <a href="tel:8322950408">
+              <Button
+                variant="outline"
+                className="px-10 py-3 text-base font-semibold rounded-xl border-white/30 text-white hover:bg-white/10"
+                data-ocid="ai.cta.secondary_button"
+              >
+                <Phone className="w-4 h-4 mr-2" /> (832) 295-0408
+              </Button>
+            </a>
           </div>
         </div>
       </section>

@@ -22,7 +22,8 @@ type PageType =
   | "fullstack"
   | "awscloud"
   | "javadevelopment"
-  | "qatesting";
+  | "qatesting"
+  | "aiservices";
 
 interface Props {
   setPage: (p: PageType) => void;

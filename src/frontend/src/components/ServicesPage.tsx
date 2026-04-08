@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import {
   ArrowRight,
   BarChart3,
+  Brain,
   CheckCircle2,
   ClipboardList,
   Cloud,
@@ -30,7 +31,8 @@ type PageType =
   | "fullstack"
   | "awscloud"
   | "javadevelopment"
-  | "qatesting";
+  | "qatesting"
+  | "aiservices";
 
 interface ServicesPageProps {
   setPage: (p: PageType) => void;
@@ -103,6 +105,14 @@ const SERVICES_OVERVIEW = [
     anchor: "#qatesting",
     page: "qatesting" as PageType,
   },
+  {
+    icon: Brain,
+    title: "AI & Automation",
+    desc: "Leverage machine learning, NLP, and intelligent automation to streamline operations and unlock new business insights.",
+    color: "#0A3D62",
+    anchor: "#aiservices",
+    page: "aiservices" as PageType,
+  },
 ];
 
 const SERVICE_DETAILS = [
@@ -174,6 +184,34 @@ const SERVICE_DETAILS = [
       "RESTful & GraphQL API development",
       "Legacy system modernization",
       "JVM performance tuning & code reviews",
+    ],
+  },
+  {
+    id: "qatesting",
+    icon: CheckCircle2,
+    color: "#1ABC9C",
+    title: "Flawless Software, Every Release",
+    body: "Our QA engineers embed quality at every stage of the development lifecycle — from requirements review to post-production monitoring — so defects never reach your users.",
+    bullets: [
+      "Manual & exploratory testing for complex user flows",
+      "Automated regression suites (Selenium, Cypress, Playwright)",
+      "Performance & load testing (JMeter, Gatling)",
+      "Security testing & OWASP vulnerability scanning",
+      "API testing & contract validation (Postman, REST Assured)",
+    ],
+  },
+  {
+    id: "aiservices",
+    icon: Brain,
+    color: "#0A3D62",
+    title: "Intelligent Automation for the Modern Enterprise",
+    body: "We help organizations harness the power of AI and machine learning to automate complex workflows, surface predictive insights, and build smarter products — from proof-of-concept to full production deployment.",
+    bullets: [
+      "Machine learning model development & deployment",
+      "Natural language processing & conversational AI",
+      "Robotic process automation (RPA) & intelligent workflows",
+      "Predictive analytics & data-driven decision making",
+      "AI integration with existing enterprise systems",
     ],
   },
 ];
@@ -336,7 +374,7 @@ export default function ServicesPage({ setPage }: ServicesPageProps) {
               Core Service Areas
             </h2>
             <p className="text-gray-500 max-w-2xl mx-auto text-lg">
-              Five specialized practice areas designed to address your most
+              Seven specialized practice areas designed to address your most
               critical technology challenges.
             </p>
           </div>

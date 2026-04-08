@@ -1,3 +1,4 @@
+import AIServicesPage from "@/components/AIServicesPage";
 import AWSCloudPage from "@/components/AWSCloudPage";
 import AboutPage from "@/components/AboutPage";
 import CybersecurityPage from "@/components/CybersecurityPage";
@@ -15,7 +16,9 @@ import {
   ArrowRight,
   BarChart3,
   BookOpen,
+  Bot,
   CheckCircle2,
+  CheckSquare,
   ChevronRight,
   ClipboardList,
   Clock,
@@ -111,6 +114,20 @@ const SERVICES = [
     desc: "Build robust, high-performance enterprise applications with Java EE, Spring, and microservices architectures.",
     color: "#0A3D62",
   },
+  {
+    icon: CheckSquare,
+    title: "Quality Assurance / Testing",
+    desc: "Comprehensive QA and testing services to ensure your software is reliable, performant, and defect-free before every release.",
+    color: "#1ABC9C",
+    page: "qatesting" as const,
+  },
+  {
+    icon: Bot,
+    title: "AI & Automation Services",
+    desc: "Harness the power of artificial intelligence and intelligent automation to streamline operations, reduce costs, and accelerate growth.",
+    color: "#0A3D62",
+    page: "aiservices" as const,
+  },
 ];
 
 const SERVICE_DETAILS = [
@@ -182,6 +199,34 @@ const SERVICE_DETAILS = [
       "RESTful & GraphQL API development",
       "Legacy system modernization",
       "JVM performance tuning & code reviews",
+    ],
+  },
+  {
+    id: "qatesting",
+    label: "QA / Testing",
+    icon: CheckSquare,
+    headline: "Deliver Flawless Software, Every Release",
+    body: "We ensure every release meets the highest quality standards through rigorous manual and automated testing across functional, performance, security, and mobile dimensions.",
+    bullets: [
+      "Manual & Exploratory Testing",
+      "Automated Test Suites (Selenium, Cypress, Playwright)",
+      "Performance & Load Testing (JMeter, Gatling)",
+      "Security & Penetration Testing",
+      "API & Mobile Testing",
+    ],
+  },
+  {
+    id: "aiservices",
+    label: "AI & Automation",
+    icon: Bot,
+    headline: "Intelligent Automation for the Modern Enterprise",
+    body: "We design and deploy intelligent automation solutions—from ML models and NLP engines to RPA workflows—that help your business scale smarter and faster.",
+    bullets: [
+      "AI Strategy & Consulting",
+      "Machine Learning Model Development",
+      "NLP & Conversational AI (Chatbots, Voice Assistants)",
+      "Robotic Process Automation (RPA)",
+      "Predictive Analytics & Business Intelligence",
     ],
   },
 ];
@@ -278,7 +323,8 @@ function Header({
       | "fullstack"
       | "awscloud"
       | "javadevelopment"
-      | "qatesting",
+      | "qatesting"
+      | "aiservices",
   ) => void;
 }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -308,9 +354,11 @@ function Header({
             }}
             data-ocid="nav.link"
           >
-            <div className="w-9 h-9 bg-navy rounded flex items-center justify-center">
-              <Shield className="w-5 h-5 text-white" />
-            </div>
+            <img
+              src="/assets/generated/es-logo-icon-transparent.dim_200x200.png"
+              alt="ES Logo"
+              className="w-10 h-10 object-contain"
+            />
             <div>
               <span className="font-bold text-lg text-navy leading-none block">
                 Ekan Solutions
@@ -634,7 +682,7 @@ function IntroCards() {
             {
               icon: Layers,
               title: "Our Services",
-              desc: "Five specialized IT practices—cybersecurity, cloud, development, and project management—delivered by certified professionals.",
+              desc: "Seven specialized IT services—cybersecurity, cloud, development, QA, AI & automation—delivered by certified professionals.",
               color: "#0A3D62",
             },
             {
@@ -1327,11 +1375,13 @@ function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 bg-[#1ABC9C] rounded flex items-center justify-center">
-                <Shield className="w-5 h-5 text-white" />
-              </div>
+              <img
+                src="/assets/generated/es-logo-icon-transparent.dim_200x200.png"
+                alt="ES Logo"
+                className="w-10 h-10 object-contain"
+              />
               <div>
-                <span className="font-bold text-lg leading-none block">
+                <span className="font-bold text-lg text-white leading-none block">
                   Ekan Solutions
                 </span>
                 <span className="text-xs text-white/50 leading-none">Inc.</span>
@@ -1488,6 +1538,7 @@ export default function App() {
     | "awscloud"
     | "javadevelopment"
     | "qatesting"
+    | "aiservices"
   >("home");
   useScrollAnimation();
 
@@ -1513,6 +1564,8 @@ export default function App() {
           <JavaDevelopmentPage setPage={setPage} />
         ) : page === "qatesting" ? (
           <QATestingPage setPage={setPage} />
+        ) : page === "aiservices" ? (
+          <AIServicesPage setPage={setPage} />
         ) : (
           <>
             <HeroSection />
