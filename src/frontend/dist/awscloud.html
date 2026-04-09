@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AWS Cloud Solutions | Ekan Solutions Inc.</title>
+  <meta name="description" content="Migrate, optimize, and manage your AWS cloud infrastructure with certified AWS architects and engineers at Ekan Solutions Inc." />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── AWS Cloud page-specific overrides ── */
+    .service-hero {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 60%, #0e4d7a 100%);
+      padding: 7rem 0 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 70% 50%, rgba(26,188,156,0.12) 0%, transparent 60%),
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%231ABC9C' stroke-width='0.4' opacity='0.15'%3E%3Crect x='5' y='5' width='50' height='50' rx='4'/%3E%3Cline x1='30' y1='5' x2='30' y2='55'/%3E%3Cline x1='5' y1='30' x2='55' y2='30'/%3E%3C/g%3E%3C/svg%3E") repeat;
+      pointer-events: none;
+    }
+    .service-hero .container { position: relative; z-index: 1; }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.6);
+      flex-wrap: wrap;
+    }
+    .breadcrumb a { color: rgba(255,255,255,0.7); transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--accent); }
+    .breadcrumb span { color: rgba(255,255,255,0.4); }
+    .breadcrumb .current { color: var(--accent); }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(26,188,156,0.15);
+      border: 1px solid rgba(26,188,156,0.4);
+      color: var(--accent);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.4rem 1rem;
+      border-radius: 100px;
+      margin-bottom: 1.25rem;
+    }
+    .hero-badge svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+    .service-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+      max-width: 720px;
+    }
+    .service-hero h1 .accent { color: var(--accent); }
+
+    .service-hero .subtitle {
+      color: rgba(255,255,255,0.78);
+      font-size: 1.1rem;
+      line-height: 1.75;
+      max-width: 620px;
+      margin-bottom: 2.25rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* ── Capability cards ── */
+    .capability-card {
+      background: var(--white);
+      border: 1px solid var(--gray-border);
+      border-radius: var(--radius-md);
+      padding: 2rem 1.75rem;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .capability-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--primary));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .capability-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
+    .capability-card:hover::before { transform: scaleX(1); }
+
+    .cap-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-sm);
+      background: var(--accent-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+      transition: background 0.25s;
+    }
+    .capability-card:hover .cap-icon { background: var(--accent); }
+    .cap-icon svg { width: 26px; height: 26px; color: var(--accent); transition: color 0.25s; }
+    .capability-card:hover .cap-icon svg { color: var(--white); }
+
+    .cap-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.6rem;
+    }
+    .cap-desc {
+      font-size: 0.9rem;
+      color: var(--text-body);
+      line-height: 1.65;
+    }
+
+    /* ── Tech stack ── */
+    .tech-stack-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+      margin-top: 0.5rem;
+    }
+    .tech-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--white);
+      border: 1px solid var(--gray-border);
+      border-radius: 100px;
+      padding: 0.45rem 1.1rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--primary);
+      transition: var(--transition);
+    }
+    .tech-badge:hover {
+      border-color: var(--accent);
+      background: var(--accent-light);
+      color: var(--accent-dark);
+    }
+    .tech-badge .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* ── Process steps ── */
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+      position: relative;
+      margin-top: 1rem;
+    }
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: calc(10% + 14px);
+      right: calc(10% + 14px);
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--primary));
+      opacity: 0.3;
+      z-index: 0;
+    }
+    .process-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0 0.75rem;
+      position: relative;
+      z-index: 1;
+    }
+    .step-number {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: var(--white);
+      font-size: 1.1rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+      border: 3px solid var(--white);
+      box-shadow: 0 0 0 3px var(--primary), var(--shadow-sm);
+      transition: var(--transition);
+    }
+    .process-step:hover .step-number {
+      background: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent), var(--shadow-md);
+    }
+    .step-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    .step-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* ── Why choose us ── */
+    .why-card {
+      background: var(--white);
+      border: 1px solid var(--gray-border);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      text-align: center;
+      transition: var(--transition);
+    }
+    .why-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+    .why-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .why-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.6rem;
+    }
+    .why-desc {
+      font-size: 0.88rem;
+      color: var(--text-body);
+      line-height: 1.65;
+    }
+
+    /* ── CTA Banner ── */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+      padding: 5rem 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 100%, rgba(26,188,156,0.18) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .cta-banner .container { position: relative; z-index: 1; }
+    .cta-banner h2 {
+      font-size: clamp(1.7rem, 4vw, 2.6rem);
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+    .cta-banner p {
+      color: rgba(255,255,255,0.75);
+      font-size: 1rem;
+      max-width: 520px;
+      margin: 0 auto 2.25rem;
+      line-height: 1.7;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .process-steps {
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 2rem;
+      }
+      .process-steps::before { display: none; }
+    }
+    @media (max-width: 640px) {
+      .process-steps { grid-template-columns: 1fr 1fr; }
+      .grid-3 { grid-template-columns: 1fr; }
+      .hero-actions { flex-direction: column; }
+    }
+    @media (max-width: 480px) {
+      .process-steps { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════ HEADER / NAV ═══════════════════════════ -->
+  <header class="site-header" id="site-header">
+    <div class="container nav-inner">
+      <a href="home.html" class="nav-logo">
+        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="44" height="44" rx="10" fill="#0A3D62"/>
+          <line x1="8" y1="22" x2="36" y2="22" stroke="#1ABC9C" stroke-width="1" opacity="0.5"/>
+          <line x1="22" y1="8" x2="22" y2="36" stroke="#1ABC9C" stroke-width="1" opacity="0.5"/>
+          <line x1="8" y1="14" x2="16" y2="14" stroke="#1ABC9C" stroke-width="1" opacity="0.4"/>
+          <line x1="28" y1="30" x2="36" y2="30" stroke="#1ABC9C" stroke-width="1" opacity="0.4"/>
+          <line x1="14" y1="8" x2="14" y2="16" stroke="#1ABC9C" stroke-width="1" opacity="0.4"/>
+          <line x1="30" y1="28" x2="30" y2="36" stroke="#1ABC9C" stroke-width="1" opacity="0.4"/>
+          <circle cx="8" cy="22" r="2" fill="#1ABC9C"/>
+          <circle cx="36" cy="22" r="2" fill="#1ABC9C"/>
+          <circle cx="22" cy="8" r="2" fill="#1ABC9C"/>
+          <circle cx="22" cy="36" r="2" fill="#1ABC9C"/>
+          <circle cx="14" cy="14" r="1.5" fill="#1ABC9C" opacity="0.7"/>
+          <circle cx="30" cy="30" r="1.5" fill="#1ABC9C" opacity="0.7"/>
+          <circle cx="30" cy="14" r="1.5" fill="#1ABC9C" opacity="0.7"/>
+          <circle cx="14" cy="30" r="1.5" fill="#1ABC9C" opacity="0.7"/>
+          <text x="22" y="27" text-anchor="middle" fill="white" font-size="14" font-weight="800" font-family="Inter,sans-serif" letter-spacing="-0.5">ES</text>
+        </svg>
+        <div class="nav-logo-text">
+          <span class="nav-logo-name">Ekan Solutions</span>
+          <span class="nav-logo-inc">Inc.</span>
+        </div>
+      </a>
+      <nav class="nav-links" id="nav-links">
+        <a href="home.html"     class="nav-link" data-page="home">Home</a>
+        <a href="about.html"    class="nav-link" data-page="about">About</a>
+        <a href="services.html" class="nav-link" data-page="services">Services</a>
+        <a href="solutions.html"class="nav-link" data-page="solutions">Solutions</a>
+        <a href="contact.html"  class="nav-link" data-page="contact">Contact</a>
+      </nav>
+      <div class="nav-cta">
+        <div class="nav-phones">
+          <a href="tel:8322950408" class="nav-phone">(832) 295-0408</a>
+          <a href="tel:4105968362" class="nav-phone">410-596-8362</a>
+        </div>
+        <a href="contact.html" class="btn btn-accent">Get Consultation</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <nav class="mobile-nav">
+        <a href="home.html"     class="mobile-link" data-page="home">Home</a>
+        <a href="about.html"    class="mobile-link" data-page="about">About</a>
+        <a href="services.html" class="mobile-link" data-page="services">Services</a>
+        <a href="solutions.html"class="mobile-link" data-page="solutions">Solutions</a>
+        <a href="contact.html"  class="mobile-link" data-page="contact">Contact</a>
+      </nav>
+      <div class="mobile-phones">
+        <a href="tel:8322950408">(832) 295-0408</a>
+        <a href="tel:4105968362">410-596-8362</a>
+      </div>
+      <a href="contact.html" class="btn btn-accent mobile-cta">Get Consultation</a>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════ SERVICE HERO ═══════════════════════════ -->
+  <section class="service-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="home.html">Home</a>
+        <span aria-hidden="true">›</span>
+        <a href="services.html">Services</a>
+        <span aria-hidden="true">›</span>
+        <span class="current">AWS Cloud Solutions</span>
+      </nav>
+
+      <div class="hero-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>
+        </svg>
+        AWS Cloud Solutions
+      </div>
+
+      <h1>AWS Cloud Solutions <span class="accent">&amp; Services</span></h1>
+      <p class="subtitle">Migrate, optimize, and manage your AWS cloud infrastructure with certified AWS architects and engineers committed to your business outcomes.</p>
+
+      <div class="hero-actions">
+        <a href="contact.html" class="btn btn-accent" data-ocid="hero-cta-assessment">
+          Get Cloud Assessment
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="services.html" class="btn btn-outline-white" data-ocid="hero-cta-services">View All Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ CAPABILITIES ═══════════════════════════ -->
+  <section class="section">
+    <div class="container">
+      <header class="section-header">
+        <span class="section-label">What We Deliver</span>
+        <h2 class="section-title">AWS Cloud Capabilities</h2>
+        <p class="section-subtitle">End-to-end cloud services designed to modernize your infrastructure, reduce costs, and accelerate innovation on AWS.</p>
+      </header>
+
+      <div class="grid-3" data-ocid="capabilities-grid">
+
+        <article class="capability-card fade-in">
+          <div class="cap-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+            </svg>
+          </div>
+          <h3 class="cap-title">Cloud Architecture &amp; Migration</h3>
+          <p class="cap-desc">Design and execute seamless migrations to AWS — from lift-and-shift to full cloud-native re-architecture, with minimal risk and disruption.</p>
+        </article>
+
+        <article class="capability-card fade-in">
+          <div class="cap-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+            </svg>
+          </div>
+          <h3 class="cap-title">Auto-Scaling Infrastructure</h3>
+          <p class="cap-desc">Dynamic, cost-optimized infrastructure that scales automatically with demand — ensuring performance peaks are met without over-provisioning.</p>
+        </article>
+
+        <article class="capability-card fade-in">
+          <div class="cap-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+            </svg>
+          </div>
+          <h3 class="cap-title">Serverless Application Design</h3>
+          <p class="cap-desc">Lambda, API Gateway, and event-driven architectures that eliminate server management overhead and dramatically reduce operational costs.</p>
+        </article>
+
+        <article class="capability-card fade-in">
+          <div class="cap-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+          <h3 class="cap-title">Cost Optimization &amp; FinOps</h3>
+          <p class="cap-desc">Reduce cloud spend while maintaining performance. We apply Reserved Instances, Savings Plans, rightsizing, and governance policies to maximize ROI.</p>
+        </article>
+
+        <article class="capability-card fade-in">
+          <div class="cap-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h3 class="cap-title">Disaster Recovery &amp; Business Continuity</h3>
+          <p class="cap-desc">Multi-region failover and backup strategies that protect your business data and guarantee fast recovery when the unexpected happens.</p>
+        </article>
+
+        <article class="capability-card fade-in">
+          <div class="cap-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/>
+            </svg>
+          </div>
+          <h3 class="cap-title">Managed Cloud Services</h3>
+          <p class="cap-desc">Ongoing monitoring, patching, security hardening, and continuous optimization — so your team can focus on building, not maintaining infrastructure.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ TECH STACK ════════════════════════════ -->
+  <section class="section-alt">
+    <div class="container">
+      <header class="section-header">
+        <span class="section-label">Technology Stack</span>
+        <h2 class="section-title">AWS Services &amp; Tools We Use</h2>
+        <p class="section-subtitle">We leverage the full breadth of the AWS ecosystem plus best-in-class DevOps tooling to deliver robust, scalable cloud solutions.</p>
+      </header>
+      <div class="tech-stack-wrap" data-ocid="tech-stack">
+        <span class="tech-badge"><span class="dot"></span>EC2</span>
+        <span class="tech-badge"><span class="dot"></span>S3</span>
+        <span class="tech-badge"><span class="dot"></span>Lambda</span>
+        <span class="tech-badge"><span class="dot"></span>RDS</span>
+        <span class="tech-badge"><span class="dot"></span>Aurora</span>
+        <span class="tech-badge"><span class="dot"></span>CloudFormation</span>
+        <span class="tech-badge"><span class="dot"></span>Terraform</span>
+        <span class="tech-badge"><span class="dot"></span>EKS</span>
+        <span class="tech-badge"><span class="dot"></span>ECS</span>
+        <span class="tech-badge"><span class="dot"></span>CloudWatch</span>
+        <span class="tech-badge"><span class="dot"></span>IAM</span>
+        <span class="tech-badge"><span class="dot"></span>VPC</span>
+        <span class="tech-badge"><span class="dot"></span>Route 53</span>
+        <span class="tech-badge"><span class="dot"></span>CloudFront</span>
+        <span class="tech-badge"><span class="dot"></span>AWS WAF</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ PROCESS ══════════════════════════════ -->
+  <section class="section">
+    <div class="container">
+      <header class="section-header">
+        <span class="section-label">Our Methodology</span>
+        <h2 class="section-title">How We Deliver Cloud Success</h2>
+        <p class="section-subtitle">A proven, structured approach that minimizes risk and accelerates your path to a fully optimized AWS environment.</p>
+      </header>
+
+      <div class="process-steps" data-ocid="process-steps">
+
+        <div class="process-step fade-in">
+          <div class="step-number">1</div>
+          <h3 class="step-title">Assessment</h3>
+          <p class="step-desc">Cloud readiness assessment and infrastructure audit to identify opportunities and risks.</p>
+        </div>
+
+        <div class="process-step fade-in">
+          <div class="step-number">2</div>
+          <h3 class="step-title">Architecture</h3>
+          <p class="step-desc">Design target cloud architecture and a phased migration plan aligned with business goals.</p>
+        </div>
+
+        <div class="process-step fade-in">
+          <div class="step-number">3</div>
+          <h3 class="step-title">Migration</h3>
+          <p class="step-desc">Execute phased migration with a zero-downtime approach and continuous validation at every step.</p>
+        </div>
+
+        <div class="process-step fade-in">
+          <div class="step-number">4</div>
+          <h3 class="step-title">Optimization</h3>
+          <p class="step-desc">Performance tuning, cost optimization, and security hardening for a production-ready environment.</p>
+        </div>
+
+        <div class="process-step fade-in">
+          <div class="step-number">5</div>
+          <h3 class="step-title">Management</h3>
+          <p class="step-desc">Ongoing managed services, proactive monitoring, and continuous improvement to maximize value.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ WHY CHOOSE US ═════════════════════════ -->
+  <section class="section-alt">
+    <div class="container">
+      <header class="section-header">
+        <span class="section-label">Our Edge</span>
+        <h2 class="section-title">Why Choose Ekan for AWS?</h2>
+        <p class="section-subtitle">Certified expertise, proven methodology, and a relentless focus on outcomes — not just deliverables.</p>
+      </header>
+
+      <div class="grid-3" data-ocid="why-grid">
+
+        <div class="why-card fade-in">
+          <div class="why-icon" aria-hidden="true">🏅</div>
+          <h3 class="why-title">AWS Certified Architects</h3>
+          <p class="why-desc">Our team holds AWS Solutions Architect and DevOps Engineer certifications, ensuring your infrastructure is designed to AWS best practices from day one.</p>
+        </div>
+
+        <div class="why-card fade-in">
+          <div class="why-icon" aria-hidden="true">🚀</div>
+          <h3 class="why-title">Zero-Downtime Migrations</h3>
+          <p class="why-desc">Our proven migration methodology keeps your business fully operational throughout the entire transition — no disruption to your team or your customers.</p>
+        </div>
+
+        <div class="why-card fade-in">
+          <div class="why-icon" aria-hidden="true">💰</div>
+          <h3 class="why-title">Cost Optimization Focus</h3>
+          <p class="why-desc">We deliver an average <strong>30% reduction in cloud costs</strong> for our clients through rightsizing, Reserved Instance planning, and FinOps governance.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ CTA BANNER ════════════════════════════ -->
+  <section class="cta-banner" data-ocid="cta-banner">
+    <div class="container">
+      <h2>Ready to Unlock the Power of AWS?</h2>
+      <p>Let our certified AWS architects assess your infrastructure and build a cloud strategy that drives real business results.</p>
+      <div class="hero-actions" style="justify-content:center;">
+        <a href="contact.html" class="btn btn-accent" data-ocid="cta-contact">
+          Get a Free Cloud Assessment
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="tel:8322950408" class="btn btn-outline-white" data-ocid="cta-phone">(832) 295-0408</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ FOOTER ═══════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo">
+          <svg width="40" height="40" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="44" height="44" rx="10" fill="#0A3D62"/>
+            <line x1="8" y1="22" x2="36" y2="22" stroke="#1ABC9C" stroke-width="1" opacity="0.5"/>
+            <line x1="22" y1="8" x2="22" y2="36" stroke="#1ABC9C" stroke-width="1" opacity="0.5"/>
+            <line x1="8" y1="14" x2="16" y2="14" stroke="#1ABC9C" stroke-width="1" opacity="0.4"/>
+            <line x1="28" y1="30" x2="36" y2="30" stroke="#1ABC9C" stroke-width="1" opacity="0.4"/>
+            <circle cx="8" cy="22" r="2" fill="#1ABC9C"/>
+            <circle cx="36" cy="22" r="2" fill="#1ABC9C"/>
+            <circle cx="22" cy="8" r="2" fill="#1ABC9C"/>
+            <circle cx="22" cy="36" r="2" fill="#1ABC9C"/>
+            <circle cx="14" cy="14" r="1.5" fill="#1ABC9C" opacity="0.7"/>
+            <circle cx="30" cy="30" r="1.5" fill="#1ABC9C" opacity="0.7"/>
+            <text x="22" y="27" text-anchor="middle" fill="white" font-size="14" font-weight="800" font-family="Inter,sans-serif" letter-spacing="-0.5">ES</text>
+          </svg>
+          <span class="footer-logo-name">Ekan Solutions Inc.</span>
+        </div>
+        <p class="footer-tagline">Enterprise IT solutions built on integrity, innovation, and 15+ years of expertise.</p>
+        <div class="footer-contact-items">
+          <span>📞 (832) 295-0408</span>
+          <span>📞 410-596-8362</span>
+          <span>📍 Maryland, United States</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="solutions.html">Solutions</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">Our Services</h4>
+        <ul class="footer-links">
+          <li><a href="cybersecurity.html">Cybersecurity</a></li>
+          <li><a href="projectmanagement.html">Project Management</a></li>
+          <li><a href="fullstack.html">Full Stack Development</a></li>
+          <li><a href="awscloud.html" aria-current="page">AWS Cloud Solutions</a></li>
+          <li><a href="javadevelopment.html">Java Development</a></li>
+          <li><a href="qatesting.html">Quality Assurance / Testing</a></li>
+          <li><a href="aiservices.html">AI &amp; Automation Services</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; <script>document.write(new Date().getFullYear())</script> Ekan Solutions Inc. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI &amp; Automation Services | Ekan Solutions Inc.</title>
+  <meta name="description" content="Intelligent automation and AI services — ML development, NLP, RPA, predictive analytics, AI strategy consulting, and enterprise AI integration." />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── AI Hero: deep neural-network dark gradient + dot-grid overlay ── */
+    .ai-service-hero {
+      position: relative;
+      background: linear-gradient(135deg, #060f1e 0%, #0a1f3d 45%, #0A3D62 100%);
+      padding: 5rem 0 4rem;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .ai-service-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle, rgba(26,188,156,0.18) 1px, transparent 1px);
+      background-size: 36px 36px;
+      pointer-events: none;
+    }
+
+    .ai-service-hero::after {
+      content: '';
+      position: absolute;
+      top: -120px;
+      right: -80px;
+      width: 520px;
+      height: 520px;
+      background: radial-gradient(circle, rgba(26,188,156,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .ai-service-hero .container { position: relative; z-index: 1; }
+
+    /* Trust badges row */
+    .trust-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-top: 1.75rem;
+    }
+
+    .trust-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(26,188,156,0.35);
+      border-radius: 100px;
+      padding: 0.3rem 0.85rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .trust-badge::before {
+      content: '✓';
+      color: #1ABC9C;
+      font-weight: 800;
+    }
+
+    /* Process: vertical numbered list */
+    .ai-process-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .ai-process-item {
+      display: flex;
+      gap: 1.5rem;
+      padding: 1.75rem 0;
+      border-bottom: 1px solid var(--gray-border);
+    }
+
+    .ai-process-item:last-child { border-bottom: none; }
+
+    .ai-process-num {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 800;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0.2rem;
+    }
+
+    .ai-process-content h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.4rem;
+    }
+
+    .ai-process-content p {
+      color: var(--text-body);
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER / NAV ===== -->
+  <header class="site-header" id="site-header">
+    <div class="container nav-inner">
+      <a href="home.html" class="nav-logo">
+        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="44" height="44" rx="10" fill="#0A3D62"/>
+          <line x1="8" y1="22" x2="36" y2="22" stroke="#1ABC9C" stroke-width="1" opacity="0.5"/>
+          <line x1="22" y1="8" x2="22" y2="36" stroke="#1ABC9C" stroke-width="1" opacity="0.5"/>
+          <line x1="8" y1="14" x2="16" y2="14" stroke="#1ABC9C" stroke-width="1" opacity="0.4"/>
+          <line x1="28" y1="30" x2="36" y2="30" stroke="#1ABC9C" stroke-width="1" opacity="0.4"/>
+          <line x1="14" y1="8" x2="14" y2="16" stroke="#1ABC9C" stroke-width="1" opacity="0.4"/>
+          <line x1="30" y1="28" x2="30" y2="36" stroke="#1ABC9C" stroke-width="1" opacity="0.4"/>
+          <circle cx="8" cy="22" r="2" fill="#1ABC9C"/>
+          <circle cx="36" cy="22" r="2" fill="#1ABC9C"/>
+          <circle cx="22" cy="8" r="2" fill="#1ABC9C"/>
+          <circle cx="22" cy="36" r="2" fill="#1ABC9C"/>
+          <circle cx="14" cy="14" r="1.5" fill="#1ABC9C" opacity="0.7"/>
+          <circle cx="30" cy="30" r="1.5" fill="#1ABC9C" opacity="0.7"/>
+          <circle cx="30" cy="14" r="1.5" fill="#1ABC9C" opacity="0.7"/>
+          <circle cx="14" cy="30" r="1.5" fill="#1ABC9C" opacity="0.7"/>
+          <text x="22" y="27" text-anchor="middle" fill="white" font-size="14" font-weight="800" font-family="Inter,sans-serif" letter-spacing="-0.5">ES</text>
+        </svg>
+        <div class="nav-logo-text">
+          <span class="nav-logo-name">Ekan Solutions</span>
+          <span class="nav-logo-inc">Inc.</span>
+        </div>
+      </a>
+      <nav class="nav-links" id="nav-links">
+        <a href="home.html"     class="nav-link" data-page="home">Home</a>
+        <a href="about.html"    class="nav-link" data-page="about">About</a>
+        <a href="services.html" class="nav-link" data-page="services">Services</a>
+        <a href="solutions.html"class="nav-link" data-page="solutions">Solutions</a>
+        <a href="contact.html"  class="nav-link" data-page="contact">Contact</a>
+      </nav>
+      <div class="nav-cta">
+        <div class="nav-phones">
+          <a href="tel:8322950408" class="nav-phone">(832) 295-0408</a>
+          <a href="tel:4105968362" class="nav-phone">410-596-8362</a>
+        </div>
+        <a href="contact.html" class="btn btn-accent">Get Consultation</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <nav class="mobile-nav">
+        <a href="home.html"     class="mobile-link" data-page="home">Home</a>
+        <a href="about.html"    class="mobile-link" data-page="about">About</a>
+        <a href="services.html" class="mobile-link" data-page="services">Services</a>
+        <a href="solutions.html"class="mobile-link" data-page="solutions">Solutions</a>
+        <a href="contact.html"  class="mobile-link" data-page="contact">Contact</a>
+      </nav>
+      <div class="mobile-phones">
+        <a href="tel:8322950408">(832) 295-0408</a>
+        <a href="tel:4105968362">410-596-8362</a>
+      </div>
+      <a href="contact.html" class="btn btn-accent mobile-cta">Get Consultation</a>
+    </div>
+  </header>
+
+  <!-- ===== SERVICE HERO ===== -->
+  <section class="ai-service-hero" id="hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="home.html">Home</a>
+        <span class="breadcrumb-sep">›</span>
+        <a href="services.html">Services</a>
+        <span class="breadcrumb-sep">›</span>
+        <span class="breadcrumb-current">AI &amp; Automation</span>
+      </nav>
+      <div class="service-hero-badge">AI &amp; AUTOMATION SERVICES</div>
+      <h1 class="service-hero-title">Intelligent Automation for the<br>Modern Enterprise</h1>
+      <p class="service-hero-desc">
+        Harness the power of artificial intelligence, machine learning, and robotic process automation
+        to transform your business operations and unlock new competitive advantages.
+      </p>
+      <div class="hero-actions">
+        <a href="contact.html" class="btn btn-accent btn-lg" data-ocid="hero-cta-explore">Explore AI Solutions</a>
+        <a href="services.html" class="btn btn-outline-white btn-lg" data-ocid="hero-cta-services">View All Services</a>
+      </div>
+      <div class="trust-badges" aria-label="Partner certifications">
+        <span class="trust-badge">OpenAI Partner</span>
+        <span class="trust-badge">AWS ML Competency</span>
+        <span class="trust-badge">Azure AI Certified</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CAPABILITIES ===== -->
+  <section class="section" id="capabilities">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">WHAT WE DO</span>
+        <h2 class="section-title">Our AI &amp; Automation Capabilities</h2>
+        <p class="section-subtitle">
+          End-to-end AI expertise — from strategy and model development to enterprise integration and continuous monitoring.
+        </p>
+      </div>
+      <div class="grid-3">
+
+        <div class="card fade-in" data-ocid="cap-card-strategy">
+          <div class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+          </div>
+          <h3 class="card-title">AI Strategy &amp; Consulting</h3>
+          <p class="card-desc">Assess your AI readiness, identify high-impact use cases, and define a phased roadmap for AI adoption aligned with your business objectives and data maturity.</p>
+        </div>
+
+        <div class="card fade-in" data-ocid="cap-card-ml">
+          <div class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 2a7 7 0 017 7c0 3.5-2.5 6.5-6 7.5V18h-2v-1.5C7.5 15.5 5 12.5 5 9a7 7 0 017-7z"/><line x1="12" y1="22" x2="12" y2="18"/><line x1="9" y1="21" x2="15" y2="21"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Machine Learning Development</h3>
+          <p class="card-desc">Custom ML models built for classification, regression, anomaly detection, and time-series forecasting — trained on your data and optimized for production performance.</p>
+        </div>
+
+        <div class="card fade-in" data-ocid="cap-card-nlp">
+          <div class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+            </svg>
+          </div>
+          <h3 class="card-title">NLP &amp; Conversational AI</h3>
+          <p class="card-desc">Intelligent chatbots, virtual assistants, and document intelligence solutions powered by large language models — reducing support costs and accelerating knowledge access.</p>
+        </div>
+
+        <div class="card fade-in" data-ocid="cap-card-rpa">
+          <div class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Robotic Process Automation (RPA)</h3>
+          <p class="card-desc">Automate high-volume, repetitive tasks with intelligent bots that operate across your existing systems — freeing your teams for higher-value strategic work.</p>
+        </div>
+
+        <div class="card fade-in" data-ocid="cap-card-analytics">
+          <div class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><path d="M2 20h20"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Predictive Analytics</h3>
+          <p class="card-desc">Transform raw data into forward-looking insights. Our data scientists build forecasting models that help you anticipate demand, reduce risk, and make smarter decisions faster.</p>
+        </div>
+
+        <div class="card fade-in" data-ocid="cap-card-integration">
+          <div class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 012 2v7"/><line x1="6" y1="9" x2="6" y2="21"/>
+            </svg>
+          </div>
+          <h3 class="card-title">AI Integration &amp; APIs</h3>
+          <p class="card-desc">Seamlessly integrate OpenAI, Azure AI, and AWS SageMaker into your existing products and workflows — delivering AI-powered experiences without rebuilding your stack.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TECH STACK ===== -->
+  <section class="section-alt" id="tech-stack">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">OUR TOOLKIT</span>
+        <h2 class="section-title">Technologies &amp; Platforms</h2>
+        <p class="section-subtitle">
+          Industry-leading AI and automation platforms trusted by enterprises worldwide.
+        </p>
+      </div>
+      <div class="tech-badges fade-in" aria-label="Technology stack">
+        <span class="tech-badge">Python</span>
+        <span class="tech-badge">TensorFlow</span>
+        <span class="tech-badge">PyTorch</span>
+        <span class="tech-badge">OpenAI</span>
+        <span class="tech-badge">LangChain</span>
+        <span class="tech-badge">Hugging Face</span>
+        <span class="tech-badge">Azure AI</span>
+        <span class="tech-badge">AWS SageMaker</span>
+        <span class="tech-badge">Google Vertex AI</span>
+        <span class="tech-badge">Apache Spark</span>
+        <span class="tech-badge">Pandas</span>
+        <span class="tech-badge">scikit-learn</span>
+        <span class="tech-badge">UiPath</span>
+        <span class="tech-badge">Automation Anywhere</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROCESS ===== -->
+  <section class="section" id="process">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">HOW WE WORK</span>
+        <h2 class="section-title">Our AI Delivery Process</h2>
+        <p class="section-subtitle">
+          A proven five-phase methodology that takes your AI initiative from concept to production — on time and on budget.
+        </p>
+      </div>
+      <div class="ai-process-list fade-in">
+
+        <div class="ai-process-item" data-ocid="process-step-1">
+          <div class="ai-process-num">01</div>
+          <div class="ai-process-content">
+            <h4>Discovery</h4>
+            <p>Identify automation opportunities and AI use cases across your operations. We conduct stakeholder workshops, data audits, and feasibility assessments to surface the highest-value starting points.</p>
+          </div>
+        </div>
+
+        <div class="ai-process-item" data-ocid="process-step-2">
+          <div class="ai-process-num">02</div>
+          <div class="ai-process-content">
+            <h4>Strategy</h4>
+            <p>Define your AI roadmap, data requirements, success metrics, and governance framework. We align the technical plan with your business priorities and set realistic milestones for each phase.</p>
+          </div>
+        </div>
+
+        <div class="ai-process-item" data-ocid="process-step-3">
+          <div class="ai-process-num">03</div>
+          <div class="ai-process-content">
+            <h4>Model Development</h4>
+            <p>Build, train, and validate AI/ML models using your data. Iterative development with transparent evaluation metrics ensures every model meets accuracy, fairness, and performance standards before promotion.</p>
+          </div>
+        </div>
+
+        <div class="ai-process-item" data-ocid="process-step-4">
+          <div class="ai-process-num">04</div>
+          <div class="ai-process-content">
+            <h4>Integration</h4>
+            <p>Deploy models into production systems and business workflows with robust APIs, failover handling, and security controls — ensuring a seamless experience for end users and downstream systems.</p>
+          </div>
+        </div>
+
+        <div class="ai-process-item" data-ocid="process-step-5">
+          <div class="ai-process-num">05</div>
+          <div class="ai-process-content">
+            <h4>Monitoring</h4>
+            <p>Continuous model performance monitoring, drift detection, and scheduled retraining pipelines keep your AI solutions accurate and reliable as your data and business context evolve over time.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY CHOOSE US ===== -->
+  <section class="section-alt" id="why-us">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">WHY EKAN</span>
+        <h2 class="section-title">Why Choose Us for AI</h2>
+        <p class="section-subtitle">
+          We bring the mindset, methodology, and technical depth that successful AI transformation demands.
+        </p>
+      </div>
+      <div class="grid-3">
+
+        <div class="card fade-in" data-ocid="why-card-ai-first">
+          <div class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+          </div>
+          <h3 class="card-title">AI-First Approach</h3>
+          <p class="card-desc">We don't add AI as an afterthought — it's core to our methodology. Every solution is architected from the ground up to leverage intelligent automation wherever it creates measurable value.</p>
+        </div>
+
+        <div class="card fade-in" data-ocid="why-card-responsible">
+          <div class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Responsible AI</h3>
+          <p class="card-desc">Ethical, explainable, and bias-free AI development is non-negotiable. We apply rigorous fairness testing, model explainability tools, and governance practices to every engagement.</p>
+        </div>
+
+        <div class="card fade-in" data-ocid="why-card-end-to-end">
+          <div class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+          </div>
+          <h3 class="card-title">End-to-End Delivery</h3>
+          <p class="card-desc">From strategy and data preparation to deployment and ongoing monitoring — we own the full AI lifecycle so you get production-grade solutions, not just proof-of-concept demos.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA BANNER ===== -->
+  <section class="cta-banner" data-ocid="cta-ai">
+    <div class="container text-center">
+      <h2 class="cta-title">Transform Your Business with Intelligent Automation</h2>
+      <p class="cta-subtitle">Schedule a free AI strategy consultation with our experts.</p>
+      <a href="contact.html" class="btn btn-accent btn-lg" data-ocid="cta-btn-ai">Book AI Consultation</a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo">
+          <svg width="40" height="40" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="44" height="44" rx="10" fill="#0A3D62"/>
+            <line x1="8" y1="22" x2="36" y2="22" stroke="#1ABC9C" stroke-width="1" opacity="0.5"/>
+            <line x1="22" y1="8" x2="22" y2="36" stroke="#1ABC9C" stroke-width="1" opacity="0.5"/>
+            <line x1="8" y1="14" x2="16" y2="14" stroke="#1ABC9C" stroke-width="1" opacity="0.4"/>
+            <line x1="28" y1="30" x2="36" y2="30" stroke="#1ABC9C" stroke-width="1" opacity="0.4"/>
+            <line x1="14" y1="8" x2="14" y2="16" stroke="#1ABC9C" stroke-width="1" opacity="0.4"/>
+            <line x1="30" y1="28" x2="30" y2="36" stroke="#1ABC9C" stroke-width="1" opacity="0.4"/>
+            <circle cx="8" cy="22" r="2" fill="#1ABC9C"/>
+            <circle cx="36" cy="22" r="2" fill="#1ABC9C"/>
+            <circle cx="22" cy="8" r="2" fill="#1ABC9C"/>
+            <circle cx="22" cy="36" r="2" fill="#1ABC9C"/>
+            <circle cx="14" cy="14" r="1.5" fill="#1ABC9C" opacity="0.7"/>
+            <circle cx="30" cy="30" r="1.5" fill="#1ABC9C" opacity="0.7"/>
+            <circle cx="30" cy="14" r="1.5" fill="#1ABC9C" opacity="0.7"/>
+            <circle cx="14" cy="30" r="1.5" fill="#1ABC9C" opacity="0.7"/>
+            <text x="22" y="27" text-anchor="middle" fill="white" font-size="14" font-weight="800" font-family="Inter,sans-serif" letter-spacing="-0.5">ES</text>
+          </svg>
+          <span class="footer-logo-name">Ekan Solutions Inc.</span>
+        </div>
+        <p class="footer-tagline">Enterprise IT solutions built on integrity, innovation, and 15+ years of expertise.</p>
+        <div class="footer-contact-items">
+          <span>📞 (832) 295-0408</span>
+          <span>📞 410-596-8362</span>
+          <span>📍 Maryland, United States</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="solutions.html">Solutions</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">Our Services</h4>
+        <ul class="footer-links">
+          <li><a href="cybersecurity.html">Cybersecurity</a></li>
+          <li><a href="projectmanagement.html">Project Management</a></li>
+          <li><a href="fullstack.html">Full Stack Development</a></li>
+          <li><a href="awscloud.html">AWS Cloud Solutions</a></li>
+          <li><a href="javadevelopment.html">Java Development</a></li>
+          <li><a href="qatesting.html">QA &amp; Testing</a></li>
+          <li><a href="aiservices.html" aria-current="page">AI &amp; Automation</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; <span id="footer-year"></span> Ekan Solutions Inc. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="nav.js"></script>
+  <script>
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

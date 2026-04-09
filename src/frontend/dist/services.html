@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | Ekan Solutions Inc.</title>
+  <meta name="description" content="Seven specialized IT practice areas — Cybersecurity, Project Management, Full Stack Development, AWS Cloud, Java, QA/Testing, and AI & Automation." />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── Services page extras ──────────────────────────────── */
+    .services-hero {
+      background: linear-gradient(135deg, #0A3D62 0%, #0d5a8a 60%, #072d48 100%);
+      padding: 5rem 0 4.5rem;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .services-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .services-hero .container { position: relative; z-index: 2; }
+    .services-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    /* service overview cards — force last card centred when 7 items in 3-col */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .services-grid .service-card:last-child {
+      grid-column: 2;
+    }
+    .service-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-decoration: none;
+      margin-top: 1rem;
+      transition: gap 0.2s ease;
+    }
+    .service-card-link:hover { gap: 0.55rem; }
+
+    /* Detailed breakdown blocks */
+    .breakdown-block {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      border: 1px solid var(--gray-border);
+      box-shadow: var(--shadow-sm);
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 2rem;
+      align-items: start;
+      margin-bottom: 1.5rem;
+      transition: var(--transition);
+    }
+    .breakdown-block:hover { box-shadow: var(--shadow-md); }
+    .breakdown-left { display: flex; flex-direction: column; gap: 1rem; }
+    .breakdown-icon {
+      width: 64px; height: 64px;
+      border-radius: var(--radius-md);
+      background: var(--primary-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .breakdown-icon svg { width: 30px; height: 30px; stroke: var(--primary); }
+    .breakdown-service-name {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.2;
+    }
+    .breakdown-service-name small {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+    .breakdown-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-decoration: none;
+      transition: gap 0.2s;
+    }
+    .breakdown-link:hover { gap: 0.6rem; }
+    .breakdown-capabilities { display: flex; flex-direction: column; gap: 0.5rem; }
+    .breakdown-cap-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      font-size: 0.875rem;
+      color: var(--text-body);
+      padding: 0.55rem 0;
+      border-bottom: 1px solid var(--gray-border);
+    }
+    .breakdown-cap-item:last-of-type { border-bottom: none; }
+    .cap-check {
+      width: 18px; height: 18px;
+      flex-shrink: 0;
+      color: var(--accent);
+      stroke: var(--accent);
+      margin-top: 2px;
+    }
+
+    /* Tech stack overview pills */
+    .tech-overview-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      justify-content: center;
+    }
+    .tech-overview-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.45rem 1rem;
+      background: var(--white);
+      border: 1.5px solid var(--gray-border);
+      border-radius: 100px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--primary);
+      transition: var(--transition);
+    }
+    .tech-overview-badge:hover {
+      background: var(--primary);
+      color: var(--white);
+      border-color: var(--primary);
+    }
+    .tech-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* Stats bar dark section */
+    .stats-dark {
+      background: linear-gradient(135deg, #0A3D62 0%, #0d5a8a 100%);
+      padding: 4rem 0;
+    }
+    .stats-dark-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+    .stat-dark-item { text-align: center; }
+    .stat-dark-value {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .stat-dark-label {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.65);
+      font-weight: 500;
+    }
+
+    @media (max-width: 900px) {
+      .breakdown-block { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .services-grid .service-card:last-child { grid-column: auto; }
+      .stats-dark-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .services-grid .service-card:last-child { grid-column: auto; }
+      .stats-dark-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .stats-dark-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================
+     HEADER / NAV
+     ============================================================ -->
+<header class="site-header" id="site-header">
+  <div class="container nav-inner">
+    <a href="home.html" class="nav-logo">
+      <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="44" height="44" rx="10" fill="#0A3D62"/>
+        <line x1="8" y1="22" x2="36" y2="22" stroke="#1ABC9C" stroke-width="1" opacity="0.5"/>
+        <line x1="22" y1="8" x2="22" y2="36" stroke="#1ABC9C" stroke-width="1" opacity="0.5"/>
+        <line x1="8" y1="14" x2="16" y2="14" stroke="#1ABC9C" stroke-width="1" opacity="0.4"/>
+        <line x1="28" y1="30" x2="36" y2="30" stroke="#1ABC9C" stroke-width="1" opacity="0.4"/>
+        <line x1="14" y1="8" x2="14" y2="16" stroke="#1ABC9C" stroke-width="1" opacity="0.4"/>
+        <line x1="30" y1="28" x2="30" y2="36" stroke="#1ABC9C" stroke-width="1" opacity="0.4"/>
+        <circle cx="8" cy="22" r="2" fill="#1ABC9C"/>
+        <circle cx="36" cy="22" r="2" fill="#1ABC9C"/>
+        <circle cx="22" cy="8" r="2" fill="#1ABC9C"/>
+        <circle cx="22" cy="36" r="2" fill="#1ABC9C"/>
+        <circle cx="14" cy="14" r="1.5" fill="#1ABC9C" opacity="0.7"/>
+        <circle cx="30" cy="30" r="1.5" fill="#1ABC9C" opacity="0.7"/>
+        <circle cx="30" cy="14" r="1.5" fill="#1ABC9C" opacity="0.7"/>
+        <circle cx="14" cy="30" r="1.5" fill="#1ABC9C" opacity="0.7"/>
+        <text x="22" y="27" text-anchor="middle" fill="white" font-size="14" font-weight="800" font-family="Inter,sans-serif" letter-spacing="-0.5">ES</text>
+      </svg>
+      <div class="nav-logo-text">
+        <span class="nav-logo-name">Ekan Solutions</span>
+        <span class="nav-logo-inc">Inc.</span>
+      </div>
+    </a>
+    <nav class="nav-links" id="nav-links">
+      <a href="home.html"      class="nav-link" data-page="home">Home</a>
+      <a href="about.html"     class="nav-link" data-page="about">About</a>
+      <a href="services.html"  class="nav-link" data-page="services">Services</a>
+      <a href="solutions.html" class="nav-link" data-page="solutions">Solutions</a>
+      <a href="contact.html"   class="nav-link" data-page="contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="nav-phones">
+        <a href="tel:8322950408" class="nav-phone">(832) 295-0408</a>
+        <a href="tel:4105968362" class="nav-phone">410-596-8362</a>
+      </div>
+      <a href="contact.html" class="btn btn-accent">Get Consultation</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <nav class="mobile-nav">
+      <a href="home.html"      class="mobile-link" data-page="home">Home</a>
+      <a href="about.html"     class="mobile-link" data-page="about">About</a>
+      <a href="services.html"  class="mobile-link" data-page="services">Services</a>
+      <a href="solutions.html" class="mobile-link" data-page="solutions">Solutions</a>
+      <a href="contact.html"   class="mobile-link" data-page="contact">Contact</a>
+    </nav>
+    <div class="mobile-phones">
+      <a href="tel:8322950408">(832) 295-0408</a>
+      <a href="tel:4105968362">410-596-8362</a>
+    </div>
+    <a href="contact.html" class="btn btn-accent mobile-cta">Get Consultation</a>
+  </div>
+</header>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="services-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="home.html">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>Services</span>
+    </nav>
+    <h1 class="hero-title" style="max-width:680px;">
+      Enterprise <span style="color:#1ABC9C;">IT Services</span>
+    </h1>
+    <p class="hero-subtitle">
+      Seven specialized practice areas delivering measurable results for your business — from security and cloud to AI-powered automation.
+    </p>
+    <div class="services-hero-actions">
+      <a href="contact.html" class="btn btn-accent btn-lg" data-ocid="hero-cta-quote">Get a Quote</a>
+      <a href="solutions.html" class="btn btn-outline-white btn-lg" data-ocid="hero-cta-solutions">View Solutions</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     2. SERVICE CARDS GRID
+     ============================================================ -->
+<section class="section fade-in" id="our-services">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">WHAT WE OFFER</span>
+      <h2 class="section-title">Our Core Services</h2>
+      <p class="section-subtitle">Purpose-built expertise across seven critical IT disciplines, delivered by certified professionals with 15+ years of enterprise experience.</p>
+    </div>
+
+    <div class="services-grid" data-ocid="service-cards-grid">
+
+      <!-- Cybersecurity -->
+      <div class="service-card fade-in">
+        <div class="card-icon-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <h3 class="card-title">Cybersecurity</h3>
+        <p class="card-desc">Enterprise-grade security solutions: threat detection, compliance, and incident response.</p>
+        <a href="cybersecurity.html" class="service-card-link" data-ocid="service-card-link-cybersecurity">Learn More →</a>
+      </div>
+
+      <!-- Project Management -->
+      <div class="service-card fade-in">
+        <div class="card-icon-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+            <line x1="16" y1="2" x2="16" y2="6"/>
+            <line x1="8" y1="2" x2="8" y2="6"/>
+            <line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+        </div>
+        <h3 class="card-title">Project Management</h3>
+        <p class="card-desc">End-to-end project delivery using Agile, Scrum, and PMP-certified methodologies.</p>
+        <a href="projectmanagement.html" class="service-card-link" data-ocid="service-card-link-pm">Learn More →</a>
+      </div>
+
+      <!-- Full Stack Development -->
+      <div class="service-card fade-in">
+        <div class="card-icon-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="16 18 22 12 16 6"/>
+            <polyline points="8 6 2 12 8 18"/>
+          </svg>
+        </div>
+        <h3 class="card-title">Full Stack Development</h3>
+        <p class="card-desc">Modern web and mobile applications built with cutting-edge technologies.</p>
+        <a href="fullstack.html" class="service-card-link" data-ocid="service-card-link-fullstack">Learn More →</a>
+      </div>
+
+      <!-- AWS Cloud Solutions -->
+      <div class="service-card fade-in">
+        <div class="card-icon-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+        </div>
+        <h3 class="card-title">AWS Cloud Solutions</h3>
+        <p class="card-desc">Cloud migration, architecture, and managed services on AWS.</p>
+        <a href="awscloud.html" class="service-card-link" data-ocid="service-card-link-aws">Learn More →</a>
+      </div>
+
+      <!-- Java Development -->
+      <div class="service-card fade-in">
+        <div class="card-icon-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+            <line x1="8" y1="21" x2="16" y2="21"/>
+            <line x1="12" y1="17" x2="12" y2="21"/>
+          </svg>
+        </div>
+        <h3 class="card-title">Java Development</h3>
+        <p class="card-desc">Scalable enterprise Java applications and microservices.</p>
+        <a href="javadevelopment.html" class="service-card-link" data-ocid="service-card-link-java">Learn More →</a>
+      </div>
+
+      <!-- QA & Testing -->
+      <div class="service-card fade-in">
+        <div class="card-icon-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="9 11 12 14 22 4"/>
+            <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+          </svg>
+        </div>
+        <h3 class="card-title">QA &amp; Testing</h3>
+        <p class="card-desc">Comprehensive quality assurance across manual, automated, and performance testing.</p>
+        <a href="qatesting.html" class="service-card-link" data-ocid="service-card-link-qa">Learn More →</a>
+      </div>
+
+      <!-- AI & Automation (7th — centered via CSS) -->
+      <div class="service-card fade-in">
+        <div class="card-icon-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/>
+            <path d="M15.54 8.46a5 5 0 010 7.07M8.46 8.46a5 5 0 000 7.07"/>
+          </svg>
+        </div>
+        <h3 class="card-title">AI &amp; Automation Services</h3>
+        <p class="card-desc">Intelligent automation, ML models, and AI-powered business solutions.</p>
+        <a href="aiservices.html" class="service-card-link" data-ocid="service-card-link-ai">Learn More →</a>
+      </div>
+
+    </div><!-- /services-grid -->
+  </div>
+</section>
+
+<!-- ============================================================
+     3. DETAILED SERVICE BREAKDOWNS
+     ============================================================ -->
+<section class="section-alt fade-in" id="service-details">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">IN DEPTH</span>
+      <h2 class="section-title">Service Details</h2>
+      <p class="section-subtitle">A closer look at our capabilities, methodologies, and the technologies behind each practice area.</p>
+    </div>
+
+    <!-- Cybersecurity -->
+    <div class="breakdown-block fade-in" data-ocid="breakdown-cybersecurity">
+      <div class="breakdown-left">
+        <div class="breakdown-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <div>
+          <h3 class="breakdown-service-name">Cybersecurity<small>Protect · Detect · Respond</small></h3>
+        </div>
+        <div class="tech-stack">
+          <span class="tech-badge">Splunk</span>
+          <span class="tech-badge">CrowdStrike</span>
+          <span class="tech-badge">Palo Alto</span>
+          <span class="tech-badge">AWS Security Hub</span>
+          <span class="tech-badge">Nessus</span>
+        </div>
+        <a href="cybersecurity.html" class="breakdown-link" data-ocid="breakdown-link-cyber">Full Details →</a>
+      </div>
+      <div class="breakdown-capabilities">
+        <div class="breakdown-cap-item">
+          <svg class="cap-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Threat Assessment &amp; Penetration Testing</span>
+        </div>
+        <div class="breakdown-cap-item">
+          <svg class="cap-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Security Operations Center (SOC)</span>
+        </div>
+        <div class="breakdown-cap-item">
+          <svg class="cap-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Compliance Management (HIPAA, PCI-DSS, SOC2)</span>
+        </div>
+        <div class="breakdown-cap-item">
+          <svg class="cap-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Identity &amp; Access Management</span>
+        </div>
+        <div class="breakdown-cap-item">
+          <svg class="cap-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Incident Response &amp; Recovery</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project Management -->
+    <div class="breakdown-block fade-in" data-ocid="breakdown-pm">
+      <div class="breakdown-left">
+        <div class="breakdown-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+        </div>
+        <div>
+          <h3 class="breakdown-service-name">Project Management<small>Plan · Execute · Deliver</small></h3>
+        </div>
+        <div class="tech-stack">
+          <span class="tech-badge">Jira</span>
+          <span class="tech-badge">Monday.com</span>
+          <span class="tech-badge">Asana</span>
+          <span class="tech-badge">Azure DevOps</span>
+          <span class="tech-badge">MS Project</span>
+        </div>
+        <a href="projectmanagement.html" class="breakdown-link" data-ocid="breakdown-link-pm">Full Details →</a>
+      </div>
+      <div class="breakdown-capabilities">
+        <div class="breakdown-cap-item">
+          <svg class="cap-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Agile/Scrum Project Leadership</span>
+        </div>
+        <div class="breakdown-cap-item">
+          <svg class="cap-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>PMP-Certified Project Managers</span>
+        </div>
+        <div class="breakdown-cap-item">
+          <svg class="cap-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Risk Management &amp; Mitigation</span>
+        </div>
+        <div class="breakdown-cap-item">
+          <svg class="cap-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Stakeholder Communication</span>
+        </div>
+        <div class="breakdown-cap-item">
+          <svg class="cap-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Budget &amp; Timeline Management</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Full Stack Development -->
+    <div class="breakdown-block fade-in" data-ocid="breakdown-fullstack">
+      <div class="breakdown-left">
+        <div class="breakdown-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+          </svg>
+        </div>
+        <div>
+          <h3 class="breakdown-service-name">Full Stack Development<small>Design · Build · Deploy</small></h3>
+        </div>
+        <div class="tech-stack">
+          <span class="tech-badge">React</span>
+          <span class="tech-badge">Node.js</span>
+          <span class="tech-badge">Python</span>
+          <span class="tech-badge">Spring Boot</span>
+          <span class="tech-badge">PostgreSQL</span>
+          <span class="tech-badge">MongoDB</span>
+          <span class="tech-badge">Docker</span>
+        </div>
+        <a href="fullstack.html" class="breakdown-link" data-ocid="breakdown-link-fullstack">Full Details →</a>
+      </div>
+      <div class="breakdown-capabilities">
+        <div class="breakdown-cap-item">
+          <svg class="cap-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Custom Web Application Development</span>
+        </div>
+        <div class="breakdown-cap-item">
+          <svg class="cap-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Microservices Architecture</span>
+        </div>
+        <div class="breakdown-cap-item">
+          <svg class="cap-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>API Design &amp; Integration</span>
+        </div>
+        <div class="breakdown-cap-item">
+          <svg class="cap-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Database Design &amp; Optimization</span>
+        </div>
+        <div class="breakdown-cap-item">
+          <svg class="cap-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>DevOps &amp; CI/CD Pipeline Setup</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- AWS Cloud Solutions -->
+    <div class="breakdown-block fade-in" data-ocid="breakdown-aws">
+      <div class="breakdown-left">
+        <div class="breakdown-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+        </div>
+        <div>
+          <h3 class="breakdown-service-name">AWS Cloud Solutions<small>Migrate · Scale · Optimise</small></h3>
+        </div>
+        <div class="tech-stack">
+          <span class="tech-badge">EC2</span>
+          <span class="tech-badge">S3</span>
+          <span class="tech-badge">Lambda</span>
+          <span class="tech-badge">RDS</span>
+          <span class="tech-badge">CloudFormation</span>
+          <span class="tech-badge">Terraform</span>
+          <span class="tech-badge">EKS</span>
+        </div>
+        <a href="awscloud.html" class="breakdown-link" data-ocid="breakdown-link-aws">Full Details →</a>
+      </div>
+      <div class="breakdown-capabilities">
+        <div class="breakdown-cap-item">
+          <svg class="cap-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Cloud Architecture &amp; Migration</span>
+        </div>
+        <div class="breakdown-cap-item">
+          <svg class="cap-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Auto-Scaling Infrastructure</span>
+        </div>
+        <div class="breakdown-cap-item">
+          <svg class="cap-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Serverless Application Design</span>
+        </div>
+        <div class="breakdown-cap-item">
+          <svg class="cap-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Cost Optimization &amp; FinOps</span>
+        </div>
+        <div class="breakdown-cap-item">
+          <svg class="cap-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Disaster Recovery Planning</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Java Development -->
+    <div class="breakdown-block fade-in" data-ocid="breakdown-java">
+      <div class="breakdown-left">
+        <div class="breakdown-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+          </svg>
+        </div>
+        <div>
+          <h3 class="breakdown-service-name">Java Development<small>Enterprise · Microservices · APIs</small></h3>
+        </div>
+        <div class="tech-stack">
+          <span class="tech-badge">Spring Boot</span>
+          <span class="tech-badge">Spring Cloud</span>
+          <span class="tech-badge">Hibernate</span>
+          <span class="tech-badge">Maven</span>
+          <span class="tech-badge">Jenkins</span>
+          <span class="tech-badge">Docker</span>
+          <span class="tech-badge">Kubernetes</span>
+        </div>
+        <a href="javadevelopment.html" class="breakdown-link" data-ocid="breakdown-link-java">Full Details →</a>
+      </div>
+      <div class="breakdown-capabilities">
+        <div class="breakdown-cap-item">
+          <svg class="cap-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Enterprise Application Development</span>
+        </div>
+        <div class="breakdown-cap-item">
+          <svg class="cap-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Spring Boot Microservices</span>
+        </div>
+        <div class="breakdown-cap-item">
+          <svg class="cap-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>RESTful API Design</span>
+        </div>
+        <div class="breakdown-cap-item">
+          <svg class="cap-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Performance Optimization</span>
+        </div>
+        <div class="breakdown-cap-item">
+          <svg class="cap-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Legacy System Modernization</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- QA & Testing -->
+    <div class="breakdown-block fade-in" data-ocid="breakdown-qa">
+      <div class="breakdown-left">
+        <div class="breakdown-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+          </svg>
+        </div>
+        <div>
+          <h3 class="breakdown-service-name">QA &amp; Testing<small>Quality · Reliability · Coverage</small></h3>
+        </div>
+        <div class="tech-stack">
+          <span class="tech-badge">Selenium</span>
+          <span class="tech-badge">Cypress</span>
+          <span class="tech-badge">Playwright</span>
+          <span class="tech-badge">JMeter</span>
+          <span class="tech-badge">Gatling</span>
+          <span class="tech-badge">Postman</span>
+          <span class="tech-badge">Appium</span>
+        </div>
+        <a href="qatesting.html" class="breakdown-link" data-ocid="breakdown-link-qa">Full Details →</a>
+      </div>
+      <div class="breakdown-capabilities">
+        <div class="breakdown-cap-item">
+          <svg class="cap-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Manual &amp; Automated Testing</span>
+        </div>
+        <div class="breakdown-cap-item">
+          <svg class="cap-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Performance &amp; Load Testing</span>
+        </div>
+        <div class="breakdown-cap-item">
+          <svg class="cap-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Security Testing</span>
+        </div>
+        <div class="breakdown-cap-item">
+          <svg class="cap-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>API Testing</span>
+        </div>
+        <div class="breakdown-cap-item">
+          <svg class="cap-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Mobile Application Testing</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI & Automation Services -->
+    <div class="breakdown-block fade-in" data-ocid="breakdown-ai">
+      <div class="breakdown-left">
+        <div class="breakdown-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/>
+            <path d="M15.54 8.46a5 5 0 010 7.07M8.46 8.46a5 5 0 000 7.07"/>
+          </svg>
+        </div>
+        <div>
+          <h3 class="breakdown-service-name">AI &amp; Automation Services<small>Intelligence · Automation · Scale</small></h3>
+        </div>
+        <div class="tech-stack">
+          <span class="tech-badge">Python</span>
+          <span class="tech-badge">TensorFlow</span>
+          <span class="tech-badge">PyTorch</span>
+          <span class="tech-badge">OpenAI</span>
+          <span class="tech-badge">LangChain</span>
+          <span class="tech-badge">Azure AI</span>
+          <span class="tech-badge">AWS SageMaker</span>
+        </div>
+        <a href="aiservices.html" class="breakdown-link" data-ocid="breakdown-link-ai">Full Details →</a>
+      </div>
+      <div class="breakdown-capabilities">
+        <div class="breakdown-cap-item">
+          <svg class="cap-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>AI Strategy &amp; Consulting</span>
+        </div>
+        <div class="breakdown-cap-item">
+          <svg class="cap-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Machine Learning Model Development</span>
+        </div>
+        <div class="breakdown-cap-item">
+          <svg class="cap-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>NLP &amp; Conversational AI</span>
+        </div>
+        <div class="breakdown-cap-item">
+          <svg class="cap-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Robotic Process Automation (RPA)</span>
+        </div>
+        <div class="breakdown-cap-item">
+          <svg class="cap-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Predictive Analytics</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     4. TECH STACK OVERVIEW
+     ============================================================ -->
+<section class="section fade-in" id="technologies">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">OUR TOOLKIT</span>
+      <h2 class="section-title">Technologies We Master</h2>
+      <p class="section-subtitle">An enterprise-grade technology stack spanning security, cloud, development, testing, and AI domains.</p>
+    </div>
+
+    <div class="tech-overview-grid" data-ocid="tech-overview-grid">
+      <!-- Security -->
+      <span class="tech-overview-badge"><span class="tech-dot"></span>Splunk</span>
+      <span class="tech-overview-badge"><span class="tech-dot"></span>CrowdStrike</span>
+      <span class="tech-overview-badge"><span class="tech-dot"></span>Palo Alto</span>
+      <span class="tech-overview-badge"><span class="tech-dot"></span>AWS Security Hub</span>
+      <span class="tech-overview-badge"><span class="tech-dot"></span>Nessus</span>
+      <!-- PM -->
+      <span class="tech-overview-badge"><span class="tech-dot"></span>Jira</span>
+      <span class="tech-overview-badge"><span class="tech-dot"></span>Monday.com</span>
+      <span class="tech-overview-badge"><span class="tech-dot"></span>Asana</span>
+      <span class="tech-overview-badge"><span class="tech-dot"></span>Azure DevOps</span>
+      <span class="tech-overview-badge"><span class="tech-dot"></span>MS Project</span>
+      <!-- Dev -->
+      <span class="tech-overview-badge"><span class="tech-dot"></span>React</span>
+      <span class="tech-overview-badge"><span class="tech-dot"></span>Node.js</span>
+      <span class="tech-overview-badge"><span class="tech-dot"></span>Python</span>
+      <span class="tech-overview-badge"><span class="tech-dot"></span>Spring Boot</span>
+      <span class="tech-overview-badge"><span class="tech-dot"></span>PostgreSQL</span>
+      <span class="tech-overview-badge"><span class="tech-dot"></span>MongoDB</span>
+      <span class="tech-overview-badge"><span class="tech-dot"></span>Docker</span>
+      <span class="tech-overview-badge"><span class="tech-dot"></span>Kubernetes</span>
+      <!-- AWS -->
+      <span class="tech-overview-badge"><span class="tech-dot"></span>EC2</span>
+      <span class="tech-overview-badge"><span class="tech-dot"></span>S3</span>
+      <span class="tech-overview-badge"><span class="tech-dot"></span>Lambda</span>
+      <span class="tech-overview-badge"><span class="tech-dot"></span>RDS</span>
+      <span class="tech-overview-badge"><span class="tech-dot"></span>CloudFormation</span>
+      <span class="tech-overview-badge"><span class="tech-dot"></span>Terraform</span>
+      <span class="tech-overview-badge"><span class="tech-dot"></span>EKS</span>
+      <!-- Java -->
+      <span class="tech-overview-badge"><span class="tech-dot"></span>Spring Cloud</span>
+      <span class="tech-overview-badge"><span class="tech-dot"></span>Hibernate</span>
+      <span class="tech-overview-badge"><span class="tech-dot"></span>Maven</span>
+      <span class="tech-overview-badge"><span class="tech-dot"></span>Jenkins</span>
+      <!-- QA -->
+      <span class="tech-overview-badge"><span class="tech-dot"></span>Selenium</span>
+      <span class="tech-overview-badge"><span class="tech-dot"></span>Cypress</span>
+      <span class="tech-overview-badge"><span class="tech-dot"></span>Playwright</span>
+      <span class="tech-overview-badge"><span class="tech-dot"></span>JMeter</span>
+      <span class="tech-overview-badge"><span class="tech-dot"></span>Gatling</span>
+      <span class="tech-overview-badge"><span class="tech-dot"></span>Postman</span>
+      <span class="tech-overview-badge"><span class="tech-dot"></span>Appium</span>
+      <span class="tech-overview-badge"><span class="tech-dot"></span>SonarQube</span>
+      <!-- AI -->
+      <span class="tech-overview-badge"><span class="tech-dot"></span>TensorFlow</span>
+      <span class="tech-overview-badge"><span class="tech-dot"></span>PyTorch</span>
+      <span class="tech-overview-badge"><span class="tech-dot"></span>OpenAI</span>
+      <span class="tech-overview-badge"><span class="tech-dot"></span>LangChain</span>
+      <span class="tech-overview-badge"><span class="tech-dot"></span>Hugging Face</span>
+      <span class="tech-overview-badge"><span class="tech-dot"></span>Azure AI</span>
+      <span class="tech-overview-badge"><span class="tech-dot"></span>AWS SageMaker</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     5. STATS BAR (dark)
+     ============================================================ -->
+<div class="stats-dark fade-in" data-ocid="stats-bar">
+  <div class="container">
+    <div class="stats-dark-grid">
+      <div class="stat-dark-item">
+        <div class="stat-dark-value">500+</div>
+        <div class="stat-dark-label">Projects Delivered</div>
+      </div>
+      <div class="stat-dark-item">
+        <div class="stat-dark-value">15+</div>
+        <div class="stat-dark-label">Years of Experience</div>
+      </div>
+      <div class="stat-dark-item">
+        <div class="stat-dark-value">7</div>
+        <div class="stat-dark-label">Practice Areas</div>
+      </div>
+      <div class="stat-dark-item">
+        <div class="stat-dark-value">200+</div>
+        <div class="stat-dark-label">Clients Served</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     6. CTA BANNER
+     ============================================================ -->
+<section class="cta-banner fade-in" data-ocid="cta-banner">
+  <div class="container">
+    <div class="cta-banner-inner">
+      <h2 class="cta-title">Ready to Get Started?</h2>
+      <p class="cta-subtitle">Contact us today to discuss your technology needs. Our experts are ready to build a tailored solution for your business.</p>
+      <a href="contact.html" class="btn btn-accent btn-lg" data-ocid="cta-banner-btn">Schedule Consultation</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-col">
+      <div class="footer-logo">
+        <svg width="40" height="40" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="44" height="44" rx="10" fill="#0A3D62"/>
+          <line x1="8" y1="22" x2="36" y2="22" stroke="#1ABC9C" stroke-width="1" opacity="0.5"/>
+          <line x1="22" y1="8" x2="22" y2="36" stroke="#1ABC9C" stroke-width="1" opacity="0.5"/>
+          <line x1="8" y1="14" x2="16" y2="14" stroke="#1ABC9C" stroke-width="1" opacity="0.4"/>
+          <line x1="28" y1="30" x2="36" y2="30" stroke="#1ABC9C" stroke-width="1" opacity="0.4"/>
+          <circle cx="8" cy="22" r="2" fill="#1ABC9C"/>
+          <circle cx="36" cy="22" r="2" fill="#1ABC9C"/>
+          <circle cx="22" cy="8" r="2" fill="#1ABC9C"/>
+          <circle cx="22" cy="36" r="2" fill="#1ABC9C"/>
+          <circle cx="14" cy="14" r="1.5" fill="#1ABC9C" opacity="0.7"/>
+          <circle cx="30" cy="30" r="1.5" fill="#1ABC9C" opacity="0.7"/>
+          <text x="22" y="27" text-anchor="middle" fill="white" font-size="14" font-weight="800" font-family="Inter,sans-serif" letter-spacing="-0.5">ES</text>
+        </svg>
+        <span class="footer-logo-name">Ekan Solutions Inc.</span>
+      </div>
+      <p class="footer-tagline">Enterprise IT solutions built on integrity, innovation, and 15+ years of expertise.</p>
+      <div class="footer-contact-items">
+        <span>📞 (832) 295-0408</span>
+        <span>📞 410-596-8362</span>
+        <span>📍 Maryland, United States</span>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-heading">Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="solutions.html">Solutions</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-heading">Our Services</h4>
+      <ul class="footer-links">
+        <li><a href="cybersecurity.html">Cybersecurity</a></li>
+        <li><a href="projectmanagement.html">Project Management</a></li>
+        <li><a href="fullstack.html">Full Stack Development</a></li>
+        <li><a href="awscloud.html">AWS Cloud Solutions</a></li>
+        <li><a href="javadevelopment.html">Java Development</a></li>
+        <li><a href="qatesting.html">Quality Assurance / Testing</a></li>
+        <li><a href="aiservices.html">AI &amp; Automation Services</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; <script>document.write(new Date().getFullYear())</script> Ekan Solutions Inc. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="nav.js"></script>
+</body>
+</html>
