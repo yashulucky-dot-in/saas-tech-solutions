@@ -162,30 +162,74 @@ function initTabs() {
 }
 
 /* ============================================================
-   Contact Form Handler
+   Contact Form Handler — Web3Forms integration
    ============================================================ */
 function initContactForm() {
   const form = document.getElementById('contact-form');
   if (!form) return;
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const panel = document.getElementById('form-panel');
-    const success = document.getElementById('form-success');
-
-    if (panel && success) {
-      panel.style.display = 'none';
-      success.classList.add('visible');
+    const submitBtn = form.querySelector('[type="submit"]');
+    const originalText = submitBtn ? submitBtn.textContent : '';
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
     }
 
-    setTimeout(() => {
-      form.reset();
-      if (panel && success) {
-        panel.style.display = 'block';
-        success.classList.remove('visible');
+    try {
+      const formData = new FormData(form);
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData,
+      });
+
+      const panel = document.getElementById('form-panel');
+      const success = document.getElementById('form-success');
+
+      if (response.ok) {
+        // Show success UI
+        if (panel && success) {
+          panel.style.display = 'none';
+          success.classList.add('visible');
+        }
+        form.reset();
+        setTimeout(() => {
+          if (panel && success) {
+            panel.style.display = '';
+            success.classList.remove('visible');
+          }
+        }, 6000);
+      } else {
+        // Show inline error without disrupting layout
+        let errMsg = form.querySelector('.web3forms-error');
+        if (!errMsg) {
+          errMsg = document.createElement('p');
+          errMsg.className = 'web3forms-error';
+          errMsg.style.cssText = 'color:#e74c3c;font-size:0.875rem;margin-top:0.75rem;text-align:center;';
+          form.appendChild(errMsg);
+        }
+        errMsg.textContent = 'Something went wrong. Please try again or email us directly at info@ekansolutions.com.';
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
+        }
       }
-    }, 6000);
+    } catch (_err) {
+      let errMsg = form.querySelector('.web3forms-error');
+      if (!errMsg) {
+        errMsg = document.createElement('p');
+        errMsg.className = 'web3forms-error';
+        errMsg.style.cssText = 'color:#e74c3c;font-size:0.875rem;margin-top:0.75rem;text-align:center;';
+        form.appendChild(errMsg);
+      }
+      errMsg.textContent = 'Network error. Please check your connection and try again.';
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+      }
+    }
   });
 }
 

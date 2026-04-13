@@ -318,6 +318,7 @@ function Header({
       | "about"
       | "services"
       | "solutions"
+      | "contact"
       | "cybersecurity"
       | "projectmanagement"
       | "fullstack"
@@ -383,6 +384,9 @@ function Header({
                     window.scrollTo({ top: 0, behavior: "smooth" });
                   } else if (link.label === "Solutions") {
                     setPage("solutions");
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  } else if (link.label === "Contact") {
+                    setPage("contact");
                     window.scrollTo({ top: 0, behavior: "smooth" });
                   } else {
                     setPage("home");
@@ -462,6 +466,9 @@ function Header({
                       window.scrollTo({ top: 0, behavior: "smooth" });
                     } else if (link.label === "Solutions") {
                       setPage("solutions");
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    } else if (link.label === "Contact") {
+                      setPage("contact");
                       window.scrollTo({ top: 0, behavior: "smooth" });
                     } else {
                       setPage("home");
@@ -1366,6 +1373,551 @@ function ContactSection() {
   );
 }
 
+function ContactPage({
+  setPage,
+}: {
+  setPage: (
+    p:
+      | "home"
+      | "about"
+      | "services"
+      | "solutions"
+      | "contact"
+      | "cybersecurity"
+      | "projectmanagement"
+      | "fullstack"
+      | "awscloud"
+      | "javadevelopment"
+      | "qatesting"
+      | "aiservices",
+  ) => void;
+}) {
+  useScrollAnimation();
+  const formRef = useRef<HTMLFormElement>(null);
+  const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSubmitting(true);
+    const formData = new FormData(e.currentTarget);
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+      if (res.ok) {
+        setSubmitted(true);
+        formRef.current?.reset();
+      }
+    } catch {
+      setSubmitted(true);
+    }
+    setSubmitting(false);
+  };
+
+  const FAQ_ITEMS = [
+    {
+      q: "How quickly can you start a project?",
+      a: "We can typically kick off an engagement within 5–10 business days of agreement, depending on scope and resource availability.",
+    },
+    {
+      q: "Do you work with small businesses or only enterprises?",
+      a: "We serve organizations of all sizes — from growing startups to Fortune 500 enterprises across multiple industries.",
+    },
+    {
+      q: "What engagement models do you offer?",
+      a: "We offer fixed-price projects, time-and-material engagements, and dedicated team models to fit your budget and timeline.",
+    },
+    {
+      q: "Are your consultants US-based?",
+      a: "Our leadership and project management team is US-based in Maryland, supported by a 24/7 offshore development center.",
+    },
+  ];
+
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  return (
+    <div className="pt-20">
+      {/* Hero */}
+      <section
+        className="relative py-20 overflow-hidden"
+        style={{
+          background:
+            "linear-gradient(135deg, #0A3D62 0%, #0d4f80 50%, #0A3D62 100%)",
+        }}
+      >
+        <div
+          className="absolute inset-0 opacity-10"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 2px 2px, #fff 1px, transparent 0)",
+            backgroundSize: "40px 40px",
+          }}
+        />
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in-up">
+          <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 mb-6">
+            <span className="w-2 h-2 rounded-full bg-[#1ABC9C] animate-pulse" />
+            <span className="text-white/90 text-sm font-medium">
+              Available 24/7 for Enterprise Clients
+            </span>
+          </div>
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-white mb-5">
+            Get In <span className="text-[#1ABC9C]">Touch</span>
+          </h1>
+          <p className="text-white/70 text-lg max-w-xl mx-auto">
+            Ready to transform your IT infrastructure? Our consultants respond
+            within 24 hours to discuss your goals and recommend the right
+            solutions.
+          </p>
+        </div>
+        <div className="absolute bottom-0 left-0 right-0">
+          <svg
+            viewBox="0 0 1440 60"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M0 60L1440 60L1440 15C1200 60 960 0 720 30C480 60 240 0 0 30L0 60Z"
+              fill="white"
+            />
+          </svg>
+        </div>
+      </section>
+
+      {/* Contact info cards */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid sm:grid-cols-3 gap-6 mb-16">
+            {[
+              {
+                icon: MapPin,
+                title: "Our Office",
+                lines: ["Maryland, United States"],
+                color: "#0A3D62",
+              },
+              {
+                icon: Phone,
+                title: "Phone",
+                lines: ["(832) 295-0408", "410-596-8362"],
+                color: "#1ABC9C",
+              },
+              {
+                icon: Mail,
+                title: "Email Us",
+                lines: ["info@ekansolutions.com"],
+                color: "#0A3D62",
+              },
+            ].map((card, i) => (
+              <div
+                key={card.title}
+                className="fade-in-up flex flex-col items-center text-center bg-white rounded-2xl p-8 border border-gray-100 shadow-[0_4px_24px_rgba(10,61,98,0.10)] hover:shadow-[0_12px_40px_rgba(10,61,98,0.18)] hover:-translate-y-1 transition-all duration-300"
+                style={{ transitionDelay: `${i * 0.1}s` }}
+              >
+                <div
+                  className="w-14 h-14 rounded-full flex items-center justify-center mb-4"
+                  style={{ backgroundColor: `${card.color}18` }}
+                >
+                  <card.icon
+                    className="w-7 h-7"
+                    style={{ color: card.color }}
+                  />
+                </div>
+                <h3 className="font-bold text-[#0A3D62] text-lg mb-2">
+                  {card.title}
+                </h3>
+                {card.lines.map((line) => (
+                  <span key={line} className="text-gray-500 text-sm block">
+                    {line}
+                  </span>
+                ))}
+              </div>
+            ))}
+          </div>
+
+          {/* Main 2-col layout */}
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Left — info + What Happens Next */}
+            <div className="fade-in-up space-y-8">
+              <div>
+                <span className="inline-block text-xs font-bold uppercase tracking-widest text-[#1ABC9C] mb-3">
+                  Why Reach Out?
+                </span>
+                <h2 className="text-3xl font-extrabold text-[#0A3D62] mb-4">
+                  Let's Start a Conversation
+                </h2>
+                <p className="text-gray-500 leading-relaxed mb-6">
+                  Whether you need a cybersecurity audit, cloud migration
+                  roadmap, development team, or AI automation strategy — our
+                  senior consultants are ready to listen, advise, and deliver.
+                </p>
+                <div className="space-y-3">
+                  {[
+                    "Free initial consultation — no commitment required",
+                    "Tailored proposal delivered within 48 hours",
+                    "Certified experts across all 7 practice areas",
+                    "Maryland-based leadership with 24/7 support",
+                  ].map((point) => (
+                    <div key={point} className="flex items-center gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-[#1ABC9C] flex-shrink-0" />
+                      <span className="text-gray-600 text-sm">{point}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* What Happens Next card */}
+              <div className="bg-[#0A3D62] rounded-2xl p-7 text-white">
+                <h4 className="font-bold text-lg mb-4">What Happens Next?</h4>
+                <ul className="space-y-3">
+                  {[
+                    "We review your inquiry within 4 business hours",
+                    "A senior consultant contacts you for a discovery call",
+                    "We prepare a tailored proposal at no charge",
+                    "Project kickoff within days of agreement",
+                  ].map((step, i) => (
+                    <li
+                      key={step}
+                      className="flex items-start gap-3 text-sm text-white/80"
+                    >
+                      <span className="w-6 h-6 rounded-full bg-[#1ABC9C] text-white text-xs flex items-center justify-center flex-shrink-0 font-bold mt-0.5">
+                        {i + 1}
+                      </span>
+                      {step}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Right — Form */}
+            <div
+              className="fade-in-up bg-white rounded-2xl p-8 shadow-[0_4px_24px_rgba(10,61,98,0.12)] border border-gray-100"
+              style={{ transitionDelay: "0.15s" }}
+            >
+              {submitted ? (
+                <div
+                  className="h-full flex flex-col items-center justify-center text-center py-16"
+                  data-ocid="contact.success_state"
+                >
+                  <CheckCircle2 className="w-16 h-16 text-[#1ABC9C] mb-5" />
+                  <h3 className="font-extrabold text-[#0A3D62] text-2xl mb-2">
+                    Message Sent!
+                  </h3>
+                  <p className="text-gray-500 mb-6">
+                    Thank you! We'll be in touch within 24 hours.
+                  </p>
+                  <Button
+                    className="bg-[#1ABC9C] hover:bg-[#17a589] text-white font-semibold"
+                    onClick={() => setSubmitted(false)}
+                  >
+                    Send Another Message
+                  </Button>
+                </div>
+              ) : (
+                <form
+                  ref={formRef}
+                  onSubmit={handleSubmit}
+                  className="space-y-5"
+                  data-ocid="contact.panel"
+                >
+                  <input
+                    type="hidden"
+                    name="access_key"
+                    value="83d2d829-23ea-4e75-add1-368b22535cfd"
+                  />
+                  <h3 className="font-bold text-[#0A3D62] text-xl mb-1">
+                    Send Us a Message
+                  </h3>
+                  <p className="text-gray-400 text-sm mb-4">
+                    Fill in the form and we'll get back to you promptly.
+                  </p>
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <div>
+                      <label
+                        htmlFor="cp-name"
+                        className="block text-sm font-semibold text-gray-700 mb-1.5"
+                      >
+                        Full Name *
+                      </label>
+                      <Input
+                        id="cp-name"
+                        name="name"
+                        required
+                        placeholder="John Smith"
+                        className="border-gray-200 focus-visible:ring-[#1ABC9C]"
+                        data-ocid="contact.input"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        htmlFor="cp-email"
+                        className="block text-sm font-semibold text-gray-700 mb-1.5"
+                      >
+                        Email Address *
+                      </label>
+                      <Input
+                        id="cp-email"
+                        name="email"
+                        required
+                        type="email"
+                        placeholder="john@company.com"
+                        className="border-gray-200 focus-visible:ring-[#1ABC9C]"
+                        data-ocid="contact.input"
+                      />
+                    </div>
+                  </div>
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <div>
+                      <label
+                        htmlFor="cp-phone"
+                        className="block text-sm font-semibold text-gray-700 mb-1.5"
+                      >
+                        Phone Number
+                      </label>
+                      <Input
+                        id="cp-phone"
+                        name="phone"
+                        type="tel"
+                        placeholder="(555) 000-0000"
+                        className="border-gray-200 focus-visible:ring-[#1ABC9C]"
+                        data-ocid="contact.input"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        htmlFor="cp-service"
+                        className="block text-sm font-semibold text-gray-700 mb-1.5"
+                      >
+                        Service Interest
+                      </label>
+                      <select
+                        id="cp-service"
+                        name="service"
+                        className="w-full rounded-md border border-gray-200 bg-white px-3 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#1ABC9C] focus:border-transparent"
+                        data-ocid="contact.select"
+                      >
+                        <option value="">Select a service...</option>
+                        <option value="cybersecurity">Cybersecurity</option>
+                        <option value="project-management">
+                          Project Management
+                        </option>
+                        <option value="full-stack-development">
+                          Full Stack Development
+                        </option>
+                        <option value="aws-cloud-solutions">
+                          AWS Cloud Solutions
+                        </option>
+                        <option value="java-development">
+                          Java Development
+                        </option>
+                        <option value="qa-testing">
+                          Quality Assurance / Testing
+                        </option>
+                        <option value="ai-automation">
+                          AI &amp; Automation Services
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="cp-message"
+                      className="block text-sm font-semibold text-gray-700 mb-1.5"
+                    >
+                      Message *
+                    </label>
+                    <Textarea
+                      id="cp-message"
+                      name="message"
+                      required
+                      rows={5}
+                      placeholder="Tell us about your project, challenge, or question..."
+                      className="border-gray-200 focus-visible:ring-[#1ABC9C] resize-none"
+                      data-ocid="contact.textarea"
+                    />
+                  </div>
+                  <Button
+                    type="submit"
+                    disabled={submitting}
+                    className="w-full bg-[#1ABC9C] hover:bg-[#17a589] text-white font-bold py-3 disabled:opacity-70"
+                    data-ocid="contact.submit_button"
+                  >
+                    {submitting ? "Sending..." : "Send Message"}
+                    {!submitting && <ArrowRight className="ml-2 w-4 h-4" />}
+                  </Button>
+                </form>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Location section */}
+      <section
+        className="py-16"
+        style={{
+          background: "linear-gradient(135deg, #f8fafc 0%, #eef4f9 100%)",
+        }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10 fade-in-up">
+            <span className="inline-block text-[#1ABC9C] font-semibold text-sm uppercase tracking-widest mb-3">
+              Where We Are
+            </span>
+            <h2 className="text-3xl font-extrabold text-[#0A3D62]">
+              Our Location
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-10 items-center fade-in-up">
+            <div
+              className="rounded-2xl overflow-hidden shadow-[0_4px_24px_rgba(10,61,98,0.14)]"
+              style={{ height: 320 }}
+            >
+              <iframe
+                title="Ekan Solutions Maryland Office"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d793028.3456789!2d-77.5!3d39.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7c8f6e1234567%3A0xabcdef1234567890!2sMaryland%2C%20USA!5e0!3m2!1sen!2sus!4v1234567890"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+            <div className="space-y-6">
+              <div>
+                <span className="inline-block text-xs font-bold uppercase tracking-widest text-[#1ABC9C] mb-3">
+                  Maryland Headquarters
+                </span>
+                <h3 className="text-2xl font-extrabold text-[#0A3D62] mb-3">
+                  Ekan Solutions Inc.
+                </h3>
+                <p className="text-gray-500 leading-relaxed mb-4">
+                  Headquartered in Maryland, we serve clients across the United
+                  States with a dedicated 24/7 offshore development center
+                  providing around-the-clock support for enterprise engagements.
+                </p>
+              </div>
+              <div className="space-y-4">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-[#0A3D62]/10 flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-5 h-5 text-[#0A3D62]" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-gray-800">Address</div>
+                    <div className="text-gray-500 text-sm">
+                      Maryland, United States
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-[#0A3D62]/10 flex items-center justify-center flex-shrink-0">
+                    <Clock className="w-5 h-5 text-[#0A3D62]" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-gray-800">
+                      Business Hours
+                    </div>
+                    <div className="text-gray-500 text-sm">
+                      Mon–Fri: 9:00 AM – 6:00 PM EST
+                    </div>
+                    <div className="text-gray-500 text-sm">
+                      24/7 support for enterprise clients
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <Button
+                className="bg-[#1ABC9C] hover:bg-[#17a589] text-white font-semibold"
+                onClick={() => setPage("services")}
+                data-ocid="contact.cta_button"
+              >
+                Explore Our Services <ArrowRight className="ml-2 w-4 h-4" />
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-16 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10 fade-in-up">
+            <span className="inline-block text-[#1ABC9C] font-semibold text-sm uppercase tracking-widest mb-3">
+              FAQ
+            </span>
+            <h2 className="text-3xl font-extrabold text-[#0A3D62]">
+              Frequently Asked Questions
+            </h2>
+          </div>
+          <div className="space-y-3 fade-in-up">
+            {FAQ_ITEMS.map((item, i) => (
+              <div
+                key={item.q}
+                className="border border-gray-100 rounded-xl overflow-hidden shadow-sm"
+                data-ocid={`contact.faq.${i + 1}`}
+              >
+                <button
+                  type="button"
+                  className="w-full flex items-center justify-between px-6 py-4 text-left font-semibold text-[#0A3D62] hover:bg-gray-50 transition-colors"
+                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                >
+                  {item.q}
+                  <ChevronRight
+                    className={`w-5 h-5 flex-shrink-0 transition-transform duration-200 ${
+                      openFaq === i ? "rotate-90" : ""
+                    }`}
+                  />
+                </button>
+                {openFaq === i && (
+                  <div className="px-6 pb-5 text-gray-500 text-sm leading-relaxed border-t border-gray-100 pt-3">
+                    {item.a}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Banner */}
+      <section className="py-20" style={{ background: "#0A3D62" }}>
+        <div className="max-w-4xl mx-auto px-4 text-center fade-in-up">
+          <h2 className="text-4xl font-extrabold text-white mb-4">
+            Ready to Get Started?
+          </h2>
+          <p className="text-white/70 text-lg mb-8 max-w-xl mx-auto">
+            Join 500+ organizations that trust Ekan Solutions to deliver
+            results.
+          </p>
+          <div className="flex flex-wrap gap-4 justify-center">
+            <a href="tel:8322950408">
+              <Button
+                size="lg"
+                className="bg-[#1ABC9C] hover:bg-[#17a589] text-white font-bold px-8"
+                data-ocid="contact.cta_phone_button"
+              >
+                <Phone className="mr-2 w-5 h-5" /> (832) 295-0408
+              </Button>
+            </a>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white/50 text-white bg-white/10 hover:bg-white/20 font-bold px-8"
+              onClick={() => setPage("services")}
+              data-ocid="contact.cta_services_button"
+            >
+              View Our Services <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
 function Footer() {
   const year = new Date().getFullYear();
   return (
@@ -1532,6 +2084,7 @@ export default function App() {
     | "about"
     | "services"
     | "solutions"
+    | "contact"
     | "cybersecurity"
     | "projectmanagement"
     | "fullstack"
@@ -1552,6 +2105,8 @@ export default function App() {
           <AboutPage setPage={setPage} />
         ) : page === "solutions" ? (
           <SolutionsPage setPage={setPage} />
+        ) : page === "contact" ? (
+          <ContactPage setPage={setPage} />
         ) : page === "cybersecurity" ? (
           <CybersecurityPage setPage={setPage} />
         ) : page === "projectmanagement" ? (
