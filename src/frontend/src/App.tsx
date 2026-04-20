@@ -1920,7 +1920,6 @@ function ContactPage({
 }
 
 function Footer() {
-  const year = new Date().getFullYear();
   return (
     <footer className="bg-[#0A3D62] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -2009,61 +2008,48 @@ function Footer() {
           {/* Contact */}
           <div>
             <h4 className="font-bold text-sm uppercase tracking-widest mb-5 text-[#1ABC9C]">
-              Contact
+              Get in Touch
             </h4>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-3 text-white/60 text-sm">
-                <MapPin className="w-4 h-4 flex-shrink-0 mt-0.5 text-[#1ABC9C]" />
-                Maryland, United States
-              </li>
-              <li className="flex items-center gap-3">
-                <Phone className="w-4 h-4 flex-shrink-0 text-[#1ABC9C]" />
-                <div>
+            <ul className="space-y-3.5">
+              <li className="flex items-start gap-3">
+                <Phone className="w-4 h-4 flex-shrink-0 mt-0.5 text-[#1ABC9C]" />
+                <div className="flex flex-col gap-0.5">
                   <a
                     href="tel:8322950408"
-                    className="text-white/60 hover:text-[#1ABC9C] text-sm block transition-colors"
+                    className="text-white/65 hover:text-white text-sm transition-colors leading-snug"
                   >
                     (832) 295-0408
                   </a>
                   <a
                     href="tel:4105968362"
-                    className="text-white/60 hover:text-[#1ABC9C] text-sm block transition-colors"
+                    className="text-white/65 hover:text-white text-sm transition-colors leading-snug"
                   >
                     410-596-8362
                   </a>
                 </div>
               </li>
-              <li className="flex items-center gap-3 text-white/60 text-sm">
-                <Mail className="w-4 h-4 flex-shrink-0 text-[#1ABC9C]" />
+              <li className="flex items-start gap-3">
+                <Mail className="w-4 h-4 flex-shrink-0 mt-0.5 text-[#1ABC9C]" />
                 <a
-                  href="mailto:info@ekansolutions.com"
-                  className="hover:text-[#1ABC9C] transition-colors"
+                  href="mailto:hr@ekansolutionsinc.awsapps.com"
+                  className="text-white/65 hover:text-white text-sm transition-colors leading-snug break-all"
                 >
-                  info@ekansolutions.com
+                  hr@ekansolutionsinc.awsapps.com
                 </a>
+              </li>
+              <li className="flex items-start gap-3">
+                <MapPin className="w-4 h-4 flex-shrink-0 mt-0.5 text-[#1ABC9C]" />
+                <div className="flex flex-col gap-0.5">
+                  <span className="text-white/65 text-sm leading-snug">
+                    1438 Heritage Ridge Rd, Woodbine, MD 21797
+                  </span>
+                  <span className="text-white/65 text-sm leading-snug">
+                    9175 Guilford Rd. Suite 300 #1015, Columbia, MD 21046
+                  </span>
+                </div>
               </li>
             </ul>
           </div>
-        </div>
-      </div>
-
-      {/* Bottom bar */}
-      <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-white/40 text-xs">
-            © {year} Ekan Solutions Inc. All rights reserved.
-          </p>
-          <p className="text-white/40 text-xs">
-            Built with ❤️ using{" "}
-            <a
-              href={`https://caffeine.ai?utm_source=caffeine-footer&utm_medium=referral&utm_content=${encodeURIComponent(window.location.hostname)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-[#1ABC9C] transition-colors"
-            >
-              caffeine.ai
-            </a>
-          </p>
         </div>
       </div>
     </footer>

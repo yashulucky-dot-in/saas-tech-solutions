@@ -1499,13 +1499,44 @@ input, textarea, select { font-family: inherit; }
   margin-bottom: 1.25rem;
 }
 
-.footer-contact-items {
+/* New footer contact block */
+.footer-contact-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #1ABC9C;
+  margin: 0.25rem 0 0.75rem;
+  display: block;
+}
+.footer-contact-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin-bottom: 0.55rem;
+}
+.footer-contact-row svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #1ABC9C;
+  stroke: #1ABC9C;
+}
+.footer-contact-text {
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
-  font-size: 0.82rem;
-  color: rgba(255,255,255,0.55);
+  gap: 0.15rem;
 }
+.footer-contact-text a,
+.footer-contact-text span {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.72);
+  text-decoration: none;
+  transition: color 0.2s;
+  line-height: 1.45;
+}
+.footer-contact-text a:hover { color: #fff; }
 
 .footer-heading,
 .site-footer .footer-col h4 {
@@ -1546,24 +1577,7 @@ input, textarea, select { font-family: inherit; }
   color: var(--accent);
 }
 
-.footer-bottom {
-  padding: 1.25rem 0;
-  text-align: center;
-  font-size: 0.82rem;
-  color: rgba(255,255,255,0.45);
-}
-
-.footer-bottom-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.footer-credit { font-size: 0.8rem; color: rgba(255,255,255,0.35); }
-.footer-credit a { color: rgba(255,255,255,0.5); text-decoration: none; }
-.footer-credit a:hover { color: var(--accent); }
+/* footer-bottom removed */
 
 /* ============================================================
    Scroll Animations
