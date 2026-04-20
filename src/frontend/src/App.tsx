@@ -1200,7 +1200,10 @@ function ContactSection() {
                       Maryland Office
                     </div>
                     <div className="text-gray-500 text-sm">
-                      Maryland, United States
+                      1438 Heritage Ridge Rd, Woodbine, MD 21797
+                    </div>
+                    <div className="text-gray-500 text-sm">
+                      9175 Guilford Rd. Suite 300 #1015, Columbia, MD 21046
                     </div>
                   </div>
                 </div>
@@ -1233,10 +1236,10 @@ function ContactSection() {
                   <div>
                     <div className="font-semibold text-gray-800">Email</div>
                     <a
-                      href="mailto:info@ekansolutions.com"
+                      href="mailto:hr@ekansolutionsinc.awsapps.com"
                       className="text-gray-500 text-sm hover:text-[#1ABC9C] transition-colors"
                     >
-                      info@ekansolutions.com
+                      hr@ekansolutionsinc.awsapps.com
                     </a>
                   </div>
                 </div>
@@ -1494,8 +1497,11 @@ function ContactPage({
             {[
               {
                 icon: MapPin,
-                title: "Our Office",
-                lines: ["Maryland, United States"],
+                title: "Our Offices",
+                lines: [
+                  "1438 Heritage Ridge Rd, Woodbine, MD 21797",
+                  "9175 Guilford Rd. Suite 300 #1015, Columbia, MD 21046",
+                ],
                 color: "#0A3D62",
               },
               {
@@ -1507,7 +1513,7 @@ function ContactPage({
               {
                 icon: Mail,
                 title: "Email Us",
-                lines: ["info@ekansolutions.com"],
+                lines: ["hr@ekansolutionsinc.awsapps.com"],
                 color: "#0A3D62",
               },
             ].map((card, i) => (
@@ -1809,7 +1815,10 @@ function ContactPage({
                   <div>
                     <div className="font-semibold text-gray-800">Address</div>
                     <div className="text-gray-500 text-sm">
-                      Maryland, United States
+                      1438 Heritage Ridge Rd, Woodbine, MD 21797
+                    </div>
+                    <div className="text-gray-500 text-sm">
+                      9175 Guilford Rd. Suite 300 #1015, Columbia, MD 21046
                     </div>
                   </div>
                 </div>
