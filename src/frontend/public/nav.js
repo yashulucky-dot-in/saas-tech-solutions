@@ -98,32 +98,65 @@ function initActiveNav() {
 
 /* ============================================================
    Scroll Fade-In Animations
+   — Elements with .fade-in are always opacity:1 (set in CSS).
+   — JS adds .visible immediately so the decorative animation plays.
+   — Multiple fallbacks ensure no content ever stays hidden,
+     regardless of navigation path (direct load, back/forward,
+     inter-page navigation, or slow connections).
    ============================================================ */
 function initScrollAnimations() {
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  if (prefersReduced) {
+  // Step 1: Make ALL .fade-in elements visible immediately (safety net).
+  // CSS already sets opacity:1, but adding .visible triggers the animation.
+  function makeAllVisible() {
     for (const el of document.querySelectorAll('.fade-in')) {
       el.classList.add('visible');
     }
+  }
+
+  if (prefersReduced) {
+    makeAllVisible();
     return;
   }
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      for (const entry of entries) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
+  // Step 2: Use IntersectionObserver for staggered animation on scroll.
+  // Elements already in viewport are made visible immediately.
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
         }
-      }
-    },
-    { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
-  );
+      },
+      { threshold: 0.05, rootMargin: '0px 0px -20px 0px' }
+    );
 
-  for (const el of document.querySelectorAll('.fade-in')) {
-    observer.observe(el);
+    for (const el of document.querySelectorAll('.fade-in')) {
+      // Check if element is already in viewport (handles page navigation)
+      const rect = el.getBoundingClientRect();
+      const inViewport = rect.top < window.innerHeight && rect.bottom > 0;
+      if (inViewport) {
+        // Already visible — add class now, skip observer
+        el.classList.add('visible');
+      } else {
+        observer.observe(el);
+      }
+    }
+  } else {
+    // Fallback for browsers without IntersectionObserver
+    makeAllVisible();
   }
+
+  // Step 3: Hard fallback — after 150ms, force-show any remaining hidden elements.
+  // Covers race conditions where observer fires too late after navigation.
+  setTimeout(makeAllVisible, 150);
+
+  // Step 4: Final fallback on window load event.
+  window.addEventListener('load', makeAllVisible, { once: true });
 }
 
 /* ============================================================

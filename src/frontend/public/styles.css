@@ -1582,11 +1582,15 @@ input, textarea, select { font-family: inherit; }
 
 /* ============================================================
    Scroll Animations
+   — Content is ALWAYS visible. Animation is purely decorative.
+   — opacity:1 is the default state. The animation enhances but
+     never hides content. Safe for direct loads, back/forward
+     navigation, and any navigation path.
    ============================================================ */
 @keyframes fadeInUp {
   from {
-    opacity: 0;
-    transform: translateY(28px);
+    opacity: 0.01;
+    transform: translateY(16px);
   }
   to {
     opacity: 1;
@@ -1595,29 +1599,48 @@ input, textarea, select { font-family: inherit; }
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
+  from { opacity: 0.01; }
   to   { opacity: 1; }
 }
 
+/*
+ * CRITICAL: opacity:1 and transform:none are set FIRST as the
+ * base state. The animation uses fill-mode:forwards (NOT "both")
+ * so the "from" keyframe is never applied as the initial render
+ * state — content is always visible before the animation plays.
+ */
 .fade-in {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.65s ease, transform 0.65s ease;
-}
-
-.fade-in.visible {
-  opacity: 1;
+  opacity: 1 !important;
+  visibility: visible !important;
   transform: translateY(0);
 }
 
-/* Stagger delays for child elements */
-.fade-in:nth-child(1)  { transition-delay: 0s; }
-.fade-in:nth-child(2)  { transition-delay: 0.1s; }
-.fade-in:nth-child(3)  { transition-delay: 0.2s; }
-.fade-in:nth-child(4)  { transition-delay: 0.3s; }
-.fade-in:nth-child(5)  { transition-delay: 0.4s; }
-.fade-in:nth-child(6)  { transition-delay: 0.5s; }
-.fade-in:nth-child(7)  { transition-delay: 0.6s; }
+.fade-in.visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0);
+  animation: fadeInUp 0.55s ease forwards;
+}
+
+/* Stagger delays for .visible state */
+.fade-in.visible:nth-child(1)  { animation-delay: 0s; }
+.fade-in.visible:nth-child(2)  { animation-delay: 0.08s; }
+.fade-in.visible:nth-child(3)  { animation-delay: 0.16s; }
+.fade-in.visible:nth-child(4)  { animation-delay: 0.24s; }
+.fade-in.visible:nth-child(5)  { animation-delay: 0.32s; }
+.fade-in.visible:nth-child(6)  { animation-delay: 0.40s; }
+.fade-in.visible:nth-child(7)  { animation-delay: 0.48s; }
+
+/* Honour reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in,
+  .fade-in.visible {
+    animation: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+  }
+}
 
 /* ============================================================
    Utility Classes

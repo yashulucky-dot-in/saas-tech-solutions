@@ -2061,6 +2061,11 @@ function Footer() {
           </div>
         </div>
       </div>
+      <div className="border-t border-white/10 mt-8 py-3 flex justify-center items-center">
+        <span className="text-xs text-white/30 tracking-wide">
+          Design Version 20
+        </span>
+      </div>
     </footer>
   );
 }
