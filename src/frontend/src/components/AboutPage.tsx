@@ -13,7 +13,21 @@ import {
 import { useEffect } from "react";
 
 interface AboutPageProps {
-  setPage: (page: "home" | "about" | "services") => void;
+  setPage: (
+    page:
+      | "home"
+      | "about"
+      | "services"
+      | "solutions"
+      | "contact"
+      | "cybersecurity"
+      | "projectmanagement"
+      | "fullstack"
+      | "awscloud"
+      | "javadevelopment"
+      | "qatesting"
+      | "aiservices",
+  ) => void;
 }
 
 const VALUES = [
@@ -85,13 +99,6 @@ function useAboutScrollAnimation() {
 export default function AboutPage({ setPage }: AboutPageProps) {
   useAboutScrollAnimation();
 
-  const goHomeAndScroll = (id: string) => {
-    setPage("home");
-    setTimeout(() => {
-      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-    }, 120);
-  };
-
   return (
     <div className="min-h-screen font-sans">
       {/* 1. Hero */}
@@ -148,7 +155,10 @@ export default function AboutPage({ setPage }: AboutPageProps) {
             <div className="flex flex-wrap gap-4">
               <Button
                 className="bg-[#1ABC9C] hover:bg-[#17a589] text-white font-bold px-8 py-3 text-base rounded-xl"
-                onClick={() => goHomeAndScroll("services")}
+                onClick={() => {
+                  setPage("services");
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
                 data-ocid="about.primary_button"
               >
                 Explore Our Services
@@ -157,7 +167,10 @@ export default function AboutPage({ setPage }: AboutPageProps) {
               <Button
                 variant="outline"
                 className="border-2 border-white text-white hover:bg-white hover:text-[#0A3D62] font-bold px-8 py-3 text-base rounded-xl bg-transparent"
-                onClick={() => goHomeAndScroll("contact")}
+                onClick={() => {
+                  setPage("contact");
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
                 data-ocid="about.secondary_button"
               >
                 Get in Touch
@@ -393,7 +406,10 @@ export default function AboutPage({ setPage }: AboutPageProps) {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-5 mb-10">
             <Button
               className="bg-[#1ABC9C] hover:bg-[#17a589] text-white font-bold px-10 py-4 text-base rounded-xl"
-              onClick={() => goHomeAndScroll("contact")}
+              onClick={() => {
+                setPage("contact");
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
               data-ocid="about.primary_button"
             >
               Start a Conversation

@@ -210,7 +210,7 @@ function initContactForm() {
           errMsg.style.cssText = 'color:#e74c3c;font-size:0.875rem;margin-top:0.75rem;text-align:center;';
           form.appendChild(errMsg);
         }
-        errMsg.textContent = 'Something went wrong. Please try again or email us directly at info@ekansolutions.com.';
+        errMsg.textContent = 'Something went wrong. Please try again or email us directly at hr@ekansolutionsinc.awsapps.com.';
         if (submitBtn) {
           submitBtn.disabled = false;
           submitBtn.textContent = originalText;
