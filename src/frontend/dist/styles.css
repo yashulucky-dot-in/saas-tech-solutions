@@ -1470,7 +1470,8 @@ input, textarea, select { font-family: inherit; }
   padding-top: 4rem;
 }
 
-.footer-grid {
+.footer-grid,
+.footer-inner {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
   gap: 3rem;
@@ -1506,7 +1507,8 @@ input, textarea, select { font-family: inherit; }
   color: rgba(255,255,255,0.55);
 }
 
-.footer-heading {
+.footer-heading,
+.site-footer .footer-col h4 {
   font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -1517,14 +1519,32 @@ input, textarea, select { font-family: inherit; }
 
 .footer-links { display: flex; flex-direction: column; gap: 0.5rem; }
 
+/* ── Footer link clickability: always on top, never intercepted ── */
+.footer-links li { position: relative; }
+
 .footer-links a {
   font-size: 0.875rem;
   color: rgba(255,255,255,0.6);
   text-decoration: none;
-  transition: color 0.2s;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+  cursor: pointer;
+  pointer-events: auto !important;
+  position: relative;
+  z-index: 10;
+  display: inline-block;
 }
 
-.footer-links a:hover { color: var(--accent); }
+.footer-links a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.footer-links a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+  color: var(--accent);
+}
 
 .footer-bottom {
   padding: 1.25rem 0;
@@ -1532,6 +1552,18 @@ input, textarea, select { font-family: inherit; }
   font-size: 0.82rem;
   color: rgba(255,255,255,0.45);
 }
+
+.footer-bottom-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.footer-credit { font-size: 0.8rem; color: rgba(255,255,255,0.35); }
+.footer-credit a { color: rgba(255,255,255,0.5); text-decoration: none; }
+.footer-credit a:hover { color: var(--accent); }
 
 /* ============================================================
    Scroll Animations
@@ -1626,7 +1658,8 @@ input, textarea, select { font-family: inherit; }
   .form-row { grid-template-columns: 1fr; }
 
   /* Footer */
-  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-grid,
+  .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
 
   /* Values */
   .values-grid { grid-template-columns: 1fr; }

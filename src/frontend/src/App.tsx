@@ -89,30 +89,35 @@ const SERVICES = [
     title: "Cybersecurity",
     desc: "Protect your organization with enterprise-grade threat detection, compliance management, and proactive security monitoring.",
     color: "#0A3D62",
+    href: "cybersecurity.html",
   },
   {
     icon: ClipboardList,
     title: "Project Management",
     desc: "Drive successful outcomes with Agile, PMBOK, and hybrid methodologies—on time, within budget, and aligned to your strategy.",
     color: "#1ABC9C",
+    href: "projectmanagement.html",
   },
   {
     icon: Code2,
     title: "Full Stack Development",
     desc: "End-to-end web and application development using modern frameworks—React, Node.js, Spring Boot, and beyond.",
     color: "#0A3D62",
+    href: "fullstack.html",
   },
   {
     icon: Cloud,
     title: "AWS Cloud Solutions",
     desc: "Architect, migrate, and optimize workloads on AWS. Reduce costs while scaling with confidence and reliability.",
     color: "#1ABC9C",
+    href: "awscloud.html",
   },
   {
     icon: Coffee,
     title: "Java Development",
     desc: "Build robust, high-performance enterprise applications with Java EE, Spring, and microservices architectures.",
     color: "#0A3D62",
+    href: "javadevelopment.html",
   },
   {
     icon: CheckSquare,
@@ -120,6 +125,7 @@ const SERVICES = [
     desc: "Comprehensive QA and testing services to ensure your software is reliable, performant, and defect-free before every release.",
     color: "#1ABC9C",
     page: "qatesting" as const,
+    href: "qatesting.html",
   },
   {
     icon: Bot,
@@ -127,6 +133,7 @@ const SERVICES = [
     desc: "Harness the power of artificial intelligence and intelligent automation to streamline operations, reduce costs, and accelerate growth.",
     color: "#0A3D62",
     page: "aiservices" as const,
+    href: "aiservices.html",
   },
 ];
 
@@ -356,16 +363,10 @@ function Header({
             data-ocid="nav.link"
           >
             <img
-              src="/assets/generated/es-logo-icon-transparent.dim_200x200.png"
-              alt="ES Logo"
-              className="w-10 h-10 object-contain"
+              src="/assets/header-logo.png"
+              alt="Ekan Solutions"
+              className="h-12 w-auto object-contain"
             />
-            <div>
-              <span className="font-bold text-lg text-navy leading-none block">
-                Ekan Solutions
-              </span>
-              <span className="text-xs text-gray-500 leading-none">Inc.</span>
-            </div>
           </button>
 
           {/* Desktop Nav */}
@@ -1928,16 +1929,10 @@ function Footer() {
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
               <img
-                src="/assets/generated/es-logo-icon-transparent.dim_200x200.png"
-                alt="ES Logo"
-                className="w-10 h-10 object-contain"
+                src="/assets/footer-logo.png"
+                alt="Ekan Solutions"
+                className="h-14 w-auto object-contain"
               />
-              <div>
-                <span className="font-bold text-lg text-white leading-none block">
-                  Ekan Solutions
-                </span>
-                <span className="text-xs text-white/50 leading-none">Inc.</span>
-              </div>
             </div>
             <p className="text-white/60 text-sm leading-relaxed mb-5">
               Enterprise IT services built on 15+ years of expertise. Securing,
@@ -1980,7 +1975,7 @@ function Footer() {
               {SERVICES.map((svc) => (
                 <li key={svc.title}>
                   <a
-                    href="#services"
+                    href={svc.href}
                     className="text-white/60 text-sm hover:text-[#1ABC9C] transition-colors flex items-center gap-2"
                     data-ocid="footer.link"
                   >

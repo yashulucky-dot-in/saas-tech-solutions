@@ -4,6 +4,18 @@
  */
 
 /* ============================================================
+   Page Navigation: scroll to top on load (restores correct position)
+   ============================================================ */
+function initScrollTop() {
+  // Scroll to top immediately on page load (prevents browser scroll restoration
+  // from landing on a mid-page position when navigating from footer links)
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+  window.scrollTo(0, 0);
+}
+
+/* ============================================================
    Mobile Hamburger Menu Toggle
    ============================================================ */
 function initMobileMenu() {
@@ -115,7 +127,7 @@ function initScrollAnimations() {
 }
 
 /* ============================================================
-   Smooth Scroll for Anchor Links
+   Smooth Scroll for Anchor Links (#id only, never page navigation)
    ============================================================ */
 function initSmoothScroll() {
   document.addEventListener('click', (e) => {
@@ -123,7 +135,7 @@ function initSmoothScroll() {
     if (!target) return;
 
     const href = target.getAttribute('href');
-    if (href === '#') return;
+    if (!href || href === '#' || href.includes('.html')) return;
 
     const el = document.querySelector(href);
     if (el) {
@@ -237,6 +249,7 @@ function initContactForm() {
    Main init
    ============================================================ */
 function initNav() {
+  initScrollTop();
   initMobileMenu();
   initHeaderScroll();
   initActiveNav();
