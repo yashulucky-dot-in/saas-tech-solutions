@@ -77,15 +77,21 @@ function initActiveNav() {
     'services.html': 'services',
     'solutions.html': 'solutions',
     'contact.html': 'contact',
+    'cybersecurity.html': 'services',
+    'projectmanagement.html': 'services',
+    'fullstack.html': 'services',
+    'awscloud.html': 'services',
+    'javadevelopment.html': 'services',
+    'qatesting.html': 'services',
+    'aiservices.html': 'services',
+    // legacy filenames (kept for back-compat)
     'service-cybersecurity.html': 'services',
     'service-project-management.html': 'services',
     'service-fullstack.html': 'services',
     'service-aws.html': 'services',
     'service-java.html': 'services',
-    'javadevelopment.html': 'services',
     'service-qa.html': 'services',
     'service-ai.html': 'services',
-    'projectmanagement.html': 'services',
   };
 
   const activePage = pageMap[filename] || '';
@@ -252,7 +258,6 @@ function initContactForm() {
         if (!errMsg) {
           errMsg = document.createElement('p');
           errMsg.className = 'web3forms-error';
-          errMsg.style.cssText = 'color:#e74c3c;font-size:0.875rem;margin-top:0.75rem;text-align:center;';
           form.appendChild(errMsg);
         }
         errMsg.textContent = 'Something went wrong. Please try again or email us directly at hr@ekansolutionsinc.awsapps.com.';
@@ -266,7 +271,6 @@ function initContactForm() {
       if (!errMsg) {
         errMsg = document.createElement('p');
         errMsg.className = 'web3forms-error';
-        errMsg.style.cssText = 'color:#e74c3c;font-size:0.875rem;margin-top:0.75rem;text-align:center;';
         form.appendChild(errMsg);
       }
       errMsg.textContent = 'Network error. Please check your connection and try again.';

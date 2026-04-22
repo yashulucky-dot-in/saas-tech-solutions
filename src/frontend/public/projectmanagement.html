@@ -3,31 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Project Management Services | Ekan Solutions Inc.</title>
-  <meta name="description" content="PMP-certified project managers delivering complex IT projects on time and within budget using Agile methodologies. Expert project management services from Ekan Solutions Inc." />
+  <title>Project Management | Ekan Solutions Inc.</title>
+  <meta name="description" content="On-time, on-budget delivery with PMP-certified project managers and proven Agile methodology. Expert project management services from Ekan Solutions Inc." />
   <link rel="icon" href="favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- ============================================================
-       HEADER / NAV
-       ============================================================ -->
+  <!-- ===== HEADER / NAV ===== -->
   <header class="site-header" id="site-header">
     <div class="container nav-inner">
-      <!-- Logo -->
       <a href="home.html" class="nav-logo">
-        <img src="assets/header-logo.png" alt="Ekan Solutions Logo" style="height:48px; width:auto; display:block;">
+        <img src="assets/header-logo.png" alt="Ekan Solutions" class="header-logo-img">
       </a>
-      <!-- Desktop nav links -->
       <nav class="nav-links" id="nav-links">
-        <a href="home.html" class="nav-link" data-page="home">Home</a>
-        <a href="about.html" class="nav-link" data-page="about">About</a>
-        <a href="services.html" class="nav-link" data-page="services">Services</a>
+        <a href="home.html"      class="nav-link" data-page="home">Home</a>
+        <a href="about.html"     class="nav-link" data-page="about">About</a>
+        <a href="services.html"  class="nav-link" data-page="services">Services</a>
         <a href="solutions.html" class="nav-link" data-page="solutions">Solutions</a>
-        <a href="contact.html" class="nav-link" data-page="contact">Contact</a>
+        <a href="contact.html"   class="nav-link" data-page="contact">Contact</a>
       </nav>
-      <!-- Phone + CTA -->
       <div class="nav-cta">
         <div class="nav-phones">
           <a href="tel:8322950408" class="nav-phone">(832) 295-0408</a>
@@ -35,19 +33,17 @@
         </div>
         <a href="contact.html" class="btn btn-accent">Get Consultation</a>
       </div>
-      <!-- Hamburger -->
       <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
-    <!-- Mobile dropdown -->
     <div class="mobile-menu" id="mobile-menu">
       <nav class="mobile-nav">
-        <a href="home.html" class="mobile-link" data-page="home">Home</a>
-        <a href="about.html" class="mobile-link" data-page="about">About</a>
-        <a href="services.html" class="mobile-link" data-page="services">Services</a>
+        <a href="home.html"      class="mobile-link" data-page="home">Home</a>
+        <a href="about.html"     class="mobile-link" data-page="about">About</a>
+        <a href="services.html"  class="mobile-link" data-page="services">Services</a>
         <a href="solutions.html" class="mobile-link" data-page="solutions">Solutions</a>
-        <a href="contact.html" class="mobile-link" data-page="contact">Contact</a>
+        <a href="contact.html"   class="mobile-link" data-page="contact">Contact</a>
       </nav>
       <div class="mobile-phones">
         <a href="tel:8322950408">(832) 295-0408</a>
@@ -57,313 +53,231 @@
     </div>
   </header>
 
-  <!-- ============================================================
-       SERVICE HERO
-       ============================================================ -->
-  <section class="service-hero" data-ocid="pm-hero">
-    <div class="hero-grid-pattern"></div>
-    <div class="container" style="position:relative;z-index:2;">
-      <!-- Breadcrumb -->
+  <!-- ===== SERVICE HERO ===== -->
+  <section class="service-hero">
+    <div class="container">
       <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="home.html">Home</a>
         <span class="breadcrumb-sep">›</span>
         <a href="services.html">Services</a>
         <span class="breadcrumb-sep">›</span>
-        <span>Project Management</span>
+        <span class="breadcrumb-current">Project Management</span>
       </nav>
-      <!-- Badge -->
-      <div class="service-hero-badge">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
-        PROJECT MANAGEMENT
-      </div>
-      <!-- Heading -->
-      <h1 class="service-hero-title">Expert Project Management<br>Services</h1>
-      <p class="service-hero-desc">
-        Deliver complex technology projects on time and within budget with our PMP-certified project managers and proven Agile methodologies.
+      <div class="service-hero-badge">PROJECT MANAGEMENT SERVICES</div>
+      <h1 class="service-hero-title">Project Management Services</h1>
+      <p class="service-hero-subtitle">
+        On-time, on-budget delivery with certified PMs and proven agile methodology.
       </p>
-      <!-- CTAs -->
       <div class="hero-actions">
-        <a href="contact.html" class="btn btn-accent btn-lg" data-ocid="pm-hero-cta-primary">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.5 11.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012.38 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.9a16 16 0 006.29 6.29l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-          Start Your Project
-        </a>
-        <a href="services.html" class="btn btn-outline-white btn-lg" data-ocid="pm-hero-cta-secondary">
-          View All Services
-        </a>
-      </div>
-      <!-- Trust Stats -->
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <div class="hero-stat-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <div>
-            <div class="hero-stat-value">PMP</div>
-            <div class="hero-stat-label">Certified Managers</div>
-          </div>
-        </div>
-        <div class="hero-stat">
-          <div class="hero-stat-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          </div>
-          <div>
-            <div class="hero-stat-value">95%</div>
-            <div class="hero-stat-label">On-Time Delivery</div>
-          </div>
-        </div>
-        <div class="hero-stat">
-          <div class="hero-stat-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-          </div>
-          <div>
-            <div class="hero-stat-value">10+</div>
-            <div class="hero-stat-label">Years Experience</div>
-          </div>
-        </div>
+        <a href="contact.html" class="btn btn-accent btn-lg" data-ocid="pm.primary_button">Start Your Project</a>
+        <a href="services.html" class="btn btn-outline-white btn-lg" data-ocid="pm.secondary_button">View All Services</a>
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       CAPABILITIES — 6 cards
-       ============================================================ -->
-  <section class="section" data-ocid="pm-capabilities">
+  <!-- ===== OVERVIEW ===== -->
+  <section class="section" id="overview">
     <div class="container">
       <div class="section-header fade-in">
-        <span class="section-label">What We Deliver</span>
-        <h2 class="section-title">Project Management Capabilities</h2>
-        <p class="section-subtitle">Comprehensive project management services tailored to the complexity and pace of modern technology initiatives.</p>
+        <span class="section-label">OVERVIEW</span>
+        <h2 class="section-title">Delivering Projects That Succeed</h2>
+        <p class="section-subtitle">
+          Ekan Solutions provides PMP-certified project management professionals who bring structure, visibility, and discipline to your most complex technology initiatives. We partner with your teams to align stakeholders, manage risk, and drive consistent delivery from kickoff to closure — on schedule and within budget.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CAPABILITIES ===== -->
+  <section class="section-alt" id="capabilities">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">WHAT WE DO</span>
+        <h2 class="section-title">Our Project Management Capabilities</h2>
+        <p class="section-subtitle">
+          End-to-end project management expertise to deliver complex initiatives on time and within budget.
+        </p>
       </div>
       <div class="grid-3">
-        <div class="card fade-in" data-ocid="pm-cap-1">
-          <div class="card-icon" style="background:rgba(10,61,98,0.07);">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#0A3D62" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/></svg>
+
+        <div class="card fade-in" data-ocid="pm.cap.item.1">
+          <div class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
           </div>
-          <h3 class="card-title">Agile &amp; Scrum Leadership</h3>
-          <p class="card-desc">Sprint planning, retrospectives, and velocity optimization to keep your teams aligned and consistently delivering value each iteration.</p>
+          <h3 class="card-title">Agile &amp; Scrum</h3>
+          <p class="card-desc">Sprint planning, backlog grooming, and iterative delivery that keeps teams aligned and consistently shipping value each cycle.</p>
         </div>
-        <div class="card fade-in" data-ocid="pm-cap-2">
-          <div class="card-icon" style="background:rgba(26,188,156,0.1);">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#1ABC9C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+
+        <div class="card fade-in" data-ocid="pm.cap.item.2">
+          <div class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/>
+            </svg>
           </div>
-          <h3 class="card-title">PMP-Certified Managers</h3>
-          <p class="card-desc">Experienced project managers with industry-recognized PMP certifications, bringing structured governance and accountability to every engagement.</p>
+          <h3 class="card-title">PMO Services</h3>
+          <p class="card-desc">Program management office setup and governance — establishing standards, frameworks, and reporting structures across your project portfolio.</p>
         </div>
-        <div class="card fade-in" data-ocid="pm-cap-3">
-          <div class="card-icon" style="background:rgba(10,61,98,0.07);">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#0A3D62" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+
+        <div class="card fade-in" data-ocid="pm.cap.item.3">
+          <div class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
           </div>
-          <h3 class="card-title">Risk Management &amp; Mitigation</h3>
-          <p class="card-desc">Proactive identification and mitigation of project risks through structured risk registers, contingency planning, and continuous monitoring.</p>
+          <h3 class="card-title">Risk Management</h3>
+          <p class="card-desc">Proactive risk identification and mitigation through structured risk registers, contingency planning, and continuous monitoring throughout the project lifecycle.</p>
         </div>
-        <div class="card fade-in" data-ocid="pm-cap-4">
-          <div class="card-icon" style="background:rgba(26,188,156,0.1);">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#1ABC9C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+
+        <div class="card fade-in" data-ocid="pm.cap.item.4">
+          <div class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/>
+            </svg>
           </div>
-          <h3 class="card-title">Stakeholder Communication</h3>
-          <p class="card-desc">Clear, consistent reporting and communication at all levels — from executive dashboards to team-level standups — ensuring alignment throughout the project lifecycle.</p>
+          <h3 class="card-title">Stakeholder Management</h3>
+          <p class="card-desc">Communication planning and reporting at every level — from executive dashboards to team standups — ensuring alignment across all stakeholders throughout delivery.</p>
         </div>
-        <div class="card fade-in" data-ocid="pm-cap-5">
-          <div class="card-icon" style="background:rgba(10,61,98,0.07);">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#0A3D62" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+
+        <div class="card fade-in" data-ocid="pm.cap.item.5">
+          <div class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
+            </svg>
           </div>
-          <h3 class="card-title">Budget &amp; Timeline Control</h3>
-          <p class="card-desc">Rigorous tracking and earned-value management to deliver on scope, time, and budget — preventing scope creep and cost overruns before they occur.</p>
+          <h3 class="card-title">Resource Planning</h3>
+          <p class="card-desc">Optimal team allocation and capacity planning — matching the right people to the right tasks at the right time to maximize efficiency and throughput.</p>
         </div>
-        <div class="card fade-in" data-ocid="pm-cap-6">
-          <div class="card-icon" style="background:rgba(26,188,156,0.1);">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#1ABC9C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+
+        <div class="card fade-in" data-ocid="pm.cap.item.6">
+          <div class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>
+            </svg>
           </div>
-          <h3 class="card-title">Portfolio Management</h3>
-          <p class="card-desc">Manage multiple concurrent projects with optimized resource allocation, dependency tracking, and unified reporting across your entire project portfolio.</p>
+          <h3 class="card-title">Project Recovery</h3>
+          <p class="card-desc">Getting troubled projects back on track — rapid assessment, root-cause analysis, and corrective action plans to restore momentum and stakeholder confidence.</p>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       TECH STACK
-       ============================================================ -->
-  <section class="section-alt" data-ocid="pm-techstack">
+  <!-- ===== TECH STACK ===== -->
+  <section class="section" id="tech-stack">
     <div class="container">
       <div class="section-header fade-in">
-        <span class="section-label">Tools &amp; Platforms</span>
-        <h2 class="section-title">Technology We Work With</h2>
-        <p class="section-subtitle">We leverage industry-leading project management platforms to provide visibility, collaboration, and control.</p>
+        <span class="section-label">OUR TOOLKIT</span>
+        <h2 class="section-title">Tools &amp; Platforms</h2>
+        <p class="section-subtitle">
+          Industry-leading project management platforms trusted by enterprise teams worldwide.
+        </p>
       </div>
-      <div class="tech-stack fade-in" style="justify-content:center;">
+      <div class="tech-stack fade-in">
         <span class="tech-badge">Jira</span>
-        <span class="tech-badge">Monday.com</span>
-        <span class="tech-badge">Asana</span>
-        <span class="tech-badge">Azure DevOps</span>
-        <span class="tech-badge">MS Project</span>
         <span class="tech-badge">Confluence</span>
-        <span class="tech-badge">Trello</span>
-        <span class="tech-badge">Smartsheet</span>
+        <span class="tech-badge">Microsoft Project</span>
+        <span class="tech-badge">Asana</span>
+        <span class="tech-badge">Monday.com</span>
         <span class="tech-badge">ServiceNow</span>
+        <span class="tech-badge">Smartsheet</span>
+        <span class="tech-badge">Trello</span>
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       PROCESS — 5 steps
-       ============================================================ -->
-  <section class="section process-section" data-ocid="pm-process">
+  <!-- ===== PROCESS ===== -->
+  <section class="section-alt" id="process">
     <div class="container">
       <div class="section-header fade-in">
-        <span class="section-label">How We Work</span>
-        <h2 class="section-title">Our Project Management Process</h2>
-        <p class="section-subtitle">A structured, repeatable delivery framework ensuring consistent quality and successful outcomes across every engagement.</p>
+        <span class="section-label">HOW WE WORK</span>
+        <h2 class="section-title">Our Delivery Process</h2>
+        <p class="section-subtitle">
+          A structured five-phase methodology that ensures consistent, successful project outcomes.
+        </p>
       </div>
-      <div class="process-steps">
-        <div class="process-step fade-in">
-          <div class="process-circle">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      <div class="process-steps fade-in">
+        <div class="process-step">
+          <div class="process-num">01</div>
+          <div class="process-content">
+            <h4 class="process-title">Initiate</h4>
+            <p class="process-desc">Define scope, stakeholders, and project charter — establishing a clear foundation and executive alignment from day one.</p>
           </div>
-          <div class="process-num">STEP 01</div>
-          <h3 class="process-title">Initiation</h3>
-          <p class="process-desc">Define scope, stakeholders, and project charter — establishing a clear foundation and executive alignment from day one.</p>
         </div>
-        <div class="process-step fade-in">
-          <div class="process-circle">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+        <div class="process-step">
+          <div class="process-num">02</div>
+          <div class="process-content">
+            <h4 class="process-title">Plan</h4>
+            <p class="process-desc">Detailed project plan, work breakdown structure, and risk register — mapping every dependency and milestone for predictable delivery.</p>
           </div>
-          <div class="process-num">STEP 02</div>
-          <h3 class="process-title">Planning</h3>
-          <p class="process-desc">Detailed project plan, work breakdown structure, and risk register — mapping every dependency and milestone to ensure predictable delivery.</p>
         </div>
-        <div class="process-step fade-in">
-          <div class="process-circle">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        <div class="process-step">
+          <div class="process-num">03</div>
+          <div class="process-content">
+            <h4 class="process-title">Execute</h4>
+            <p class="process-desc">Agile sprints with daily standups and continuous progress tracking — delivering working increments while adapting to evolving requirements.</p>
           </div>
-          <div class="process-num">STEP 03</div>
-          <h3 class="process-title">Execution</h3>
-          <p class="process-desc">Agile sprints with daily standups and continuous progress tracking — delivering working increments while adapting to evolving requirements.</p>
         </div>
-        <div class="process-step fade-in">
-          <div class="process-circle">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        <div class="process-step">
+          <div class="process-num">04</div>
+          <div class="process-content">
+            <h4 class="process-title">Monitor &amp; Control</h4>
+            <p class="process-desc">KPI dashboards and regular status reporting maintain full visibility — surfacing issues early and keeping stakeholders informed at all times.</p>
           </div>
-          <div class="process-num">STEP 04</div>
-          <h3 class="process-title">Monitoring</h3>
-          <p class="process-desc">KPI dashboards and regular status reporting to maintain full visibility — surfacing issues early and keeping stakeholders informed at all times.</p>
         </div>
-        <div class="process-step fade-in">
-          <div class="process-circle">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <div class="process-step">
+          <div class="process-num">05</div>
+          <div class="process-content">
+            <h4 class="process-title">Close</h4>
+            <p class="process-desc">Lessons learned, complete documentation, and structured handover — ensuring knowledge transfer and a solid foundation for future initiatives.</p>
           </div>
-          <div class="process-num">STEP 05</div>
-          <h3 class="process-title">Closure</h3>
-          <p class="process-desc">Lessons learned, complete documentation, and structured handover — ensuring knowledge transfer and a solid foundation for future initiatives.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       WHY CHOOSE US — 3 dark cards
-       ============================================================ -->
-  <section class="section why-section" data-ocid="pm-why">
-    <div class="container">
-      <div class="section-header fade-in">
-        <span class="section-label" style="color:var(--accent);">Why Ekan Solutions</span>
-        <h2 class="section-title white">Why Choose Our Project Management Services</h2>
-        <p class="section-subtitle white">What sets our project management practice apart from the rest.</p>
-      </div>
-      <div class="grid-3">
-        <div class="card-dark fade-in" data-ocid="pm-why-1">
-          <div class="card-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
-          </div>
-          <h3 class="card-title">PMP-Certified Experts</h3>
-          <p class="card-desc">Credentialed project managers with 10+ years of experience leading enterprise technology initiatives across diverse industries and scales.</p>
-        </div>
-        <div class="card-dark fade-in" data-ocid="pm-why-2">
-          <div class="card-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-          </div>
-          <h3 class="card-title">Agile-First Approach</h3>
-          <p class="card-desc">Adaptable Agile and hybrid methodologies designed for modern technology projects — enabling faster delivery, continuous improvement, and better outcomes.</p>
-        </div>
-        <div class="card-dark fade-in" data-ocid="pm-why-3">
-          <div class="card-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
-          </div>
-          <h3 class="card-title">Transparent Reporting</h3>
-          <p class="card-desc">Real-time dashboards and regular stakeholder updates ensure no surprises — you always have a clear picture of progress, risks, and budget status.</p>
-        </div>
-      </div>
+  <!-- ===== CTA BANNER ===== -->
+  <section class="cta-banner" data-ocid="pm.cta.section">
+    <div class="container text-center">
+      <h2 class="cta-title">Ready to Deliver Your Project?</h2>
+      <p class="cta-subtitle">Partner with our PMP-certified team to bring structure, visibility, and confidence to your most critical technology initiatives.</p>
+      <a href="contact.html" class="btn btn-accent btn-lg" data-ocid="pm.cta.primary_button">Contact Us</a>
     </div>
   </section>
 
-  <!-- ============================================================
-       CTA BANNER
-       ============================================================ -->
-  <section class="cta-banner" data-ocid="pm-cta">
-    <div class="container">
-      <div class="cta-banner-inner fade-in">
-        <h2 class="cta-title">Ready to Deliver Your Next Project?</h2>
-        <p class="cta-subtitle">Partner with our PMP-certified team to bring structure, visibility, and confidence to your most critical technology initiatives.</p>
-        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-          <a href="contact.html" class="btn btn-accent btn-lg" data-ocid="pm-cta-btn">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.5 11.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012.38 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.9a16 16 0 006.29 6.29l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-            Start a Conversation
-          </a>
-          <a href="services.html" class="btn btn-outline-white btn-lg" data-ocid="pm-cta-services">
-            Explore All Services
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       FOOTER
-       ============================================================ -->
+  <!-- ===== FOOTER ===== -->
   <footer class="site-footer">
-    <div class="container footer-grid">
+    <div class="container footer-grid-4">
+
+      <!-- Col 1: Brand -->
       <div class="footer-col">
         <div class="footer-logo">
-          <img src="assets/footer-logo.png" alt="Ekan Solutions Logo" style="height:80px; width:auto; display:block; margin-bottom:12px;">
+          <img src="assets/footer-logo.png" alt="Ekan Solutions" class="footer-logo-img">
         </div>
-        <p class="footer-tagline">Enterprise IT solutions built on integrity, innovation, and 15+ years of expertise.</p>
-        <span class="footer-contact-label">Get in Touch</span>
-        <div class="footer-contact-row">
-          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .94h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16z"/></svg>
-          <div class="footer-contact-text">
-            <a href="tel:8322950408">(832) 295-0408</a>
-            <a href="tel:4105968362">410-596-8362</a>
-          </div>
-        </div>
-        <div class="footer-contact-row">
-          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          <div class="footer-contact-text">
-            <a href="mailto:hr@ekansolutionsinc.awsapps.com">hr@ekansolutionsinc.awsapps.com</a>
-          </div>
-        </div>
-        <div class="footer-contact-row">
-          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <div class="footer-contact-text">
-            <span>1438 Heritage Ridge Rd, Woodbine, MD 21797</span>
-            <span>9175 Guilford Rd. Suite 300 #1015, Columbia, MD 21046</span>
-          </div>
+        <p class="footer-tagline">Enterprise IT solutions built on integrity, innovation, and 15+ years of expertise. Securing, scaling, and accelerating your business.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="LinkedIn" class="footer-social-link">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" aria-label="Twitter" class="footer-social-link">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+          </a>
+          <a href="#" aria-label="Facebook" class="footer-social-link">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="#" aria-label="YouTube" class="footer-social-link">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+          </a>
         </div>
       </div>
+
+      <!-- Col 2: Services -->
       <div class="footer-col">
-        <h4 class="footer-col-title">Quick Links</h4>
-        <ul class="footer-links">
-          <li><a href="home.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="solutions.html">Solutions</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4 class="footer-col-title">Our Services</h4>
+        <h4 class="footer-col-title">Services</h4>
         <ul class="footer-links">
           <li><a href="cybersecurity.html">Cybersecurity</a></li>
-          <li><a href="projectmanagement.html" aria-current="page">Project Management</a></li>
+          <li><a href="projectmanagement.html">Project Management</a></li>
           <li><a href="fullstack.html">Full Stack Development</a></li>
           <li><a href="awscloud.html">AWS Cloud Solutions</a></li>
           <li><a href="javadevelopment.html">Java Development</a></li>
@@ -371,12 +285,51 @@
           <li><a href="aiservices.html">AI &amp; Automation Services</a></li>
         </ul>
       </div>
+
+      <!-- Col 3: Quick Links -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="solutions.html">Solutions</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Get In Touch -->
+      <div class="footer-contact-col">
+        <h4>Get In Touch</h4>
+        <div class="footer-contact-item">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .94h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16z"/></svg>
+          <div class="footer-contact-item-text">
+            <a href="tel:8322950408">(832) 295-0408</a>
+            <a href="tel:4105968362">410-596-8362</a>
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <div class="footer-contact-item-text">
+            <a href="mailto:hr@ekansolutionsinc.awsapps.com">hr@ekansolutionsinc.awsapps.com</a>
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div class="footer-contact-item-text">
+            <span>1438 Heritage Ridge Rd, Woodbine, MD 21797</span>
+            <span>9175 Guilford Rd. Suite 300 #1015, Columbia, MD 21046</span>
+          </div>
+        </div>
+      </div>
+
     </div>
-    <div style="border-top:1px solid rgba(255,255,255,0.08);margin-top:2rem;padding:1rem 1.5rem;display:flex;justify-content:center;align-items:center;">
-      <span style="font-size:12px;color:rgba(255,255,255,0.35);letter-spacing:0.03em;">© 2026 Ekan Solutions Inc. All rights reserved.</span>
+    <div class="footer-bottom-bar">
+      <span>© 2026 Ekan Solutions Inc. All rights reserved.</span>
     </div>
   </footer>
 
   <script src="nav.js"></script>
+
 </body>
 </html>

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ekan Solutions Inc. | Enterprise IT Services</title>
-  <meta name="description" content="Ekan Solutions Inc. delivers enterprise-grade IT services including Cybersecurity, Project Management, Full Stack Development, AWS Cloud Solutions, Java, QA/Testing, and AI &amp; Automation." />
+  <title>Ekan Solutions Inc. | Empowering Businesses Through Technology</title>
+  <meta name="description" content="Ekan Solutions Inc. delivers enterprise-grade Cybersecurity, Cloud, AI, and Full Stack solutions — built for performance, security, and scale." />
   <link rel="icon" href="favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,7 +19,7 @@
 <header class="site-header" id="site-header">
   <div class="container nav-inner">
     <a href="home.html" class="nav-logo">
-      <img src="assets/header-logo.png" alt="Ekan Solutions Logo" style="height:48px; width:auto; display:block;">
+      <img src="assets/header-logo.png" alt="Ekan Solutions" class="header-logo-img">
     </a>
 
     <nav class="nav-links" id="nav-links">
@@ -35,7 +35,7 @@
         <a href="tel:8322950408" class="nav-phone">(832) 295-0408</a>
         <a href="tel:4105968362" class="nav-phone">410-596-8362</a>
       </div>
-      <a href="contact.html" class="btn btn-accent">Get Consultation</a>
+      <a href="contact.html" class="btn btn-accent" data-ocid="nav.primary_button">Get Consultation</a>
     </div>
 
     <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
@@ -60,155 +60,714 @@
 </header>
 
 <!-- ============================================================
-     HERO
+     HERO CAROUSEL
      ============================================================ -->
-<section class="hero" id="hero">
-  <div class="hero-grid-pattern" aria-hidden="true"></div>
-  <div class="container hero-inner">
-    <!-- Left column -->
-    <div class="hero-content fade-in">
-      <span class="hero-badge">
-        <span class="hero-pulse" aria-hidden="true"></span>
-        Trusted IT Partner
-      </span>
-      <h1 class="hero-title">Enterprise IT Solutions for the <span>Modern Business</span></h1>
-      <p class="hero-subtitle">We deliver cutting-edge technology services that drive digital transformation, security, and growth for businesses across industries.</p>
-      <div class="hero-actions">
-        <a href="contact.html" class="btn btn-accent" data-ocid="hero-cta-get-started">Get Started</a>
-        <a href="services.html" class="btn btn-outline-white" data-ocid="hero-cta-services">Our Services</a>
+<section class="hero-carousel" id="hero" role="region" aria-label="Hero Carousel" data-ocid="hero.carousel">
+
+  <!-- ── TRACK ── -->
+  <div class="hc-track" id="hc-track">
+
+    <!-- SLIDE 1 — About Us -->
+    <div class="hc-slide hc-slide--active" data-slide="0" aria-hidden="false">
+      <div class="hc-slide-inner">
+        <div class="hc-slide-bg" style="background: linear-gradient(135deg, #0A3D62 0%, #0d4f80 60%, #1a5f9e 100%)"></div>
+        <div class="hc-slide-pattern" aria-hidden="true"></div>
+        <div class="hc-slide-glow" aria-hidden="true"></div>
+        <div class="container hc-slide-content">
+          <div class="hc-slide-left">
+            <span class="hc-badge">ABOUT US</span>
+            <h1 class="hc-title">Trusted IT Partner <span>Since Day One</span></h1>
+            <p class="hc-subtitle">Maryland-based technology firm delivering enterprise solutions across cloud, security, development, and AI.</p>
+            <div class="hc-actions">
+              <a href="about.html" class="btn btn-accent btn-lg" data-ocid="hero.slide.1.primary_button">Learn More About Us</a>
+              <a href="contact.html" class="btn btn-outline-white btn-lg" data-ocid="hero.slide.1.secondary_button">Get In Touch</a>
+            </div>
+          </div>
+          <div class="hc-slide-right">
+            <div class="hc-icon-wrap">
+              <svg width="220" height="220" viewBox="0 0 220 220" fill="none" aria-hidden="true">
+                <circle cx="110" cy="110" r="100" fill="rgba(255,255,255,0.04)" stroke="rgba(26,172,156,0.25)" stroke-width="1.5"/>
+                <circle cx="110" cy="110" r="70" fill="rgba(255,255,255,0.04)" stroke="rgba(26,172,156,0.15)" stroke-width="1"/>
+                <!-- Building -->
+                <rect x="65" y="80" width="90" height="85" rx="4" fill="none" stroke="rgba(26,172,156,0.7)" stroke-width="2.5"/>
+                <rect x="80" y="95" width="14" height="14" rx="2" fill="none" stroke="rgba(26,172,156,0.6)" stroke-width="2"/>
+                <rect x="103" y="95" width="14" height="14" rx="2" fill="none" stroke="rgba(26,172,156,0.6)" stroke-width="2"/>
+                <rect x="126" y="95" width="14" height="14" rx="2" fill="none" stroke="rgba(26,172,156,0.6)" stroke-width="2"/>
+                <rect x="80" y="118" width="14" height="14" rx="2" fill="none" stroke="rgba(26,172,156,0.6)" stroke-width="2"/>
+                <rect x="103" y="118" width="14" height="14" rx="2" fill="none" stroke="rgba(26,172,156,0.6)" stroke-width="2"/>
+                <rect x="126" y="118" width="14" height="14" rx="2" fill="none" stroke="rgba(26,172,156,0.6)" stroke-width="2"/>
+                <rect x="96" y="142" width="28" height="23" rx="2" fill="rgba(26,172,156,0.15)" stroke="rgba(26,172,156,0.6)" stroke-width="2"/>
+                <!-- Roof peak -->
+                <polyline points="60,80 110,50 160,80" fill="none" stroke="rgba(26,172,156,0.7)" stroke-width="2.5" stroke-linejoin="round"/>
+                <!-- Star/trust badge -->
+                <circle cx="155" cy="68" r="16" fill="rgba(26,172,156,0.15)" stroke="rgba(26,172,156,0.5)" stroke-width="1.5"/>
+                <path d="M155 58l2.5 5.5h5.5l-4.5 3.5 1.5 5.5-5-3.5-5 3.5 1.5-5.5-4.5-3.5h5.5z" fill="rgba(26,172,156,0.8)"/>
+              </svg>
+            </div>
+            <div class="hc-stat-card hc-stat-card--1">
+              <span class="hc-stat-num">50+</span>
+              <span class="hc-stat-label">Projects</span>
+            </div>
+            <div class="hc-stat-card hc-stat-card--2">
+              <span class="hc-stat-num">99%</span>
+              <span class="hc-stat-label">Satisfaction</span>
+            </div>
+            <div class="hc-stat-card hc-stat-card--3">
+              <span class="hc-stat-num">10+</span>
+              <span class="hc-stat-label">Years</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <!-- Right column: services panel -->
-    <div class="hero-panel fade-in" data-ocid="hero-services-panel">
-      <h3 class="hero-panel-title">Our Services</h3>
-      <ul class="hero-service-list">
-        <li><span class="check-icon" aria-hidden="true">✓</span> Cybersecurity</li>
-        <li><span class="check-icon" aria-hidden="true">✓</span> Project Management</li>
-        <li><span class="check-icon" aria-hidden="true">✓</span> Full Stack Development</li>
-        <li><span class="check-icon" aria-hidden="true">✓</span> AWS Cloud Solutions</li>
-        <li><span class="check-icon" aria-hidden="true">✓</span> Java Development</li>
-        <li><span class="check-icon" aria-hidden="true">✓</span> Quality Assurance &amp; Testing</li>
-        <li><span class="check-icon" aria-hidden="true">✓</span> AI &amp; Automation Services</li>
-      </ul>
+
+    <!-- SLIDE 2 — Cybersecurity -->
+    <div class="hc-slide" data-slide="1" aria-hidden="true">
+      <div class="hc-slide-inner">
+        <div class="hc-slide-bg" style="background: linear-gradient(135deg, #0A3D62 0%, #1a2a4a 60%, #0d3b5e 100%)"></div>
+        <div class="hc-slide-pattern" aria-hidden="true"></div>
+        <div class="hc-slide-glow" aria-hidden="true"></div>
+        <div class="container hc-slide-content">
+          <div class="hc-slide-left">
+            <span class="hc-badge">SERVICE</span>
+            <h1 class="hc-title">Advanced <span>Cybersecurity</span> Solutions</h1>
+            <p class="hc-subtitle">Protect your business with threat detection, zero-trust architecture, and compliance frameworks.</p>
+            <div class="hc-actions">
+              <a href="cybersecurity.html" class="btn btn-accent btn-lg" data-ocid="hero.slide.2.primary_button">Explore Cybersecurity</a>
+              <a href="contact.html" class="btn btn-outline-white btn-lg" data-ocid="hero.slide.2.secondary_button">Get In Touch</a>
+            </div>
+          </div>
+          <div class="hc-slide-right">
+            <div class="hc-icon-wrap">
+              <svg width="220" height="220" viewBox="0 0 220 220" fill="none" aria-hidden="true">
+                <circle cx="110" cy="110" r="100" fill="rgba(255,255,255,0.04)" stroke="rgba(26,172,156,0.25)" stroke-width="1.5"/>
+                <circle cx="110" cy="110" r="70" fill="rgba(255,255,255,0.04)" stroke="rgba(26,172,156,0.15)" stroke-width="1"/>
+                <!-- Shield -->
+                <path d="M110 52l46 18v32c0 26-20 48-46 56-26-8-46-30-46-56V70z" fill="rgba(26,172,156,0.12)" stroke="rgba(26,172,156,0.8)" stroke-width="3" stroke-linejoin="round"/>
+                <!-- Lock -->
+                <rect x="98" y="100" width="24" height="20" rx="3" fill="rgba(26,172,156,0.25)" stroke="rgba(26,172,156,0.8)" stroke-width="2"/>
+                <path d="M104 100v-8a6 6 0 0112 0v8" fill="none" stroke="rgba(26,172,156,0.8)" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="110" cy="111" r="3" fill="rgba(26,172,156,0.9)"/>
+                <!-- Scan lines -->
+                <line x1="75" y1="88" x2="85" y2="88" stroke="rgba(26,172,156,0.4)" stroke-width="1.5" stroke-dasharray="3 2"/>
+                <line x1="135" y1="88" x2="145" y2="88" stroke="rgba(26,172,156,0.4)" stroke-width="1.5" stroke-dasharray="3 2"/>
+                <line x1="70" y1="110" x2="80" y2="110" stroke="rgba(26,172,156,0.3)" stroke-width="1.5" stroke-dasharray="3 2"/>
+                <line x1="140" y1="110" x2="150" y2="110" stroke="rgba(26,172,156,0.3)" stroke-width="1.5" stroke-dasharray="3 2"/>
+              </svg>
+            </div>
+            <div class="hc-stat-card hc-stat-card--1">
+              <span class="hc-stat-num">Zero</span>
+              <span class="hc-stat-label">Trust Arch.</span>
+            </div>
+            <div class="hc-stat-card hc-stat-card--2">
+              <span class="hc-stat-num">24/7</span>
+              <span class="hc-stat-label">Monitoring</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3 — Project Management -->
+    <div class="hc-slide" data-slide="2" aria-hidden="true">
+      <div class="hc-slide-inner">
+        <div class="hc-slide-bg" style="background: linear-gradient(135deg, #0A3D62 0%, #103a5e 60%, #0f5278 100%)"></div>
+        <div class="hc-slide-pattern" aria-hidden="true"></div>
+        <div class="hc-slide-glow" aria-hidden="true"></div>
+        <div class="container hc-slide-content">
+          <div class="hc-slide-left">
+            <span class="hc-badge">SERVICE</span>
+            <h1 class="hc-title">Expert <span>Project Management</span></h1>
+            <p class="hc-subtitle">On-time, on-budget delivery with certified PMs and agile methodology.</p>
+            <div class="hc-actions">
+              <a href="projectmanagement.html" class="btn btn-accent btn-lg" data-ocid="hero.slide.3.primary_button">Explore Project Management</a>
+              <a href="contact.html" class="btn btn-outline-white btn-lg" data-ocid="hero.slide.3.secondary_button">Get In Touch</a>
+            </div>
+          </div>
+          <div class="hc-slide-right">
+            <div class="hc-icon-wrap">
+              <svg width="220" height="220" viewBox="0 0 220 220" fill="none" aria-hidden="true">
+                <circle cx="110" cy="110" r="100" fill="rgba(255,255,255,0.04)" stroke="rgba(26,172,156,0.25)" stroke-width="1.5"/>
+                <circle cx="110" cy="110" r="70" fill="rgba(255,255,255,0.04)" stroke="rgba(26,172,156,0.15)" stroke-width="1"/>
+                <!-- Clipboard -->
+                <rect x="75" y="65" width="70" height="88" rx="6" fill="rgba(26,172,156,0.1)" stroke="rgba(26,172,156,0.7)" stroke-width="2.5"/>
+                <rect x="94" y="58" width="32" height="16" rx="8" fill="rgba(26,172,156,0.2)" stroke="rgba(26,172,156,0.7)" stroke-width="2"/>
+                <!-- Checklist lines -->
+                <line x1="88" y1="92" x2="132" y2="92" stroke="rgba(26,172,156,0.5)" stroke-width="2" stroke-linecap="round"/>
+                <line x1="88" y1="106" x2="125" y2="106" stroke="rgba(26,172,156,0.4)" stroke-width="2" stroke-linecap="round"/>
+                <line x1="88" y1="120" x2="118" y2="120" stroke="rgba(26,172,156,0.4)" stroke-width="2" stroke-linecap="round"/>
+                <!-- Check marks -->
+                <polyline points="83,92 86,95 90,89" fill="none" stroke="rgba(26,172,156,0.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <polyline points="83,106 86,109 90,103" fill="none" stroke="rgba(26,172,156,0.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <!-- Progress bar -->
+                <rect x="88" y="133" width="44" height="8" rx="4" fill="rgba(26,172,156,0.15)" stroke="rgba(26,172,156,0.3)" stroke-width="1"/>
+                <rect x="88" y="133" width="32" height="8" rx="4" fill="rgba(26,172,156,0.6)"/>
+              </svg>
+            </div>
+            <div class="hc-stat-card hc-stat-card--1">
+              <span class="hc-stat-num">Agile</span>
+              <span class="hc-stat-label">Delivery</span>
+            </div>
+            <div class="hc-stat-card hc-stat-card--2">
+              <span class="hc-stat-num">100%</span>
+              <span class="hc-stat-label">On Budget</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 4 — Full Stack Development -->
+    <div class="hc-slide" data-slide="3" aria-hidden="true">
+      <div class="hc-slide-inner">
+        <div class="hc-slide-bg" style="background: linear-gradient(135deg, #0d3b5e 0%, #0A3D62 50%, #114a7a 100%)"></div>
+        <div class="hc-slide-pattern" aria-hidden="true"></div>
+        <div class="hc-slide-glow" aria-hidden="true"></div>
+        <div class="container hc-slide-content">
+          <div class="hc-slide-left">
+            <span class="hc-badge">SERVICE</span>
+            <h1 class="hc-title">Full Stack <span>Development</span></h1>
+            <p class="hc-subtitle">Scalable web and mobile applications — from pixel-perfect frontend to robust backend.</p>
+            <div class="hc-actions">
+              <a href="fullstack.html" class="btn btn-accent btn-lg" data-ocid="hero.slide.4.primary_button">Explore Full Stack Dev</a>
+              <a href="contact.html" class="btn btn-outline-white btn-lg" data-ocid="hero.slide.4.secondary_button">Get In Touch</a>
+            </div>
+          </div>
+          <div class="hc-slide-right">
+            <div class="hc-icon-wrap">
+              <svg width="220" height="220" viewBox="0 0 220 220" fill="none" aria-hidden="true">
+                <circle cx="110" cy="110" r="100" fill="rgba(255,255,255,0.04)" stroke="rgba(26,172,156,0.25)" stroke-width="1.5"/>
+                <circle cx="110" cy="110" r="70" fill="rgba(255,255,255,0.04)" stroke="rgba(26,172,156,0.15)" stroke-width="1"/>
+                <!-- Browser frame -->
+                <rect x="60" y="70" width="100" height="75" rx="6" fill="rgba(26,172,156,0.08)" stroke="rgba(26,172,156,0.7)" stroke-width="2.5"/>
+                <line x1="60" y1="84" x2="160" y2="84" stroke="rgba(26,172,156,0.5)" stroke-width="1.5"/>
+                <circle cx="72" cy="77" r="3" fill="rgba(255,255,255,0.2)"/>
+                <circle cx="84" cy="77" r="3" fill="rgba(255,255,255,0.2)"/>
+                <circle cx="96" cy="77" r="3" fill="rgba(255,255,255,0.2)"/>
+                <!-- Code brackets -->
+                <text x="74" y="115" fill="rgba(26,172,156,0.9)" font-size="22" font-family="monospace" font-weight="700">&lt;/&gt;</text>
+                <!-- Lines of code -->
+                <line x1="73" y1="124" x2="105" y2="124" stroke="rgba(26,172,156,0.4)" stroke-width="2" stroke-linecap="round"/>
+                <line x1="73" y1="132" x2="120" y2="132" stroke="rgba(26,172,156,0.3)" stroke-width="2" stroke-linecap="round"/>
+                <!-- Mobile device -->
+                <rect x="130" y="90" width="22" height="38" rx="4" fill="rgba(26,172,156,0.1)" stroke="rgba(26,172,156,0.6)" stroke-width="1.5"/>
+                <line x1="136" y1="122" x2="146" y2="122" stroke="rgba(26,172,156,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="hc-stat-card hc-stat-card--1">
+              <span class="hc-stat-num">React</span>
+              <span class="hc-stat-label">& Node.js</span>
+            </div>
+            <div class="hc-stat-card hc-stat-card--2">
+              <span class="hc-stat-num">50+</span>
+              <span class="hc-stat-label">Apps Built</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 5 — AWS Cloud Solutions -->
+    <div class="hc-slide" data-slide="4" aria-hidden="true">
+      <div class="hc-slide-inner">
+        <div class="hc-slide-bg" style="background: linear-gradient(135deg, #0A3D62 0%, #0a3050 60%, #1b4f72 100%)"></div>
+        <div class="hc-slide-pattern" aria-hidden="true"></div>
+        <div class="hc-slide-glow" aria-hidden="true"></div>
+        <div class="container hc-slide-content">
+          <div class="hc-slide-left">
+            <span class="hc-badge">SERVICE</span>
+            <h1 class="hc-title">AWS Cloud <span>Solutions</span></h1>
+            <p class="hc-subtitle">Cloud migration, architecture, and managed services on Amazon Web Services.</p>
+            <div class="hc-actions">
+              <a href="awscloud.html" class="btn btn-accent btn-lg" data-ocid="hero.slide.5.primary_button">Explore AWS Cloud</a>
+              <a href="contact.html" class="btn btn-outline-white btn-lg" data-ocid="hero.slide.5.secondary_button">Get In Touch</a>
+            </div>
+          </div>
+          <div class="hc-slide-right">
+            <div class="hc-icon-wrap">
+              <svg width="220" height="220" viewBox="0 0 220 220" fill="none" aria-hidden="true">
+                <circle cx="110" cy="110" r="100" fill="rgba(255,255,255,0.04)" stroke="rgba(26,172,156,0.25)" stroke-width="1.5"/>
+                <circle cx="110" cy="110" r="70" fill="rgba(255,255,255,0.04)" stroke="rgba(26,172,156,0.15)" stroke-width="1"/>
+                <!-- Cloud shape -->
+                <path d="M78 120 Q68 120 68 108 Q68 96 80 96 Q82 84 94 82 Q106 80 114 90 Q120 84 130 86 Q144 88 144 102 Q152 104 152 114 Q152 124 140 124 L78 120z" fill="rgba(26,172,156,0.15)" stroke="rgba(26,172,156,0.75)" stroke-width="2.5"/>
+                <!-- Upload arrow -->
+                <line x1="110" y1="136" x2="110" y2="108" stroke="rgba(26,172,156,0.7)" stroke-width="2.5" stroke-linecap="round"/>
+                <polyline points="100,116 110,106 120,116" fill="none" stroke="rgba(26,172,156,0.7)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <!-- Data nodes -->
+                <circle cx="84" cy="144" r="8" fill="rgba(26,172,156,0.15)" stroke="rgba(26,172,156,0.5)" stroke-width="1.5"/>
+                <circle cx="110" cy="148" r="8" fill="rgba(26,172,156,0.15)" stroke="rgba(26,172,156,0.5)" stroke-width="1.5"/>
+                <circle cx="136" cy="144" r="8" fill="rgba(26,172,156,0.15)" stroke="rgba(26,172,156,0.5)" stroke-width="1.5"/>
+                <line x1="92" y1="144" x2="102" y2="148" stroke="rgba(26,172,156,0.4)" stroke-width="1.5"/>
+                <line x1="118" y1="148" x2="128" y2="144" stroke="rgba(26,172,156,0.4)" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <div class="hc-stat-card hc-stat-card--1">
+              <span class="hc-stat-num">AWS</span>
+              <span class="hc-stat-label">Certified</span>
+            </div>
+            <div class="hc-stat-card hc-stat-card--2">
+              <span class="hc-stat-num">99.9%</span>
+              <span class="hc-stat-label">Uptime SLA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 6 — Java Development -->
+    <div class="hc-slide" data-slide="5" aria-hidden="true">
+      <div class="hc-slide-inner">
+        <div class="hc-slide-bg" style="background: linear-gradient(135deg, #0A3D62 0%, #0d3352 60%, #133a5e 100%)"></div>
+        <div class="hc-slide-pattern" aria-hidden="true"></div>
+        <div class="hc-slide-glow" aria-hidden="true"></div>
+        <div class="container hc-slide-content">
+          <div class="hc-slide-left">
+            <span class="hc-badge">SERVICE</span>
+            <h1 class="hc-title">Enterprise <span>Java Development</span></h1>
+            <p class="hc-subtitle">High-performance enterprise applications built with Java and Spring Boot.</p>
+            <div class="hc-actions">
+              <a href="javadevelopment.html" class="btn btn-accent btn-lg" data-ocid="hero.slide.6.primary_button">Explore Java Dev</a>
+              <a href="contact.html" class="btn btn-outline-white btn-lg" data-ocid="hero.slide.6.secondary_button">Get In Touch</a>
+            </div>
+          </div>
+          <div class="hc-slide-right">
+            <div class="hc-icon-wrap">
+              <svg width="220" height="220" viewBox="0 0 220 220" fill="none" aria-hidden="true">
+                <circle cx="110" cy="110" r="100" fill="rgba(255,255,255,0.04)" stroke="rgba(26,172,156,0.25)" stroke-width="1.5"/>
+                <circle cx="110" cy="110" r="70" fill="rgba(255,255,255,0.04)" stroke="rgba(26,172,156,0.15)" stroke-width="1"/>
+                <!-- Coffee cup -->
+                <path d="M85 80 Q88 72 110 72 Q132 72 135 80 L130 140 Q128 148 110 148 Q92 148 90 140z" fill="rgba(26,172,156,0.12)" stroke="rgba(26,172,156,0.7)" stroke-width="2.5"/>
+                <path d="M135 90 Q148 90 148 102 Q148 114 135 114" fill="none" stroke="rgba(26,172,156,0.6)" stroke-width="2.5" stroke-linecap="round"/>
+                <!-- Steam lines -->
+                <path d="M100 66 Q103 60 100 54" fill="none" stroke="rgba(26,172,156,0.4)" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M110 64 Q113 58 110 52" fill="none" stroke="rgba(26,172,156,0.4)" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M120 66 Q123 60 120 54" fill="none" stroke="rgba(26,172,156,0.4)" stroke-width="1.5" stroke-linecap="round"/>
+                <!-- Java text hint -->
+                <text x="100" y="115" fill="rgba(26,172,156,0.75)" font-size="13" font-family="monospace" font-weight="700">Java</text>
+              </svg>
+            </div>
+            <div class="hc-stat-card hc-stat-card--1">
+              <span class="hc-stat-num">Spring</span>
+              <span class="hc-stat-label">Boot Expert</span>
+            </div>
+            <div class="hc-stat-card hc-stat-card--2">
+              <span class="hc-stat-num">High</span>
+              <span class="hc-stat-label">Performance</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 7 — Quality Assurance -->
+    <div class="hc-slide" data-slide="6" aria-hidden="true">
+      <div class="hc-slide-inner">
+        <div class="hc-slide-bg" style="background: linear-gradient(135deg, #0A3D62 0%, #0e4268 60%, #155e8a 100%)"></div>
+        <div class="hc-slide-pattern" aria-hidden="true"></div>
+        <div class="hc-slide-glow" aria-hidden="true"></div>
+        <div class="container hc-slide-content">
+          <div class="hc-slide-left">
+            <span class="hc-badge">SERVICE</span>
+            <h1 class="hc-title">Quality Assurance <span>&amp; Testing</span></h1>
+            <p class="hc-subtitle">Comprehensive manual and automated testing to ensure flawless software releases.</p>
+            <div class="hc-actions">
+              <a href="qatesting.html" class="btn btn-accent btn-lg" data-ocid="hero.slide.7.primary_button">Explore QA Testing</a>
+              <a href="contact.html" class="btn btn-outline-white btn-lg" data-ocid="hero.slide.7.secondary_button">Get In Touch</a>
+            </div>
+          </div>
+          <div class="hc-slide-right">
+            <div class="hc-icon-wrap">
+              <svg width="220" height="220" viewBox="0 0 220 220" fill="none" aria-hidden="true">
+                <circle cx="110" cy="110" r="100" fill="rgba(255,255,255,0.04)" stroke="rgba(26,172,156,0.25)" stroke-width="1.5"/>
+                <circle cx="110" cy="110" r="70" fill="rgba(255,255,255,0.04)" stroke="rgba(26,172,156,0.15)" stroke-width="1"/>
+                <!-- Magnifying glass -->
+                <circle cx="104" cy="104" r="30" fill="rgba(26,172,156,0.1)" stroke="rgba(26,172,156,0.7)" stroke-width="3"/>
+                <line x1="126" y1="126" x2="148" y2="148" stroke="rgba(26,172,156,0.7)" stroke-width="4" stroke-linecap="round"/>
+                <!-- Bug inside -->
+                <circle cx="104" cy="100" r="8" fill="rgba(26,172,156,0.2)" stroke="rgba(26,172,156,0.6)" stroke-width="1.5"/>
+                <line x1="96" y1="96" x2="90" y2="90" stroke="rgba(26,172,156,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="112" y1="96" x2="118" y2="90" stroke="rgba(26,172,156,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="96" y1="108" x2="90" y2="114" stroke="rgba(26,172,156,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="112" y1="108" x2="118" y2="114" stroke="rgba(26,172,156,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+                <!-- Check overlay -->
+                <polyline points="95,111 102,118 115,103" fill="none" stroke="rgba(26,172,156,0.9)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="hc-stat-card hc-stat-card--1">
+              <span class="hc-stat-num">Auto</span>
+              <span class="hc-stat-label">Testing</span>
+            </div>
+            <div class="hc-stat-card hc-stat-card--2">
+              <span class="hc-stat-num">Zero</span>
+              <span class="hc-stat-label">Defect Goal</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 8 — AI & Automation -->
+    <div class="hc-slide" data-slide="7" aria-hidden="true">
+      <div class="hc-slide-inner">
+        <div class="hc-slide-bg" style="background: linear-gradient(135deg, #0A3D62 0%, #0b2d4a 60%, #1a3f5e 100%)"></div>
+        <div class="hc-slide-pattern" aria-hidden="true"></div>
+        <div class="hc-slide-glow" aria-hidden="true"></div>
+        <div class="container hc-slide-content">
+          <div class="hc-slide-left">
+            <span class="hc-badge">SERVICE</span>
+            <h1 class="hc-title">AI &amp; Intelligent <span>Automation</span></h1>
+            <p class="hc-subtitle">ML pipelines, intelligent automation, and AI-powered business solutions.</p>
+            <div class="hc-actions">
+              <a href="aiservices.html" class="btn btn-accent btn-lg" data-ocid="hero.slide.8.primary_button">Explore AI &amp; Automation</a>
+              <a href="contact.html" class="btn btn-outline-white btn-lg" data-ocid="hero.slide.8.secondary_button">Get In Touch</a>
+            </div>
+          </div>
+          <div class="hc-slide-right">
+            <div class="hc-icon-wrap">
+              <svg width="220" height="220" viewBox="0 0 220 220" fill="none" aria-hidden="true">
+                <circle cx="110" cy="110" r="100" fill="rgba(255,255,255,0.04)" stroke="rgba(26,172,156,0.25)" stroke-width="1.5"/>
+                <circle cx="110" cy="110" r="70" fill="rgba(255,255,255,0.04)" stroke="rgba(26,172,156,0.15)" stroke-width="1"/>
+                <!-- Brain outline -->
+                <path d="M110 68 Q124 64 132 76 Q142 74 146 86 Q154 90 152 102 Q158 110 152 120 Q152 132 140 136 Q134 148 122 146 Q116 154 110 152 Q104 154 98 146 Q86 148 80 136 Q68 132 68 120 Q62 110 68 102 Q66 90 74 86 Q78 74 88 76 Q96 64 110 68z" fill="rgba(26,172,156,0.1)" stroke="rgba(26,172,156,0.7)" stroke-width="2.5"/>
+                <!-- Neural connections -->
+                <circle cx="110" cy="100" r="5" fill="rgba(26,172,156,0.6)"/>
+                <circle cx="92" cy="112" r="4" fill="rgba(26,172,156,0.5)"/>
+                <circle cx="128" cy="112" r="4" fill="rgba(26,172,156,0.5)"/>
+                <circle cx="100" cy="126" r="4" fill="rgba(26,172,156,0.5)"/>
+                <circle cx="120" cy="126" r="4" fill="rgba(26,172,156,0.5)"/>
+                <line x1="110" y1="105" x2="92" y2="112" stroke="rgba(26,172,156,0.4)" stroke-width="1.5"/>
+                <line x1="110" y1="105" x2="128" y2="112" stroke="rgba(26,172,156,0.4)" stroke-width="1.5"/>
+                <line x1="92" y1="116" x2="100" y2="126" stroke="rgba(26,172,156,0.4)" stroke-width="1.5"/>
+                <line x1="128" y1="116" x2="120" y2="126" stroke="rgba(26,172,156,0.4)" stroke-width="1.5"/>
+                <line x1="100" y1="126" x2="120" y2="126" stroke="rgba(26,172,156,0.3)" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <div class="hc-stat-card hc-stat-card--1">
+              <span class="hc-stat-num">ML</span>
+              <span class="hc-stat-label">Pipelines</span>
+            </div>
+            <div class="hc-stat-card hc-stat-card--2">
+              <span class="hc-stat-num">AI</span>
+              <span class="hc-stat-label">Powered</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /.hc-track -->
+
+  <!-- ── PREV / NEXT BUTTONS ── -->
+  <button class="hc-btn hc-btn--prev" id="hc-prev" aria-label="Previous slide" data-ocid="hero.carousel.prev_button">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+  </button>
+  <button class="hc-btn hc-btn--next" id="hc-next" aria-label="Next slide" data-ocid="hero.carousel.next_button">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+  </button>
+
+  <!-- ── DOT INDICATORS ── -->
+  <div class="hc-dots" role="tablist" aria-label="Carousel slides" data-ocid="hero.carousel.dots">
+    <button class="hc-dot hc-dot--active" role="tab" aria-label="Slide 1: About Us" aria-selected="true" data-ocid="hero.carousel.dot.1"></button>
+    <button class="hc-dot" role="tab" aria-label="Slide 2: Cybersecurity" aria-selected="false" data-ocid="hero.carousel.dot.2"></button>
+    <button class="hc-dot" role="tab" aria-label="Slide 3: Project Management" aria-selected="false" data-ocid="hero.carousel.dot.3"></button>
+    <button class="hc-dot" role="tab" aria-label="Slide 4: Full Stack Development" aria-selected="false" data-ocid="hero.carousel.dot.4"></button>
+    <button class="hc-dot" role="tab" aria-label="Slide 5: AWS Cloud Solutions" aria-selected="false" data-ocid="hero.carousel.dot.5"></button>
+    <button class="hc-dot" role="tab" aria-label="Slide 6: Java Development" aria-selected="false" data-ocid="hero.carousel.dot.6"></button>
+    <button class="hc-dot" role="tab" aria-label="Slide 7: Quality Assurance" aria-selected="false" data-ocid="hero.carousel.dot.7"></button>
+    <button class="hc-dot" role="tab" aria-label="Slide 8: AI & Automation" aria-selected="false" data-ocid="hero.carousel.dot.8"></button>
+  </div>
+
+  <!-- ── COUNTER + PAUSE ── -->
+  <div class="hc-controls-top">
+    <button class="hc-pause-btn" id="hc-pause" aria-label="Pause carousel" data-ocid="hero.carousel.toggle">
+      <svg class="hc-pause-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+      <svg class="hc-play-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:none"><polygon points="5 3 19 12 5 21"/></svg>
+    </button>
+    <div class="hc-counter" aria-live="polite" aria-atomic="true">
+      <span class="hc-counter-current">01</span>
+      <span class="hc-counter-sep"> / </span>
+      <span class="hc-counter-total">08</span>
     </div>
   </div>
+
 </section>
 
-<!-- ============================================================
-     INTRO CARDS
-     ============================================================ -->
-<section class="section">
-  <div class="container">
-    <div class="grid-3 fade-in">
-      <div class="card intro-card">
-        <div class="icon-circle">
-          <svg width="24" height="24" fill="none" stroke="#1ABC9C" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 12l2 2 4-4M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/></svg>
-        </div>
-        <h3>Proven Expertise</h3>
-        <p>15+ years delivering enterprise IT solutions across industries, with a track record of successful digital transformations.</p>
-      </div>
-      <div class="card intro-card">
-        <div class="icon-circle">
-          <svg width="24" height="24" fill="none" stroke="#1ABC9C" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-        </div>
-        <h3>End-to-End Service</h3>
-        <p>From strategy and architecture to deployment and ongoing support — we cover the full technology lifecycle.</p>
-      </div>
-      <div class="card intro-card">
-        <div class="icon-circle">
-          <svg width="24" height="24" fill="none" stroke="#1ABC9C" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
-        </div>
-        <h3>Results Driven</h3>
-        <p>Measurable outcomes and ROI for every engagement — we align our success metrics directly with your business objectives.</p>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- ── CAROUSEL JAVASCRIPT ── -->
+<script>
+(function() {
+  'use strict';
+
+  var carousel   = document.getElementById('hero');
+  var track      = document.getElementById('hc-track');
+  var slides     = Array.from(track.querySelectorAll('.hc-slide'));
+  var dots       = Array.from(document.querySelectorAll('.hc-dot'));
+  var prevBtn    = document.getElementById('hc-prev');
+  var nextBtn    = document.getElementById('hc-next');
+  var pauseBtn   = document.getElementById('hc-pause');
+  var counterCur = document.querySelector('.hc-counter-current');
+  var pauseIcon  = pauseBtn.querySelector('.hc-pause-icon');
+  var playIcon   = pauseBtn.querySelector('.hc-play-icon');
+
+  var total      = slides.length;
+  var current    = 0;
+  var isPlaying  = true;
+  var interval   = null;
+  var DELAY      = 5000;
+
+  function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+  function goTo(index) {
+    // Remove active from current
+    slides[current].classList.remove('hc-slide--active', 'hc-slide--enter');
+    slides[current].setAttribute('aria-hidden', 'true');
+    dots[current].classList.remove('hc-dot--active');
+    dots[current].setAttribute('aria-selected', 'false');
+
+    current = (index + total) % total;
+
+    // Activate new slide
+    slides[current].classList.add('hc-slide--active');
+    slides[current].setAttribute('aria-hidden', 'false');
+    dots[current].classList.add('hc-dot--active');
+    dots[current].setAttribute('aria-selected', 'true');
+
+    // Trigger enter animation (small tick to allow reflow)
+    requestAnimationFrame(function() {
+      requestAnimationFrame(function() {
+        slides[current].classList.add('hc-slide--enter');
+      });
+    });
+
+    // Update counter
+    counterCur.textContent = pad(current + 1);
+
+    // Update track position
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+  }
+
+  function startAutoPlay() {
+    stopAutoPlay();
+    interval = setInterval(function() { goTo(current + 1); }, DELAY);
+  }
+
+  function stopAutoPlay() {
+    if (interval) { clearInterval(interval); interval = null; }
+  }
+
+  // Init first slide enter animation
+  goTo(0);
+
+  // Start autoplay
+  startAutoPlay();
+
+  // Prev / Next
+  prevBtn.addEventListener('click', function() { goTo(current - 1); if (isPlaying) startAutoPlay(); });
+  nextBtn.addEventListener('click', function() { goTo(current + 1); if (isPlaying) startAutoPlay(); });
+
+  // Dots
+  dots.forEach(function(dot, i) {
+    dot.addEventListener('click', function() { goTo(i); if (isPlaying) startAutoPlay(); });
+  });
+
+  // Pause / Play toggle
+  pauseBtn.addEventListener('click', function() {
+    isPlaying = !isPlaying;
+    if (isPlaying) {
+      startAutoPlay();
+      pauseIcon.style.display = '';
+      playIcon.style.display  = 'none';
+      pauseBtn.setAttribute('aria-label', 'Pause carousel');
+    } else {
+      stopAutoPlay();
+      pauseIcon.style.display = 'none';
+      playIcon.style.display  = '';
+      pauseBtn.setAttribute('aria-label', 'Play carousel');
+    }
+  });
+
+  // Pause on hover
+  carousel.addEventListener('mouseenter', function() { stopAutoPlay(); });
+  carousel.addEventListener('mouseleave', function() { if (isPlaying) startAutoPlay(); });
+
+  // Keyboard navigation
+  carousel.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft')  { goTo(current - 1); if (isPlaying) startAutoPlay(); }
+    if (e.key === 'ArrowRight') { goTo(current + 1); if (isPlaying) startAutoPlay(); }
+  });
+
+  // Touch / swipe support
+  var touchStartX = 0;
+  carousel.addEventListener('touchstart', function(e) { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+  carousel.addEventListener('touchend', function(e) {
+    var diff = touchStartX - e.changedTouches[0].screenX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) { goTo(current + 1); } else { goTo(current - 1); }
+      if (isPlaying) startAutoPlay();
+    }
+  }, { passive: true });
+
+})();
+</script>
 
 <!-- ============================================================
-     SERVICES GRID
+     SERVICES OVERVIEW
      ============================================================ -->
 <section class="section section-alt" id="services">
   <div class="container">
     <div class="section-header fade-in">
       <span class="section-label">WHAT WE DO</span>
       <h2 class="section-title">Seven Specialized IT Services</h2>
-      <p class="section-desc">From infrastructure security to intelligent automation — our seven core practice areas cover every dimension of enterprise technology.</p>
+      <p class="section-desc">End-to-end IT services tailored to your business needs — from infrastructure security to intelligent automation.</p>
     </div>
-    <div class="grid-4 fade-in" style="margin-top:2.5rem;">
+    <div class="grid-4 fade-in grid-mt" data-ocid="services.list">
 
-      <div class="card service-card" data-ocid="service-card-cybersecurity">
+      <div class="card service-card" data-ocid="services.item.1">
         <div class="icon-circle">
           <svg width="24" height="24" fill="none" stroke="#1ABC9C" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
         <h4>Cybersecurity</h4>
-        <p>Protect your business with enterprise-grade security</p>
-        <a href="cybersecurity.html" class="card-link" data-ocid="service-link-cybersecurity">Learn More →</a>
+        <p>Protect your business with threat detection, compliance, and zero-trust architecture.</p>
+        <a href="cybersecurity.html" class="card-link" data-ocid="services.link.1">Learn More →</a>
       </div>
 
-      <div class="card service-card" data-ocid="service-card-pm">
+      <div class="card service-card" data-ocid="services.item.2">
         <div class="icon-circle">
           <svg width="24" height="24" fill="none" stroke="#1ABC9C" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="2" width="6" height="4" rx="1"/><path d="M9 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V4a2 2 0 00-2-2h-3"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg>
         </div>
         <h4>Project Management</h4>
-        <p>Deliver projects on time and within budget</p>
-        <a href="projectmanagement.html" class="card-link" data-ocid="service-link-pm">Learn More →</a>
+        <p>On-time, on-budget delivery with certified PMs and agile methodology.</p>
+        <a href="projectmanagement.html" class="card-link" data-ocid="services.link.2">Learn More →</a>
       </div>
 
-      <div class="card service-card" data-ocid="service-card-fullstack">
+      <div class="card service-card" data-ocid="services.item.3">
         <div class="icon-circle">
           <svg width="24" height="24" fill="none" stroke="#1ABC9C" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
         </div>
         <h4>Full Stack Development</h4>
-        <p>Modern web and application development</p>
-        <a href="fullstack.html" class="card-link" data-ocid="service-link-fullstack">Learn More →</a>
+        <p>Scalable web and mobile applications from frontend to backend.</p>
+        <a href="fullstack.html" class="card-link" data-ocid="services.link.3">Learn More →</a>
       </div>
 
-      <div class="card service-card" data-ocid="service-card-aws">
+      <div class="card service-card" data-ocid="services.item.4">
         <div class="icon-circle">
           <svg width="24" height="24" fill="none" stroke="#1ABC9C" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/></svg>
         </div>
         <h4>AWS Cloud Solutions</h4>
-        <p>Scalable cloud infrastructure and migration</p>
-        <a href="awscloud.html" class="card-link" data-ocid="service-link-aws">Learn More →</a>
+        <p>Cloud migration, architecture, and managed services on AWS.</p>
+        <a href="awscloud.html" class="card-link" data-ocid="services.link.4">Learn More →</a>
       </div>
 
-      <div class="card service-card" data-ocid="service-card-java">
+      <div class="card service-card" data-ocid="services.item.5">
         <div class="icon-circle">
-          <svg width="24" height="24" fill="none" stroke="#1ABC9C" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+          <svg width="24" height="24" fill="none" stroke="#1ABC9C" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="8" y1="9" x2="16" y2="9"/><line x1="8" y1="13" x2="14" y2="13"/><line x1="8" y1="17" x2="12" y2="17"/></svg>
         </div>
         <h4>Java Development</h4>
-        <p>Robust enterprise Java applications</p>
-        <a href="javadevelopment.html" class="card-link" data-ocid="service-link-java">Learn More →</a>
+        <p>High-performance enterprise applications built with Java and Spring Boot.</p>
+        <a href="javadevelopment.html" class="card-link" data-ocid="services.link.5">Learn More →</a>
       </div>
 
-      <div class="card service-card" data-ocid="service-card-qa">
+      <div class="card service-card" data-ocid="services.item.6">
         <div class="icon-circle">
           <svg width="24" height="24" fill="none" stroke="#1ABC9C" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
         </div>
-        <h4>QA &amp; Testing</h4>
-        <p>Comprehensive quality assurance and testing</p>
-        <a href="qatesting.html" class="card-link" data-ocid="service-link-qa">Learn More →</a>
+        <h4>Quality Assurance</h4>
+        <p>Comprehensive manual and automated testing to ensure flawless releases.</p>
+        <a href="qatesting.html" class="card-link" data-ocid="services.link.6">Learn More →</a>
       </div>
 
-      <div class="card service-card" data-ocid="service-card-ai">
+      <div class="card service-card" data-ocid="services.item.7">
         <div class="icon-circle">
           <svg width="24" height="24" fill="none" stroke="#1ABC9C" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 017 7c0 3.5-2.5 6.5-6 7.5V18h-2v-1.5C7.5 15.5 5 12.5 5 9a7 7 0 017-7z"/><line x1="12" y1="22" x2="12" y2="18"/><line x1="9" y1="21" x2="15" y2="21"/></svg>
         </div>
         <h4>AI &amp; Automation</h4>
-        <p>Intelligent automation and AI solutions</p>
-        <a href="aiservices.html" class="card-link" data-ocid="service-link-ai">Learn More →</a>
+        <p>Intelligent automation, ML pipelines, and AI-powered business solutions.</p>
+        <a href="aiservices.html" class="card-link" data-ocid="services.link.7">Learn More →</a>
       </div>
 
-      <div class="card service-card service-card-cta" data-ocid="service-card-all">
+      <div class="card service-card service-card-cta" data-ocid="services.item.8">
         <div class="icon-circle">
           <svg width="24" height="24" fill="none" stroke="#1ABC9C" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
         </div>
         <h4>Explore All Services</h4>
         <p>See our full capabilities and how we can partner with you</p>
-        <a href="services.html" class="card-link" data-ocid="service-link-all">View All →</a>
+        <a href="services.html" class="card-link" data-ocid="services.link.8">View All →</a>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ABOUT SNAPSHOT
+     ============================================================ -->
+<section class="section" id="about-snapshot">
+  <div class="container">
+    <div class="grid-equal fade-in">
+      <!-- Left: text -->
+      <div>
+        <span class="section-label">WHO WE ARE</span>
+        <h2 class="section-title">Driven by Expertise, Committed to Results</h2>
+        <p class="section-desc text-left">Ekan Solutions Inc. is a Maryland-based IT services firm helping businesses modernize, secure, and scale their technology. From startup to enterprise, we bring deep expertise across cloud, cybersecurity, development, and AI — delivering solutions that drive real results.</p>
+        <a href="about.html" class="btn btn-primary mt-6" data-ocid="about.link">Learn More About Us</a>
+      </div>
+      <!-- Right: stats (light background) -->
+      <div class="about-stats-grid">
+        <div class="about-stat-item">
+          <span class="about-stat-value">50+</span>
+          <span class="about-stat-label">Projects Delivered</span>
+        </div>
+        <div class="about-stat-item">
+          <span class="about-stat-value">30+</span>
+          <span class="about-stat-label">Clients Served</span>
+        </div>
+        <div class="about-stat-item">
+          <span class="about-stat-value">10+</span>
+          <span class="about-stat-label">Years Experience</span>
+        </div>
+        <div class="about-stat-item">
+          <span class="about-stat-value">99%</span>
+          <span class="about-stat-label">Client Satisfaction</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SOLUTIONS HIGHLIGHT
+     ============================================================ -->
+<section class="section-dark" id="solutions-highlight">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-label section-label-light">SOLUTIONS</span>
+      <h2 class="section-title section-title-light">Solutions Built for Your Industry</h2>
+      <p class="section-desc section-desc-light">From healthcare to finance, we deliver technology that fits your sector</p>
+    </div>
+    <div class="grid-3 fade-in">
+      <div class="card-dark">
+        <div class="card-icon">
+          <svg width="28" height="28" fill="none" stroke="#1ABC9C" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <h3 class="card-title">Digital Transformation</h3>
+        <p class="card-desc">Modernize legacy systems and workflows with cloud-first strategy and agile implementation.</p>
+      </div>
+      <div class="card-dark">
+        <div class="card-icon">
+          <svg width="28" height="28" fill="none" stroke="#1ABC9C" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 017 7c0 3.5-2.5 6.5-6 7.5V18h-2v-1.5C7.5 15.5 5 12.5 5 9a7 7 0 017-7z"/><line x1="12" y1="22" x2="12" y2="18"/><line x1="9" y1="21" x2="15" y2="21"/></svg>
+        </div>
+        <h3 class="card-title">Intelligent Automation</h3>
+        <p class="card-desc">Reduce manual workload with AI-driven automation pipelines and process optimization.</p>
+      </div>
+      <div class="card-dark">
+        <div class="card-icon">
+          <svg width="28" height="28" fill="none" stroke="#1ABC9C" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3 class="card-title">Secure Infrastructure</h3>
+        <p class="card-desc">Enterprise security architecture that meets compliance requirements and protects critical assets.</p>
+      </div>
+    </div>
+    <div class="text-center mt-8">
+      <a href="solutions.html" class="btn btn-accent btn-lg" data-ocid="solutions.link">View All Solutions</a>
     </div>
   </div>
 </section>
@@ -220,222 +779,43 @@
   <div class="container">
     <div class="section-header fade-in">
       <span class="section-label">OUR ADVANTAGE</span>
-      <h2 class="section-title">Why Choose Ekan Solutions</h2>
+      <h2 class="section-title">Why Ekan Solutions?</h2>
       <p class="section-desc">We combine deep technical expertise with a client-first delivery philosophy to ensure every engagement exceeds expectations.</p>
     </div>
-    <div class="grid-3 fade-in" style="margin-top:2.5rem;">
-      <div class="card why-card">
+    <div class="grid-4 fade-in">
+
+      <div class="card why-card" data-ocid="why.item.1">
         <div class="icon-circle">
           <svg width="24" height="24" fill="none" stroke="#1ABC9C" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/><polyline points="14.5 6.5 16 8 19 5"/></svg>
         </div>
-        <h3>Certified Experts</h3>
-        <p>Our team holds certifications in AWS, Azure, PMP, CISSP, and more — ensuring every project benefits from verified, current expertise.</p>
+        <h3>Proven Expertise</h3>
+        <p>Certified professionals across cloud, security, and development with 10+ years of enterprise delivery.</p>
       </div>
-      <div class="card why-card">
+
+      <div class="card why-card" data-ocid="why.item.2">
+        <div class="icon-circle">
+          <svg width="24" height="24" fill="none" stroke="#1ABC9C" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <h3>Client-First Approach</h3>
+        <p>Every solution is tailored to your specific business goals with full transparency at every step.</p>
+      </div>
+
+      <div class="card why-card" data-ocid="why.item.3">
         <div class="icon-circle">
           <svg width="24" height="24" fill="none" stroke="#1ABC9C" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>
         </div>
         <h3>Agile Delivery</h3>
-        <p>Iterative, sprint-based delivery gives you full visibility and control throughout every phase of the project lifecycle.</p>
+        <p>Fast, iterative delivery with sprint-based transparency and measurable outcomes at every milestone.</p>
       </div>
-      <div class="card why-card">
+
+      <div class="card why-card" data-ocid="why.item.4">
         <div class="icon-circle">
-          <svg width="24" height="24" fill="none" stroke="#1ABC9C" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg>
+          <svg width="24" height="24" fill="none" stroke="#1ABC9C" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
-        <h3>24/7 Support</h3>
-        <p>Round-the-clock monitoring and dedicated support teams keep your systems resilient and your business operational at all times.</p>
+        <h3>Security by Design</h3>
+        <p>Security is embedded at every layer — not added as an afterthought — ensuring compliance and resilience.</p>
       </div>
-    </div>
-  </div>
-</section>
 
-<!-- ============================================================
-     SERVICE DEEP-DIVE TABS
-     ============================================================ -->
-<section class="section-dark" id="deep-dive">
-  <div class="container">
-    <div class="section-header fade-in">
-      <span class="section-label section-label-light">OUR EXPERTISE</span>
-      <h2 class="section-title section-title-light">A Deeper Look at Our Services</h2>
-    </div>
-
-    <div class="tab-nav fade-in" role="tablist" aria-label="Service deep-dive">
-      <button class="tab-btn active" data-tab="cyber" data-group="services-home" role="tab" aria-selected="true" aria-controls="tab-cyber" data-ocid="tab-cybersecurity">Cybersecurity</button>
-      <button class="tab-btn" data-tab="pm" data-group="services-home" role="tab" aria-selected="false" aria-controls="tab-pm" data-ocid="tab-pm">Project Mgmt</button>
-      <button class="tab-btn" data-tab="fs" data-group="services-home" role="tab" aria-selected="false" aria-controls="tab-fs" data-ocid="tab-fullstack">Full Stack</button>
-      <button class="tab-btn" data-tab="aws" data-group="services-home" role="tab" aria-selected="false" aria-controls="tab-aws" data-ocid="tab-aws">AWS Cloud</button>
-      <button class="tab-btn" data-tab="java" data-group="services-home" role="tab" aria-selected="false" aria-controls="tab-java" data-ocid="tab-java">Java Dev</button>
-      <button class="tab-btn" data-tab="qa" data-group="services-home" role="tab" aria-selected="false" aria-controls="tab-qa" data-ocid="tab-qa">QA/Testing</button>
-      <button class="tab-btn" data-tab="ai" data-group="services-home" role="tab" aria-selected="false" aria-controls="tab-ai" data-ocid="tab-ai">AI &amp; Automation</button>
-    </div>
-
-    <div class="tab-panel active" id="tab-cyber" data-tab="cyber" data-group="services-home" role="tabpanel">
-      <div class="tab-content-inner">
-        <h3>Cybersecurity</h3>
-        <p>Enterprise-grade security services to protect your infrastructure, data, and operations from evolving threats.</p>
-        <ul class="tab-bullets">
-          <li>Security audits, vulnerability assessments &amp; penetration testing</li>
-          <li>Identity &amp; Access Management (IAM) and Zero Trust architecture</li>
-          <li>Security Operations Center (SOC) monitoring and incident response</li>
-          <li>Compliance management: HIPAA, PCI-DSS, SOC 2, ISO 27001</li>
-        </ul>
-        <a href="cybersecurity.html" class="btn-accent-sm" data-ocid="tab-cta-cybersecurity">See Full Details →</a>
-      </div>
-    </div>
-
-    <div class="tab-panel" id="tab-pm" data-tab="pm" data-group="services-home" role="tabpanel">
-      <div class="tab-content-inner">
-        <h3>Project Management</h3>
-        <p>PMP-certified project managers who deliver complex IT initiatives on time, within budget, and to specification.</p>
-        <ul class="tab-bullets">
-          <li>Agile, Scrum, and hybrid methodology delivery frameworks</li>
-          <li>Resource planning, risk management, and stakeholder communication</li>
-          <li>Program governance, change management, and executive reporting</li>
-          <li>Portfolio management across multiple concurrent workstreams</li>
-        </ul>
-        <a href="projectmanagement.html" class="btn-accent-sm" data-ocid="tab-cta-pm">See Full Details →</a>
-      </div>
-    </div>
-
-    <div class="tab-panel" id="tab-fs" data-tab="fs" data-group="services-home" role="tabpanel">
-      <div class="tab-content-inner">
-        <h3>Full Stack Development</h3>
-        <p>End-to-end web and application development using modern frameworks and best-practice engineering standards.</p>
-        <ul class="tab-bullets">
-          <li>React, Angular, Vue.js front-end development with responsive design</li>
-          <li>Node.js, Python, Java, and .NET back-end API development</li>
-          <li>Microservices architecture, RESTful and GraphQL APIs</li>
-          <li>CI/CD pipelines, code reviews, and automated testing integration</li>
-        </ul>
-        <a href="fullstack.html" class="btn-accent-sm" data-ocid="tab-cta-fullstack">See Full Details →</a>
-      </div>
-    </div>
-
-    <div class="tab-panel" id="tab-aws" data-tab="aws" data-group="services-home" role="tabpanel">
-      <div class="tab-content-inner">
-        <h3>AWS Cloud Solutions</h3>
-        <p>AWS-certified architects and engineers to design, migrate, and operate your cloud infrastructure.</p>
-        <ul class="tab-bullets">
-          <li>Cloud migration strategy and lift-and-shift execution</li>
-          <li>Serverless architecture, Lambda, ECS/EKS container platforms</li>
-          <li>Cost optimization, auto-scaling, and disaster recovery design</li>
-          <li>DevOps toolchain: CodePipeline, Terraform, Ansible, and more</li>
-        </ul>
-        <a href="awscloud.html" class="btn-accent-sm" data-ocid="tab-cta-aws">See Full Details →</a>
-      </div>
-    </div>
-
-    <div class="tab-panel" id="tab-java" data-tab="java" data-group="services-home" role="tabpanel">
-      <div class="tab-content-inner">
-        <h3>Java Development</h3>
-        <p>Battle-tested Java engineers building high-performance, scalable enterprise applications and integrations.</p>
-        <ul class="tab-bullets">
-          <li>Spring Boot, Spring Cloud, and Jakarta EE enterprise applications</li>
-          <li>Microservices and event-driven architecture with Kafka and RabbitMQ</li>
-          <li>Legacy modernization: monolith to microservices migration</li>
-          <li>Performance tuning, JVM profiling, and load testing</li>
-        </ul>
-        <a href="javadevelopment.html" class="btn-accent-sm" data-ocid="tab-cta-java">See Full Details →</a>
-      </div>
-    </div>
-
-    <div class="tab-panel" id="tab-qa" data-tab="qa" data-group="services-home" role="tabpanel">
-      <div class="tab-content-inner">
-        <h3>Quality Assurance &amp; Testing</h3>
-        <p>Comprehensive QA programs ensuring your software meets the highest standards of quality, security, and performance.</p>
-        <ul class="tab-bullets">
-          <li>Manual and automated testing with Selenium, Cypress, and Playwright</li>
-          <li>Performance and load testing using JMeter and Gatling</li>
-          <li>API testing with Postman; mobile testing with Appium</li>
-          <li>Security scanning, test management in TestRail &amp; JIRA</li>
-        </ul>
-        <a href="qatesting.html" class="btn-accent-sm" data-ocid="tab-cta-qa">See Full Details →</a>
-      </div>
-    </div>
-
-    <div class="tab-panel" id="tab-ai" data-tab="ai" data-group="services-home" role="tabpanel">
-      <div class="tab-content-inner">
-        <h3>AI &amp; Automation Services</h3>
-        <p>Intelligent automation and AI solutions that reduce manual effort, surface insights, and accelerate business outcomes.</p>
-        <ul class="tab-bullets">
-          <li>ML model development with TensorFlow, PyTorch, and Scikit-learn</li>
-          <li>NLP, conversational AI, and LLM-powered enterprise chatbots</li>
-          <li>Robotic Process Automation (RPA) with UiPath and Automation Anywhere</li>
-          <li>Predictive analytics, AI integration APIs, and MLOps pipelines</li>
-        </ul>
-        <a href="aiservices.html" class="btn-accent-sm" data-ocid="tab-cta-ai">See Full Details →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     PROCESS
-     ============================================================ -->
-<section class="section" id="process">
-  <div class="container">
-    <div class="section-header fade-in">
-      <span class="section-label">HOW WE WORK</span>
-      <h2 class="section-title">Our Proven Process</h2>
-      <p class="section-desc">A structured, transparent delivery model that keeps you informed and in control at every stage.</p>
-    </div>
-    <div class="process-steps fade-in">
-      <div class="process-step">
-        <div class="step-num">1</div>
-        <h4>Discovery</h4>
-        <p>We deeply understand your business goals, technical environment, and success criteria before writing a single line of code.</p>
-      </div>
-      <div class="process-arrow" aria-hidden="true">→</div>
-      <div class="process-step">
-        <div class="step-num">2</div>
-        <h4>Strategy</h4>
-        <p>Our architects define a clear roadmap, technology stack, resource plan, and milestones aligned to your objectives.</p>
-      </div>
-      <div class="process-arrow" aria-hidden="true">→</div>
-      <div class="process-step">
-        <div class="step-num">3</div>
-        <h4>Implementation</h4>
-        <p>Agile sprints with regular demos, code reviews, and transparent status reporting throughout the build phase.</p>
-      </div>
-      <div class="process-arrow" aria-hidden="true">→</div>
-      <div class="process-step">
-        <div class="step-num">4</div>
-        <h4>Testing</h4>
-        <p>Comprehensive QA, performance testing, security scanning, and user acceptance testing before every release.</p>
-      </div>
-      <div class="process-arrow" aria-hidden="true">→</div>
-      <div class="process-step">
-        <div class="step-num">5</div>
-        <h4>Support</h4>
-        <p>Post-launch monitoring, incident response, iterative enhancements, and 24/7 technical support coverage.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     STATS BAR
-     ============================================================ -->
-<section class="stats-section fade-in" aria-label="Company statistics">
-  <div class="container stats-inner">
-    <div class="stat-item">
-      <span class="stat-number">500+</span>
-      <span class="stat-label">Projects Delivered</span>
-    </div>
-    <div class="stat-divider" aria-hidden="true"></div>
-    <div class="stat-item">
-      <span class="stat-number">15+</span>
-      <span class="stat-label">Years Experience</span>
-    </div>
-    <div class="stat-divider" aria-hidden="true"></div>
-    <div class="stat-item">
-      <span class="stat-number">200+</span>
-      <span class="stat-label">Happy Clients</span>
-    </div>
-    <div class="stat-divider" aria-hidden="true"></div>
-    <div class="stat-item">
-      <span class="stat-number">50+</span>
-      <span class="stat-label">Technology Partners</span>
     </div>
   </div>
 </section>
@@ -443,21 +823,18 @@
 <!-- ============================================================
      CTA BANNER
      ============================================================ -->
-<section class="cta-banner fade-in" id="cta" style="background: linear-gradient(135deg, #1ABC9C 0%, #17a589 100%);">
-  <div class="container cta-inner">
-    <div class="cta-text">
+<section class="cta-banner fade-in" id="cta">
+  <div class="cta-banner-inner">
+    <div class="cta-banner-text">
       <h2>Ready to Transform Your Business?</h2>
       <p>Partner with Ekan Solutions Inc. to accelerate your digital transformation journey.</p>
     </div>
-    <div class="cta-actions">
-      <a href="contact.html" class="btn-white" data-ocid="cta-schedule">Schedule a Consultation</a>
-      <a href="tel:8322950408" class="btn-outline-white-sm" data-ocid="cta-call">(832) 295-0408</a>
-    </div>
+    <a href="contact.html" class="btn-white" data-ocid="cta.primary_button">Contact Us</a>
   </div>
 </section>
 
 <!-- ============================================================
-     CONTACT FORM
+     CONTACT FORM SECTION
      ============================================================ -->
 <section class="section section-alt" id="contact">
   <div class="container">
@@ -506,7 +883,7 @@
 
         <div class="contact-hours">
           <strong>Business Hours</strong>
-          Monday – Friday: 9:00 AM – 6:00 PM EST<br/>
+          Monday – Friday: 9:00 AM – 6:00 PM EST<br>
           Emergency Support: 24/7
         </div>
       </div>
@@ -517,21 +894,21 @@
           <input type="hidden" name="access_key" value="83d2d829-23ea-4e75-add1-368b22535cfd">
           <div class="form-group">
             <label for="cf-name">Full Name <span aria-hidden="true">*</span></label>
-            <input type="text" id="cf-name" name="name" placeholder="Your full name" required data-ocid="contact-input-name" />
+            <input type="text" id="cf-name" name="name" placeholder="Your full name" required data-ocid="contact.input" />
           </div>
           <div class="form-row">
             <div class="form-group">
               <label for="cf-email">Email Address <span aria-hidden="true">*</span></label>
-              <input type="email" id="cf-email" name="email" placeholder="you@company.com" required data-ocid="contact-input-email" />
+              <input type="email" id="cf-email" name="email" placeholder="you@company.com" required />
             </div>
             <div class="form-group">
               <label for="cf-phone">Phone Number</label>
-              <input type="tel" id="cf-phone" name="phone" placeholder="(xxx) xxx-xxxx" data-ocid="contact-input-phone" />
+              <input type="tel" id="cf-phone" name="phone" placeholder="(xxx) xxx-xxxx" />
             </div>
           </div>
           <div class="form-group">
             <label for="cf-service">Service of Interest</label>
-            <select id="cf-service" name="service" data-ocid="contact-select-service">
+            <select id="cf-service" name="service" data-ocid="contact.select">
               <option value="">Select a service...</option>
               <option value="cybersecurity">Cybersecurity</option>
               <option value="pm">Project Management</option>
@@ -544,9 +921,9 @@
           </div>
           <div class="form-group">
             <label for="cf-message">Message <span aria-hidden="true">*</span></label>
-            <textarea id="cf-message" name="message" rows="4" placeholder="Tell us about your project or requirements..." required data-ocid="contact-input-message"></textarea>
+            <textarea id="cf-message" name="message" rows="4" placeholder="Tell us about your project or requirements..." required data-ocid="contact.textarea"></textarea>
           </div>
-          <button type="submit" class="btn-primary btn-full" data-ocid="contact-submit">Send Message</button>
+          <button type="submit" class="btn-primary btn-full" data-ocid="contact.submit_button">Send Message</button>
         </form>
       </div>
 
@@ -554,8 +931,8 @@
         <div class="form-success-icon" aria-hidden="true">
           <svg width="48" height="48" fill="none" stroke="#1ABC9C" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
         </div>
-        <h3 style="font-size:1.3rem;font-weight:800;color:#0A3D62;margin-bottom:0.5rem;">Message Sent!</h3>
-        <p style="color:#6c757d;">Thank you for reaching out. Our team will be in touch within one business day.</p>
+        <h3 class="form-success-title">Message Sent!</h3>
+        <p class="form-success-msg">Thank you for reaching out. Our team will be in touch within one business day.</p>
       </div>
     </div>
   </div>
@@ -565,51 +942,33 @@
      FOOTER
      ============================================================ -->
 <footer class="site-footer">
-  <div class="container footer-grid">
-    <!-- Company -->
+  <div class="container footer-grid-4">
+
+    <!-- Col 1: Brand -->
     <div class="footer-col">
       <div class="footer-logo">
-        <img src="assets/footer-logo.png" alt="Ekan Solutions Logo" style="height:80px; width:auto; display:block; margin-bottom:12px;">
+        <img src="assets/footer-logo.png" alt="Ekan Solutions" class="footer-logo-img">
       </div>
-      <p class="footer-tagline">Enterprise IT solutions built on integrity, innovation, and 15+ years of expertise.</p>
-      <span class="footer-contact-label">Get in Touch</span>
-      <div class="footer-contact-row">
-        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .94h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16z"/></svg>
-        <div class="footer-contact-text">
-          <a href="tel:8322950408">(832) 295-0408</a>
-          <a href="tel:4105968362">410-596-8362</a>
-        </div>
-      </div>
-      <div class="footer-contact-row">
-        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        <div class="footer-contact-text">
-          <a href="mailto:hr@ekansolutionsinc.awsapps.com">hr@ekansolutionsinc.awsapps.com</a>
-        </div>
-      </div>
-      <div class="footer-contact-row">
-        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        <div class="footer-contact-text">
-          <span>1438 Heritage Ridge Rd, Woodbine, MD 21797</span>
-          <span>9175 Guilford Rd. Suite 300 #1015, Columbia, MD 21046</span>
-        </div>
+      <p class="footer-tagline">Enterprise IT solutions built on integrity, innovation, and 15+ years of expertise. Securing, scaling, and accelerating your business.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="LinkedIn" class="footer-social-link">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="#" aria-label="Twitter" class="footer-social-link">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+        </a>
+        <a href="#" aria-label="Facebook" class="footer-social-link">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <a href="#" aria-label="YouTube" class="footer-social-link">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+        </a>
       </div>
     </div>
 
-    <!-- Quick Links -->
+    <!-- Col 2: Services -->
     <div class="footer-col">
-      <h4 class="footer-col-title">Quick Links</h4>
-      <ul class="footer-links">
-        <li><a href="home.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="solutions.html">Solutions</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-
-    <!-- Services -->
-    <div class="footer-col">
-      <h4 class="footer-col-title">Our Services</h4>
+      <h4 class="footer-col-title">Services</h4>
       <ul class="footer-links">
         <li><a href="cybersecurity.html">Cybersecurity</a></li>
         <li><a href="projectmanagement.html">Project Management</a></li>
@@ -620,9 +979,50 @@
         <li><a href="aiservices.html">AI &amp; Automation Services</a></li>
       </ul>
     </div>
+
+    <!-- Col 3: Quick Links -->
+    <div class="footer-col">
+      <h4 class="footer-col-title">Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="solutions.html">Solutions</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Col 4: Get In Touch -->
+    <div class="footer-contact-col">
+      <h4>Get In Touch</h4>
+
+      <div class="footer-contact-item">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .94h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16z"/></svg>
+        <div class="footer-contact-item-text">
+          <a href="tel:8322950408">(832) 295-0408</a>
+          <a href="tel:4105968362">410-596-8362</a>
+        </div>
+      </div>
+
+      <div class="footer-contact-item">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <div class="footer-contact-item-text">
+          <a href="mailto:hr@ekansolutionsinc.awsapps.com">hr@ekansolutionsinc.awsapps.com</a>
+        </div>
+      </div>
+
+      <div class="footer-contact-item">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div class="footer-contact-item-text">
+          <span>1438 Heritage Ridge Rd, Woodbine, MD 21797</span>
+          <span>9175 Guilford Rd. Suite 300 #1015, Columbia, MD 21046</span>
+        </div>
+      </div>
+    </div>
+
   </div>
-  <div style="border-top:1px solid rgba(255,255,255,0.08);margin-top:2rem;padding:1rem 1.5rem;display:flex;justify-content:center;align-items:center;">
-    <span style="font-size:12px;color:rgba(255,255,255,0.35);letter-spacing:0.03em;">Design Version 20</span>
+  <div class="footer-bottom-bar">
+    <span>© 2026 Ekan Solutions Inc. All rights reserved.</span>
   </div>
 </footer>
 

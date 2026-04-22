@@ -4,23 +4,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Solutions | Ekan Solutions Inc.</title>
-  <meta name="description" content="Seven core technology solution areas to accelerate your digital transformation — Cybersecurity, Cloud, App Development, AI & Automation, and more." />
+  <meta name="description" content="Seven core technology solution areas driving enterprise digital transformation — Cybersecurity, Cloud, Software Development, AI &amp; Automation, and more." />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-<!-- ===== HEADER / NAV ===== -->
+<!-- ============================================================
+     HEADER / NAV
+     ============================================================ -->
 <header class="site-header" id="site-header">
   <div class="container nav-inner">
     <a href="home.html" class="nav-logo">
-      <img src="assets/header-logo.png" alt="Ekan Solutions Logo" style="height:48px; width:auto; display:block;">
+      <img src="assets/header-logo.png" alt="Ekan Solutions Logo" class="header-logo-img">
     </a>
     <nav class="nav-links" id="nav-links">
-      <a href="home.html" class="nav-link" data-page="home">Home</a>
-      <a href="about.html" class="nav-link" data-page="about">About</a>
-      <a href="services.html" class="nav-link" data-page="services">Services</a>
+      <a href="home.html"      class="nav-link" data-page="home">Home</a>
+      <a href="about.html"     class="nav-link" data-page="about">About</a>
+      <a href="services.html"  class="nav-link" data-page="services">Services</a>
       <a href="solutions.html" class="nav-link" data-page="solutions">Solutions</a>
-      <a href="contact.html" class="nav-link" data-page="contact">Contact</a>
+      <a href="contact.html"   class="nav-link" data-page="contact">Contact</a>
     </nav>
     <div class="nav-cta">
       <div class="nav-phones">
@@ -35,11 +41,11 @@
   </div>
   <div class="mobile-menu" id="mobile-menu">
     <nav class="mobile-nav">
-      <a href="home.html" class="mobile-link" data-page="home">Home</a>
-      <a href="about.html" class="mobile-link" data-page="about">About</a>
-      <a href="services.html" class="mobile-link" data-page="services">Services</a>
+      <a href="home.html"      class="mobile-link" data-page="home">Home</a>
+      <a href="about.html"     class="mobile-link" data-page="about">About</a>
+      <a href="services.html"  class="mobile-link" data-page="services">Services</a>
       <a href="solutions.html" class="mobile-link" data-page="solutions">Solutions</a>
-      <a href="contact.html" class="mobile-link" data-page="contact">Contact</a>
+      <a href="contact.html"   class="mobile-link" data-page="contact">Contact</a>
     </nav>
     <div class="mobile-phones">
       <a href="tel:8322950408">(832) 295-0408</a>
@@ -49,518 +55,510 @@
   </div>
 </header>
 
-<!-- ===== HERO ===== -->
-<section class="sol-hero fade-in">
-  <div class="sol-hero-bg"></div>
-  <div class="container sol-hero-inner">
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="service-hero" id="hero">
+  <div class="hero-grid-pattern" aria-hidden="true"></div>
+  <div class="container">
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <a href="home.html">Home</a>
-      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-sep" aria-hidden="true">›</span>
       <span>Solutions</span>
     </nav>
-    <h1 class="sol-hero-title">Technology Solutions for<br><span class="text-accent">Every Business Need</span></h1>
-    <p class="sol-hero-sub">Seven core solution areas designed to accelerate your digital transformation</p>
-    <div class="sol-hero-actions">
-      <a href="#solution-cards" class="btn btn-accent btn-lg" data-ocid="hero-explore-btn">Explore Solutions</a>
-      <a href="contact.html" class="btn btn-outline-white btn-lg" data-ocid="hero-contact-btn">Contact Us</a>
-    </div>
-  </div>
-</section>
-
-<!-- ===== SOLUTION OVERVIEW CARDS ===== -->
-<section class="section fade-in" id="solution-cards">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-label">OUR SOLUTIONS</span>
-      <h2 class="section-title">Seven Core Solution Areas</h2>
-      <p class="section-subtitle">Comprehensive technology capabilities covering every dimension of your enterprise IT strategy.</p>
-    </div>
-    <div class="sol-cards-grid" data-ocid="solution-cards-grid">
-
-      <div class="sol-card">
-        <div class="sol-card-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <h3 class="sol-card-title">Cybersecurity Solutions</h3>
-        <p class="sol-card-desc">Protect your business with enterprise-grade security services and compliance frameworks.</p>
-        <a href="#tab-cybersecurity" class="sol-card-link" data-tab-target="cybersecurity" data-ocid="sol-card-cyber-link">Learn More →</a>
-      </div>
-
-      <div class="sol-card">
-        <div class="sol-card-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-        </div>
-        <h3 class="sol-card-title">Digital Project Delivery</h3>
-        <p class="sol-card-desc">Agile project management and delivery by PMP-certified professionals on time and on budget.</p>
-        <a href="#tab-delivery" class="sol-card-link" data-tab-target="delivery" data-ocid="sol-card-delivery-link">Learn More →</a>
-      </div>
-
-      <div class="sol-card">
-        <div class="sol-card-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-        </div>
-        <h3 class="sol-card-title">Application Development</h3>
-        <p class="sol-card-desc">Custom full-stack applications built with modern frameworks and cloud-native best practices.</p>
-        <a href="#tab-appdev" class="sol-card-link" data-tab-target="appdev" data-ocid="sol-card-appdev-link">Learn More →</a>
-      </div>
-
-      <div class="sol-card">
-        <div class="sol-card-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-        </div>
-        <h3 class="sol-card-title">Cloud &amp; Infrastructure</h3>
-        <p class="sol-card-desc">AWS cloud migration, architecture design, and cost-optimized infrastructure management.</p>
-        <a href="#tab-cloud" class="sol-card-link" data-tab-target="cloud" data-ocid="sol-card-cloud-link">Learn More →</a>
-      </div>
-
-      <div class="sol-card">
-        <div class="sol-card-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
-        </div>
-        <h3 class="sol-card-title">Java Enterprise Solutions</h3>
-        <p class="sol-card-desc">Robust Java application development powering mission-critical enterprise operations.</p>
-        <a href="#tab-java" class="sol-card-link" data-tab-target="java" data-ocid="sol-card-java-link">Learn More →</a>
-      </div>
-
-      <div class="sol-card">
-        <div class="sol-card-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-        </div>
-        <h3 class="sol-card-title">Quality &amp; Testing</h3>
-        <p class="sol-card-desc">End-to-end QA and testing services ensuring reliability, performance, and security.</p>
-        <a href="#tab-qa" class="sol-card-link" data-tab-target="qa" data-ocid="sol-card-qa-link">Learn More →</a>
-      </div>
-
-      <div class="sol-card sol-card-ai">
-        <div class="sol-card-icon sol-card-icon-ai">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
-        </div>
-        <h3 class="sol-card-title">AI &amp; Intelligent Automation</h3>
-        <p class="sol-card-desc">ML, RPA, and AI-powered solutions to streamline operations and unlock new business value.</p>
-        <a href="#tab-ai" class="sol-card-link" data-tab-target="ai" data-ocid="sol-card-ai-link">Learn More →</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ===== SOLUTION DEEP-DIVE TABS ===== -->
-<section class="sol-tabs-section fade-in" id="solution-deep-dive">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-label" style="color:var(--accent)">DEEP DIVE</span>
-      <h2 class="section-title white">Explore Each Solution</h2>
-      <p class="section-subtitle white">Select a solution area to see capabilities, features, and technology details.</p>
-    </div>
-
-    <div class="tab-nav sol-tab-nav" role="tablist" aria-label="Solution areas" data-ocid="solution-tab-nav">
-      <button class="tab-btn active" data-tab="cybersecurity" data-group="solutions" role="tab" aria-selected="true" aria-controls="panel-cybersecurity" id="tab-cybersecurity" data-ocid="tab-cyber">Cybersecurity</button>
-      <button class="tab-btn" data-tab="delivery" data-group="solutions" role="tab" aria-selected="false" aria-controls="panel-delivery" id="tab-delivery" data-ocid="tab-delivery">Digital Delivery</button>
-      <button class="tab-btn" data-tab="appdev" data-group="solutions" role="tab" aria-selected="false" aria-controls="panel-appdev" id="tab-appdev" data-ocid="tab-appdev">App Development</button>
-      <button class="tab-btn" data-tab="cloud" data-group="solutions" role="tab" aria-selected="false" aria-controls="panel-cloud" id="tab-cloud" data-ocid="tab-cloud">Cloud &amp; Infra</button>
-      <button class="tab-btn" data-tab="java" data-group="solutions" role="tab" aria-selected="false" aria-controls="panel-java" id="tab-java" data-ocid="tab-java">Java Enterprise</button>
-      <button class="tab-btn" data-tab="qa" data-group="solutions" role="tab" aria-selected="false" aria-controls="panel-qa" id="tab-qa" data-ocid="tab-qa">QA &amp; Testing</button>
-      <button class="tab-btn" data-tab="ai" data-group="solutions" role="tab" aria-selected="false" aria-controls="panel-ai" id="tab-ai" data-ocid="tab-ai">AI &amp; Automation</button>
-    </div>
-
-    <div class="sol-tab-panels">
-
-      <!-- Tab 1: Cybersecurity -->
-      <div class="tab-panel active sol-tab-panel" id="panel-cybersecurity" data-tab="cybersecurity" data-group="solutions" role="tabpanel" aria-labelledby="tab-cybersecurity">
-        <div class="sol-panel-content">
-          <div class="sol-panel-text">
-            <h3 class="sol-panel-title">Cybersecurity Solutions</h3>
-            <p class="sol-panel-desc">We provide end-to-end cybersecurity services to protect your digital assets, ensure regulatory compliance, and minimize risk exposure. Our certified security experts build resilient defenses tailored to your threat landscape.</p>
-            <ul class="sol-features" aria-label="Cybersecurity features">
-              <li><span class="sol-feature-dot"></span>Threat Detection &amp; Response</li>
-              <li><span class="sol-feature-dot"></span>Penetration Testing</li>
-              <li><span class="sol-feature-dot"></span>Compliance (HIPAA, PCI-DSS, SOC2)</li>
-              <li><span class="sol-feature-dot"></span>Identity &amp; Access Management</li>
-              <li><span class="sol-feature-dot"></span>Security Architecture Design</li>
-            </ul>
-            <a href="cybersecurity.html" class="btn btn-accent" data-ocid="panel-cyber-cta">View Service Details →</a>
-          </div>
-          <div class="sol-panel-icon-wrap">
-            <svg class="sol-panel-bg-icon" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M60 10 L100 26 L100 60 C100 82 80 100 60 110 C40 100 20 82 20 60 L20 26 Z" stroke="#1ABC9C" stroke-width="2" fill="rgba(26,188,156,0.06)"/>
-              <circle cx="60" cy="60" r="18" stroke="#1ABC9C" stroke-width="1.5" fill="none" opacity="0.5"/>
-              <path d="M52 60 L58 66 L70 54" stroke="#1ABC9C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tab 2: Digital Delivery -->
-      <div class="tab-panel sol-tab-panel" id="panel-delivery" data-tab="delivery" data-group="solutions" role="tabpanel" aria-labelledby="tab-delivery">
-        <div class="sol-panel-content">
-          <div class="sol-panel-text">
-            <h3 class="sol-panel-title">Digital Project Delivery</h3>
-            <p class="sol-panel-desc">Our PMP-certified project managers deliver complex technology initiatives on time and within budget using proven Agile methodologies. We bring structure, transparency, and discipline to every engagement.</p>
-            <ul class="sol-features" aria-label="Digital delivery features">
-              <li><span class="sol-feature-dot"></span>Agile &amp; Scrum Delivery</li>
-              <li><span class="sol-feature-dot"></span>Risk Management</li>
-              <li><span class="sol-feature-dot"></span>Stakeholder Reporting</li>
-              <li><span class="sol-feature-dot"></span>Resource Planning</li>
-              <li><span class="sol-feature-dot"></span>Portfolio Management</li>
-            </ul>
-            <a href="projectmanagement.html" class="btn btn-accent" data-ocid="panel-delivery-cta">View Service Details →</a>
-          </div>
-          <div class="sol-panel-icon-wrap">
-            <svg class="sol-panel-bg-icon" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect x="20" y="20" width="80" height="80" rx="8" stroke="#1ABC9C" stroke-width="2" fill="rgba(26,188,156,0.06)"/>
-              <path d="M35 50 H85 M35 65 H70 M35 80 H60" stroke="#1ABC9C" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
-              <circle cx="28" cy="50" r="4" fill="#1ABC9C" opacity="0.7"/>
-              <circle cx="28" cy="65" r="4" fill="#1ABC9C" opacity="0.7"/>
-              <circle cx="28" cy="80" r="4" fill="#1ABC9C" opacity="0.7"/>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tab 3: App Development -->
-      <div class="tab-panel sol-tab-panel" id="panel-appdev" data-tab="appdev" data-group="solutions" role="tabpanel" aria-labelledby="tab-appdev">
-        <div class="sol-panel-content">
-          <div class="sol-panel-text">
-            <h3 class="sol-panel-title">Application Development</h3>
-            <p class="sol-panel-desc">We build scalable, modern web and mobile applications using the latest full-stack technologies and best practices. From MVP to enterprise scale, we deliver applications that drive real business outcomes.</p>
-            <ul class="sol-features" aria-label="App development features">
-              <li><span class="sol-feature-dot"></span>Custom Web Applications</li>
-              <li><span class="sol-feature-dot"></span>Microservices &amp; APIs</li>
-              <li><span class="sol-feature-dot"></span>Database Design</li>
-              <li><span class="sol-feature-dot"></span>DevOps &amp; CI/CD</li>
-              <li><span class="sol-feature-dot"></span>Cloud-Native Development</li>
-            </ul>
-            <a href="fullstack.html" class="btn btn-accent" data-ocid="panel-appdev-cta">View Service Details →</a>
-          </div>
-          <div class="sol-panel-icon-wrap">
-            <svg class="sol-panel-bg-icon" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect x="15" y="25" width="90" height="70" rx="6" stroke="#1ABC9C" stroke-width="2" fill="rgba(26,188,156,0.06)"/>
-              <path d="M45 65 L35 55 L45 45" stroke="#1ABC9C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M75 65 L85 55 L75 45" stroke="#1ABC9C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M65 42 L55 70" stroke="#1ABC9C" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tab 4: Cloud & Infra -->
-      <div class="tab-panel sol-tab-panel" id="panel-cloud" data-tab="cloud" data-group="solutions" role="tabpanel" aria-labelledby="tab-cloud">
-        <div class="sol-panel-content">
-          <div class="sol-panel-text">
-            <h3 class="sol-panel-title">Cloud &amp; Infrastructure</h3>
-            <p class="sol-panel-desc">We architect, migrate, and manage AWS cloud environments that are secure, scalable, and cost-optimized. Our certified AWS experts ensure your infrastructure supports growth without surprises.</p>
-            <ul class="sol-features" aria-label="Cloud features">
-              <li><span class="sol-feature-dot"></span>Cloud Migration &amp; Architecture</li>
-              <li><span class="sol-feature-dot"></span>Serverless Solutions</li>
-              <li><span class="sol-feature-dot"></span>Auto-Scaling Infrastructure</li>
-              <li><span class="sol-feature-dot"></span>Cost Optimization</li>
-              <li><span class="sol-feature-dot"></span>Disaster Recovery</li>
-            </ul>
-            <a href="awscloud.html" class="btn btn-accent" data-ocid="panel-cloud-cta">View Service Details →</a>
-          </div>
-          <div class="sol-panel-icon-wrap">
-            <svg class="sol-panel-bg-icon" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M30 70 C30 58 42 50 54 54 C56 44 66 38 78 42 C90 46 94 58 90 68 C96 70 98 80 90 84 H32 C22 82 20 72 30 70Z" stroke="#1ABC9C" stroke-width="2" fill="rgba(26,188,156,0.06)"/>
-              <line x1="60" y1="84" x2="60" y2="96" stroke="#1ABC9C" stroke-width="1.5" opacity="0.6"/>
-              <line x1="45" y1="96" x2="75" y2="96" stroke="#1ABC9C" stroke-width="1.5" opacity="0.6"/>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tab 5: Java Enterprise -->
-      <div class="tab-panel sol-tab-panel" id="panel-java" data-tab="java" data-group="solutions" role="tabpanel" aria-labelledby="tab-java">
-        <div class="sol-panel-content">
-          <div class="sol-panel-text">
-            <h3 class="sol-panel-title">Java Enterprise Solutions</h3>
-            <p class="sol-panel-desc">Our Java experts build high-performance enterprise applications and microservices that power mission-critical business operations. We specialize in Spring Boot, distributed systems, and legacy modernization.</p>
-            <ul class="sol-features" aria-label="Java enterprise features">
-              <li><span class="sol-feature-dot"></span>Spring Boot Microservices</li>
-              <li><span class="sol-feature-dot"></span>Enterprise API Design</li>
-              <li><span class="sol-feature-dot"></span>Legacy Modernization</li>
-              <li><span class="sol-feature-dot"></span>Performance Tuning</li>
-              <li><span class="sol-feature-dot"></span>Kubernetes Deployments</li>
-            </ul>
-            <a href="javadevelopment.html" class="btn btn-accent" data-ocid="panel-java-cta">View Service Details →</a>
-          </div>
-          <div class="sol-panel-icon-wrap">
-            <svg class="sol-panel-bg-icon" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M50 30 C48 40 55 46 60 50 C65 54 72 60 70 72 C68 84 58 88 50 88" stroke="#1ABC9C" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-              <path d="M40 100 C50 96 80 96 80 96" stroke="#1ABC9C" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
-              <circle cx="60" cy="50" r="8" stroke="#1ABC9C" stroke-width="1.5" fill="rgba(26,188,156,0.1)"/>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tab 6: QA & Testing -->
-      <div class="tab-panel sol-tab-panel" id="panel-qa" data-tab="qa" data-group="solutions" role="tabpanel" aria-labelledby="tab-qa">
-        <div class="sol-panel-content">
-          <div class="sol-panel-text">
-            <h3 class="sol-panel-title">Quality &amp; Testing</h3>
-            <p class="sol-panel-desc">Our comprehensive testing services ensure your applications are reliable, secure, and performant before and after deployment. We integrate quality at every stage of the development lifecycle.</p>
-            <ul class="sol-features" aria-label="QA features">
-              <li><span class="sol-feature-dot"></span>Manual &amp; Automated Testing</li>
-              <li><span class="sol-feature-dot"></span>Performance Testing</li>
-              <li><span class="sol-feature-dot"></span>Security Testing</li>
-              <li><span class="sol-feature-dot"></span>API Testing</li>
-              <li><span class="sol-feature-dot"></span>Mobile Testing</li>
-            </ul>
-            <a href="qatesting.html" class="btn btn-accent" data-ocid="panel-qa-cta">View Service Details →</a>
-          </div>
-          <div class="sol-panel-icon-wrap">
-            <svg class="sol-panel-bg-icon" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect x="25" y="20" width="70" height="80" rx="8" stroke="#1ABC9C" stroke-width="2" fill="rgba(26,188,156,0.06)"/>
-              <path d="M42 52 L52 62 L78 36" stroke="#1ABC9C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tab 7: AI & Automation -->
-      <div class="tab-panel sol-tab-panel" id="panel-ai" data-tab="ai" data-group="solutions" role="tabpanel" aria-labelledby="tab-ai">
-        <div class="sol-panel-content">
-          <div class="sol-panel-text">
-            <h3 class="sol-panel-title">AI &amp; Intelligent Automation</h3>
-            <p class="sol-panel-desc">We harness the power of artificial intelligence and automation to streamline operations, reduce costs, and unlock new business value. Our AI team combines domain expertise with cutting-edge machine learning.</p>
-            <ul class="sol-features" aria-label="AI features">
-              <li><span class="sol-feature-dot"></span>AI Strategy &amp; Consulting</li>
-              <li><span class="sol-feature-dot"></span>ML Model Development</li>
-              <li><span class="sol-feature-dot"></span>Conversational AI &amp; NLP</li>
-              <li><span class="sol-feature-dot"></span>Robotic Process Automation</li>
-              <li><span class="sol-feature-dot"></span>Predictive Analytics</li>
-            </ul>
-            <a href="aiservices.html" class="btn btn-accent" data-ocid="panel-ai-cta">View Service Details →</a>
-          </div>
-          <div class="sol-panel-icon-wrap">
-            <svg class="sol-panel-bg-icon" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <circle cx="60" cy="60" r="22" stroke="#1ABC9C" stroke-width="2" fill="rgba(26,188,156,0.06)"/>
-              <circle cx="60" cy="30" r="5" fill="#1ABC9C" opacity="0.7"/>
-              <circle cx="60" cy="90" r="5" fill="#1ABC9C" opacity="0.7"/>
-              <circle cx="30" cy="60" r="5" fill="#1ABC9C" opacity="0.7"/>
-              <circle cx="90" cy="60" r="5" fill="#1ABC9C" opacity="0.7"/>
-              <line x1="60" y1="35" x2="60" y2="38" stroke="#1ABC9C" stroke-width="1.5"/>
-              <line x1="60" y1="82" x2="60" y2="85" stroke="#1ABC9C" stroke-width="1.5"/>
-              <line x1="35" y1="60" x2="38" y2="60" stroke="#1ABC9C" stroke-width="1.5"/>
-              <line x1="82" y1="60" x2="85" y2="60" stroke="#1ABC9C" stroke-width="1.5"/>
-              <circle cx="60" cy="60" r="8" stroke="#1ABC9C" stroke-width="1.5" fill="rgba(26,188,156,0.2)"/>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-    </div><!-- end sol-tab-panels -->
-  </div>
-</section>
-
-<!-- ===== INDUSTRIES SERVED ===== -->
-<section class="section-alt fade-in" id="industries">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-label">SECTORS</span>
-      <h2 class="section-title">Industries We Serve</h2>
-      <p class="section-subtitle">Delivering tailored technology solutions across the industries that matter most.</p>
-    </div>
-    <div class="grid-3 sol-industry-grid" data-ocid="industry-grid">
-      <div class="sol-industry-card">
-        <div class="sol-industry-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-        </div>
-        <h3>Healthcare</h3>
-        <p>HIPAA-compliant systems, EHR integrations, and telehealth platforms.</p>
-      </div>
-      <div class="sol-industry-card">
-        <div class="sol-industry-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
-        </div>
-        <h3>Financial Services</h3>
-        <p>Fintech solutions, regulatory compliance, and secure transaction systems.</p>
-      </div>
-      <div class="sol-industry-card">
-        <div class="sol-industry-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        </div>
-        <h3>Government</h3>
-        <p>FedRAMP-ready cloud solutions and secure digital transformation for public sector.</p>
-      </div>
-      <div class="sol-industry-card">
-        <div class="sol-industry-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-        </div>
-        <h3>Retail &amp; E-Commerce</h3>
-        <p>Scalable commerce platforms, inventory automation, and personalization engines.</p>
-      </div>
-      <div class="sol-industry-card">
-        <div class="sol-industry-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 20h20M4 20V10l8-7 8 7v10M10 20v-6h4v6"/></svg>
-        </div>
-        <h3>Manufacturing</h3>
-        <p>IoT integration, predictive maintenance, and supply chain optimization solutions.</p>
-      </div>
-      <div class="sol-industry-card">
-        <div class="sol-industry-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-        </div>
-        <h3>Education</h3>
-        <p>LMS platforms, student analytics, and digital campus infrastructure solutions.</p>
+    <div class="fade-in">
+      <span class="service-hero-badge">TECHNOLOGY SOLUTIONS</span>
+      <h1 class="service-hero-title">Technology Solutions</h1>
+      <p class="service-hero-desc">Comprehensive technology solutions designed to accelerate digital transformation, strengthen security posture, and drive measurable business outcomes across seven critical practice areas.</p>
+      <div class="hero-actions">
+        <a href="contact.html" class="btn btn-accent btn-lg" data-ocid="solutions.hero.cta_button">Explore a Solution</a>
+        <a href="#solution-areas" class="btn btn-outline-white btn-lg" data-ocid="solutions.hero.learn_button">See All Solutions</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== ENGAGEMENT MODELS ===== -->
-<section class="section fade-in" id="engagement-models">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-label">HOW WE WORK</span>
-      <h2 class="section-title">Engagement Models</h2>
-      <p class="section-subtitle">Flexible ways to partner with us — choose the model that fits your team and goals.</p>
+<!-- ============================================================
+     SOLUTION DEEP-DIVES
+     ============================================================ -->
+<section class="section" id="solution-areas" style="padding-left:0;padding-right:0;">
+  <div style="max-width:1200px;margin:0 auto;padding:0 1.5rem;">
+    <div class="section-header fade-in">
+      <span class="section-label">SOLUTION AREAS</span>
+      <h2 class="section-title">Seven End-to-End Solution Areas</h2>
+      <p class="section-desc">Deep expertise across every major technology discipline — tailored to your industry, scale, and objectives.</p>
     </div>
-    <div class="grid-3 sol-model-grid" data-ocid="engagement-models-grid">
-      <div class="sol-model-card">
-        <div class="sol-model-num">01</div>
-        <div class="sol-model-icon">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="7" r="4"/><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><path d="M21 21v-2a4 4 0 0 0-3-3.87"/></svg>
+  </div>
+
+  <div class="solutions-split-container fade-in" data-ocid="solutions.areas.list">
+
+    <!-- Card 1: Cybersecurity — image LEFT, content RIGHT -->
+    <div class="solution-split-card" data-ocid="solutions.areas.item.1">
+      <div class="solution-split-image solution-split-image--cyber" aria-hidden="true">
+        <svg width="64" height="64" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+      </div>
+      <div class="solution-split-content">
+        <span class="solution-split-num">01</span>
+        <h3 class="solution-split-title">Cybersecurity</h3>
+        <p class="solution-split-desc">Protecting Your Digital Assets — comprehensive security programs defending your business from evolving threats with zero-trust architecture and 24/7 monitoring.</p>
+        <ul class="solution-split-bullets">
+          <li>Threat Detection &amp; Response</li>
+          <li>Penetration Testing</li>
+          <li>Zero-Trust Architecture</li>
+          <li>Compliance &amp; Governance</li>
+          <li>Security Audits</li>
+        </ul>
+        <a href="cybersecurity.html" class="solution-split-link" data-ocid="solutions.areas.link.1">Learn More →</a>
+      </div>
+    </div>
+
+    <!-- Card 2: Project Management — content LEFT, image RIGHT -->
+    <div class="solution-split-card solution-split-card--reverse" data-ocid="solutions.areas.item.2">
+      <div class="solution-split-content">
+        <span class="solution-split-num">02</span>
+        <h3 class="solution-split-title">Project Management</h3>
+        <p class="solution-split-desc">Delivering On Time, Every Time — PMP-certified program managers ensuring every IT initiative is delivered on time, within scope, and on budget.</p>
+        <ul class="solution-split-bullets">
+          <li>Agile &amp; Scrum Methodology</li>
+          <li>PMP-Certified Managers</li>
+          <li>Risk Management</li>
+          <li>Stakeholder Communication</li>
+          <li>Budget Control</li>
+        </ul>
+        <a href="projectmanagement.html" class="solution-split-link" data-ocid="solutions.areas.link.2">Learn More →</a>
+      </div>
+      <div class="solution-split-image solution-split-image--pm" aria-hidden="true">
+        <svg width="64" height="64" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/><path d="M7 6h.01M11 6h.01"/></svg>
+      </div>
+    </div>
+
+    <!-- Card 3: Full Stack Development — image LEFT, content RIGHT -->
+    <div class="solution-split-card" data-ocid="solutions.areas.item.3">
+      <div class="solution-split-image solution-split-image--dev" aria-hidden="true">
+        <svg width="64" height="64" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.5" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      </div>
+      <div class="solution-split-content">
+        <span class="solution-split-num">03</span>
+        <h3 class="solution-split-title">Full Stack Development</h3>
+        <p class="solution-split-desc">End-to-End Application Development — custom web and mobile applications built for performance, scalability, and longevity using modern tech stacks.</p>
+        <ul class="solution-split-bullets">
+          <li>React &amp; Angular Frontend</li>
+          <li>Node.js &amp; Spring Boot Backend</li>
+          <li>REST &amp; GraphQL APIs</li>
+          <li>Cloud-Native Architecture</li>
+          <li>CI/CD Pipelines</li>
+        </ul>
+        <a href="fullstack.html" class="solution-split-link" data-ocid="solutions.areas.link.3">Learn More →</a>
+      </div>
+    </div>
+
+    <!-- Card 4: AWS Cloud Solutions — content LEFT, image RIGHT -->
+    <div class="solution-split-card solution-split-card--reverse" data-ocid="solutions.areas.item.4">
+      <div class="solution-split-content">
+        <span class="solution-split-num">04</span>
+        <h3 class="solution-split-title">AWS Cloud Solutions</h3>
+        <p class="solution-split-desc">Scalable Cloud Infrastructure — AWS-certified architects designing resilient, cost-optimized cloud environments from migration to fully managed services.</p>
+        <ul class="solution-split-bullets">
+          <li>Cloud Migration Strategy</li>
+          <li>AWS Architecture Design</li>
+          <li>Cost Optimization</li>
+          <li>DevOps &amp; Automation</li>
+          <li>24/7 Managed Services</li>
+        </ul>
+        <a href="awscloud.html" class="solution-split-link" data-ocid="solutions.areas.link.4">Learn More →</a>
+      </div>
+      <div class="solution-split-image solution-split-image--cloud" aria-hidden="true">
+        <svg width="64" height="64" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/></svg>
+      </div>
+    </div>
+
+    <!-- Card 5: Java Development — image LEFT, content RIGHT -->
+    <div class="solution-split-card" data-ocid="solutions.areas.item.5">
+      <div class="solution-split-image solution-split-image--java" aria-hidden="true">
+        <svg width="64" height="64" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M17 8h1a4 4 0 010 8h-1"/><path d="M3 8h14v9a4 4 0 01-4 4H7a4 4 0 01-4-4V8z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg>
+      </div>
+      <div class="solution-split-content">
+        <span class="solution-split-num">05</span>
+        <h3 class="solution-split-title">Java Development</h3>
+        <p class="solution-split-desc">Enterprise-Grade Java Solutions — high-performance systems built with Spring Boot microservices, event-driven architectures, and legacy modernization expertise.</p>
+        <ul class="solution-split-bullets">
+          <li>Spring Boot Microservices</li>
+          <li>High-Performance APIs</li>
+          <li>Legacy System Modernization</li>
+          <li>JVM Optimization</li>
+          <li>Enterprise Integration</li>
+        </ul>
+        <a href="javadevelopment.html" class="solution-split-link" data-ocid="solutions.areas.link.5">Learn More →</a>
+      </div>
+    </div>
+
+    <!-- Card 6: QA & Testing — content LEFT, image RIGHT -->
+    <div class="solution-split-card solution-split-card--reverse" data-ocid="solutions.areas.item.6">
+      <div class="solution-split-content">
+        <span class="solution-split-num">06</span>
+        <h3 class="solution-split-title">Quality Assurance &amp; Testing</h3>
+        <p class="solution-split-desc">Flawless Software Delivery — robust QA frameworks embedding quality throughout the entire development lifecycle for flawless, high-confidence releases.</p>
+        <ul class="solution-split-bullets">
+          <li>Manual &amp; Automated Testing</li>
+          <li>Selenium &amp; Cypress</li>
+          <li>Performance Testing</li>
+          <li>CI/CD Integration</li>
+          <li>Bug Tracking &amp; Reporting</li>
+        </ul>
+        <a href="qatesting.html" class="solution-split-link" data-ocid="solutions.areas.link.6">Learn More →</a>
+      </div>
+      <div class="solution-split-image solution-split-image--qa" aria-hidden="true">
+        <svg width="64" height="64" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+    </div>
+
+    <!-- Card 7: AI & Automation — image LEFT, content RIGHT -->
+    <div class="solution-split-card" data-ocid="solutions.areas.item.7">
+      <div class="solution-split-image solution-split-image--ai" aria-hidden="true">
+        <svg width="64" height="64" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2a7 7 0 017 7c0 3.5-2.5 6.5-6 7.5V18h-2v-1.5C7.5 15.5 5 12.5 5 9a7 7 0 017-7z"/><line x1="12" y1="22" x2="12" y2="18"/><line x1="9" y1="21" x2="15" y2="21"/><circle cx="12" cy="9" r="2"/></svg>
+      </div>
+      <div class="solution-split-content">
+        <span class="solution-split-num">07</span>
+        <h3 class="solution-split-title">AI &amp; Intelligent Automation</h3>
+        <p class="solution-split-desc">The Future of Business Operations — transformative AI and automation solutions that eliminate manual processes, surface predictive insights, and integrate intelligence into core workflows.</p>
+        <ul class="solution-split-bullets">
+          <li>Machine Learning Models</li>
+          <li>RPA Implementation</li>
+          <li>Natural Language Processing</li>
+          <li>Predictive Analytics</li>
+          <li>AI-Powered Workflows</li>
+        </ul>
+        <a href="aiservices.html" class="solution-split-link" data-ocid="solutions.areas.link.7">Learn More →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     INDUSTRIES SERVED
+     ============================================================ -->
+<section class="section section-alt" id="industries">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-label">INDUSTRIES WE SERVE</span>
+      <h2 class="section-title">Built for Your Industry</h2>
+      <p class="section-desc">We bring deep domain expertise across eight key verticals — delivering solutions that meet the unique regulatory, operational, and technology demands of each sector.</p>
+    </div>
+
+    <div class="industries-grid fade-in" data-ocid="solutions.industries.list">
+
+      <div class="industry-card-v2" data-ocid="solutions.industries.item.1">
+        <div class="industry-card-v2-icon">
+          <svg width="28" height="28" fill="none" stroke="#1abc9c" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
         </div>
-        <h3 class="sol-model-title">Staff Augmentation</h3>
-        <p class="sol-model-desc">Bring certified IT experts directly into your existing team. Scale up or down as your project demands, with full knowledge transfer and minimal onboarding overhead.</p>
-        <ul class="sol-model-features">
-          <li>Flexible team scaling</li>
-          <li>Certified, vetted professionals</li>
-          <li>Seamless team integration</li>
+        <h4 class="industry-card-v2-title">Healthcare &amp; Life Sciences</h4>
+        <p class="industry-card-v2-desc">Secure, HIPAA-compliant solutions for patient data management, telehealth platforms, and medical workflows.</p>
+        <a href="contact.html" class="industry-card-v2-link">Read More <span aria-hidden="true">→</span></a>
+      </div>
+
+      <div class="industry-card-v2" data-ocid="solutions.industries.item.2">
+        <div class="industry-card-v2-icon">
+          <svg width="28" height="28" fill="none" stroke="#1abc9c" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+        </div>
+        <h4 class="industry-card-v2-title">Financial Services</h4>
+        <p class="industry-card-v2-desc">Robust fintech solutions with real-time data processing, fraud detection, and regulatory compliance.</p>
+        <a href="contact.html" class="industry-card-v2-link">Read More <span aria-hidden="true">→</span></a>
+      </div>
+
+      <div class="industry-card-v2" data-ocid="solutions.industries.item.3">
+        <div class="industry-card-v2-icon">
+          <svg width="28" height="28" fill="none" stroke="#1abc9c" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h4 class="industry-card-v2-title">Government &amp; Public Sector</h4>
+        <p class="industry-card-v2-desc">Scalable e-government platforms with enterprise security and citizen-facing digital services.</p>
+        <a href="contact.html" class="industry-card-v2-link">Read More <span aria-hidden="true">→</span></a>
+      </div>
+
+      <div class="industry-card-v2" data-ocid="solutions.industries.item.4">
+        <div class="industry-card-v2-icon">
+          <svg width="28" height="28" fill="none" stroke="#1abc9c" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+        </div>
+        <h4 class="industry-card-v2-title">Manufacturing &amp; Industry</h4>
+        <p class="industry-card-v2-desc">Smart factory automation, IoT integration, and predictive maintenance for modern manufacturers.</p>
+        <a href="contact.html" class="industry-card-v2-link">Read More <span aria-hidden="true">→</span></a>
+      </div>
+
+      <div class="industry-card-v2" data-ocid="solutions.industries.item.5">
+        <div class="industry-card-v2-icon">
+          <svg width="28" height="28" fill="none" stroke="#1abc9c" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        </div>
+        <h4 class="industry-card-v2-title">Retail &amp; E-Commerce</h4>
+        <p class="industry-card-v2-desc">High-performance commerce platforms, inventory management, and personalized customer experiences.</p>
+        <a href="contact.html" class="industry-card-v2-link">Read More <span aria-hidden="true">→</span></a>
+      </div>
+
+      <div class="industry-card-v2" data-ocid="solutions.industries.item.6">
+        <div class="industry-card-v2-icon">
+          <svg width="28" height="28" fill="none" stroke="#1abc9c" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+        </div>
+        <h4 class="industry-card-v2-title">Education &amp; EdTech</h4>
+        <p class="industry-card-v2-desc">Learning management systems, student analytics, and virtual classroom solutions.</p>
+        <a href="contact.html" class="industry-card-v2-link">Read More <span aria-hidden="true">→</span></a>
+      </div>
+
+      <div class="industry-card-v2" data-ocid="solutions.industries.item.7">
+        <div class="industry-card-v2-icon">
+          <svg width="28" height="28" fill="none" stroke="#1abc9c" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <h4 class="industry-card-v2-title">Energy &amp; Utilities</h4>
+        <p class="industry-card-v2-desc">Digital grid management, energy analytics, and IoT-powered monitoring for utility providers.</p>
+        <a href="contact.html" class="industry-card-v2-link">Read More <span aria-hidden="true">→</span></a>
+      </div>
+
+      <div class="industry-card-v2" data-ocid="solutions.industries.item.8">
+        <div class="industry-card-v2-icon">
+          <svg width="28" height="28" fill="none" stroke="#1abc9c" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4a1 1 0 011 1v9a1 1 0 01-1 1h-4"/><path d="M12 17H4a1 1 0 01-1-1V3"/><circle cx="7.5" cy="20.5" r="1.5"/><circle cx="18.5" cy="20.5" r="1.5"/></svg>
+        </div>
+        <h4 class="industry-card-v2-title">Logistics &amp; Supply Chain</h4>
+        <p class="industry-card-v2-desc">Real-time tracking, supply chain visibility, and route optimization platforms.</p>
+        <a href="contact.html" class="industry-card-v2-link">Read More <span aria-hidden="true">→</span></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ENGAGEMENT MODELS
+     ============================================================ -->
+<section class="section" id="engagement">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-label">HOW WE ENGAGE</span>
+      <h2 class="section-title">Flexible Engagement Models</h2>
+      <p class="section-desc">We structure our engagements to match your project scope, budget, and internal team dynamics.</p>
+    </div>
+
+    <div class="grid-3 fade-in" data-ocid="solutions.engagement.list">
+      <div class="card engagement-card" data-ocid="solutions.engagement.item.1">
+        <div class="engagement-number">01</div>
+        <h3 class="engagement-title">Fixed Price</h3>
+        <p class="engagement-desc">Best for well-defined projects with clear scope and deliverables. We provide a fixed timeline, fixed cost, and agreed milestones — giving you full cost certainty and no surprises.</p>
+        <ul class="engagement-list">
+          <li>Clear scope &amp; defined deliverables</li>
+          <li>Fixed budget &amp; timeline</li>
+          <li>Milestone-based delivery</li>
+          <li>Ideal for discrete projects</li>
         </ul>
       </div>
-      <div class="sol-model-card sol-model-card-featured">
-        <div class="sol-model-num">02</div>
-        <div class="sol-model-badge">Most Popular</div>
-        <div class="sol-model-icon">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-        </div>
-        <h3 class="sol-model-title">Managed Services</h3>
-        <p class="sol-model-desc">Fully managed technology services with defined SLAs, proactive monitoring, and continuous improvement — letting you focus on core business while we handle IT.</p>
-        <ul class="sol-model-features">
-          <li>24/7 monitoring &amp; support</li>
-          <li>Defined SLAs &amp; KPIs</li>
-          <li>Proactive issue resolution</li>
+
+      <div class="card engagement-card engagement-card-featured" data-ocid="solutions.engagement.item.2">
+        <div class="engagement-badge">Most Popular</div>
+        <div class="engagement-number">02</div>
+        <h3 class="engagement-title">Time &amp; Material</h3>
+        <p class="engagement-desc">Best for evolving requirements, agile development, and exploratory work. You pay for actual hours worked — giving you flexibility to pivot, add scope, or scale resources as your needs change.</p>
+        <ul class="engagement-list">
+          <li>Flexible scope &amp; adaptable backlog</li>
+          <li>Sprint-based delivery cadence</li>
+          <li>Scale up or down as needed</li>
+          <li>Ideal for ongoing development</li>
         </ul>
       </div>
-      <div class="sol-model-card">
-        <div class="sol-model-num">03</div>
-        <div class="sol-model-icon">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-        </div>
-        <h3 class="sol-model-title">Project-Based</h3>
-        <p class="sol-model-desc">Fixed-scope delivery with clear milestones, transparent pricing, and defined deliverables. Ideal for organizations that need a specific outcome within a set budget and timeline.</p>
-        <ul class="sol-model-features">
-          <li>Fixed scope &amp; budget</li>
-          <li>Clear milestone tracking</li>
-          <li>Defined deliverables</li>
+
+      <div class="card engagement-card" data-ocid="solutions.engagement.item.3">
+        <div class="engagement-number">03</div>
+        <h3 class="engagement-title">Dedicated Team</h3>
+        <p class="engagement-desc">Best for long-term partnerships and extended capacity needs. A dedicated pod of engineers, designers, and PM works exclusively on your product — functioning as a fully integrated extension of your team.</p>
+        <ul class="engagement-list">
+          <li>Exclusive, dedicated resources</li>
+          <li>Fully integrated with your team</li>
+          <li>Long-term partnership model</li>
+          <li>Ideal for product companies</li>
         </ul>
       </div>
     </div>
+
+    <div class="engagement-cta fade-in">
+      <p>Not sure which model fits your project?</p>
+      <a href="contact.html" class="btn btn-accent" data-ocid="solutions.engagement.cta_button">Let's Talk</a>
+    </div>
   </div>
 </section>
 
-<!-- ===== TECH PARTNERS ===== -->
-<section class="section-alt sol-partners-section fade-in" id="tech-partners">
+<!-- ============================================================
+     TECH PARTNERS
+     ============================================================ -->
+<section class="section section-alt" id="partners">
   <div class="container">
-    <div class="section-header">
-      <span class="section-label">ECOSYSTEM</span>
-      <h2 class="section-title">Our Technology Partners</h2>
-      <p class="section-subtitle">We deliver solutions on the world's leading technology platforms.</p>
+    <div class="section-header fade-in">
+      <span class="section-label">TECHNOLOGY PARTNERS</span>
+      <h2 class="section-title">Our Technology Ecosystem</h2>
+      <p class="section-desc">We work with the world's leading technology platforms to deliver proven, enterprise-grade solutions.</p>
     </div>
-    <div class="sol-partners-row" data-ocid="tech-partners-row">
-      <span class="tech-badge">AWS</span>
-      <span class="tech-badge">Microsoft Azure</span>
-      <span class="tech-badge">Google Cloud</span>
-      <span class="tech-badge">Salesforce</span>
-      <span class="tech-badge">ServiceNow</span>
-      <span class="tech-badge">Oracle</span>
-      <span class="tech-badge">IBM</span>
+
+    <div class="partners-grid fade-in" data-ocid="solutions.partners.list">
+      <div class="partner-badge" data-ocid="solutions.partners.item.1">
+        <span class="partner-name">AWS</span>
+        <span class="partner-tier">Certified Partner</span>
+      </div>
+      <div class="partner-badge" data-ocid="solutions.partners.item.2">
+        <span class="partner-name">Microsoft Azure</span>
+        <span class="partner-tier">Cloud Partner</span>
+      </div>
+      <div class="partner-badge" data-ocid="solutions.partners.item.3">
+        <span class="partner-name">Google Cloud</span>
+        <span class="partner-tier">Technology Partner</span>
+      </div>
+      <div class="partner-badge" data-ocid="solutions.partners.item.4">
+        <span class="partner-name">Oracle</span>
+        <span class="partner-tier">Enterprise Partner</span>
+      </div>
+      <div class="partner-badge" data-ocid="solutions.partners.item.5">
+        <span class="partner-name">UiPath</span>
+        <span class="partner-tier">RPA Partner</span>
+      </div>
+      <div class="partner-badge" data-ocid="solutions.partners.item.6">
+        <span class="partner-name">Atlassian</span>
+        <span class="partner-tier">JIRA / Confluence</span>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ===== STATS BAR ===== -->
-<section class="sol-stats-bar fade-in" id="stats" data-ocid="stats-bar">
+<!-- ============================================================
+     CASE STUDY TEASERS
+     ============================================================ -->
+<section class="section" id="case-studies">
   <div class="container">
-    <div class="sol-stats-grid">
-      <div class="sol-stat">
-        <span class="sol-stat-num">7</span>
-        <span class="sol-stat-label">Solution Areas</span>
+    <div class="section-header fade-in">
+      <span class="section-label">CLIENT OUTCOMES</span>
+      <h2 class="section-title">Results That Speak for Themselves</h2>
+      <p class="section-desc">A sample of the measurable outcomes our clients have achieved through technology partnerships with Ekan Solutions.</p>
+    </div>
+
+    <div class="grid-3 fade-in" data-ocid="solutions.cases.list">
+
+      <div class="card case-card" data-ocid="solutions.cases.item.1">
+        <div class="case-tag">Healthcare</div>
+        <h3 class="case-title">Regional Hospital Network — Security Transformation</h3>
+        <p class="case-desc">Implemented a zero-trust security architecture, SOC monitoring, and HIPAA compliance program across a 5-hospital network.</p>
+        <div class="case-metrics">
+          <div class="case-metric">
+            <span class="case-metric-value">87%</span>
+            <span class="case-metric-label">Reduction in security incidents</span>
+          </div>
+          <div class="case-metric">
+            <span class="case-metric-value">100%</span>
+            <span class="case-metric-label">HIPAA compliance achieved</span>
+          </div>
+        </div>
       </div>
-      <div class="sol-stat">
-        <span class="sol-stat-num">15+</span>
-        <span class="sol-stat-label">Years Experience</span>
+
+      <div class="card case-card" data-ocid="solutions.cases.item.2">
+        <div class="case-tag">Finance</div>
+        <h3 class="case-title">Mid-Market Bank — Cloud Migration &amp; Modernization</h3>
+        <p class="case-desc">Migrated legacy banking infrastructure to AWS, rebuilt core transaction APIs as microservices, and automated deployment pipelines.</p>
+        <div class="case-metrics">
+          <div class="case-metric">
+            <span class="case-metric-value">60%</span>
+            <span class="case-metric-label">Reduction in infrastructure costs</span>
+          </div>
+          <div class="case-metric">
+            <span class="case-metric-value">3×</span>
+            <span class="case-metric-label">Faster deployment cycles</span>
+          </div>
+        </div>
       </div>
-      <div class="sol-stat">
-        <span class="sol-stat-num">500+</span>
-        <span class="sol-stat-label">Projects Delivered</span>
+
+      <div class="card case-card" data-ocid="solutions.cases.item.3">
+        <div class="case-tag">Manufacturing</div>
+        <h3 class="case-title">Industrial Manufacturer — AI Automation Platform</h3>
+        <p class="case-desc">Deployed RPA workflows and a predictive maintenance ML model to automate procurement and reduce equipment downtime.</p>
+        <div class="case-metrics">
+          <div class="case-metric">
+            <span class="case-metric-value">40%</span>
+            <span class="case-metric-label">Reduction in manual processing</span>
+          </div>
+          <div class="case-metric">
+            <span class="case-metric-value">25%</span>
+            <span class="case-metric-label">Decrease in equipment downtime</span>
+          </div>
+        </div>
       </div>
-      <div class="sol-stat">
-        <span class="sol-stat-num">200+</span>
-        <span class="sol-stat-label">Clients Served</span>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     STATS BAR
+     ============================================================ -->
+<section class="stats-section fade-in" aria-label="Company statistics">
+  <div class="container">
+    <div class="stats-inner-grid">
+      <div class="stat-item">
+        <span class="stat-number">50+</span>
+        <span class="stat-label">Projects Delivered</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">30+</span>
+        <span class="stat-label">Clients Served</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">10+</span>
+        <span class="stat-label">Years Experience</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">99%</span>
+        <span class="stat-label">Client Satisfaction</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== CTA BANNER ===== -->
-<section class="cta-banner fade-in" data-ocid="cta-banner">
+<!-- ============================================================
+     CTA BANNER
+     ============================================================ -->
+<section class="cta-banner" id="cta">
   <div class="container cta-inner">
     <div class="cta-text">
-      <h2 class="cta-title">Find the Right Solution for Your Business</h2>
-      <p class="cta-sub">Let's discuss your challenges and map out a technology roadmap that delivers measurable results.</p>
+      <h2>Ready to Transform Your Business?</h2>
+      <p>Talk to our technology experts today — no commitment, just a conversation about your goals and how we can help.</p>
     </div>
     <div class="cta-actions">
-      <a href="contact.html" class="btn btn-accent btn-lg" data-ocid="cta-talk-btn">Talk to an Expert</a>
-      <a href="services.html" class="btn btn-outline-white btn-lg" data-ocid="cta-services-btn">View All Services</a>
+      <a href="contact.html" class="btn-white" data-ocid="solutions.cta.contact_button">Get In Touch</a>
+      <a href="tel:8322950408" class="btn-outline-white-sm" data-ocid="solutions.cta.call_button">(832) 295-0408</a>
     </div>
   </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
 <footer class="site-footer">
-  <div class="container footer-grid">
+  <div class="container footer-grid-4">
+
+    <!-- Col 1: Brand -->
     <div class="footer-col">
       <div class="footer-logo">
-        <img src="assets/footer-logo.png" alt="Ekan Solutions Logo" style="height:80px; width:auto; display:block; margin-bottom:12px;">
+        <img src="assets/footer-logo.png" alt="Ekan Solutions" class="footer-logo-img">
       </div>
-      <p class="footer-tagline">Enterprise IT solutions built on integrity, innovation, and 15+ years of expertise.</p>
-      <span class="footer-contact-label">Get in Touch</span>
-      <div class="footer-contact-row">
-        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .94h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16z"/></svg>
-        <div class="footer-contact-text">
-          <a href="tel:8322950408">(832) 295-0408</a>
-          <a href="tel:4105968362">410-596-8362</a>
-        </div>
-      </div>
-      <div class="footer-contact-row">
-        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        <div class="footer-contact-text">
-          <a href="mailto:hr@ekansolutionsinc.awsapps.com">hr@ekansolutionsinc.awsapps.com</a>
-        </div>
-      </div>
-      <div class="footer-contact-row">
-        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        <div class="footer-contact-text">
-          <span>1438 Heritage Ridge Rd, Woodbine, MD 21797</span>
-          <span>9175 Guilford Rd. Suite 300 #1015, Columbia, MD 21046</span>
-        </div>
+      <p class="footer-tagline">Enterprise IT solutions built on integrity, innovation, and 15+ years of expertise. Securing, scaling, and accelerating your business.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="LinkedIn" class="footer-social-link">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="#" aria-label="Twitter" class="footer-social-link">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+        </a>
+        <a href="#" aria-label="Facebook" class="footer-social-link">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <a href="#" aria-label="YouTube" class="footer-social-link">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+        </a>
       </div>
     </div>
+
+    <!-- Col 2: Services -->
     <div class="footer-col">
-      <h4 class="footer-heading">Quick Links</h4>
-      <ul class="footer-links">
-        <li><a href="home.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="solutions.html">Solutions</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4 class="footer-heading">Our Services</h4>
+      <h4 class="footer-col-title">Services</h4>
       <ul class="footer-links">
         <li><a href="cybersecurity.html">Cybersecurity</a></li>
         <li><a href="projectmanagement.html">Project Management</a></li>
@@ -571,530 +569,53 @@
         <li><a href="aiservices.html">AI &amp; Automation Services</a></li>
       </ul>
     </div>
+
+    <!-- Col 3: Quick Links -->
+    <div class="footer-col">
+      <h4 class="footer-col-title">Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="solutions.html">Solutions</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Col 4: Get In Touch -->
+    <div class="footer-contact-col">
+      <h4>Get In Touch</h4>
+
+      <div class="footer-contact-item">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .94h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16z"/></svg>
+        <div class="footer-contact-item-text">
+          <a href="tel:8322950408">(832) 295-0408</a>
+          <a href="tel:4105968362">410-596-8362</a>
+        </div>
+      </div>
+
+      <div class="footer-contact-item">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <div class="footer-contact-item-text">
+          <a href="mailto:hr@ekansolutionsinc.awsapps.com">hr@ekansolutionsinc.awsapps.com</a>
+        </div>
+      </div>
+
+      <div class="footer-contact-item">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div class="footer-contact-item-text">
+          <span>1438 Heritage Ridge Rd, Woodbine, MD 21797</span>
+          <span>9175 Guilford Rd. Suite 300 #1015, Columbia, MD 21046</span>
+        </div>
+      </div>
+    </div>
+
   </div>
-  <div style="border-top:1px solid rgba(255,255,255,0.08);margin-top:2rem;padding:0.75rem 1.5rem;display:flex;justify-content:center;align-items:center;">
-    <span style="font-size:12px;color:rgba(255,255,255,0.35);letter-spacing:0.03em;">Design Version 20</span>
+  <div class="footer-bottom-bar">
+    <span>© 2026 Ekan Solutions Inc. All rights reserved.</span>
   </div>
 </footer>
 
 <script src="nav.js"></script>
-<script>
-  // Tab system (data-group="solutions")
-  document.querySelectorAll('.tab-btn[data-group="solutions"]').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var group = this.getAttribute('data-group');
-      var target = this.getAttribute('data-tab');
-
-      // Deactivate all buttons in group
-      document.querySelectorAll('.tab-btn[data-group="' + group + '"]').forEach(function(b) {
-        b.classList.remove('active');
-        b.setAttribute('aria-selected', 'false');
-      });
-      // Deactivate all panels in group
-      document.querySelectorAll('.tab-panel[data-group="' + group + '"]').forEach(function(p) {
-        p.classList.remove('active');
-      });
-
-      // Activate clicked button and matching panel
-      this.classList.add('active');
-      this.setAttribute('aria-selected', 'true');
-      var panel = document.querySelector('.tab-panel[data-tab="' + target + '"][data-group="' + group + '"]');
-      if (panel) panel.classList.add('active');
-    });
-  });
-
-  // Solution card "Learn More" links scroll to tabs section and activate the correct tab
-  document.querySelectorAll('.sol-card-link[data-tab-target]').forEach(function(link) {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      var target = this.getAttribute('data-tab-target');
-      var tabBtn = document.querySelector('.tab-btn[data-tab="' + target + '"][data-group="solutions"]');
-      if (tabBtn) {
-        tabBtn.click();
-        document.getElementById('solution-deep-dive').scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
-  });
-
-  // Fade-in on scroll
-  var fadeEls = document.querySelectorAll('.fade-in');
-  var observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  fadeEls.forEach(function(el) { observer.observe(el); });
-</script>
-
-<!-- Page-specific styles -->
-<style>
-  /* ===== HERO ===== */
-  .sol-hero {
-    position: relative;
-    padding: 5rem 0 4.5rem;
-    overflow: hidden;
-    color: #fff;
-  }
-  .sol-hero-bg {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, #0A3D62 0%, #072d48 55%, #0d4f7a 100%);
-    z-index: 0;
-  }
-  .sol-hero-bg::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse 70% 60% at 75% 50%, rgba(26,188,156,0.12) 0%, transparent 70%);
-  }
-  .sol-hero-inner {
-    position: relative;
-    z-index: 1;
-  }
-  .breadcrumb {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-size: 0.85rem;
-    color: rgba(255,255,255,0.6);
-    margin-bottom: 1.75rem;
-  }
-  .breadcrumb a { color: rgba(255,255,255,0.6); transition: color 0.2s; }
-  .breadcrumb a:hover { color: #1ABC9C; }
-  .breadcrumb-sep { color: rgba(255,255,255,0.4); }
-  .breadcrumb span:last-child { color: #1ABC9C; font-weight: 600; }
-  .sol-hero-title {
-    font-size: clamp(2rem, 5vw, 3.2rem);
-    font-weight: 900;
-    line-height: 1.15;
-    color: #fff;
-    margin-bottom: 1.25rem;
-    max-width: 700px;
-  }
-  .sol-hero-sub {
-    font-size: 1.1rem;
-    color: rgba(255,255,255,0.75);
-    max-width: 560px;
-    margin-bottom: 2.25rem;
-    line-height: 1.7;
-  }
-  .sol-hero-actions {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  /* ===== SOLUTION CARDS ===== */
-  .sol-cards-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-  }
-  .sol-card {
-    background: #fff;
-    border: 1px solid var(--gray-border);
-    border-radius: var(--radius-lg);
-    padding: 1.75rem 1.5rem;
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-    position: relative;
-    overflow: hidden;
-  }
-  .sol-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--primary), var(--accent));
-    opacity: 0;
-    transition: opacity 0.25s ease;
-  }
-  .sol-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
-    border-color: transparent;
-  }
-  .sol-card:hover::before { opacity: 1; }
-  .sol-card-ai {
-    border-color: rgba(26,188,156,0.25);
-    background: linear-gradient(135deg, #fff 0%, rgba(26,188,156,0.04) 100%);
-  }
-  .sol-card-icon {
-    width: 52px;
-    height: 52px;
-    border-radius: var(--radius-md);
-    background: var(--primary-light);
-    color: var(--primary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1.1rem;
-    transition: background 0.25s ease, color 0.25s ease;
-  }
-  .sol-card:hover .sol-card-icon {
-    background: var(--accent-light);
-    color: var(--accent-dark);
-  }
-  .sol-card-icon-ai { background: var(--accent-light); color: var(--accent-dark); }
-  .sol-card-title {
-    font-size: 0.975rem;
-    font-weight: 700;
-    color: var(--primary);
-    margin-bottom: 0.55rem;
-    line-height: 1.3;
-  }
-  .sol-card-desc {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    line-height: 1.6;
-    margin-bottom: 1rem;
-  }
-  .sol-card-link {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--accent-dark);
-    text-decoration: none;
-    transition: color 0.2s;
-    cursor: pointer;
-  }
-  .sol-card-link:hover { color: var(--primary); }
-
-  /* ===== DEEP DIVE TABS SECTION ===== */
-  .sol-tabs-section {
-    background: linear-gradient(135deg, #0A3D62 0%, #0d4f7a 100%);
-    padding: 5rem 0;
-  }
-  .sol-tabs-section .section-header { margin-bottom: 2.5rem; }
-  .sol-tab-nav {
-    display: flex;
-    gap: 0.25rem;
-    flex-wrap: wrap;
-    background: rgba(255,255,255,0.06);
-    border-radius: var(--radius-lg);
-    padding: 0.35rem;
-    margin-bottom: 0;
-    border: 1px solid rgba(255,255,255,0.1);
-  }
-  .sol-tab-nav .tab-btn {
-    flex: 1;
-    min-width: 110px;
-    padding: 0.65rem 1rem;
-    border-radius: var(--radius-md);
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: rgba(255,255,255,0.6);
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    white-space: nowrap;
-    text-align: center;
-  }
-  .sol-tab-nav .tab-btn:hover { color: #fff; background: rgba(255,255,255,0.1); }
-  .sol-tab-nav .tab-btn.active {
-    background: var(--accent);
-    color: #fff;
-    box-shadow: 0 2px 12px rgba(26,188,156,0.4);
-  }
-  .sol-tab-panels { margin-top: 1.5rem; }
-  .sol-tab-panel { display: none; }
-  .sol-tab-panel.active { display: block; }
-  .sol-panel-content {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: var(--radius-xl);
-    padding: 2.5rem 2.5rem;
-    display: grid;
-    grid-template-columns: 1fr 200px;
-    gap: 2rem;
-    align-items: center;
-  }
-  .sol-panel-title {
-    font-size: 1.6rem;
-    font-weight: 800;
-    color: #fff;
-    margin-bottom: 0.9rem;
-  }
-  .sol-panel-desc {
-    color: rgba(255,255,255,0.75);
-    font-size: 0.95rem;
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
-    max-width: 540px;
-  }
-  .sol-features {
-    list-style: none;
-    margin-bottom: 2rem;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.6rem 1.5rem;
-  }
-  .sol-features li {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    font-size: 0.9rem;
-    color: rgba(255,255,255,0.85);
-    font-weight: 500;
-  }
-  .sol-feature-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--accent);
-    flex-shrink: 0;
-  }
-  .sol-panel-icon-wrap {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0.85;
-  }
-  .sol-panel-bg-icon { width: 160px; height: 160px; }
-
-  /* ===== INDUSTRIES ===== */
-  .sol-industry-grid { margin-top: 0; }
-  .sol-industry-card {
-    background: #fff;
-    border-radius: var(--radius-lg);
-    padding: 2rem 1.75rem;
-    border: 1px solid var(--gray-border);
-    text-align: center;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-  }
-  .sol-industry-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
-  }
-  .sol-industry-icon {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    background: var(--primary-light);
-    color: var(--primary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1rem;
-    transition: background 0.25s, color 0.25s;
-  }
-  .sol-industry-card:hover .sol-industry-icon {
-    background: var(--accent-light);
-    color: var(--accent-dark);
-  }
-  .sol-industry-card h3 {
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--primary);
-    margin-bottom: 0.5rem;
-  }
-  .sol-industry-card p {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    line-height: 1.6;
-  }
-
-  /* ===== ENGAGEMENT MODELS ===== */
-  .sol-model-grid { align-items: stretch; }
-  .sol-model-card {
-    background: #fff;
-    border: 1px solid var(--gray-border);
-    border-radius: var(--radius-xl);
-    padding: 2.25rem 2rem;
-    position: relative;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-    display: flex;
-    flex-direction: column;
-  }
-  .sol-model-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
-  }
-  .sol-model-card-featured {
-    border-color: var(--accent);
-    background: linear-gradient(135deg, #fff 0%, rgba(26,188,156,0.04) 100%);
-    box-shadow: 0 4px 24px rgba(26,188,156,0.15);
-  }
-  .sol-model-num {
-    font-size: 3rem;
-    font-weight: 900;
-    color: var(--primary-light);
-    line-height: 1;
-    margin-bottom: 0.75rem;
-    font-variant-numeric: tabular-nums;
-  }
-  .sol-model-card-featured .sol-model-num { color: rgba(26,188,156,0.15); }
-  .sol-model-badge {
-    position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
-    background: var(--accent);
-    color: #fff;
-    font-size: 0.72rem;
-    font-weight: 700;
-    padding: 0.2rem 0.65rem;
-    border-radius: 20px;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-  }
-  .sol-model-icon {
-    width: 60px;
-    height: 60px;
-    border-radius: var(--radius-md);
-    background: var(--primary-light);
-    color: var(--primary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1.25rem;
-    transition: background 0.25s, color 0.25s;
-  }
-  .sol-model-card-featured .sol-model-icon { background: var(--accent-light); color: var(--accent-dark); }
-  .sol-model-card:hover .sol-model-icon { background: var(--accent-light); color: var(--accent-dark); }
-  .sol-model-title {
-    font-size: 1.2rem;
-    font-weight: 800;
-    color: var(--primary);
-    margin-bottom: 0.75rem;
-  }
-  .sol-model-desc {
-    font-size: 0.9rem;
-    color: var(--text-body);
-    line-height: 1.7;
-    margin-bottom: 1.25rem;
-    flex: 1;
-  }
-  .sol-model-features {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-  }
-  .sol-model-features li {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    padding-left: 1.1rem;
-    position: relative;
-  }
-  .sol-model-features li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    color: var(--accent);
-    font-weight: 700;
-  }
-
-  /* ===== TECH PARTNERS ===== */
-  .sol-partners-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-  }
-  .tech-badge {
-    display: inline-block;
-    background: #fff;
-    border: 1.5px solid var(--gray-border);
-    color: var(--text-dark);
-    font-weight: 700;
-    font-size: 0.88rem;
-    padding: 0.55rem 1.4rem;
-    border-radius: 30px;
-    letter-spacing: 0.02em;
-    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
-  }
-  .tech-badge:hover {
-    border-color: var(--accent);
-    box-shadow: 0 2px 12px rgba(26,188,156,0.18);
-    transform: translateY(-2px);
-  }
-
-  /* ===== STATS BAR ===== */
-  .sol-stats-bar {
-    background: linear-gradient(135deg, #0A3D62 0%, #0d4f7a 100%);
-    padding: 3.5rem 0;
-  }
-  .sol-stats-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    text-align: center;
-  }
-  .sol-stat { display: flex; flex-direction: column; align-items: center; gap: 0.3rem; }
-  .sol-stat-num {
-    font-size: clamp(2.2rem, 4vw, 3rem);
-    font-weight: 900;
-    color: var(--accent);
-    line-height: 1;
-  }
-  .sol-stat-label {
-    font-size: 0.88rem;
-    color: rgba(255,255,255,0.7);
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  /* ===== CTA BANNER ===== */
-  .cta-banner {
-    background: linear-gradient(135deg, var(--accent-dark) 0%, var(--accent) 100%);
-    padding: 4rem 0;
-  }
-  .cta-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-    flex-wrap: wrap;
-  }
-  .cta-text { flex: 1; min-width: 280px; }
-  .cta-title {
-    font-size: clamp(1.4rem, 3vw, 2rem);
-    font-weight: 800;
-    color: #fff;
-    margin-bottom: 0.5rem;
-    line-height: 1.25;
-  }
-  .cta-sub { color: rgba(255,255,255,0.82); font-size: 0.95rem; }
-  .cta-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
-  .cta-actions .btn-accent {
-    background: #fff;
-    color: var(--accent-dark);
-    border-color: #fff;
-  }
-  .cta-actions .btn-accent:hover {
-    background: rgba(255,255,255,0.9);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-  }
-
-  /* ===== FADE-IN: inherit from styles.css — no override needed ===== */
-
-  /* ===== RESPONSIVE ===== */
-  @media (max-width: 1100px) {
-    .sol-cards-grid { grid-template-columns: repeat(3, 1fr); }
-  }
-  @media (max-width: 900px) {
-    .sol-panel-content { grid-template-columns: 1fr; }
-    .sol-panel-icon-wrap { display: none; }
-    .sol-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
-    .sol-features { grid-template-columns: 1fr; }
-  }
-  @media (max-width: 768px) {
-    .sol-cards-grid { grid-template-columns: repeat(2, 1fr); }
-    .sol-tab-nav .tab-btn { min-width: 80px; font-size: 0.76rem; padding: 0.55rem 0.65rem; }
-    .cta-inner { flex-direction: column; text-align: center; }
-    .cta-actions { justify-content: center; }
-  }
-  @media (max-width: 540px) {
-    .sol-cards-grid { grid-template-columns: 1fr; }
-    .grid-3.sol-industry-grid { grid-template-columns: 1fr 1fr; }
-    .grid-3.sol-model-grid { grid-template-columns: 1fr; }
-    .sol-stats-grid { grid-template-columns: repeat(2, 1fr); }
-    .sol-tab-nav { gap: 0.15rem; }
-  }
-</style>
-
 </body>
 </html>

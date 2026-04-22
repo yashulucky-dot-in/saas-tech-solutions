@@ -1,60 +1,49 @@
-import { fileURLToPath, URL } from "url";
-import react from "@vitejs/plugin-react";
+import { fileURLToPath } from "url";
+import { dirname, resolve, join } from "path";
+import { copyFileSync, readdirSync, mkdirSync, statSync, existsSync } from "fs";
 import { defineConfig } from "vite";
-import environment from "vite-plugin-environment";
 
-const ii_url =
-  process.env.DFX_NETWORK === "local"
-    ? `http://rdmx6-jaaaa-aaaaa-aaadq-cai.localhost:8081/`
-    : `https://identity.internetcomputer.org/`;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
-process.env.II_URL = process.env.II_URL || ii_url;
-process.env.STORAGE_GATEWAY_URL =
-  process.env.STORAGE_GATEWAY_URL || "https://blob.caffeine.ai";
+function copyDirRecursive(srcDir, destDir) {
+  if (!existsSync(destDir)) mkdirSync(destDir, { recursive: true });
+  for (const entry of readdirSync(srcDir)) {
+    const srcPath = join(srcDir, entry);
+    const destPath = join(destDir, entry);
+    if (statSync(srcPath).isDirectory()) {
+      copyDirRecursive(srcPath, destPath);
+    } else {
+      copyFileSync(srcPath, destPath);
+    }
+  }
+}
+
+// Plugin: copy everything from public/ into dist/ after build
+function copyPublicStaticPlugin() {
+  return {
+    name: "copy-public-static",
+    closeBundle() {
+      const src = resolve(__dirname, "public");
+      const dest = resolve(__dirname, "dist");
+      copyDirRecursive(src, dest);
+    },
+  };
+}
 
 export default defineConfig({
   logLevel: "error",
+  // Use public/ as the root so Vite serves static HTML files directly
+  root: resolve(__dirname, "public"),
+  publicDir: false,
   build: {
+    outDir: resolve(__dirname, "dist"),
     emptyOutDir: true,
+    rollupOptions: {
+      input: resolve(__dirname, "public/index.html"),
+    },
     sourcemap: false,
     minify: false,
   },
-  css: {
-    postcss: "./postcss.config.js",
-  },
-  optimizeDeps: {
-    esbuildOptions: {
-      define: {
-        global: "globalThis",
-      },
-    },
-  },
-  server: {
-    proxy: {
-      "/api": {
-        target: "http://127.0.0.1:4943",
-        changeOrigin: true,
-      },
-    },
-  },
-  plugins: [
-    environment("all", { prefix: "CANISTER_" }),
-    environment("all", { prefix: "DFX_" }),
-    environment(["II_URL"]),
-    environment(["STORAGE_GATEWAY_URL"]),
-    react(),
-  ],
-  resolve: {
-    alias: [
-      {
-        find: "declarations",
-        replacement: fileURLToPath(new URL("../declarations", import.meta.url)),
-      },
-      {
-        find: "@",
-        replacement: fileURLToPath(new URL("./src", import.meta.url)),
-      },
-    ],
-    dedupe: ["@dfinity/agent"]
-  },
+  plugins: [copyPublicStaticPlugin()],
 });

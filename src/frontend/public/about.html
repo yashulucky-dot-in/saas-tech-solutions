@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us | Ekan Solutions Inc.</title>
-  <meta name="description" content="Learn about Ekan Solutions Inc. — a trusted enterprise IT services firm headquartered in Maryland, serving clients nationwide since 2008." />
+  <meta name="description" content="Learn about Ekan Solutions Inc. — a trusted enterprise IT services firm headquartered in Maryland, serving clients nationwide with Cybersecurity, Cloud, AI, and Full Stack solutions." />
   <link rel="icon" href="favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,739 +13,459 @@
 </head>
 <body>
 
-  <!-- ============================================================
-       HEADER / NAV
-       ============================================================ -->
-  <header class="site-header" id="site-header">
-    <div class="container nav-inner">
-      <a href="home.html" class="nav-logo">
-        <img src="assets/header-logo.png" alt="Ekan Solutions Logo" style="height:48px; width:auto; display:block;">
-      </a>
-      <nav class="nav-links" id="nav-links">
-        <a href="home.html" class="nav-link" data-page="home">Home</a>
-        <a href="about.html" class="nav-link" data-page="about">About</a>
-        <a href="services.html" class="nav-link" data-page="services">Services</a>
-        <a href="solutions.html" class="nav-link" data-page="solutions">Solutions</a>
-        <a href="contact.html" class="nav-link" data-page="contact">Contact</a>
-      </nav>
-      <div class="nav-cta">
-        <div class="nav-phones">
-          <a href="tel:8322950408" class="nav-phone">(832) 295-0408</a>
-          <a href="tel:4105968362" class="nav-phone">410-596-8362</a>
-        </div>
-        <a href="contact.html" class="btn btn-accent">Get Consultation</a>
+<!-- ============================================================
+     HEADER / NAV
+     ============================================================ -->
+<header class="site-header" id="site-header">
+  <div class="container nav-inner">
+    <a href="home.html" class="nav-logo">
+      <img src="assets/header-logo.png" alt="Ekan Solutions Logo" class="header-logo-img">
+    </a>
+    <nav class="nav-links" id="nav-links">
+      <a href="home.html" class="nav-link" data-page="home">Home</a>
+      <a href="about.html" class="nav-link active" data-page="about">About</a>
+      <a href="services.html" class="nav-link" data-page="services">Services</a>
+      <a href="solutions.html" class="nav-link" data-page="solutions">Solutions</a>
+      <a href="contact.html" class="nav-link" data-page="contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="nav-phones">
+        <a href="tel:8322950408" class="nav-phone">(832) 295-0408</a>
+        <a href="tel:4105968362" class="nav-phone">410-596-8362</a>
       </div>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <a href="contact.html" class="btn btn-accent">Get Consultation</a>
     </div>
-    <div class="mobile-menu" id="mobile-menu">
-      <nav class="mobile-nav">
-        <a href="home.html" class="mobile-link" data-page="home">Home</a>
-        <a href="about.html" class="mobile-link" data-page="about">About</a>
-        <a href="services.html" class="mobile-link" data-page="services">Services</a>
-        <a href="solutions.html" class="mobile-link" data-page="solutions">Solutions</a>
-        <a href="contact.html" class="mobile-link" data-page="contact">Contact</a>
-      </nav>
-      <div class="mobile-phones">
-        <a href="tel:8322950408">(832) 295-0408</a>
-        <a href="tel:4105968362">410-596-8362</a>
-      </div>
-      <a href="contact.html" class="btn btn-accent mobile-cta">Get Consultation</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <nav class="mobile-nav">
+      <a href="home.html" class="mobile-link" data-page="home">Home</a>
+      <a href="about.html" class="mobile-link active" data-page="about">About</a>
+      <a href="services.html" class="mobile-link" data-page="services">Services</a>
+      <a href="solutions.html" class="mobile-link" data-page="solutions">Solutions</a>
+      <a href="contact.html" class="mobile-link" data-page="contact">Contact</a>
+    </nav>
+    <div class="mobile-phones">
+      <a href="tel:8322950408">(832) 295-0408</a>
+      <a href="tel:4105968362">410-596-8362</a>
     </div>
-  </header>
+    <a href="contact.html" class="btn btn-accent mobile-cta">Get Consultation</a>
+  </div>
+</header>
 
-  <!-- ============================================================
-       HERO SECTION
-       ============================================================ -->
-  <section class="about-hero">
-    <div class="container">
-      <nav class="breadcrumb fade-in" aria-label="Breadcrumb">
-        <a href="home.html">Home</a>
-        <span class="breadcrumb-sep">›</span>
-        <span>About Us</span>
-      </nav>
-      <h1 class="fade-in">About Ekan Solutions Inc.</h1>
-      <p class="about-hero-subtitle fade-in">A trusted technology partner delivering enterprise-grade IT solutions since 2008</p>
-      <div class="about-hero-btns fade-in">
-        <a href="services.html" class="btn btn-outline-white">Our Services</a>
-        <a href="contact.html" class="btn btn-accent">Contact Us</a>
-      </div>
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="about-hero" aria-label="About Us hero">
+  <div class="container">
+    <nav class="breadcrumb fade-in" aria-label="Breadcrumb">
+      <a href="home.html">Home</a>
+      <span class="breadcrumb-sep" aria-hidden="true">›</span>
+      <span aria-current="page">About Us</span>
+    </nav>
+    <h1 class="fade-in">About Ekan Solutions Inc.</h1>
+    <p class="about-hero-subtitle fade-in">A Maryland-based enterprise IT services firm delivering innovative, secure, and scalable technology solutions since 2008 — trusted by government and commercial organizations nationwide.</p>
+    <div class="about-hero-btns fade-in">
+      <a href="services.html" class="btn-outline-white" data-ocid="about-hero-services-link">Explore Our Services</a>
+      <a href="contact.html" class="btn btn-accent" data-ocid="about-hero-contact-link">Get In Touch</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ============================================================
-       COMPANY STORY — TWO COLUMN
-       ============================================================ -->
-  <section class="section">
-    <div class="container">
-      <div class="about-story-grid">
-        <div class="about-story-text fade-in">
-          <h2>Who We Are</h2>
-          <p>Ekan Solutions Inc. is an enterprise IT services firm headquartered in Maryland, serving clients across the United States. Founded in 2008, we have grown from a boutique technology consulting firm into a full-service partner delivering mission-critical solutions for government, commercial, and non-profit organizations.</p>
-          <p>Our team of certified professionals brings deep expertise across cybersecurity, cloud architecture, full-stack development, project management, quality assurance, and artificial intelligence. We combine technical excellence with strategic insight to deliver solutions that are secure, scalable, and aligned with your business objectives.</p>
-          <div class="about-story-badges">
-            <span class="about-badge">AWS Certified</span>
-            <span class="about-badge">CMMI Level 3</span>
-            <span class="about-badge">ISO 27001</span>
-            <span class="about-badge">PMI Certified</span>
-          </div>
+<!-- ============================================================
+     COMPANY STORY — TWO COLUMN
+     ============================================================ -->
+<section class="section" id="our-story">
+  <div class="container">
+    <div class="about-story-grid">
+      <div class="about-story-text fade-in">
+        <span class="section-label">OUR STORY</span>
+        <h2>Who We Are</h2>
+        <p>Ekan Solutions Inc. is an enterprise IT services firm headquartered in Maryland, serving clients across the United States. Founded in 2008, we have grown from a boutique technology consulting group into a full-service partner delivering mission-critical solutions for government, commercial, and non-profit organizations.</p>
+        <p>Our team of certified professionals brings deep expertise across cybersecurity, cloud architecture, full-stack development, project management, quality assurance, and artificial intelligence. We combine technical excellence with strategic insight to deliver solutions that are secure, scalable, and aligned with your business objectives.</p>
+        <p>From our offices in Woodbine and Columbia, Maryland, we serve clients coast-to-coast — bringing the reliability of an enterprise partner with the agility and responsiveness of a dedicated team that truly cares about your success.</p>
+        <div class="about-story-badges">
+          <span class="about-badge">AWS Certified</span>
+          <span class="about-badge">PMP Certified</span>
+          <span class="about-badge">ISO 27001</span>
+          <span class="about-badge">CISSP</span>
+          <span class="about-badge">CMMI Level 3</span>
         </div>
-        <div class="about-story-image fade-in">
-          <img src="assets/generated/about-team.dim_1200x700.jpg" alt="Ekan Solutions Team" style="width:100%;border-radius:12px;display:block;" />
-        </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       STATS BAR
-       ============================================================ -->
-  <div class="stats-bar fade-in">
-    <div class="container stats-bar-inner">
-      <div class="stat-item">
-        <span class="stat-number">15+</span>
-        <span class="stat-label">Years in Business</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-number">500+</span>
-        <span class="stat-label">Projects Delivered</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-number">200+</span>
-        <span class="stat-label">Clients Served</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-number">50+</span>
-        <span class="stat-label">Certified Experts</span>
+      <div class="about-story-image fade-in">
+        <img src="assets/generated/about-team.dim_1200x700.jpg" alt="Ekan Solutions team collaborating on enterprise IT projects" class="about-team-photo" />
       </div>
     </div>
   </div>
+</section>
 
-  <!-- ============================================================
-       MISSION & VISION
-       ============================================================ -->
-  <section class="section section-alt">
-    <div class="container">
-      <div class="section-header fade-in">
-        <h2>Mission &amp; Vision</h2>
-        <p>The principles that guide everything we do</p>
+<!-- ============================================================
+     STATS BAR
+     ============================================================ -->
+<section class="stats-section fade-in" aria-label="Company statistics">
+  <div class="container">
+    <div class="stats-inner-grid">
+      <div class="stat-item">
+        <span class="stat-number">50+</span>
+        <span class="stat-label">Projects Delivered</span>
       </div>
-      <div class="mission-vision-grid">
-        <div class="mission-block fade-in">
-          <div class="mission-icon" aria-hidden="true">
-            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="18" cy="18" r="18" fill="#1ABC9C" opacity="0.15"/>
-              <path d="M18 8l2.472 7.608H28.18l-6.576 4.779 2.472 7.607L18 23.215l-6.076 4.779 2.472-7.607L8.182 15.608H15.528L18 8z" fill="#1ABC9C"/>
-            </svg>
-          </div>
-          <h3>Our Mission</h3>
-          <p>To empower organizations with innovative, secure, and scalable technology solutions that drive business growth and competitive advantage. We partner with our clients to understand their unique challenges and deliver results that create lasting value.</p>
-        </div>
-        <div class="mission-block fade-in">
-          <div class="mission-icon" aria-hidden="true">
-            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="18" cy="18" r="18" fill="#0A3D62" opacity="0.1"/>
-              <circle cx="18" cy="18" r="8" stroke="#0A3D62" stroke-width="2.5" fill="none"/>
-              <circle cx="18" cy="18" r="3" fill="#0A3D62"/>
-              <line x1="18" y1="4" x2="18" y2="9" stroke="#0A3D62" stroke-width="2" stroke-linecap="round"/>
-              <line x1="18" y1="27" x2="18" y2="32" stroke="#0A3D62" stroke-width="2" stroke-linecap="round"/>
-              <line x1="4" y1="18" x2="9" y2="18" stroke="#0A3D62" stroke-width="2" stroke-linecap="round"/>
-              <line x1="27" y1="18" x2="32" y2="18" stroke="#0A3D62" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h3>Our Vision</h3>
-          <p>To be the most trusted technology partner for enterprises seeking digital transformation, recognized for excellence, integrity, and measurable results. We aspire to set the standard for IT services through continuous innovation and client-centric delivery.</p>
-        </div>
+      <div class="stat-item">
+        <span class="stat-number">30+</span>
+        <span class="stat-label">Clients Served</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">10+</span>
+        <span class="stat-label">Years Experience</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">99%</span>
+        <span class="stat-label">Client Satisfaction</span>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ============================================================
-       VALUES SECTION
-       ============================================================ -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header fade-in">
-        <h2>Our Core Values</h2>
-        <p>The beliefs that define our culture and shape every client engagement</p>
-      </div>
-      <div class="values-grid">
-
-        <div class="value-card fade-in">
-          <div class="value-icon" aria-hidden="true">
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M14 3L4 8v7c0 5.523 4.477 10 10 10s10-4.477 10-10V8L14 3z" stroke="#1ABC9C" stroke-width="2" stroke-linejoin="round" fill="none"/>
-              <path d="M9 14l3 3 7-7" stroke="#1ABC9C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <h4>Integrity</h4>
-          <p>Honest, transparent partnerships in everything we do. We build trust through accountability and ethical conduct in every interaction.</p>
-        </div>
-
-        <div class="value-card fade-in">
-          <div class="value-icon" aria-hidden="true">
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="14" cy="14" r="11" stroke="#1ABC9C" stroke-width="2" fill="none"/>
-              <path d="M14 7l1.854 5.705H21.5l-4.854 3.527 1.854 5.705L14 18.41l-4.5 3.527 1.854-5.705L6.5 12.705H12.146L14 7z" fill="#1ABC9C"/>
-            </svg>
-          </div>
-          <h4>Excellence</h4>
-          <p>Delivering the highest quality in every project. We hold ourselves to rigorous standards so our clients always receive best-in-class solutions.</p>
-        </div>
-
-        <div class="value-card fade-in">
-          <div class="value-icon" aria-hidden="true">
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="14" cy="14" r="11" stroke="#1ABC9C" stroke-width="2" fill="none"/>
-              <path d="M10 14h8M14 10v8" stroke="#1ABC9C" stroke-width="2" stroke-linecap="round"/>
-              <circle cx="14" cy="14" r="3" stroke="#1ABC9C" stroke-width="1.5" fill="none"/>
-            </svg>
-          </div>
-          <h4>Innovation</h4>
-          <p>Embracing new technologies to solve complex challenges. We continuously research emerging tools and methodologies to keep clients ahead of the curve.</p>
-        </div>
-
-        <div class="value-card fade-in">
-          <div class="value-icon" aria-hidden="true">
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="10" cy="10" r="4" stroke="#1ABC9C" stroke-width="2" fill="none"/>
-              <circle cx="18" cy="18" r="4" stroke="#1ABC9C" stroke-width="2" fill="none"/>
-              <path d="M14 10c2 0 4 1 4 4" stroke="#1ABC9C" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-              <path d="M10 18c0-2 1-4 4-4" stroke="#1ABC9C" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-            </svg>
-          </div>
-          <h4>Collaboration</h4>
-          <p>Working as a unified team with our clients. We integrate seamlessly with your organization to deliver shared outcomes and build long-term relationships.</p>
-        </div>
-
-        <div class="value-card fade-in">
-          <div class="value-icon" aria-hidden="true">
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="5" y="5" width="18" height="18" rx="3" stroke="#1ABC9C" stroke-width="2" fill="none"/>
-              <path d="M9 14l3 3 7-7" stroke="#1ABC9C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <h4>Accountability</h4>
-          <p>Taking full ownership of results and outcomes. We stand behind our commitments and measure our success by the tangible business impact we deliver.</p>
-        </div>
-
-      </div>
+<!-- ============================================================
+     MISSION & VISION
+     ============================================================ -->
+<section class="section section-alt" id="mission-vision">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-label">PURPOSE &amp; DIRECTION</span>
+      <h2 class="section-title">Mission &amp; Vision</h2>
+      <p class="section-desc">The principles that guide every engagement, every decision, and every line of code we write.</p>
     </div>
-  </section>
-
-  <!-- ============================================================
-       INDUSTRIES SERVED
-       ============================================================ -->
-  <section class="section section-alt">
-    <div class="container">
-      <div class="section-header fade-in">
-        <h2>Industries We Serve</h2>
-        <p>Deep domain expertise across the sectors that depend on technology to operate and grow</p>
-      </div>
-      <div class="industries-grid">
-
-        <div class="industry-card fade-in">
-          <div class="industry-icon" aria-hidden="true">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="2" y="8" width="28" height="20" rx="3" stroke="#1ABC9C" stroke-width="2" fill="none"/>
-              <path d="M10 8V6a6 6 0 1112 0v2" stroke="#1ABC9C" stroke-width="2" stroke-linecap="round"/>
-              <path d="M16 16v4" stroke="#1ABC9C" stroke-width="2" stroke-linecap="round"/>
-              <circle cx="16" cy="14" r="2" fill="#1ABC9C"/>
-            </svg>
-          </div>
-          <h4>Healthcare</h4>
-          <p>HIPAA-compliant systems, EHR integration, and secure patient data management</p>
-        </div>
-
-        <div class="industry-card fade-in">
-          <div class="industry-icon" aria-hidden="true">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="4" y="10" width="24" height="16" rx="2" stroke="#1ABC9C" stroke-width="2" fill="none"/>
-              <path d="M4 16h24" stroke="#1ABC9C" stroke-width="2"/>
-              <rect x="9" y="6" width="14" height="4" rx="1" stroke="#1ABC9C" stroke-width="2" fill="none"/>
-              <path d="M12 21h2M18 21h2" stroke="#1ABC9C" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h4>Financial Services</h4>
-          <p>Secure banking platforms, regulatory compliance, and real-time fraud detection</p>
-        </div>
-
-        <div class="industry-card fade-in">
-          <div class="industry-icon" aria-hidden="true">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M16 3L4 10v18h24V10L16 3z" stroke="#1ABC9C" stroke-width="2" stroke-linejoin="round" fill="none"/>
-              <rect x="12" y="18" width="8" height="10" rx="1" stroke="#1ABC9C" stroke-width="1.5" fill="none"/>
-              <path d="M9 14h2M21 14h2M9 18h2M21 18h2" stroke="#1ABC9C" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h4>Government</h4>
-          <p>FedRAMP-authorized cloud solutions, FISMA compliance, and digital modernization</p>
-        </div>
-
-        <div class="industry-card fade-in">
-          <div class="industry-icon" aria-hidden="true">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="3" y="8" width="26" height="18" rx="3" stroke="#1ABC9C" stroke-width="2" fill="none"/>
-              <path d="M10 8V6a6 6 0 0112 0v2" stroke="#1ABC9C" stroke-width="2" stroke-linecap="round"/>
-              <path d="M3 14h26" stroke="#1ABC9C" stroke-width="1.5" opacity="0.5"/>
-              <path d="M10 14v12M22 14v12M16 14v12" stroke="#1ABC9C" stroke-width="1" opacity="0.4" stroke-dasharray="2 2"/>
-            </svg>
-          </div>
-          <h4>Retail &amp; E-Commerce</h4>
-          <p>Scalable storefronts, inventory systems, and customer analytics platforms</p>
-        </div>
-
-        <div class="industry-card fade-in">
-          <div class="industry-icon" aria-hidden="true">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="4" y="14" width="24" height="14" rx="2" stroke="#1ABC9C" stroke-width="2" fill="none"/>
-              <path d="M10 14V10a6 6 0 0112 0v4" stroke="#1ABC9C" stroke-width="2" stroke-linecap="round"/>
-              <path d="M4 20h24" stroke="#1ABC9C" stroke-width="1.5" opacity="0.5"/>
-              <circle cx="16" cy="23" r="2" fill="#1ABC9C"/>
-            </svg>
-          </div>
-          <h4>Manufacturing</h4>
-          <p>IoT integration, ERP systems, supply chain optimization, and predictive maintenance</p>
-        </div>
-
-        <div class="industry-card fade-in">
-          <div class="industry-icon" aria-hidden="true">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5 26V12l11-8 11 8v14H5z" stroke="#1ABC9C" stroke-width="2" stroke-linejoin="round" fill="none"/>
-              <rect x="11" y="17" width="10" height="9" rx="1" stroke="#1ABC9C" stroke-width="1.5" fill="none"/>
-              <path d="M10 12h3M19 12h3" stroke="#1ABC9C" stroke-width="1.5" stroke-linecap="round"/>
-              <circle cx="16" cy="11" r="2" stroke="#1ABC9C" stroke-width="1.5" fill="none"/>
-            </svg>
-          </div>
-          <h4>Education</h4>
-          <p>LMS platforms, student data systems, remote learning infrastructure, and campus security</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       OUR PROMISE
-       ============================================================ -->
-  <section class="promise-section fade-in">
-    <div class="container">
-      <div class="promise-block">
-        <div class="promise-icon" aria-hidden="true">
-          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="24" cy="24" r="24" fill="#1ABC9C" opacity="0.15"/>
-            <path d="M24 12l3.09 9.51H37l-8.09 5.879 3.09 9.51L24 31.021l-8.001 5.879 3.09-9.51L10.91 21.51H20.91L24 12z" fill="#1ABC9C"/>
+    <div class="mission-vision-grid">
+      <div class="mission-block fade-in" data-ocid="about-mission-card">
+        <div class="mission-icon" aria-hidden="true">
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="22" cy="22" r="22" fill="rgba(26,188,156,0.12)"/>
+            <path d="M22 10l2.8 8.6h9.1l-7.36 5.35 2.8 8.6L22 27.2l-7.34 5.35 2.8-8.6L10.1 18.6h9.1L22 10z" fill="#1ABC9C"/>
           </svg>
         </div>
-        <h2>Our Promise to You</h2>
-        <blockquote>
-          "Every engagement begins with understanding your goals. We commit to delivering solutions that are secure, scalable, and aligned with your business objectives — on time and within budget."
-        </blockquote>
-        <cite>— The Ekan Solutions Leadership Team</cite>
+        <h3>Our Mission</h3>
+        <p>To empower organizations with innovative, secure, and scalable technology solutions that drive business growth and competitive advantage. We partner with our clients to deeply understand their unique challenges and deliver results that create lasting, measurable value — on time and within budget.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       CTA BANNER
-       ============================================================ -->
-  <section class="cta-banner fade-in">
-    <div class="container cta-banner-inner">
-      <div class="cta-banner-text">
-        <h2>Ready to Partner With Us?</h2>
-        <p>Let's discuss how Ekan Solutions can help drive your next technology initiative.</p>
-      </div>
-      <a href="contact.html" class="btn btn-white" data-ocid="about-cta-contact">Get In Touch</a>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       FOOTER
-       ============================================================ -->
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-col">
-        <div class="footer-logo">
-          <img src="assets/footer-logo.png" alt="Ekan Solutions Logo" style="height:80px; width:auto; display:block; margin-bottom:12px;">
+      <div class="mission-block fade-in" data-ocid="about-vision-card">
+        <div class="mission-icon" aria-hidden="true">
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="22" cy="22" r="22" fill="rgba(10,61,98,0.08)"/>
+            <circle cx="22" cy="22" r="9" stroke="#0A3D62" stroke-width="2.5" fill="none"/>
+            <circle cx="22" cy="22" r="3.5" fill="#0A3D62"/>
+            <line x1="22" y1="6" x2="22" y2="12" stroke="#0A3D62" stroke-width="2" stroke-linecap="round"/>
+            <line x1="22" y1="32" x2="22" y2="38" stroke="#0A3D62" stroke-width="2" stroke-linecap="round"/>
+            <line x1="6" y1="22" x2="12" y2="22" stroke="#0A3D62" stroke-width="2" stroke-linecap="round"/>
+            <line x1="32" y1="22" x2="38" y2="22" stroke="#0A3D62" stroke-width="2" stroke-linecap="round"/>
+          </svg>
         </div>
-        <p class="footer-tagline">Enterprise IT solutions built on integrity, innovation, and 15+ years of expertise.</p>
-      <span class="footer-contact-label">Get in Touch</span>
-      <div class="footer-contact-row">
+        <h3>Our Vision</h3>
+        <p>To be the most trusted technology partner for enterprises seeking digital transformation — recognized for excellence, integrity, and measurable results. We aspire to set the standard for IT services through continuous innovation, deep expertise, and a relentless commitment to client-centric delivery across every engagement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CORE VALUES
+     ============================================================ -->
+<section class="section" id="core-values">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-label">WHAT WE STAND FOR</span>
+      <h2 class="section-title">Our Core Values</h2>
+      <p class="section-desc">The beliefs that define our culture and shape every client engagement, from strategy through delivery.</p>
+    </div>
+    <div class="values-grid">
+
+      <div class="value-card fade-in" data-ocid="about-value-card.1">
+        <div class="value-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="#1ABC9C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 2L4 5.5v5.5c0 4.1 3 7.9 7 9 4-1.1 7-4.9 7-9V5.5L11 2z"/>
+            <polyline points="7 11 10 14 16 8"/>
+          </svg>
+        </div>
+        <h4>Integrity</h4>
+        <p>Honest, transparent partnerships built on accountability and ethical conduct in every interaction with our clients and partners.</p>
+      </div>
+
+      <div class="value-card fade-in" data-ocid="about-value-card.2">
+        <div class="value-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="#1ABC9C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="9"/>
+            <path d="M11 6l1.4 4.3h4.6l-3.7 2.7 1.4 4.3L11 14.6l-3.7 2.7 1.4-4.3L5 9.3h4.6L11 6z" fill="#1ABC9C" stroke="none"/>
+          </svg>
+        </div>
+        <h4>Excellence</h4>
+        <p>Delivering the highest quality in every engagement. We hold ourselves to rigorous standards so clients always receive best-in-class solutions.</p>
+      </div>
+
+      <div class="value-card fade-in" data-ocid="about-value-card.3">
+        <div class="value-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="#1ABC9C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="9"/>
+            <line x1="11" y1="7" x2="11" y2="15"/>
+            <line x1="7" y1="11" x2="15" y2="11"/>
+          </svg>
+        </div>
+        <h4>Innovation</h4>
+        <p>Embracing emerging technologies to solve complex business challenges. We continuously research new tools and methodologies to keep clients ahead.</p>
+      </div>
+
+      <div class="value-card fade-in" data-ocid="about-value-card.4">
+        <div class="value-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="#1ABC9C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="8" cy="8" r="3.5"/>
+            <circle cx="14" cy="14" r="3.5"/>
+            <path d="M11.5 8.5c1.6 0 2.5 1.2 2.5 2.5"/>
+            <path d="M8.5 11c0-1.4 1.2-2.5 2.5-2.5"/>
+          </svg>
+        </div>
+        <h4>Collaboration</h4>
+        <p>Working as a unified team with our clients. We integrate seamlessly with your organization to deliver shared outcomes and long-term relationships.</p>
+      </div>
+
+      <div class="value-card fade-in" data-ocid="about-value-card.5">
+        <div class="value-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="#1ABC9C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 7H4a2 2 0 00-2 2v8a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/>
+            <path d="M16 3H6a2 2 0 00-2 2v2h16V5a2 2 0 00-2-2z"/>
+            <line x1="12" y1="12" x2="12" y2="15"/>
+            <circle cx="12" cy="11" r="1" fill="#1ABC9C" stroke="none"/>
+          </svg>
+        </div>
+        <h4>Client Focus</h4>
+        <p>Every solution is purpose-built around your unique goals. We listen deeply, understand your business context, and tailor our approach accordingly.</p>
+      </div>
+
+      <div class="value-card fade-in" data-ocid="about-value-card.6">
+        <div class="value-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="#1ABC9C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="13 2 13 9 20 9"/>
+            <path d="M20 14.7V18a2 2 0 01-2 2H4a2 2 0 01-2-2V4a2 2 0 012-2h9.3"/>
+            <polyline points="20 2 13 9"/>
+          </svg>
+        </div>
+        <h4>Agility</h4>
+        <p>Adapting quickly to evolving requirements and market conditions. Our iterative, sprint-based delivery ensures speed and flexibility at every stage.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     INDUSTRIES SERVED
+     ============================================================ -->
+<section class="section section-alt" id="industries">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-label">SECTORS WE SERVE</span>
+      <h2 class="section-title">Industries We Serve</h2>
+      <p class="section-desc">Deep domain expertise across the sectors that depend on technology to operate, compete, and grow.</p>
+    </div>
+    <div class="industries-grid fade-in">
+
+      <div class="industry-card-v2" data-ocid="about-industry-card.1">
+        <div class="industry-card-v2-icon">
+          <svg width="28" height="28" fill="none" stroke="#1abc9c" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <h4 class="industry-card-v2-title">Healthcare</h4>
+        <p class="industry-card-v2-desc">HIPAA-compliant systems, EHR integration, and secure patient data management for modern healthcare providers.</p>
+        <a href="solutions.html#industries" class="industry-card-v2-link">Read More <span aria-hidden="true">→</span></a>
+      </div>
+
+      <div class="industry-card-v2" data-ocid="about-industry-card.2">
+        <div class="industry-card-v2-icon">
+          <svg width="28" height="28" fill="none" stroke="#1abc9c" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+        </div>
+        <h4 class="industry-card-v2-title">Financial Services</h4>
+        <p class="industry-card-v2-desc">Secure banking platforms, regulatory compliance, and real-time fraud detection for fintech organizations.</p>
+        <a href="solutions.html#industries" class="industry-card-v2-link">Read More <span aria-hidden="true">→</span></a>
+      </div>
+
+      <div class="industry-card-v2" data-ocid="about-industry-card.3">
+        <div class="industry-card-v2-icon">
+          <svg width="28" height="28" fill="none" stroke="#1abc9c" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h4 class="industry-card-v2-title">Government &amp; Public Sector</h4>
+        <p class="industry-card-v2-desc">FedRAMP-authorized cloud solutions, FISMA compliance, and digital modernization for public sector agencies.</p>
+        <a href="solutions.html#industries" class="industry-card-v2-link">Read More <span aria-hidden="true">→</span></a>
+      </div>
+
+      <div class="industry-card-v2" data-ocid="about-industry-card.4">
+        <div class="industry-card-v2-icon">
+          <svg width="28" height="28" fill="none" stroke="#1abc9c" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        </div>
+        <h4 class="industry-card-v2-title">Retail &amp; E-Commerce</h4>
+        <p class="industry-card-v2-desc">Scalable storefronts, inventory systems, and customer analytics platforms for modern retail businesses.</p>
+        <a href="solutions.html#industries" class="industry-card-v2-link">Read More <span aria-hidden="true">→</span></a>
+      </div>
+
+      <div class="industry-card-v2" data-ocid="about-industry-card.5">
+        <div class="industry-card-v2-icon">
+          <svg width="28" height="28" fill="none" stroke="#1abc9c" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+        </div>
+        <h4 class="industry-card-v2-title">Manufacturing &amp; Industry</h4>
+        <p class="industry-card-v2-desc">IoT integration, ERP systems, supply chain optimization, and predictive maintenance for industry leaders.</p>
+        <a href="solutions.html#industries" class="industry-card-v2-link">Read More <span aria-hidden="true">→</span></a>
+      </div>
+
+      <div class="industry-card-v2" data-ocid="about-industry-card.6">
+        <div class="industry-card-v2-icon">
+          <svg width="28" height="28" fill="none" stroke="#1abc9c" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+        </div>
+        <h4 class="industry-card-v2-title">Education &amp; EdTech</h4>
+        <p class="industry-card-v2-desc">LMS platforms, student data systems, remote learning infrastructure, and campus security solutions.</p>
+        <a href="solutions.html#industries" class="industry-card-v2-link">Read More <span aria-hidden="true">→</span></a>
+      </div>
+
+      <div class="industry-card-v2" data-ocid="about-industry-card.7">
+        <div class="industry-card-v2-icon">
+          <svg width="28" height="28" fill="none" stroke="#1abc9c" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        </div>
+        <h4 class="industry-card-v2-title">Technology</h4>
+        <p class="industry-card-v2-desc">Software product engineering, platform migrations, and DevOps acceleration for tech-forward companies.</p>
+        <a href="solutions.html#industries" class="industry-card-v2-link">Read More <span aria-hidden="true">→</span></a>
+      </div>
+
+      <div class="industry-card-v2" data-ocid="about-industry-card.8">
+        <div class="industry-card-v2-icon">
+          <svg width="28" height="28" fill="none" stroke="#1abc9c" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <h4 class="industry-card-v2-title">Energy &amp; Utilities</h4>
+        <p class="industry-card-v2-desc">SCADA systems, OT/IT convergence, and regulatory compliance for energy and utility infrastructure.</p>
+        <a href="solutions.html#industries" class="industry-card-v2-link">Read More <span aria-hidden="true">→</span></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     OUR PROMISE
+     ============================================================ -->
+<section class="promise-section fade-in" aria-label="Our promise">
+  <div class="container">
+    <div class="promise-block">
+      <div class="promise-icon" aria-hidden="true">
+        <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="26" cy="26" r="26" fill="rgba(26,188,156,0.12)"/>
+          <path d="M26 12l3.4 10.5h11l-8.9 6.5 3.4 10.4L26 33l-8.9 6.4 3.4-10.4L11.6 22.5h11L26 12z" fill="#1ABC9C"/>
+        </svg>
+      </div>
+      <h2>Our Promise to You</h2>
+      <div class="promise-divider" aria-hidden="true"></div>
+      <blockquote>
+        "Every engagement begins with understanding your goals. We commit to delivering solutions that are secure, scalable, and precisely aligned with your business objectives — on time, within budget, and with transparency at every step."
+      </blockquote>
+      <cite>— The Ekan Solutions Leadership Team</cite>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CTA BANNER
+     ============================================================ -->
+<section class="cta-banner fade-in" aria-label="Call to action">
+  <div class="cta-banner-inner">
+    <div class="cta-banner-text">
+      <h2>Ready to Work With Us?</h2>
+      <p>Let's discuss how Ekan Solutions can help drive your next technology initiative.</p>
+    </div>
+    <a href="contact.html" class="btn-white" data-ocid="about-cta-contact-button">Get In Touch</a>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="site-footer">
+  <div class="container footer-grid-4">
+
+    <!-- Col 1: Brand -->
+    <div class="footer-col">
+      <div class="footer-logo">
+        <img src="assets/footer-logo.png" alt="Ekan Solutions" class="footer-logo-img">
+      </div>
+      <p class="footer-tagline">Enterprise IT solutions built on integrity, innovation, and 15+ years of expertise. Securing, scaling, and accelerating your business.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="LinkedIn" class="footer-social-link">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="#" aria-label="Twitter" class="footer-social-link">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+        </a>
+        <a href="#" aria-label="Facebook" class="footer-social-link">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <a href="#" aria-label="YouTube" class="footer-social-link">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Col 2: Services -->
+    <div class="footer-col">
+      <h4 class="footer-col-title">Services</h4>
+      <ul class="footer-links">
+        <li><a href="cybersecurity.html">Cybersecurity</a></li>
+        <li><a href="projectmanagement.html">Project Management</a></li>
+        <li><a href="fullstack.html">Full Stack Development</a></li>
+        <li><a href="awscloud.html">AWS Cloud Solutions</a></li>
+        <li><a href="javadevelopment.html">Java Development</a></li>
+        <li><a href="qatesting.html">Quality Assurance / Testing</a></li>
+        <li><a href="aiservices.html">AI &amp; Automation Services</a></li>
+      </ul>
+    </div>
+
+    <!-- Col 3: Quick Links -->
+    <div class="footer-col">
+      <h4 class="footer-col-title">Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="solutions.html">Solutions</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Col 4: Get In Touch -->
+    <div class="footer-contact-col">
+      <h4>Get In Touch</h4>
+
+      <div class="footer-contact-item">
         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .94h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16z"/></svg>
-        <div class="footer-contact-text">
+        <div class="footer-contact-item-text">
           <a href="tel:8322950408">(832) 295-0408</a>
           <a href="tel:4105968362">410-596-8362</a>
         </div>
       </div>
-      <div class="footer-contact-row">
+
+      <div class="footer-contact-item">
         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        <div class="footer-contact-text">
+        <div class="footer-contact-item-text">
           <a href="mailto:hr@ekansolutionsinc.awsapps.com">hr@ekansolutionsinc.awsapps.com</a>
         </div>
       </div>
-      <div class="footer-contact-row">
+
+      <div class="footer-contact-item">
         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        <div class="footer-contact-text">
+        <div class="footer-contact-item-text">
           <span>1438 Heritage Ridge Rd, Woodbine, MD 21797</span>
           <span>9175 Guilford Rd. Suite 300 #1015, Columbia, MD 21046</span>
         </div>
       </div>
     </div>
-      <div class="footer-col">
-        <h4 class="footer-heading">Quick Links</h4>
-        <ul class="footer-links">
-          <li><a href="home.html">Home</a></li>
-          <li><a href="about.html" aria-current="page">About Us</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="solutions.html">Solutions</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4 class="footer-heading">Our Services</h4>
-        <ul class="footer-links">
-          <li><a href="cybersecurity.html">Cybersecurity</a></li>
-          <li><a href="projectmanagement.html">Project Management</a></li>
-          <li><a href="fullstack.html">Full Stack Development</a></li>
-          <li><a href="awscloud.html">AWS Cloud Solutions</a></li>
-          <li><a href="javadevelopment.html">Java Development</a></li>
-          <li><a href="qatesting.html">Quality Assurance / Testing</a></li>
-          <li><a href="aiservices.html">AI &amp; Automation Services</a></li>
-        </ul>
-      </div>
-    </div>
-    <div style="border-top:1px solid rgba(255,255,255,0.08);margin-top:2rem;padding:0.75rem 1.5rem;display:flex;justify-content:center;align-items:center;">
-      <span style="font-size:12px;color:rgba(255,255,255,0.35);letter-spacing:0.03em;">Design Version 20</span>
-    </div>
-  </footer>
 
-  <script src="nav.js"></script>
+  </div>
+  <div class="footer-bottom-bar">
+    <span>© 2026 Ekan Solutions Inc. All rights reserved.</span>
+  </div>
+</footer>
 
-  <!-- Page-specific styles for sections not covered by base styles.css -->
-  <style>
-    /* ---- Hero ---- */
-    .about-hero {
-      background: linear-gradient(135deg, #0A3D62 0%, #0d4f7d 50%, #062d4a 100%);
-      padding: 7rem 0 5rem;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .about-hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(26,188,156,0.12) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .about-hero h1 {
-      font-size: clamp(2rem, 5vw, 3.25rem);
-      font-weight: 900;
-      color: #fff;
-      margin: 0.75rem 0 1rem;
-      line-height: 1.15;
-    }
-    .about-hero-subtitle {
-      font-size: 1.15rem;
-      color: rgba(255,255,255,0.78);
-      max-width: 600px;
-      margin: 0 auto 2rem;
-      line-height: 1.6;
-    }
-    .about-hero-btns {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .btn-outline-white {
-      border: 2px solid rgba(255,255,255,0.6);
-      color: #fff;
-      background: transparent;
-      padding: 0.75rem 1.75rem;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      text-decoration: none;
-      transition: background 0.2s, border-color 0.2s;
-    }
-    .btn-outline-white:hover {
-      background: rgba(255,255,255,0.12);
-      border-color: #fff;
-    }
-
-    /* ---- Company Story ---- */
-    .about-story-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3.5rem;
-      align-items: center;
-    }
-    @media (max-width: 768px) {
-      .about-story-grid { grid-template-columns: 1fr; gap: 2rem; }
-    }
-    .about-story-text h2 {
-      font-size: 2rem;
-      font-weight: 800;
-      color: #0A3D62;
-      margin: 0 0 1.25rem;
-    }
-    .about-story-text p {
-      color: #4a5568;
-      line-height: 1.75;
-      margin-bottom: 1.1rem;
-    }
-    .about-story-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-top: 1.5rem;
-    }
-    .about-badge {
-      background: rgba(26,188,156,0.1);
-      color: #0d9e82;
-      border: 1px solid rgba(26,188,156,0.3);
-      border-radius: 999px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      padding: 0.3rem 0.85rem;
-    }
-
-    /* ---- Stats Bar ---- */
-    .stats-bar {
-      background: linear-gradient(90deg, #0A3D62 0%, #0d4f7d 100%);
-      padding: 3rem 0;
-    }
-    .stats-bar-inner {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem;
-      text-align: center;
-    }
-    @media (max-width: 640px) {
-      .stats-bar-inner { grid-template-columns: repeat(2, 1fr); }
-    }
-    .stat-item { padding: 0.5rem; }
-    .stat-number {
-      display: block;
-      font-size: 2.5rem;
-      font-weight: 900;
-      color: #1ABC9C;
-      line-height: 1;
-      margin-bottom: 0.4rem;
-    }
-    .stat-label {
-      display: block;
-      font-size: 0.88rem;
-      color: rgba(255,255,255,0.72);
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    /* ---- Mission & Vision ---- */
-    .mission-vision-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-    }
-    @media (max-width: 640px) {
-      .mission-vision-grid { grid-template-columns: 1fr; }
-    }
-    .mission-block {
-      background: #fff;
-      border-radius: 14px;
-      padding: 2.5rem 2rem;
-      border: 1px solid #e8edf2;
-      box-shadow: 0 2px 12px rgba(10,61,98,0.06);
-    }
-    .mission-icon {
-      margin-bottom: 1.25rem;
-    }
-    .mission-block h3 {
-      font-size: 1.25rem;
-      font-weight: 800;
-      color: #0A3D62;
-      margin: 0 0 0.85rem;
-    }
-    .mission-block p {
-      color: #4a5568;
-      line-height: 1.75;
-      margin: 0;
-    }
-
-    /* ---- Values Grid ---- */
-    .values-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.75rem;
-    }
-    @media (max-width: 900px) {
-      .values-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 540px) {
-      .values-grid { grid-template-columns: 1fr; }
-    }
-    .value-card {
-      background: #fff;
-      border-radius: 14px;
-      padding: 2rem 1.75rem;
-      border: 1px solid #e8edf2;
-      box-shadow: 0 2px 10px rgba(10,61,98,0.05);
-      transition: transform 0.22s, box-shadow 0.22s;
-    }
-    .value-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 28px rgba(10,61,98,0.12);
-    }
-    .value-icon {
-      width: 52px;
-      height: 52px;
-      background: rgba(26,188,156,0.1);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.1rem;
-    }
-    .value-card h4 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: #0A3D62;
-      margin: 0 0 0.6rem;
-    }
-    .value-card p {
-      color: #4a5568;
-      font-size: 0.9rem;
-      line-height: 1.65;
-      margin: 0;
-    }
-
-    /* ---- Industries ---- */
-    .industries-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-    }
-    @media (max-width: 900px) {
-      .industries-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 540px) {
-      .industries-grid { grid-template-columns: 1fr; }
-    }
-    .industry-card {
-      background: #fff;
-      border-radius: 12px;
-      padding: 1.75rem 1.5rem;
-      border: 1px solid #e8edf2;
-      box-shadow: 0 2px 8px rgba(10,61,98,0.05);
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .industry-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 24px rgba(10,61,98,0.1);
-    }
-    .industry-icon {
-      width: 52px;
-      height: 52px;
-      background: rgba(26,188,156,0.1);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    .industry-card h4 {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: #0A3D62;
-      margin: 0 0 0.35rem;
-    }
-    .industry-card p {
-      color: #4a5568;
-      font-size: 0.85rem;
-      line-height: 1.55;
-      margin: 0;
-    }
-
-    /* ---- Promise Section ---- */
-    .promise-section {
-      background: linear-gradient(135deg, #0A3D62 0%, #062d4a 100%);
-      padding: 5rem 0;
-    }
-    .promise-block {
-      text-align: center;
-      max-width: 780px;
-      margin: 0 auto;
-    }
-    .promise-icon { margin-bottom: 1.5rem; }
-    .promise-block h2 {
-      font-size: clamp(1.5rem, 3vw, 2.25rem);
-      font-weight: 800;
-      color: #fff;
-      margin: 0 0 1.75rem;
-    }
-    .promise-block blockquote {
-      font-size: 1.15rem;
-      color: rgba(255,255,255,0.88);
-      line-height: 1.8;
-      font-style: italic;
-      border-left: 4px solid #1ABC9C;
-      padding-left: 1.75rem;
-      text-align: left;
-      margin: 0 0 1.25rem;
-    }
-    .promise-block cite {
-      display: block;
-      font-size: 0.9rem;
-      color: #1ABC9C;
-      font-weight: 600;
-      font-style: normal;
-      text-align: right;
-    }
-
-    /* ---- CTA Banner override ---- */
-    .cta-banner {
-      background: linear-gradient(135deg, #1ABC9C 0%, #0d9e82 100%);
-      padding: 4rem 0;
-    }
-    .cta-banner-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-    .cta-banner-text h2 {
-      font-size: 1.75rem;
-      font-weight: 800;
-      color: #fff;
-      margin: 0 0 0.5rem;
-    }
-    .cta-banner-text p {
-      color: rgba(255,255,255,0.85);
-      font-size: 1rem;
-      margin: 0;
-    }
-    .btn-white {
-      background: #fff;
-      color: #0A3D62;
-      font-weight: 700;
-      font-size: 0.95rem;
-      padding: 0.85rem 2rem;
-      border-radius: 8px;
-      text-decoration: none;
-      white-space: nowrap;
-      transition: transform 0.18s, box-shadow 0.18s;
-    }
-    .btn-white:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-    }
-  </style>
+<script src="nav.js"></script>
 </body>
 </html>

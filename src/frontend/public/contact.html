@@ -4,235 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Us | Ekan Solutions Inc.</title>
-  <meta name="description" content="Get in touch with Ekan Solutions Inc. — enterprise IT services in Cybersecurity, Cloud, AI, and more. Based in Maryland." />
+  <meta name="description" content="Contact Ekan Solutions Inc. — enterprise IT services in Cybersecurity, Cloud, AI, Development, and more. Based in Maryland. Reach out today." />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <style>
-    /* ---- Contact page specific styles ---- */
-    .contact-hero {
-      background: linear-gradient(135deg, #0A3D62 0%, #0d4f80 100%);
-      padding: 3.5rem 0 3rem;
-      color: var(--white);
-      position: relative;
-      overflow: hidden;
-    }
-    .contact-hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
-      background-size: 60px 60px;
-    }
-    .contact-hero .container { position: relative; z-index: 1; }
-    .contact-hero-title {
-      font-size: clamp(2rem, 4vw, 2.75rem);
-      font-weight: 900;
-      color: var(--white);
-      line-height: 1.15;
-      margin-bottom: 0.75rem;
-    }
-    .contact-hero-title span { color: var(--accent); }
-    .contact-hero-subtitle {
-      color: rgba(255,255,255,0.72);
-      font-size: 1.05rem;
-      line-height: 1.65;
-      max-width: 520px;
-    }
-
-    /* Contact info side */
-    .contact-info-heading {
-      font-size: 1.4rem;
-      font-weight: 800;
-      color: var(--primary);
-      margin-bottom: 1.5rem;
-    }
-    .contact-detail-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.9rem;
-      margin-bottom: 1.25rem;
-    }
-    .contact-detail-label {
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-      color: var(--text-muted);
-      margin-bottom: 0.2rem;
-    }
-    .contact-detail-value {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--text-dark);
-    }
-    .contact-detail-value a {
-      color: var(--primary);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .contact-detail-value a:hover { color: var(--accent); }
-    .social-links {
-      display: flex;
-      gap: 0.75rem;
-      margin-top: 1.75rem;
-      flex-wrap: wrap;
-    }
-    .social-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.5rem 1rem;
-      background: var(--primary-light);
-      color: var(--primary);
-      border-radius: var(--radius-md);
-      font-size: 0.82rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: var(--transition);
-      border: 1.5px solid transparent;
-    }
-    .social-link:hover {
-      background: var(--primary);
-      color: var(--white);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-sm);
-    }
-    .hours-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      background: var(--accent-light);
-      color: var(--accent-dark);
-      border-radius: 100px;
-      padding: 0.3rem 0.8rem;
-      font-size: 0.78rem;
-      font-weight: 600;
-      margin-top: 1.5rem;
-    }
-    .hours-dot {
-      width: 7px; height: 7px;
-      border-radius: 50%;
-      background: var(--accent);
-    }
-
-    /* Form panel wrapping */
-    .form-wrapper { position: relative; }
-
-    /* Map section */
-    .map-placeholder {
-      background: linear-gradient(135deg, #e8f0f7 0%, #d0e4f1 100%);
-      border-radius: var(--radius-xl);
-      min-height: 260px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 2.5rem;
-      border: 2px dashed rgba(10,61,98,0.18);
-      gap: 0.75rem;
-    }
-    .map-icon {
-      width: 52px; height: 52px;
-      border-radius: 50%;
-      background: var(--primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 0.5rem;
-    }
-    .map-icon svg { width: 26px; height: 26px; stroke: var(--white); }
-    .map-label {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--primary);
-    }
-    .map-address {
-      font-size: 0.875rem;
-      color: var(--text-muted);
-    }
-    .map-location-card {
-      background: var(--white);
-      border-radius: var(--radius-xl);
-      padding: 2rem;
-      box-shadow: var(--shadow-md);
-      border: 1px solid var(--gray-border);
-      display: flex;
-      flex-direction: column;
-      gap: 1.1rem;
-    }
-    .map-location-card h3 {
-      font-size: 1.15rem;
-      font-weight: 800;
-      color: var(--primary);
-      margin-bottom: 0.25rem;
-    }
-    .location-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-      font-size: 0.875rem;
-      color: var(--text-body);
-    }
-    .location-item-icon {
-      width: 34px; height: 34px;
-      border-radius: 50%;
-      background: var(--primary-light);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    .location-item-icon svg { width: 15px; height: 15px; stroke: var(--primary); }
-    .location-item a { color: var(--primary); text-decoration: none; }
-    .location-item a:hover { color: var(--accent); }
-
-    /* FAQ */
-    .faq-list { display: flex; flex-direction: column; gap: 1rem; max-width: 760px; margin: 0 auto; }
-    .faq-item {
-      background: var(--white);
-      border: 1.5px solid var(--gray-border);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      transition: box-shadow 0.25s;
-    }
-    .faq-item:hover { box-shadow: var(--shadow-md); }
-    .faq-question {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 1.25rem 1.5rem;
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--primary);
-      background: none;
-      border: none;
-      cursor: pointer;
-      text-align: left;
-      font-family: inherit;
-    }
-    .faq-question:hover { color: var(--accent); }
-    .faq-chevron {
-      width: 20px; height: 20px;
-      flex-shrink: 0;
-      stroke: currentColor;
-      transition: transform 0.3s ease;
-    }
-    .faq-item.open .faq-chevron { transform: rotate(180deg); }
-    .faq-answer {
-      display: none;
-      padding: 0 1.5rem 1.25rem;
-      font-size: 0.875rem;
-      color: var(--text-muted);
-      line-height: 1.7;
-      border-top: 1px solid var(--gray-border);
-      padding-top: 1rem;
-    }
-    .faq-item.open .faq-answer { display: block; }
-  </style>
 </head>
 <body>
 
@@ -242,15 +19,17 @@
 <header class="site-header" id="site-header">
   <div class="container nav-inner">
     <a href="home.html" class="nav-logo">
-      <img src="assets/header-logo.png" alt="Ekan Solutions Logo" style="height:48px; width:auto; display:block;">
+      <img src="assets/header-logo.png" alt="Ekan Solutions Logo" class="header-logo-img">
     </a>
+
     <nav class="nav-links" id="nav-links">
       <a href="home.html" class="nav-link" data-page="home">Home</a>
       <a href="about.html" class="nav-link" data-page="about">About</a>
       <a href="services.html" class="nav-link" data-page="services">Services</a>
       <a href="solutions.html" class="nav-link" data-page="solutions">Solutions</a>
-      <a href="contact.html" class="nav-link" data-page="contact">Contact</a>
+      <a href="contact.html" class="nav-link active" data-page="contact">Contact</a>
     </nav>
+
     <div class="nav-cta">
       <div class="nav-phones">
         <a href="tel:8322950408" class="nav-phone">(832) 295-0408</a>
@@ -258,10 +37,12 @@
       </div>
       <a href="contact.html" class="btn btn-accent">Get Consultation</a>
     </div>
+
     <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
+
   <div class="mobile-menu" id="mobile-menu">
     <nav class="mobile-nav">
       <a href="home.html" class="mobile-link" data-page="home">Home</a>
@@ -288,56 +69,105 @@
       <span class="breadcrumb-sep">›</span>
       <span>Contact</span>
     </nav>
-    <h1 class="contact-hero-title">Get <span>In Touch</span></h1>
-    <p class="contact-hero-subtitle">Ready to start your next technology project? We'd love to hear from you.</p>
+    <h1 class="contact-hero-title">Contact <span>Us</span></h1>
+    <p class="contact-hero-subtitle">We'd love to hear from you. Reach out and let's start a conversation.</p>
   </div>
 </section>
 
 <!-- ============================================================
-     CONTACT SECTION — two-column
+     CONTACT INFO CARDS — 3 cards
      ============================================================ -->
-<section class="section" id="contact-section">
+<section class="section section-alt" id="contact-info-cards">
   <div class="container">
-    <div class="grid-equal fade-in">
+    <div class="grid-3 fade-in">
 
-      <!-- Left: Contact Info -->
-      <div>
-        <h2 class="contact-info-heading">Contact Information</h2>
+      <!-- Location Card -->
+      <div class="card contact-card" data-ocid="contact-card-location">
+        <div class="icon-circle" aria-hidden="true">
+          <svg width="24" height="24" fill="none" stroke="#1ABC9C" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
+        <h3>Office Locations</h3>
+        <p>1438 Heritage Ridge Rd, Woodbine, MD 21797</p>
+        <p>9175 Guilford Rd. Suite 300 #1015, Columbia, MD 21046</p>
+      </div>
+
+      <!-- Phone Card -->
+      <div class="card contact-card" data-ocid="contact-card-phone">
+        <div class="icon-circle" aria-hidden="true">
+          <svg width="24" height="24" fill="none" stroke="#1ABC9C" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .94h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16z"/>
+          </svg>
+        </div>
+        <h3>Phone Numbers</h3>
+        <p><a href="tel:8322950408">(832) 295-0408</a></p>
+        <p><a href="tel:4105968362">410-596-8362</a></p>
+      </div>
+
+      <!-- Email Card -->
+      <div class="card contact-card" data-ocid="contact-card-email">
+        <div class="icon-circle" aria-hidden="true">
+          <svg width="24" height="24" fill="none" stroke="#1ABC9C" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </div>
+        <h3>Email Address</h3>
+        <p><a href="mailto:hr@ekansolutionsinc.awsapps.com">hr@ekansolutionsinc.awsapps.com</a></p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CONTACT FORM SECTION — 2-column
+     ============================================================ -->
+<section class="section" id="contact-form-section">
+  <div class="container">
+    <div class="contact-grid fade-in">
+
+      <!-- Left: Heading + Description -->
+      <div class="contact-info">
+        <h2 class="contact-info-heading">Send Us a Message</h2>
+        <p class="contact-info-desc">Have a project in mind or want to learn more about our services? Fill out the form and one of our experts will get back to you within one business day.</p>
 
         <div class="contact-detail-row">
-          <div class="contact-info-icon">
+          <div class="contact-info-icon" aria-hidden="true">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
             </svg>
           </div>
           <div>
             <p class="contact-detail-label">Office 1</p>
-            <p class="contact-detail-value">1438 Heritage Ridge Rd<br>Woodbine, MD 21797</p>
-            <p class="contact-detail-label" style="margin-top:0.6rem;">Office 2</p>
-            <p class="contact-detail-value">9175 Guilford Rd. Suite 300 #1015<br>Columbia, MD 21046</p>
+            <p class="contact-detail-value">1438 Heritage Ridge Rd, Woodbine, MD 21797</p>
+            <p class="contact-detail-label contact-detail-label-mt">Office 2</p>
+            <p class="contact-detail-value">9175 Guilford Rd. Suite 300 #1015, Columbia, MD 21046</p>
           </div>
         </div>
 
         <div class="contact-detail-row">
-          <div class="contact-info-icon">
+          <div class="contact-info-icon" aria-hidden="true">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/>
             </svg>
           </div>
           <div>
             <p class="contact-detail-label">Phone</p>
             <p class="contact-detail-value">
-              <a href="tel:8322950408">(832) 295-0408</a><br/>
+              <a href="tel:8322950408">(832) 295-0408</a><br>
               <a href="tel:4105968362">410-596-8362</a>
             </p>
           </div>
         </div>
 
         <div class="contact-detail-row">
-          <div class="contact-info-icon">
+          <div class="contact-info-icon" aria-hidden="true">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/>
             </svg>
           </div>
           <div>
@@ -348,134 +178,78 @@
           </div>
         </div>
 
-        <div class="contact-detail-row">
-          <div class="contact-info-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </div>
-          <div>
-            <p class="contact-detail-label">Business Hours</p>
-            <p class="contact-detail-value">Monday–Friday, 9:00 AM – 6:00 PM EST</p>
-          </div>
-        </div>
-
         <div class="hours-badge">
-          <span class="hours-dot"></span>
-          Currently available during business hours
-        </div>
-
-        <div class="social-links">
-          <a href="https://www.linkedin.com/company/ekansolutions" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
-            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-            LinkedIn
-          </a>
-          <a href="https://twitter.com/ekansolutions" target="_blank" rel="noopener" class="social-link" aria-label="Twitter / X">
-            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-            Twitter / X
-          </a>
+          <span class="hours-dot" aria-hidden="true"></span>
+          Monday – Friday, 9:00 AM – 6:00 PM EST
         </div>
       </div>
 
-      <!-- Right: Contact Form -->
+      <!-- Right: Web3Forms -->
       <div class="form-wrapper" id="form-panel">
-        <div class="form-panel" data-ocid="contact-form-panel">
-          <h2 class="form-title">Send Us a Message</h2>
+        <div class="form-panel" data-ocid="contact.dialog">
+
           <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
             <input type="hidden" name="access_key" value="83d2d829-23ea-4e75-add1-368b22535cfd">
-            <div class="form-row">
-              <div class="form-group">
-                <label class="form-label" for="contact-name">Full Name <span style="color:var(--accent)">*</span></label>
-                <input
-                  class="form-input"
-                  type="text"
-                  id="contact-name"
-                  name="name"
-                  placeholder="John Smith"
-                  required
-                  data-ocid="input-name"
-                />
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="contact-email">Email Address <span style="color:var(--accent)">*</span></label>
-                <input
-                  class="form-input"
-                  type="email"
-                  id="contact-email"
-                  name="email"
-                  placeholder="john@company.com"
-                  required
-                  data-ocid="input-email"
-                />
-              </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-name">Full Name <span class="required-star" aria-hidden="true">*</span></label>
+              <input class="form-input" type="text" id="contact-name" name="name" placeholder="Your Name" required data-ocid="contact.input" />
             </div>
+
             <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="contact-email">Email Address <span class="required-star" aria-hidden="true">*</span></label>
+                <input class="form-input" type="email" id="contact-email" name="email" placeholder="Your Email" required data-ocid="contact.email_input" />
+              </div>
               <div class="form-group">
                 <label class="form-label" for="contact-phone">Phone Number</label>
-                <input
-                  class="form-input"
-                  type="tel"
-                  id="contact-phone"
-                  name="phone"
-                  placeholder="(555) 000-0000"
-                  data-ocid="input-phone"
-                />
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="contact-company">Company</label>
-                <input
-                  class="form-input"
-                  type="text"
-                  id="contact-company"
-                  name="company"
-                  placeholder="Your Company Name"
-                  data-ocid="input-company"
-                />
+                <input class="form-input" type="tel" id="contact-phone" name="phone" placeholder="Phone Number" data-ocid="contact.phone_input" />
               </div>
             </div>
+
             <div class="form-group">
               <label class="form-label" for="contact-service">Service of Interest</label>
-              <select class="form-input form-select" id="contact-service" name="service" data-ocid="select-service">
-                <option value="">— Select a Service —</option>
+              <select class="form-input form-select" id="contact-service" name="service" data-ocid="contact.select">
+                <option value="">Select a Service</option>
                 <option value="cybersecurity">Cybersecurity</option>
                 <option value="project-management">Project Management</option>
                 <option value="fullstack">Full Stack Development</option>
                 <option value="aws">AWS Cloud Solutions</option>
                 <option value="java">Java Development</option>
-                <option value="qa">QA &amp; Testing</option>
+                <option value="qa">Quality Assurance / Testing</option>
                 <option value="ai">AI &amp; Automation Services</option>
-                <option value="general">General Inquiry</option>
               </select>
             </div>
+
             <div class="form-group">
-              <label class="form-label" for="contact-message">Message</label>
-              <textarea
-                class="form-textarea"
-                id="contact-message"
-                name="message"
-                rows="5"
-                placeholder="Tell us about your project, goals, or any questions you have..."
-                data-ocid="input-message"
-              ></textarea>
+              <label class="form-label" for="contact-message">Message <span class="required-star" aria-hidden="true">*</span></label>
+              <textarea class="form-textarea" id="contact-message" name="message" rows="5" placeholder="Your Message" required data-ocid="contact.textarea"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary btn-lg" style="width:100%; justify-content:center;" data-ocid="btn-submit-contact">
+
+            <button type="submit" class="btn btn-primary btn-lg btn-full" data-ocid="contact.submit_button">
               <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/>
               </svg>
               Send Message
             </button>
           </form>
         </div>
 
-        <!-- Success message (shown by nav.js on submit) -->
-        <div class="form-success" id="form-success" data-ocid="contact-form-success">
-          <div class="form-success-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+        <!-- Success state -->
+        <div class="form-success" id="form-success" role="alert" aria-live="polite" data-ocid="contact.success_state">
+          <div class="form-success-icon" aria-hidden="true">
+            <svg width="48" height="48" fill="none" stroke="#1ABC9C" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
             </svg>
           </div>
-          <h3 style="font-size:1.3rem;font-weight:800;color:var(--primary);margin-bottom:0.5rem;">Message Sent!</h3>
-          <p style="color:var(--text-muted);font-size:0.95rem;max-width:320px;line-height:1.6;">Thank you for reaching out. Our team will get back to you within 1 business day.</p>
+          <h3 class="form-success-title">Message Sent!</h3>
+          <p class="form-success-msg">Thank you for reaching out. Our team will get back to you within one business day.</p>
+        </div>
+
+        <!-- Error state -->
+        <div class="form-error" id="form-error" role="alert" aria-live="polite" data-ocid="contact.error_state">
+          <p>Something went wrong. Please try again or email us directly at <a href="mailto:hr@ekansolutionsinc.awsapps.com">hr@ekansolutionsinc.awsapps.com</a>.</p>
         </div>
       </div>
 
@@ -484,93 +258,40 @@
 </section>
 
 <!-- ============================================================
-     MAP / LOCATION SECTION
+     OFFICE LOCATIONS
      ============================================================ -->
-<section class="section-alt" id="location-section">
+<section class="section section-alt" id="our-offices">
   <div class="container fade-in">
     <div class="section-header">
-      <span class="section-label">Our Location</span>
-      <h2 class="section-title">Find Us</h2>
+      <span class="section-label">WHERE TO FIND US</span>
+      <h2 class="section-title">Our Offices</h2>
     </div>
-    <div class="grid-equal" style="align-items: stretch;">
+    <div class="grid-equal">
 
-      <!-- Map placeholder -->
-      <div class="map-placeholder">
-        <div class="map-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z" />
+      <!-- Office 1 -->
+      <div class="card office-card" data-ocid="office.item.1">
+        <div class="icon-circle" aria-hidden="true">
+          <svg width="24" height="24" fill="none" stroke="#1ABC9C" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/>
+            <circle cx="12" cy="10" r="3"/>
           </svg>
         </div>
-        <p class="map-label">Ekan Solutions Inc.</p>
-        <p class="map-address">1438 Heritage Ridge Rd, Woodbine, MD 21797</p>
-        <a
-          href="https://maps.google.com/?q=1438+Heritage+Ridge+Rd+Woodbine+MD+21797"
-          target="_blank"
-          rel="noopener"
-          class="btn btn-primary mt-4"
-          data-ocid="btn-get-directions"
-        >
-          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z" />
-          </svg>
-          Get Directions
-        </a>
+        <h3>Woodbine Office</h3>
+        <p class="office-address">1438 Heritage Ridge Rd<br>Woodbine, MD 21797</p>
+        <a href="https://maps.google.com/?q=1438+Heritage+Ridge+Rd+Woodbine+MD+21797" target="_blank" rel="noopener" class="card-link" data-ocid="office.link.1">Get Directions →</a>
       </div>
 
-      <!-- Location details card -->
-      <div class="map-location-card">
-        <h3>Office Details</h3>
-
-        <div class="location-item">
-          <div class="location-item-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-            </svg>
-          </div>
-          <div>
-            <p style="font-weight:700;font-size:0.8rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.3rem;">Office 1</p>
-            <p style="font-weight:600;font-size:0.85rem;color:var(--text-dark)">1438 Heritage Ridge Rd<br>Woodbine, MD 21797</p>
-            <p style="font-weight:700;font-size:0.8rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-top:0.6rem;margin-bottom:0.3rem;">Office 2</p>
-            <p style="font-weight:600;font-size:0.85rem;color:var(--text-dark)">9175 Guilford Rd. Suite 300 #1015<br>Columbia, MD 21046</p>
-            <p style="font-size:0.78rem;color:var(--text-muted);margin-top:0.4rem;">Serving clients nationwide &amp; remotely</p>
-          </div>
+      <!-- Office 2 -->
+      <div class="card office-card" data-ocid="office.item.2">
+        <div class="icon-circle" aria-hidden="true">
+          <svg width="24" height="24" fill="none" stroke="#1ABC9C" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
         </div>
-
-        <div class="location-item">
-          <div class="location-item-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
-            </svg>
-          </div>
-          <div>
-            <a href="tel:8322950408" style="display:block;font-weight:600;font-size:0.85rem;color:var(--primary)">(832) 295-0408</a>
-            <a href="tel:4105968362" style="display:block;font-weight:600;font-size:0.85rem;color:var(--primary)">410-596-8362</a>
-          </div>
-        </div>
-
-        <div class="location-item">
-          <div class="location-item-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-            </svg>
-          </div>
-          <div>
-            <a href="mailto:hr@ekansolutionsinc.awsapps.com" style="font-weight:600;font-size:0.85rem;color:var(--primary)">hr@ekansolutionsinc.awsapps.com</a>
-          </div>
-        </div>
-
-        <div class="location-item">
-          <div class="location-item-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </div>
-          <div>
-            <p style="font-weight:600;font-size:0.85rem;color:var(--text-dark)">Mon–Fri, 9:00 AM – 6:00 PM EST</p>
-            <p style="font-size:0.78rem;color:var(--text-muted)">Weekend support available for critical systems</p>
-          </div>
-        </div>
+        <h3>Columbia Office</h3>
+        <p class="office-address">9175 Guilford Rd. Suite 300 #1015<br>Columbia, MD 21046</p>
+        <a href="https://maps.google.com/?q=9175+Guilford+Rd+Columbia+MD+21046" target="_blank" rel="noopener" class="card-link" data-ocid="office.link.2">Get Directions →</a>
       </div>
 
     </div>
@@ -578,63 +299,63 @@
 </section>
 
 <!-- ============================================================
-     FAQ SECTION
+     FAQ ACCORDION
      ============================================================ -->
 <section class="section" id="faq-section">
   <div class="container fade-in">
     <div class="section-header">
-      <span class="section-label">Quick Answers</span>
+      <span class="section-label">QUICK ANSWERS</span>
       <h2 class="section-title">Frequently Asked Questions</h2>
-      <p class="section-subtitle">Common questions from clients before starting their engagement with us.</p>
+      <p class="section-desc">Common questions from clients before starting their engagement with us.</p>
     </div>
 
-    <div class="faq-list" data-ocid="faq-list">
+    <div class="faq-list" data-ocid="faq.list">
 
-      <div class="faq-item" data-ocid="faq-item-1">
-        <button class="faq-question" aria-expanded="false">
-          How quickly can you start a new project?
+      <div class="faq-item" data-ocid="faq.item.1">
+        <button class="faq-question" aria-expanded="false" data-ocid="faq.toggle.1">
+          What services does Ekan Solutions offer?
           <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
           </svg>
         </button>
         <div class="faq-answer">
-          We typically onboard new clients within 1–2 weeks of contract signing. Our streamlined kickoff process ensures your team is aligned, your environment is configured, and work begins with minimal delay.
+          Ekan Solutions Inc. offers seven core IT services: Cybersecurity, Project Management, Full Stack Development, AWS Cloud Solutions, Java Development, Quality Assurance &amp; Testing, and AI &amp; Automation Services. Each practice is staffed by certified professionals with deep domain expertise. Visit our <a href="services.html">Services page</a> for full details.
         </div>
       </div>
 
-      <div class="faq-item" data-ocid="faq-item-2">
-        <button class="faq-question" aria-expanded="false">
-          Do you work with small businesses as well as enterprises?
+      <div class="faq-item" data-ocid="faq.item.2">
+        <button class="faq-question" aria-expanded="false" data-ocid="faq.toggle.2">
+          Where are you located?
           <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
           </svg>
         </button>
         <div class="faq-answer">
-          Yes — we serve organizations of all sizes, from startups to Fortune 500 companies. Our engagement models are designed to scale, so whether you need a single specialist or a full delivery team, we adapt to your needs and budget.
+          We have two office locations in Maryland — 1438 Heritage Ridge Rd, Woodbine, MD 21797 and 9175 Guilford Rd. Suite 300 #1015, Columbia, MD 21046. We also serve clients nationwide through our remote delivery model, so location is never a barrier to working with us.
         </div>
       </div>
 
-      <div class="faq-item" data-ocid="faq-item-3">
-        <button class="faq-question" aria-expanded="false">
-          Do you offer remote services?
+      <div class="faq-item" data-ocid="faq.item.3">
+        <button class="faq-question" aria-expanded="false" data-ocid="faq.toggle.3">
+          How do I get started with your services?
           <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
           </svg>
         </button>
         <div class="faq-answer">
-          Absolutely. We work with clients nationwide and can deliver all services remotely. Our distributed delivery model leverages secure collaboration tools, regular video check-ins, and async communication to keep projects on track regardless of location.
+          Getting started is simple. Fill out the contact form above, call us at (832) 295-0408, or email hr@ekansolutionsinc.awsapps.com. We'll schedule a no-obligation consultation to understand your needs, assess your current environment, and propose a tailored solution. Most new client onboardings begin within 1–2 weeks of contract signing.
         </div>
       </div>
 
-      <div class="faq-item" data-ocid="faq-item-4">
-        <button class="faq-question" aria-expanded="false">
-          What industries do you serve?
+      <div class="faq-item" data-ocid="faq.item.4">
+        <button class="faq-question" aria-expanded="false" data-ocid="faq.toggle.4">
+          Do you work with small businesses or only enterprises?
           <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
           </svg>
         </button>
         <div class="faq-answer">
-          We have deep experience across healthcare, financial services, government, retail, manufacturing, and education. Our practitioners bring domain-specific knowledge to every engagement, ensuring solutions meet both technical and industry compliance requirements.
+          We work with organizations of all sizes — from startups and growing SMBs to large enterprise clients. Our engagement models are flexible and budget-conscious, so whether you need a single specialist, a project team, or a full managed-service arrangement, we can design a program that fits your scale and objectives.
         </div>
       </div>
 
@@ -646,16 +367,14 @@
      CTA BANNER
      ============================================================ -->
 <section class="cta-banner fade-in">
-  <div class="container">
-    <div class="cta-banner-inner">
-      <h2 class="cta-title">Don't Wait — Start Your Journey Today</h2>
-      <p class="cta-subtitle">Our team is ready to help you design, build, and scale the technology that drives your business forward.</p>
-      <a href="contact.html#contact-form" class="btn btn-accent btn-lg" data-ocid="btn-cta-consultation">
-        <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
-        </svg>
-        Schedule a Free Consultation
-      </a>
+  <div class="container cta-inner">
+    <div class="cta-text">
+      <h2>Ready to Transform Your Business?</h2>
+      <p>Partner with Ekan Solutions Inc. to accelerate your digital transformation journey.</p>
+    </div>
+    <div class="cta-actions">
+      <a href="tel:8322950408" class="btn-white" data-ocid="cta.primary_button">(832) 295-0408</a>
+      <a href="mailto:hr@ekansolutionsinc.awsapps.com" class="btn-outline-white-sm" data-ocid="cta.secondary_button">Email Us</a>
     </div>
   </div>
 </section>
@@ -664,46 +383,33 @@
      FOOTER
      ============================================================ -->
 <footer class="site-footer">
-  <div class="container footer-grid">
+  <div class="container footer-grid-4">
+
+    <!-- Col 1: Brand -->
     <div class="footer-col">
       <div class="footer-logo">
-        <img src="assets/footer-logo.png" alt="Ekan Solutions Logo" style="height:80px; width:auto; display:block; margin-bottom:12px;">
+        <img src="assets/footer-logo.png" alt="Ekan Solutions" class="footer-logo-img">
       </div>
-      <p class="footer-tagline">Enterprise IT solutions built on integrity, innovation, and 15+ years of expertise.</p>
-      <span class="footer-contact-label">Get in Touch</span>
-      <div class="footer-contact-row">
-        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .94h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16z"/></svg>
-        <div class="footer-contact-text">
-          <a href="tel:8322950408">(832) 295-0408</a>
-          <a href="tel:4105968362">410-596-8362</a>
-        </div>
-      </div>
-      <div class="footer-contact-row">
-        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        <div class="footer-contact-text">
-          <a href="mailto:hr@ekansolutionsinc.awsapps.com">hr@ekansolutionsinc.awsapps.com</a>
-        </div>
-      </div>
-      <div class="footer-contact-row">
-        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        <div class="footer-contact-text">
-          <span>1438 Heritage Ridge Rd, Woodbine, MD 21797</span>
-          <span>9175 Guilford Rd. Suite 300 #1015, Columbia, MD 21046</span>
-        </div>
+      <p class="footer-tagline">Enterprise IT solutions built on integrity, innovation, and 15+ years of expertise. Securing, scaling, and accelerating your business.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="LinkedIn" class="footer-social-link">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="#" aria-label="Twitter" class="footer-social-link">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+        </a>
+        <a href="#" aria-label="Facebook" class="footer-social-link">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <a href="#" aria-label="YouTube" class="footer-social-link">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+        </a>
       </div>
     </div>
+
+    <!-- Col 2: Services -->
     <div class="footer-col">
-      <h4 class="footer-heading">Quick Links</h4>
-      <ul class="footer-links">
-        <li><a href="home.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="solutions.html">Solutions</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4 class="footer-heading">Our Services</h4>
+      <h4 class="footer-col-title">Services</h4>
       <ul class="footer-links">
         <li><a href="cybersecurity.html">Cybersecurity</a></li>
         <li><a href="projectmanagement.html">Project Management</a></li>
@@ -714,9 +420,50 @@
         <li><a href="aiservices.html">AI &amp; Automation Services</a></li>
       </ul>
     </div>
+
+    <!-- Col 3: Quick Links -->
+    <div class="footer-col">
+      <h4 class="footer-col-title">Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="solutions.html">Solutions</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Col 4: Get In Touch -->
+    <div class="footer-contact-col">
+      <h4>Get In Touch</h4>
+
+      <div class="footer-contact-item">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .94h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16z"/></svg>
+        <div class="footer-contact-item-text">
+          <a href="tel:8322950408">(832) 295-0408</a>
+          <a href="tel:4105968362">410-596-8362</a>
+        </div>
+      </div>
+
+      <div class="footer-contact-item">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <div class="footer-contact-item-text">
+          <a href="mailto:hr@ekansolutionsinc.awsapps.com">hr@ekansolutionsinc.awsapps.com</a>
+        </div>
+      </div>
+
+      <div class="footer-contact-item">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div class="footer-contact-item-text">
+          <span>1438 Heritage Ridge Rd, Woodbine, MD 21797</span>
+          <span>9175 Guilford Rd. Suite 300 #1015, Columbia, MD 21046</span>
+        </div>
+      </div>
+    </div>
+
   </div>
-  <div style="border-top:1px solid rgba(255,255,255,0.08);margin-top:2rem;padding:0.75rem 1.5rem;display:flex;justify-content:center;align-items:center;">
-    <span style="font-size:12px;color:rgba(255,255,255,0.35);letter-spacing:0.03em;">Design Version 20</span>
+  <div class="footer-bottom-bar">
+    <span>© 2026 Ekan Solutions Inc. All rights reserved.</span>
   </div>
 </footer>
 
@@ -727,18 +474,46 @@
     btn.addEventListener('click', function() {
       var item = this.closest('.faq-item');
       var isOpen = item.classList.contains('open');
-      // Close all
       document.querySelectorAll('.faq-item.open').forEach(function(el) {
         el.classList.remove('open');
         el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
       });
-      // Toggle clicked
       if (!isOpen) {
         item.classList.add('open');
         this.setAttribute('aria-expanded', 'true');
       }
     });
   });
+
+  // Web3Forms submission handling
+  var form = document.getElementById('contact-form');
+  var successEl = document.getElementById('form-success');
+  var errorEl = document.getElementById('form-error');
+  var formPanel = document.querySelector('.form-panel');
+
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var data = new FormData(form);
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: data
+      })
+      .then(function(res) { return res.json(); })
+      .then(function(json) {
+        if (json.success) {
+          formPanel.classList.add('hidden');
+          successEl.classList.add('visible');
+          errorEl.classList.remove('visible');
+        } else {
+          errorEl.classList.add('visible');
+        }
+      })
+      .catch(function() {
+        errorEl.classList.add('visible');
+      });
+    });
+  }
 </script>
 </body>
 </html>

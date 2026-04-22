@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Java Development Services | Ekan Solutions Inc.</title>
-  <meta name="description" content="Enterprise Java development services — Spring Boot microservices, RESTful APIs, JVM performance tuning, and legacy modernization by certified Java architects." />
+  <title>Java Development | Ekan Solutions Inc.</title>
+  <meta name="description" content="High-performance enterprise Java development — Spring Boot microservices, RESTful APIs, JVM performance optimization, and legacy system modernization." />
+  <link rel="icon" href="favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -12,349 +13,391 @@
 </head>
 <body>
 
-<!-- ============================================================
-     HEADER / NAV
-     ============================================================ -->
-<header class="site-header" id="site-header">
-  <div class="container nav-inner">
-    <a href="home.html" class="nav-logo">
-      <img src="assets/header-logo.png" alt="Ekan Solutions Logo" style="height:48px; width:auto; display:block;">
-    </a>
-
-    <nav class="nav-links" id="nav-links">
-      <a href="home.html" class="nav-link" data-page="home">Home</a>
-      <a href="about.html" class="nav-link" data-page="about">About</a>
-      <a href="services.html" class="nav-link" data-page="services">Services</a>
-      <a href="solutions.html" class="nav-link" data-page="solutions">Solutions</a>
-      <a href="contact.html" class="nav-link" data-page="contact">Contact</a>
-    </nav>
-
-    <div class="nav-cta">
-      <div class="nav-phones">
-        <a href="tel:8322950408" class="nav-phone">(832) 295-0408</a>
-        <a href="tel:4105968362" class="nav-phone">410-596-8362</a>
+  <!-- ===== HEADER / NAV ===== -->
+  <header class="site-header" id="site-header">
+    <div class="container nav-inner">
+      <a href="home.html" class="nav-logo">
+        <img src="assets/header-logo.png" alt="Ekan Solutions" class="header-logo-img">
+      </a>
+      <nav class="nav-links" id="nav-links">
+        <a href="home.html"      class="nav-link" data-page="home">Home</a>
+        <a href="about.html"     class="nav-link" data-page="about">About</a>
+        <a href="services.html"  class="nav-link" data-page="services">Services</a>
+        <a href="solutions.html" class="nav-link" data-page="solutions">Solutions</a>
+        <a href="contact.html"   class="nav-link" data-page="contact">Contact</a>
+      </nav>
+      <div class="nav-cta">
+        <div class="nav-phones">
+          <a href="tel:8322950408" class="nav-phone">(832) 295-0408</a>
+          <a href="tel:4105968362" class="nav-phone">410-596-8362</a>
+        </div>
+        <a href="contact.html" class="btn btn-accent">Get Consultation</a>
       </div>
-      <a href="contact.html" class="btn btn-accent">Get Consultation</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-
-  <div class="mobile-menu" id="mobile-menu">
-    <nav class="mobile-nav">
-      <a href="home.html" class="mobile-link" data-page="home">Home</a>
-      <a href="about.html" class="mobile-link" data-page="about">About</a>
-      <a href="services.html" class="mobile-link" data-page="services">Services</a>
-      <a href="solutions.html" class="mobile-link" data-page="solutions">Solutions</a>
-      <a href="contact.html" class="mobile-link" data-page="contact">Contact</a>
-    </nav>
-    <div class="mobile-phones">
-      <a href="tel:8322950408">(832) 295-0408</a>
-      <a href="tel:4105968362">410-596-8362</a>
+    <div class="mobile-menu" id="mobile-menu">
+      <nav class="mobile-nav">
+        <a href="home.html"      class="mobile-link" data-page="home">Home</a>
+        <a href="about.html"     class="mobile-link" data-page="about">About</a>
+        <a href="services.html"  class="mobile-link" data-page="services">Services</a>
+        <a href="solutions.html" class="mobile-link" data-page="solutions">Solutions</a>
+        <a href="contact.html"   class="mobile-link" data-page="contact">Contact</a>
+      </nav>
+      <div class="mobile-phones">
+        <a href="tel:8322950408">(832) 295-0408</a>
+        <a href="tel:4105968362">410-596-8362</a>
+      </div>
+      <a href="contact.html" class="btn btn-accent mobile-cta">Get Consultation</a>
     </div>
-    <a href="contact.html" class="btn btn-accent mobile-cta">Get Consultation</a>
-  </div>
-</header>
+  </header>
 
-<!-- ============================================================
-     SERVICE HERO
-     ============================================================ -->
-<section class="service-hero">
-  <div class="container">
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="home.html">Home</a>
-      <span class="breadcrumb-sep">›</span>
-      <a href="services.html">Services</a>
-      <span class="breadcrumb-sep">›</span>
-      <span>Java Development</span>
-    </nav>
-    <span class="service-hero-badge">JAVA DEVELOPMENT</span>
-    <h1 class="service-hero-title">Enterprise Java Development</h1>
-    <p class="service-hero-desc">Build high-performance, scalable Java enterprise applications with our team of certified Java developers and architects</p>
-    <div style="display:flex;flex-wrap:wrap;gap:1rem;margin-top:2rem;">
-      <a href="contact.html" class="btn btn-accent btn-lg" data-ocid="java-hero-cta-primary">Discuss Your Project</a>
-      <a href="services.html" class="btn btn-outline-white btn-lg" data-ocid="java-hero-cta-secondary">View All Services</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     CAPABILITIES
-     ============================================================ -->
-<section class="section">
-  <div class="container">
-    <div class="section-header fade-in">
-      <span class="section-label">What We Deliver</span>
-      <h2 class="section-title">Java Development Capabilities</h2>
-      <p class="section-subtitle">End-to-end Java engineering from architecture design to production deployment, tailored for enterprise scale.</p>
-    </div>
-    <div class="grid-3 fade-in">
-
-      <div class="card" data-ocid="cap-enterprise-app">
-        <div class="card-icon" style="background:var(--primary-light);">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0A3D62" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-        </div>
-        <h3 class="card-title">Enterprise Application Development</h3>
-        <p class="card-desc">Complex Java applications for large-scale business operations — from ERP integrations to custom workflow systems built for reliability and growth.</p>
-      </div>
-
-      <div class="card" data-ocid="cap-microservices">
-        <div class="card-icon" style="background:var(--primary-light);">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0A3D62" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><circle cx="3" cy="5" r="2"/><circle cx="21" cy="5" r="2"/><circle cx="3" cy="19" r="2"/><circle cx="21" cy="19" r="2"/><path d="M5 5h4M15 5h4M5 19h4M15 19h4M10 10l-4-4M14 10l4-4M10 14l-4 4M14 14l4 4"/></svg>
-        </div>
-        <h3 class="card-title">Spring Boot Microservices</h3>
-        <p class="card-desc">Modern microservices architecture with the full Spring ecosystem — Spring Cloud, service discovery, API gateways, and resilient circuit-breaker patterns.</p>
-      </div>
-
-      <div class="card" data-ocid="cap-api-design">
-        <div class="card-icon" style="background:var(--primary-light);">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0A3D62" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-        </div>
-        <h3 class="card-title">RESTful API Design</h3>
-        <p class="card-desc">High-performance APIs with OpenAPI/Swagger documentation, versioning strategies, rate limiting, and security best practices baked in from day one.</p>
-      </div>
-
-      <div class="card" data-ocid="cap-performance">
-        <div class="card-icon" style="background:var(--primary-light);">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0A3D62" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        </div>
-        <h3 class="card-title">Performance Optimization</h3>
-        <p class="card-desc">Deep JVM tuning, heap profiling, GC optimization, thread pool configuration, and code-level refactoring to eliminate bottlenecks under production load.</p>
-      </div>
-
-      <div class="card" data-ocid="cap-modernization">
-        <div class="card-icon" style="background:var(--primary-light);">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0A3D62" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
-        </div>
-        <h3 class="card-title">Legacy System Modernization</h3>
-        <p class="card-desc">Migrate and modernize legacy Java monoliths — strangler-fig refactoring, Java version upgrades, framework migrations, and incremental microservice extraction.</p>
-      </div>
-
-      <div class="card" data-ocid="cap-integration">
-        <div class="card-icon" style="background:var(--primary-light);">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0A3D62" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
-        </div>
-        <h3 class="card-title">Integration Services</h3>
-        <p class="card-desc">Enterprise integration with ESBs, Apache Kafka messaging, RabbitMQ event-driven pipelines, and third-party system connectors using proven EIP patterns.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     TECH STACK
-     ============================================================ -->
-<section class="section-alt">
-  <div class="container">
-    <div class="section-header fade-in">
-      <span class="section-label">Technology Stack</span>
-      <h2 class="section-title">Java Ecosystem Expertise</h2>
-      <p class="section-subtitle">Modern, production-proven Java technologies from language runtimes to containerized cloud deployments.</p>
-    </div>
-    <div class="tech-stack fade-in" style="justify-content:center;">
-      <span class="tech-badge">Java 17 / 21</span>
-      <span class="tech-badge">Spring Boot</span>
-      <span class="tech-badge">Spring Cloud</span>
-      <span class="tech-badge">Spring Security</span>
-      <span class="tech-badge">Hibernate / JPA</span>
-      <span class="tech-badge">Maven</span>
-      <span class="tech-badge">Gradle</span>
-      <span class="tech-badge">Jenkins</span>
-      <span class="tech-badge">Docker</span>
-      <span class="tech-badge">Kubernetes</span>
-      <span class="tech-badge">Apache Kafka</span>
-      <span class="tech-badge">RabbitMQ</span>
-      <span class="tech-badge">PostgreSQL</span>
-      <span class="tech-badge">Oracle DB</span>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     PROCESS
-     ============================================================ -->
-<section class="section" id="process">
-  <div class="container">
-    <div class="section-header fade-in">
-      <span class="section-label">Our Approach</span>
-      <h2 class="section-title">Java Development Process</h2>
-      <p class="section-subtitle">A structured, repeatable methodology that delivers predictable quality at every milestone.</p>
-    </div>
-    <div class="process-steps fade-in">
-
-      <div class="process-step">
-        <div class="process-circle">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        </div>
-        <p class="process-num">STEP 01</p>
-        <h3 class="process-title">Analysis</h3>
-        <p class="process-desc">Business requirements gathering, technical feasibility assessment, and solution architecture design to establish a clear engineering roadmap.</p>
-      </div>
-
-      <div class="process-step">
-        <div class="process-circle">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-        </div>
-        <p class="process-num">STEP 02</p>
-        <h3 class="process-title">Design</h3>
-        <p class="process-desc">Detailed system design, data modeling, API contract definition, and technology selection aligned with your non-functional requirements.</p>
-      </div>
-
-      <div class="process-step">
-        <div class="process-circle">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-        </div>
-        <p class="process-num">STEP 03</p>
-        <h3 class="process-title">Development</h3>
-        <p class="process-desc">Test-driven development with continuous code reviews, static analysis, and CI pipelines ensuring high-quality, maintainable Java code throughout.</p>
-      </div>
-
-      <div class="process-step">
-        <div class="process-circle">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-        </div>
-        <p class="process-num">STEP 04</p>
-        <h3 class="process-title">Integration</h3>
-        <p class="process-desc">Full system integration, end-to-end testing, performance benchmarking, and security validation before any production release gate.</p>
-      </div>
-
-      <div class="process-step">
-        <div class="process-circle">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-        </div>
-        <p class="process-num">STEP 05</p>
-        <h3 class="process-title">Deployment</h3>
-        <p class="process-desc">Zero-downtime production deployment, observability setup with metrics and alerting, and ongoing support to keep your application at peak performance.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     WHY CHOOSE US
-     ============================================================ -->
-<section class="section-alt">
-  <div class="container">
-    <div class="section-header fade-in">
-      <span class="section-label">Why Ekan Solutions</span>
-      <h2 class="section-title">Java Specialists You Can Trust</h2>
-      <p class="section-subtitle">Deep expertise and proven practices that translate into reliable, long-lived enterprise systems.</p>
-    </div>
-    <div class="grid-3 fade-in">
-
-      <div class="card" data-ocid="why-specialists">
-        <div class="card-icon-circle">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1ABC9C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <h3 class="card-title" style="text-align:center;">Java Specialists</h3>
-        <p class="card-desc" style="text-align:center;">Dedicated Java experts with 10+ years of enterprise experience across financial services, healthcare, logistics, and government sectors.</p>
-      </div>
-
-      <div class="card" data-ocid="why-tdd">
-        <div class="card-icon-circle">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1ABC9C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-        </div>
-        <h3 class="card-title" style="text-align:center;">Test-Driven Development</h3>
-        <p class="card-desc" style="text-align:center;">High code quality through comprehensive unit, integration, and contract testing — ensuring your system is verifiable, maintainable, and regression-safe.</p>
-      </div>
-
-      <div class="card" data-ocid="why-patterns">
-        <div class="card-icon-circle">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1ABC9C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-        </div>
-        <h3 class="card-title" style="text-align:center;">Enterprise Patterns</h3>
-        <p class="card-desc" style="text-align:center;">SOLID principles, Gang-of-Four design patterns, and domain-driven design applied consistently — delivering codebases that teams can confidently extend for years.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     CTA BANNER
-     ============================================================ -->
-<section class="cta-banner fade-in" style="background: linear-gradient(135deg, #1ABC9C 0%, #17a589 100%);">
-  <div class="container cta-inner">
-    <div class="cta-text">
-      <h2>Build Your Enterprise Java Application</h2>
-      <p>Ready to architect a high-performance, scalable Java solution? Our certified engineers are ready to help.</p>
-    </div>
-    <div class="cta-actions">
-      <a href="contact.html" class="btn-white" data-ocid="java-cta-banner-btn">Start a Conversation</a>
-      <a href="tel:8322950408" class="btn-outline-white-sm" data-ocid="java-cta-phone">(832) 295-0408</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     FOOTER
-     ============================================================ -->
-<footer class="site-footer">
-  <div class="container footer-grid">
-    <!-- Company -->
-    <div class="footer-col">
-      <div class="footer-logo">
-        <img src="assets/footer-logo.png" alt="Ekan Solutions Logo" style="height:80px; width:auto; display:block; margin-bottom:12px;">
-      </div>
-      <p class="footer-tagline">Enterprise IT solutions built on integrity, innovation, and 15+ years of expertise.</p>
-      <span class="footer-contact-label">Get in Touch</span>
-      <div class="footer-contact-row">
-        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .94h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16z"/></svg>
-        <div class="footer-contact-text">
-          <a href="tel:8322950408">(832) 295-0408</a>
-          <a href="tel:4105968362">410-596-8362</a>
-        </div>
-      </div>
-      <div class="footer-contact-row">
-        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        <div class="footer-contact-text">
-          <a href="mailto:hr@ekansolutionsinc.awsapps.com">hr@ekansolutionsinc.awsapps.com</a>
-        </div>
-      </div>
-      <div class="footer-contact-row">
-        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        <div class="footer-contact-text">
-          <span>1438 Heritage Ridge Rd, Woodbine, MD 21797</span>
-          <span>9175 Guilford Rd. Suite 300 #1015, Columbia, MD 21046</span>
-        </div>
+  <!-- ===== SERVICE HERO ===== -->
+  <section class="service-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="home.html">Home</a>
+        <span class="breadcrumb-sep">›</span>
+        <a href="services.html">Services</a>
+        <span class="breadcrumb-sep">›</span>
+        <span class="breadcrumb-current">Java Development</span>
+      </nav>
+      <div class="service-hero-badge">JAVA DEVELOPMENT</div>
+      <h1 class="service-hero-title">Enterprise Java Development</h1>
+      <p class="service-hero-subtitle">
+        High-performance enterprise applications built with Java and Spring Boot —
+        designed for scalability, reliability, and long-term maintainability.
+      </p>
+      <div class="hero-actions">
+        <a href="contact.html" class="btn btn-accent btn-lg" data-ocid="java.primary_button">Discuss Your Project</a>
+        <a href="services.html" class="btn btn-outline-white btn-lg" data-ocid="java.secondary_button">View All Services</a>
       </div>
     </div>
+  </section>
 
-    <!-- Quick Links -->
-    <div class="footer-col">
-      <h4 class="footer-col-title">Quick Links</h4>
-      <ul class="footer-links">
-        <li><a href="home.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="solutions.html">Solutions</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+  <!-- ===== OVERVIEW ===== -->
+  <section class="section" id="overview">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">OVERVIEW</span>
+        <h2 class="section-title">Java Development Services</h2>
+        <p class="section-subtitle">
+          Ekan Solutions delivers end-to-end Java engineering for enterprises that demand performance at scale.
+          Our certified Java architects design and build robust systems — from greenfield microservices to
+          large-scale legacy modernization — using battle-tested frameworks and industry best practices.
+          We bring deep expertise across the full Java ecosystem to accelerate your digital transformation.
+        </p>
+      </div>
     </div>
+  </section>
 
-    <!-- Services -->
-    <div class="footer-col">
-      <h4 class="footer-col-title">Our Services</h4>
-      <ul class="footer-links">
-        <li><a href="cybersecurity.html">Cybersecurity</a></li>
-        <li><a href="projectmanagement.html">Project Management</a></li>
-        <li><a href="fullstack.html">Full Stack Development</a></li>
-        <li><a href="awscloud.html">AWS Cloud Solutions</a></li>
-        <li><a href="javadevelopment.html" aria-current="page">Java Development</a></li>
-        <li><a href="qatesting.html">Quality Assurance / Testing</a></li>
-        <li><a href="aiservices.html">AI &amp; Automation Services</a></li>
-      </ul>
+  <!-- ===== CAPABILITIES ===== -->
+  <section class="section-alt" id="capabilities">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">WHAT WE DO</span>
+        <h2 class="section-title">Java Development Capabilities</h2>
+        <p class="section-subtitle">
+          Comprehensive Java engineering services covering architecture, development, optimization, and modernization.
+        </p>
+      </div>
+      <div class="grid-3">
+
+        <div class="card fade-in" data-ocid="cap-card-springboot">
+          <div class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="3"/><circle cx="3" cy="5" r="2"/><circle cx="21" cy="5" r="2"/>
+              <circle cx="3" cy="19" r="2"/><circle cx="21" cy="19" r="2"/>
+              <path d="M5 5h4M15 5h4M5 19h4M15 19h4M10 10l-4-4M14 10l4-4M10 14l-4 4M14 14l4 4"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Spring Boot Applications</h3>
+          <p class="card-desc">Microservices and REST API development using the full Spring ecosystem — Spring Cloud, service discovery, API gateways, and resilient circuit-breaker patterns built for production scale.</p>
+        </div>
+
+        <div class="card fade-in" data-ocid="cap-card-j2ee">
+          <div class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Enterprise Java (J2EE)</h3>
+          <p class="card-desc">Large-scale enterprise application development — from ERP integrations to custom workflow systems, built with proven J2EE patterns for reliability, auditability, and long-term maintainability.</p>
+        </div>
+
+        <div class="card fade-in" data-ocid="cap-card-microservices">
+          <div class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Microservices Architecture</h3>
+          <p class="card-desc">Scalable, loosely coupled service design using domain-driven principles — enabling independent deployment, team autonomy, and horizontal scaling for each business capability.</p>
+        </div>
+
+        <div class="card fade-in" data-ocid="cap-card-api">
+          <div class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
+            </svg>
+          </div>
+          <h3 class="card-title">API Development</h3>
+          <p class="card-desc">RESTful and GraphQL API design and implementation with OpenAPI/Swagger documentation, versioning strategies, rate limiting, and security best practices baked in from day one.</p>
+        </div>
+
+        <div class="card fade-in" data-ocid="cap-card-performance">
+          <div class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Performance Optimization</h3>
+          <p class="card-desc">JVM tuning, heap profiling, GC optimization, thread pool configuration, and code-level refactoring to eliminate bottlenecks and sustain peak throughput under production load.</p>
+        </div>
+
+        <div class="card fade-in" data-ocid="cap-card-legacy">
+          <div class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/>
+              <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Legacy Modernization</h3>
+          <p class="card-desc">Migrating legacy Java apps to modern frameworks — strangler-fig refactoring, Java version upgrades, framework migrations, and incremental microservice extraction with zero business disruption.</p>
+        </div>
+
+      </div>
     </div>
-  </div>
-  <div style="border-top:1px solid rgba(255,255,255,0.08);margin-top:2rem;padding:1rem 1.5rem;display:flex;justify-content:center;align-items:center;">
-    <span style="font-size:12px;color:rgba(255,255,255,0.45);letter-spacing:0.03em;">© 2026 Ekan Solutions Inc. All rights reserved.</span>
-  </div>
-</footer>
+  </section>
 
-<script src="nav.js"></script>
+  <!-- ===== TECH STACK ===== -->
+  <section class="section" id="tech-stack">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">OUR TOOLKIT</span>
+        <h2 class="section-title">Java Ecosystem Expertise</h2>
+        <p class="section-subtitle">
+          Modern, production-proven Java technologies from language runtimes to containerized cloud deployments.
+        </p>
+      </div>
+      <div class="tech-stack fade-in">
+        <span class="tech-badge">Java 17+</span>
+        <span class="tech-badge">Spring Boot</span>
+        <span class="tech-badge">Spring Cloud</span>
+        <span class="tech-badge">Spring Security</span>
+        <span class="tech-badge">Hibernate / JPA</span>
+        <span class="tech-badge">Maven</span>
+        <span class="tech-badge">Gradle</span>
+        <span class="tech-badge">JUnit</span>
+        <span class="tech-badge">Docker</span>
+        <span class="tech-badge">Kubernetes</span>
+        <span class="tech-badge">Apache Kafka</span>
+        <span class="tech-badge">Redis</span>
+        <span class="tech-badge">Jenkins</span>
+        <span class="tech-badge">PostgreSQL</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROCESS ===== -->
+  <section class="section-alt" id="process">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">HOW WE WORK</span>
+        <h2 class="section-title">Our Java Development Process</h2>
+        <p class="section-subtitle">
+          A structured, repeatable methodology that delivers predictable quality at every milestone.
+        </p>
+      </div>
+      <div class="process-steps fade-in">
+
+        <div class="process-step">
+          <div class="process-num">01</div>
+          <div class="process-content">
+            <h4 class="process-title">Requirements</h4>
+            <p class="process-desc">Business requirements gathering, technical feasibility assessment, and solution architecture design to establish a clear engineering roadmap aligned with your goals.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="process-num">02</div>
+          <div class="process-content">
+            <h4 class="process-title">Architecture</h4>
+            <p class="process-desc">Detailed system design, data modeling, API contract definition, and technology selection aligned with performance, scalability, and non-functional requirements.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="process-num">03</div>
+          <div class="process-content">
+            <h4 class="process-title">Development</h4>
+            <p class="process-desc">Test-driven development with continuous code reviews, static analysis, and CI pipelines ensuring high-quality, maintainable Java code throughout every sprint.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="process-num">04</div>
+          <div class="process-content">
+            <h4 class="process-title">Testing</h4>
+            <p class="process-desc">Full system integration testing, performance benchmarking, security validation, and load testing before any production release gate is approved.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="process-num">05</div>
+          <div class="process-content">
+            <h4 class="process-title">Deployment</h4>
+            <p class="process-desc">Zero-downtime production deployment, observability setup with metrics and alerting, and ongoing support to keep your application at peak performance.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY CHOOSE US ===== -->
+  <section class="section" id="why-us">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">WHY EKAN</span>
+        <h2 class="section-title">Java Specialists You Can Trust</h2>
+        <p class="section-subtitle">
+          Deep expertise and proven practices that translate into reliable, long-lived enterprise systems.
+        </p>
+      </div>
+      <div class="grid-3">
+
+        <div class="card fade-in" data-ocid="why-card-specialists">
+          <div class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Certified Java Specialists</h3>
+          <p class="card-desc">Dedicated Java experts with 10+ years of enterprise experience across financial services, healthcare, logistics, and government sectors — bringing battle-tested knowledge to every project.</p>
+        </div>
+
+        <div class="card fade-in" data-ocid="why-card-tdd">
+          <div class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="9 11 12 14 22 4"/>
+              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Test-Driven Development</h3>
+          <p class="card-desc">High code quality through comprehensive unit, integration, and contract testing — ensuring your system is verifiable, maintainable, and regression-safe at every release.</p>
+        </div>
+
+        <div class="card fade-in" data-ocid="why-card-patterns">
+          <div class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+              <rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Enterprise Patterns</h3>
+          <p class="card-desc">SOLID principles, design patterns, and domain-driven design applied consistently — delivering codebases that teams can confidently extend and maintain for years to come.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA BANNER ===== -->
+  <section class="cta-banner" data-ocid="java.cta_banner">
+    <div class="container text-center">
+      <h2 class="cta-title">Ready to Build Enterprise-Grade Java Solutions?</h2>
+      <p class="cta-subtitle">Talk to our certified Java architects — let's design your next high-performance application together.</p>
+      <a href="contact.html" class="btn btn-accent btn-lg" data-ocid="java.cta_primary_button">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container footer-grid-4">
+
+      <!-- Col 1: Brand -->
+      <div class="footer-col">
+        <div class="footer-logo">
+          <img src="assets/footer-logo.png" alt="Ekan Solutions" class="footer-logo-img">
+        </div>
+        <p class="footer-tagline">Enterprise IT solutions built on integrity, innovation, and 15+ years of expertise. Securing, scaling, and accelerating your business.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="LinkedIn" class="footer-social-link">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" aria-label="Twitter" class="footer-social-link">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+          </a>
+          <a href="#" aria-label="Facebook" class="footer-social-link">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="#" aria-label="YouTube" class="footer-social-link">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 2: Services -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">Services</h4>
+        <ul class="footer-links">
+          <li><a href="cybersecurity.html">Cybersecurity</a></li>
+          <li><a href="projectmanagement.html">Project Management</a></li>
+          <li><a href="fullstack.html">Full Stack Development</a></li>
+          <li><a href="awscloud.html">AWS Cloud Solutions</a></li>
+          <li><a href="javadevelopment.html">Java Development</a></li>
+          <li><a href="qatesting.html">Quality Assurance / Testing</a></li>
+          <li><a href="aiservices.html">AI &amp; Automation Services</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Quick Links -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="solutions.html">Solutions</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Get In Touch -->
+      <div class="footer-contact-col">
+        <h4>Get In Touch</h4>
+        <div class="footer-contact-item">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .94h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16z"/></svg>
+          <div class="footer-contact-item-text">
+            <a href="tel:8322950408">(832) 295-0408</a>
+            <a href="tel:4105968362">410-596-8362</a>
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <div class="footer-contact-item-text">
+            <a href="mailto:hr@ekansolutionsinc.awsapps.com">hr@ekansolutionsinc.awsapps.com</a>
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div class="footer-contact-item-text">
+            <span>1438 Heritage Ridge Rd, Woodbine, MD 21797</span>
+            <span>9175 Guilford Rd. Suite 300 #1015, Columbia, MD 21046</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="footer-bottom-bar">
+      <span>© 2026 Ekan Solutions Inc. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script src="nav.js"></script>
 </body>
 </html>
