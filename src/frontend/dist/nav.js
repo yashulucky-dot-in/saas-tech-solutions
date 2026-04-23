@@ -28,13 +28,24 @@ function initMobileMenu() {
     const isOpen = mobileMenu.classList.toggle('open');
     hamburger.classList.toggle('open', isOpen);
     hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+
+    // Close all mobile dropdowns when main menu closes
+    if (!isOpen) {
+      for (const dd of mobileMenu.querySelectorAll('.mobile-dropdown.open')) {
+        dd.classList.remove('open');
+      }
+    }
   });
 
-  for (const link of mobileMenu.querySelectorAll('.mobile-link, .mobile-cta')) {
+  for (const link of mobileMenu.querySelectorAll('.mobile-link, .mobile-cta, .mobile-sub-link')) {
     link.addEventListener('click', () => {
       mobileMenu.classList.remove('open');
       hamburger.classList.remove('open');
       hamburger.setAttribute('aria-expanded', 'false');
+      // Close mobile dropdowns too
+      for (const dd of mobileMenu.querySelectorAll('.mobile-dropdown.open')) {
+        dd.classList.remove('open');
+      }
     });
   }
 
@@ -44,8 +55,31 @@ function initMobileMenu() {
       mobileMenu.classList.remove('open');
       hamburger.classList.remove('open');
       hamburger.setAttribute('aria-expanded', 'false');
+      for (const dd of mobileMenu.querySelectorAll('.mobile-dropdown.open')) {
+        dd.classList.remove('open');
+      }
     }
   });
+}
+
+/* ============================================================
+   Mobile Services Dropdown Accordion
+   ============================================================ */
+function initMobileDropdowns() {
+  const toggles = document.querySelectorAll('.mobile-dropdown-toggle');
+  if (!toggles.length) return;
+
+  for (const toggle of toggles) {
+    toggle.addEventListener('click', (e) => {
+      // Stop propagation so the "click outside" handler doesn't immediately close
+      e.stopPropagation();
+      const parent = toggle.closest('.mobile-dropdown');
+      if (!parent) return;
+
+      const isOpen = parent.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  }
 }
 
 /* ============================================================
@@ -96,9 +130,48 @@ function initActiveNav() {
 
   const activePage = pageMap[filename] || '';
 
+  // Standard nav-links and mobile-links
   for (const link of document.querySelectorAll('.nav-link, .mobile-link')) {
     const page = link.getAttribute('data-page');
     link.classList.toggle('active', page === activePage && !!activePage);
+  }
+
+  // Desktop dropdown trigger: mark active when on any service sub-page
+  for (const trigger of document.querySelectorAll('.nav-link-has-dropdown')) {
+    const page = trigger.getAttribute('data-page');
+    trigger.classList.toggle('active', page === activePage && !!activePage);
+  }
+
+  // Mobile dropdown toggle: mark active when on any service sub-page
+  for (const toggle of document.querySelectorAll('.mobile-dropdown-toggle')) {
+    const page = toggle.getAttribute('data-page');
+    toggle.classList.toggle('active', page === activePage && !!activePage);
+  }
+
+  // Highlight the specific sub-link that matches the current page
+  const serviceFileMap = {
+    'cybersecurity.html': 'cybersecurity.html',
+    'projectmanagement.html': 'projectmanagement.html',
+    'fullstack.html': 'fullstack.html',
+    'awscloud.html': 'awscloud.html',
+    'javadevelopment.html': 'javadevelopment.html',
+    'qatesting.html': 'qatesting.html',
+    'aiservices.html': 'aiservices.html',
+  };
+
+  if (serviceFileMap[filename]) {
+    const targetHref = serviceFileMap[filename];
+    for (const link of document.querySelectorAll('.nav-dropdown-menu a, .mobile-sub-link')) {
+      const href = link.getAttribute('href');
+      link.classList.toggle('active', href === targetHref);
+    }
+    // Auto-expand mobile dropdown when on a service page
+    const mobileDd = document.querySelector('.mobile-dropdown');
+    if (mobileDd) {
+      mobileDd.classList.add('open');
+      const toggle = mobileDd.querySelector('.mobile-dropdown-toggle');
+      if (toggle) toggle.setAttribute('aria-expanded', 'true');
+    }
   }
 }
 
@@ -341,6 +414,7 @@ function _showFormError(form, errorPanel, message) {
 function initNav() {
   initScrollTop();
   initMobileMenu();
+  initMobileDropdowns();
   initHeaderScroll();
   initActiveNav();
   initScrollAnimations();
