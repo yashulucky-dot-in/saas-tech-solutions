@@ -213,7 +213,7 @@ function initTabs() {
 }
 
 /* ============================================================
-   Contact Form Handler — Web3Forms integration
+   Contact Form Handler — AWS Lambda email API
    ============================================================ */
 function initContactForm() {
   const form = document.getElementById('contact-form');
@@ -222,64 +222,117 @@ function initContactForm() {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const submitBtn = form.querySelector('[type="submit"]');
-    const originalText = submitBtn ? submitBtn.textContent : '';
+    const submitBtn    = form.querySelector('[type="submit"]');
+    const spinner      = document.getElementById('form-spinner');
+    const formPanel    = document.getElementById('form-panel');
+    const successPanel = document.getElementById('form-success');
+    const errorPanel   = document.getElementById('form-error');
+
+    // --- Show loading state ---
     if (submitBtn) {
       submitBtn.disabled = true;
-      submitBtn.textContent = 'Sending…';
+      // Replace button text with "Sending…" while keeping any SVG icon intact
+      const btnTextNode = Array.from(submitBtn.childNodes).find(n => n.nodeType === Node.TEXT_NODE);
+      if (btnTextNode) {
+        btnTextNode.textContent = ' Sending…';
+      } else {
+        submitBtn.dataset.originalHtml = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<span class="btn-spinner" aria-hidden="true"></span> Sending…';
+      }
     }
+    if (spinner) spinner.classList.add('visible');
+
+    // Clear any previous inline error
+    const prevErr = form.querySelector('.form-submit-error');
+    if (prevErr) prevErr.remove();
+    if (errorPanel) errorPanel.classList.remove('visible');
 
     try {
-      const formData = new FormData(form);
-      const response = await fetch('https://api.web3forms.com/submit', {
+      const name    = form.querySelector('[name="name"]')?.value    ?? '';
+      const email   = form.querySelector('[name="email"]')?.value   ?? '';
+      const phone   = form.querySelector('[name="phone"]')?.value   ?? '';
+      const service = form.querySelector('[name="service"]')?.value ?? '';
+      const message = form.querySelector('[name="message"]')?.value ?? '';
+
+      const objectKey = [
+        'submissions',
+        encodeURIComponent(name),
+        encodeURIComponent(email),
+        encodeURIComponent(phone),
+        encodeURIComponent(service),
+        encodeURIComponent(message),
+      ].join('/');
+
+      const payload = {
+        Records: [
+          {
+            s3: {
+              bucket: { name: 'contact-form-submissions' },
+              object: { key: objectKey },
+            },
+          },
+        ],
+      };
+
+      const response = await fetch('https://88u9fepasd.execute-api.us-west-2.amazonaws.com/prd/sendemail', {
         method: 'POST',
-        body: formData,
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': 'c24dEdgMp89VoU488eOxhazdZpOI9Yw4VPZPZ8Jj',
+        },
+        body: JSON.stringify(payload),
       });
 
-      const panel = document.getElementById('form-panel');
-      const success = document.getElementById('form-success');
+      if (spinner) spinner.classList.remove('visible');
 
       if (response.ok) {
-        // Show success UI
-        if (panel && success) {
-          panel.style.display = 'none';
-          success.classList.add('visible');
-        }
+        // Hide the form panel, show persistent Thank You message
+        if (formPanel)    formPanel.style.display = 'none';
+        if (successPanel) successPanel.classList.add('visible');
         form.reset();
-        setTimeout(() => {
-          if (panel && success) {
-            panel.style.display = '';
-            success.classList.remove('visible');
-          }
-        }, 6000);
+        // Scroll the success message into view
+        if (successPanel) successPanel.scrollIntoView({ behavior: 'smooth', block: 'center' });
       } else {
-        // Show inline error without disrupting layout
-        let errMsg = form.querySelector('.web3forms-error');
-        if (!errMsg) {
-          errMsg = document.createElement('p');
-          errMsg.className = 'web3forms-error';
-          form.appendChild(errMsg);
-        }
-        errMsg.textContent = 'Something went wrong. Please try again or email us directly at hr@ekansolutionsinc.awsapps.com.';
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.textContent = originalText;
-        }
+        // Re-enable button and show error
+        _resetSubmitBtn(submitBtn);
+        _showFormError(form, errorPanel, 'Something went wrong. Please try again or email us directly at hr@ekansolutionsinc.awsapps.com.');
       }
     } catch (_err) {
-      let errMsg = form.querySelector('.web3forms-error');
-      if (!errMsg) {
-        errMsg = document.createElement('p');
-        errMsg.className = 'web3forms-error';
-        form.appendChild(errMsg);
-      }
-      errMsg.textContent = 'Network error. Please check your connection and try again.';
-      if (submitBtn) {
-        submitBtn.disabled = false;
-        submitBtn.textContent = originalText;
-      }
+      if (spinner) spinner.classList.remove('visible');
+      _resetSubmitBtn(submitBtn);
+      _showFormError(form, errorPanel, 'Network error. Please check your connection and try again.');
     }
   });
+}
+
+function _resetSubmitBtn(submitBtn) {
+  if (!submitBtn) return;
+  submitBtn.disabled = false;
+  // Restore original HTML if we replaced it wholesale, otherwise just fix text node
+  if (submitBtn.dataset.originalHtml) {
+    submitBtn.innerHTML = submitBtn.dataset.originalHtml;
+    delete submitBtn.dataset.originalHtml;
+  } else {
+    const btnTextNode = Array.from(submitBtn.childNodes).find(n => n.nodeType === Node.TEXT_NODE);
+    if (btnTextNode) btnTextNode.textContent = btnTextNode.textContent.replace('Sending…', 'Send Message');
+  }
+}
+
+function _showFormError(form, errorPanel, message) {
+  if (errorPanel) {
+    const errP = errorPanel.querySelector('p');
+    if (errP) errP.textContent = message;
+    errorPanel.classList.add('visible');
+    errorPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  } else {
+    let errMsg = form.querySelector('.form-submit-error');
+    if (!errMsg) {
+      errMsg = document.createElement('p');
+      errMsg.className = 'form-submit-error';
+      form.appendChild(errMsg);
+    }
+    errMsg.textContent = message;
+  }
 }
 
 /* ============================================================

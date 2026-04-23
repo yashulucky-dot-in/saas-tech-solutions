@@ -184,12 +184,11 @@
         </div>
       </div>
 
-      <!-- Right: Web3Forms -->
+      <!-- Right: Contact Form -->
       <div class="form-wrapper" id="form-panel">
         <div class="form-panel" data-ocid="contact.dialog">
 
-          <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
-            <input type="hidden" name="access_key" value="83d2d829-23ea-4e75-add1-368b22535cfd">
+          <form id="contact-form" action="#" novalidate>
 
             <div class="form-group">
               <label class="form-label" for="contact-name">Full Name <span class="required-star" aria-hidden="true">*</span></label>
@@ -232,19 +231,24 @@
               </svg>
               Send Message
             </button>
+            <div id="form-spinner" role="status" aria-live="polite" aria-label="Sending your message…">
+              <span class="spinner-ring"></span>
+              <span>Sending your message…</span>
+            </div>
           </form>
         </div>
 
         <!-- Success state -->
         <div class="form-success" id="form-success" role="alert" aria-live="polite" data-ocid="contact.success_state">
           <div class="form-success-icon" aria-hidden="true">
-            <svg width="48" height="48" fill="none" stroke="#1ABC9C" stroke-width="2" viewBox="0 0 24 24">
+            <svg width="48" height="48" fill="none" stroke="#1ABC9C" stroke-width="2.5" viewBox="0 0 24 24">
               <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
               <polyline points="22 4 12 14.01 9 11.01"/>
             </svg>
           </div>
-          <h3 class="form-success-title">Message Sent!</h3>
-          <p class="form-success-msg">Thank you for reaching out. Our team will get back to you within one business day.</p>
+          <h3 class="form-success-title">Thank You!</h3>
+          <p class="form-success-msg">Your message has been sent successfully. We'll get back to you within 24 hours.</p>
+          <p class="form-success-sub">Our team is looking forward to speaking with you.</p>
         </div>
 
         <!-- Error state -->
@@ -484,36 +488,75 @@
       }
     });
   });
+</script>
+<script>
+(function () {
+  'use strict';
 
-  // Web3Forms submission handling
-  var form = document.getElementById('contact-form');
-  var successEl = document.getElementById('form-success');
-  var errorEl = document.getElementById('form-error');
-  var formPanel = document.querySelector('.form-panel');
+  var form      = document.getElementById('contact-form');
+  var spinner   = document.getElementById('form-spinner');
+  var success   = document.getElementById('form-success');
+  var errorEl   = document.getElementById('form-error');
+  var formPanel = document.getElementById('form-panel');
 
-  if (form) {
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      var data = new FormData(form);
-      fetch('https://api.web3forms.com/submit', {
+  if (!form) return;
+
+  // Hide status panels on load
+  if (spinner)  spinner.style.display  = 'none';
+  if (success)  success.style.display  = 'none';
+  if (errorEl)  errorEl.style.display  = 'none';
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    // Show spinner
+    if (spinner) spinner.style.display = 'flex';
+    if (errorEl) errorEl.style.display = 'none';
+    var submitBtn = form.querySelector('[type="submit"]');
+    if (submitBtn) submitBtn.disabled = true;
+
+    var data = {
+      name:    document.getElementById('contact-name').value,
+      email:   document.getElementById('contact-email').value,
+      phone:   document.getElementById('contact-phone').value,
+      service: document.getElementById('contact-service').value,
+      message: document.getElementById('contact-message').value
+    };
+
+    try {
+      var res = await fetch('https://88u9fepasd.execute-api.us-west-2.amazonaws.com/prd/sendemail', {
         method: 'POST',
-        body: data
-      })
-      .then(function(res) { return res.json(); })
-      .then(function(json) {
-        if (json.success) {
-          formPanel.classList.add('hidden');
-          successEl.classList.add('visible');
-          errorEl.classList.remove('visible');
-        } else {
-          errorEl.classList.add('visible');
-        }
-      })
-      .catch(function() {
-        errorEl.classList.add('visible');
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': 'c24dEdgMp89VoU488eOxhazdZpOI9Yw4VPZPZ8Jj'
+        },
+        body: JSON.stringify(data)
       });
-    });
-  }
+
+      if (spinner) spinner.style.display = 'none';
+
+      if (res.ok) {
+        // Hide form panel, show thank-you
+        if (formPanel) formPanel.style.display = 'none';
+        if (success)   success.style.display   = 'flex';
+        form.reset();
+      } else {
+        var result = await res.json().catch(function () { return {}; });
+        console.error('Send failed:', result);
+        if (submitBtn) submitBtn.disabled = false;
+        if (errorEl)   errorEl.style.display = 'block';
+      }
+    } catch (error) {
+      console.error('Network error:', error);
+      if (spinner) spinner.style.display = 'none';
+      if (submitBtn) submitBtn.disabled = false;
+      if (errorEl) {
+        errorEl.style.display = 'block';
+        errorEl.querySelector('p').textContent = 'Network error. Please check your connection and try again, or email us directly at hr@ekansolutionsinc.awsapps.com';
+      }
+    }
+  });
+})();
 </script>
 </body>
 </html>

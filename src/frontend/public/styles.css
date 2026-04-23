@@ -253,16 +253,25 @@ input, textarea, select { font-family: inherit; }
    ============================================================ */
 .container {
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 2rem;
+}
+
+@media (max-width: 1024px) {
+  .container { padding: 0 1.5rem; }
+}
+
+@media (max-width: 768px) {
+  .container { padding: 0 1rem; }
 }
 
 .section {
-  padding: 5rem 0;
+  padding: 60px 0 40px;
 }
 
 .section-alt {
-  padding: 5rem 0;
+  padding: 60px 0 40px;
   background: var(--gray-light);
 }
 
@@ -1130,7 +1139,7 @@ input, textarea, select { font-family: inherit; }
    ============================================================ */
 .cta-banner {
   background: var(--primary);
-  padding: 5rem 0;
+  padding: 60px 0 40px;
 }
 
 .cta-banner-inner {
@@ -1354,7 +1363,7 @@ input, textarea, select { font-family: inherit; }
    ============================================================ */
 .service-hero {
   background: linear-gradient(135deg, #0A3D62 0%, #0d4f80 100%);
-  padding: 5rem 0 4rem;
+  padding: 60px 0 40px;
   color: var(--white);
 }
 
@@ -1589,6 +1598,146 @@ input, textarea, select { font-family: inherit; }
 /* footer-bottom removed */
 
 /* ============================================================
+   Form: Loading Spinner, Thank You State, Error State
+   ============================================================ */
+
+/* --- Spinner overlay shown above the form while submitting --- */
+#form-spinner {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 0 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+#form-spinner.visible { display: flex; }
+
+/* The rotating circle */
+.spinner-ring {
+  width: 28px;
+  height: 28px;
+  border: 3px solid rgba(26,188,156,0.2);
+  border-top-color: #1ABC9C;
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Inline spinner inside a button (used when button text is replaced) */
+.btn-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255,255,255,0.35);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+/* Disabled submit button — visual feedback */
+[type="submit"]:disabled,
+button[type="submit"]:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* --- Enhanced Thank You / Success panel --- */
+.form-success {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 2rem;
+  background: #e8f8f4;
+  border-radius: var(--radius-xl);
+  border: 1.5px solid rgba(26,188,156,0.3);
+  animation: successFadeIn 0.45s ease forwards;
+}
+
+@keyframes successFadeIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.form-success.visible { display: flex; }
+
+.form-success-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(26,188,156,0.15);
+  border: 2px solid rgba(26,188,156,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.form-success-icon svg {
+  width: 40px;
+  height: 40px;
+  stroke: #1ABC9C;
+}
+
+.form-success-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.form-success-msg {
+  font-size: 1rem;
+  color: var(--text-body);
+  line-height: 1.7;
+  max-width: 380px;
+  margin: 0 auto 1.5rem;
+}
+
+.form-success-sub {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+}
+
+/* --- Error state panel --- */
+.form-error {
+  display: none;
+  padding: 1rem 1.25rem;
+  background: #fff5f5;
+  border: 1.5px solid #f5c6cb;
+  border-radius: var(--radius-md);
+  margin-top: 1rem;
+  color: #721c24;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+.form-error.visible { display: block; }
+.form-error a { color: #721c24; font-weight: 600; text-decoration: underline; }
+
+/* Inline error (appended to form on error) */
+.form-submit-error {
+  margin-top: 0.75rem;
+  padding: 0.85rem 1rem;
+  background: #fff5f5;
+  border: 1.5px solid #f5c6cb;
+  border-radius: var(--radius-sm);
+  color: #721c24;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+/* ============================================================
    Scroll Animations
    — Content is ALWAYS visible. Animation is purely decorative.
    — opacity:1 is the default state. The animation enhances but
@@ -1808,7 +1957,7 @@ input, textarea, select { font-family: inherit; }
 
 /* Section dark (tabs section) */
 .section-dark {
-  padding: 5rem 0;
+  padding: 60px 0 40px;
   background: linear-gradient(135deg, #0A3D62 0%, #0d5a8a 100%);
 }
 .section-label-light { color: rgba(255,255,255,0.6); }
@@ -1913,7 +2062,7 @@ input, textarea, select { font-family: inherit; }
 /* Stats bar standalone section */
 .stats-section {
   background: #0a2540;
-  padding: 4rem 0;
+  padding: 60px 0 40px;
 }
 .stats-inner {
   display: grid;
@@ -2242,7 +2391,7 @@ input, textarea, select { font-family: inherit; }
    ============================================================ */
 .cta-banner {
   background: linear-gradient(135deg, #1ABC9C 0%, #17a589 100%);
-  padding: 4rem 0;
+  padding: 60px 0 40px;
 }
 .cta-banner-inner {
   display: flex;
@@ -2326,7 +2475,7 @@ input, textarea, select { font-family: inherit; }
 /* Hero */
 .about-hero {
   background: linear-gradient(135deg, #0A3D62 0%, #0d4f7d 50%, #062d4a 100%);
-  padding: 7rem 0 5rem;
+  padding: 60px 0 40px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -2427,7 +2576,7 @@ input, textarea, select { font-family: inherit; }
 /* Stats Bar */
 .stats-bar {
   background: linear-gradient(90deg, #0A3D62 0%, #0d4f7d 100%);
-  padding: 3rem 0;
+  padding: 60px 0 40px;
 }
 .stats-bar-inner {
   display: grid;
@@ -2598,7 +2747,7 @@ input, textarea, select { font-family: inherit; }
 /* Promise Section */
 .promise-section {
   background: #f4f8fb;
-  padding: 5rem 0;
+  padding: 60px 0 40px;
 }
 .promise-block {
   text-align: center;
@@ -2636,7 +2785,7 @@ input, textarea, select { font-family: inherit; }
    ============================================================ */
 .contact-hero {
   background: linear-gradient(135deg, #0A3D62 0%, #0d4f80 100%);
-  padding: 3.5rem 0 3rem;
+  padding: 60px 0 40px;
   color: var(--white);
   position: relative;
   overflow: hidden;
@@ -2878,7 +3027,7 @@ input, textarea, select { font-family: inherit; }
    ============================================================ */
 .services-hero {
   background: linear-gradient(135deg, #0A3D62 0%, #0d5a8a 60%, #072d48 100%);
-  padding: 5rem 0 4.5rem;
+  padding: 60px 0 40px;
   color: #fff;
   position: relative;
   overflow: hidden;
@@ -3014,7 +3163,7 @@ input, textarea, select { font-family: inherit; }
 .tech-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
 .stats-dark {
   background: linear-gradient(135deg, #0A3D62 0%, #0d5a8a 100%);
-  padding: 4rem 0;
+  padding: 60px 0 40px;
 }
 .stats-dark-grid {
   display: grid;
@@ -3054,7 +3203,7 @@ input, textarea, select { font-family: inherit; }
    ============================================================ */
 .sol-hero {
   position: relative;
-  padding: 5rem 0 4.5rem;
+  padding: 60px 0 40px;
   overflow: hidden;
   color: #fff;
 }
@@ -3134,7 +3283,7 @@ input, textarea, select { font-family: inherit; }
 /* Deep Dive Tabs */
 .sol-tabs-section {
   background: linear-gradient(135deg, #0A3D62 0%, #0d4f7a 100%);
-  padding: 5rem 0;
+  padding: 60px 0 40px;
 }
 .sol-tabs-section .section-header { margin-bottom: 2.5rem; }
 .sol-tab-nav {
@@ -3302,8 +3451,8 @@ input, textarea, select { font-family: inherit; }
 .location-item-label-mt { margin-top: 0.6rem; }
 .contact-detail-label-mt { margin-top: 0.6rem; }
 .grid-mt { margin-top: 2.5rem; }
-.form-success-title { font-size: 1.3rem; font-weight: 800; color: var(--primary); margin-bottom: 0.5rem; }
-.form-success-msg { color: var(--text-muted); font-size: 0.95rem; max-width: 320px; line-height: 1.6; }
+.form-success-title { font-size: 1.5rem; font-weight: 800; color: var(--primary); margin-bottom: 0.75rem; letter-spacing: -0.02em; }
+.form-success-msg { color: var(--text-body); font-size: 1rem; max-width: 380px; line-height: 1.7; margin: 0 auto 1.5rem; }
 .services-hero-title { max-width: 680px; }
 .card-icon-primary-soft { background: rgba(10,61,98,0.07); }
 .card-icon-primary-soft svg { stroke: var(--primary); }
@@ -3343,16 +3492,16 @@ input, textarea, select { font-family: inherit; }
 .form-error {
   display: none;
   padding: 1rem 1.25rem;
-  background: rgba(220, 53, 69, 0.06);
-  border: 1px solid rgba(220, 53, 69, 0.25);
+  background: #fff5f5;
+  border: 1.5px solid #f5c6cb;
   border-radius: var(--radius-md);
   font-size: 0.875rem;
-  color: #c0392b;
+  color: #721c24;
   line-height: 1.6;
   margin-top: 0.75rem;
 }
 .form-error.visible { display: block; }
-.form-error a { color: var(--primary); text-decoration: underline; }
+.form-error a { color: #721c24; font-weight: 600; text-decoration: underline; }
 
 /* Hidden utility for form toggle */
 .hidden { display: none !important; }
@@ -4124,8 +4273,9 @@ input, textarea, select { font-family: inherit; }
 .hero-carousel {
   position: relative;
   width: 100%;
-  height: calc(100vh - 72px);
-  min-height: 560px;
+  height: auto;
+  min-height: 600px;
+  max-height: 720px;
   overflow: hidden;
   background: #0A3D62;
   outline: none;
@@ -4136,6 +4286,7 @@ input, textarea, select { font-family: inherit; }
   display: flex;
   width: 100%;
   height: 100%;
+  min-height: inherit;
   transition: transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   will-change: transform;
 }
@@ -4144,7 +4295,7 @@ input, textarea, select { font-family: inherit; }
 .hc-slide {
   flex: 0 0 100%;
   width: 100%;
-  height: 100%;
+  min-height: inherit;
   position: relative;
   overflow: hidden;
 }
@@ -4152,7 +4303,7 @@ input, textarea, select { font-family: inherit; }
 .hc-slide-inner {
   position: relative;
   width: 100%;
-  height: 100%;
+  min-height: inherit;
   display: flex;
   align-items: center;
 }
@@ -4161,6 +4312,7 @@ input, textarea, select { font-family: inherit; }
 .hc-slide-bg {
   position: absolute;
   inset: 0;
+  min-height: 100%;
   z-index: 0;
 }
 
@@ -4197,8 +4349,8 @@ input, textarea, select { font-family: inherit; }
   grid-template-columns: 60% 40%;
   align-items: center;
   gap: 2rem;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 60px;
+  padding-bottom: 40px;
 }
 
 /* ── LEFT zone ── */
@@ -4467,7 +4619,8 @@ input, textarea, select { font-family: inherit; }
 @media (max-width: 767px) {
   .hero-carousel {
     height: auto;
-    min-height: 100svh;
+    max-height: none;
+    min-height: 520px;
   }
 
   .hc-slide-content {

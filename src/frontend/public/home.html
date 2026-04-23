@@ -890,8 +890,7 @@
 
       <!-- Contact Form -->
       <div class="contact-form-wrap" id="form-panel">
-        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
-          <input type="hidden" name="access_key" value="83d2d829-23ea-4e75-add1-368b22535cfd">
+        <form id="contact-form" action="#" novalidate>
           <div class="form-group">
             <label for="cf-name">Full Name <span aria-hidden="true">*</span></label>
             <input type="text" id="cf-name" name="name" placeholder="Your full name" required data-ocid="contact.input" />
@@ -924,15 +923,21 @@
             <textarea id="cf-message" name="message" rows="4" placeholder="Tell us about your project or requirements..." required data-ocid="contact.textarea"></textarea>
           </div>
           <button type="submit" class="btn-primary btn-full" data-ocid="contact.submit_button">Send Message</button>
+          <div id="form-spinner" role="status" aria-live="polite" aria-label="Sending your message…" style="display:none">
+            <span class="spinner-ring"></span>
+            <span>Sending your message…</span>
+          </div>
+          <p id="home-form-status" aria-live="polite" style="margin-top:10px;font-size:14px;min-height:20px;"></p>
         </form>
       </div>
 
-      <div class="form-success" id="form-success" role="alert" aria-live="polite">
+      <div class="form-success" id="form-success" role="alert" aria-live="polite" style="display:none">
         <div class="form-success-icon" aria-hidden="true">
-          <svg width="48" height="48" fill="none" stroke="#1ABC9C" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <svg width="48" height="48" fill="none" stroke="#1ABC9C" stroke-width="2.5" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
         </div>
-        <h3 class="form-success-title">Message Sent!</h3>
-        <p class="form-success-msg">Thank you for reaching out. Our team will be in touch within one business day.</p>
+        <h3 class="form-success-title">Thank You!</h3>
+        <p class="form-success-msg">Your message has been sent successfully. We'll get back to you within 24 hours.</p>
+        <p class="form-success-sub">Our team is looking forward to speaking with you.</p>
       </div>
     </div>
   </div>
@@ -1027,5 +1032,71 @@
 </footer>
 
 <script src="nav.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  var form      = document.getElementById('contact-form');
+  var spinner   = document.getElementById('form-spinner');
+  var success   = document.getElementById('form-success');
+  var formPanel = document.getElementById('form-panel');
+  var status    = document.getElementById('home-form-status');
+
+  if (!form) return;
+
+  // Hide spinner and status on load
+  if (spinner) spinner.style.display = 'none';
+  if (status)  status.textContent = '';
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    // Show spinner
+    if (spinner) spinner.style.display = 'flex';
+    if (status)  status.textContent = 'Sending...';
+    var submitBtn = form.querySelector('[type="submit"]');
+    if (submitBtn) submitBtn.disabled = true;
+
+    var data = {
+      name:    document.getElementById('cf-name').value,
+      email:   document.getElementById('cf-email').value,
+      phone:   document.getElementById('cf-phone').value,
+      service: document.getElementById('cf-service').value,
+      message: document.getElementById('cf-message').value
+    };
+
+    try {
+      var res = await fetch('https://88u9fepasd.execute-api.us-west-2.amazonaws.com/prd/sendemail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': 'c24dEdgMp89VoU488eOxhazdZpOI9Yw4VPZPZ8Jj'
+        },
+        body: JSON.stringify(data)
+      });
+
+      if (spinner) spinner.style.display = 'none';
+
+      if (res.ok) {
+        if (status) status.textContent = '';
+        // Hide the form panel, show thank-you
+        if (formPanel) formPanel.style.display = 'none';
+        if (success)   success.style.display   = 'flex';
+        form.reset();
+      } else {
+        var result = await res.json().catch(function () { return {}; });
+        console.error('Send failed:', result);
+        if (submitBtn) submitBtn.disabled = false;
+        if (status) status.textContent = '❌ Failed to send message. Please try again.';
+      }
+    } catch (err) {
+      console.error('Network error:', err);
+      if (spinner)   spinner.style.display = 'none';
+      if (submitBtn) submitBtn.disabled = false;
+      if (status) status.textContent = '⚠️ Network error. Please check your connection and try again.';
+    }
+  });
+})();
+</script>
 </body>
 </html>
