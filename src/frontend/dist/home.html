@@ -918,24 +918,24 @@
 
       <!-- Contact Form -->
       <div class="contact-form-wrap" id="form-panel">
-        <form id="contact-form" action="#" novalidate>
+        <form id="contactForm" action="#" novalidate>
           <div class="form-group">
-            <label for="cf-name">Full Name <span aria-hidden="true">*</span></label>
-            <input type="text" id="cf-name" name="name" placeholder="Your full name" required data-ocid="contact.input" />
+            <label for="name">Full Name <span aria-hidden="true">*</span></label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required data-ocid="contact.input" />
           </div>
           <div class="form-row">
             <div class="form-group">
-              <label for="cf-email">Email Address <span aria-hidden="true">*</span></label>
-              <input type="email" id="cf-email" name="email" placeholder="you@company.com" required />
+              <label for="email">Email Address <span aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email" placeholder="you@company.com" required />
             </div>
             <div class="form-group">
-              <label for="cf-phone">Phone Number</label>
-              <input type="tel" id="cf-phone" name="phone" placeholder="(xxx) xxx-xxxx" />
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="(xxx) xxx-xxxx" />
             </div>
           </div>
           <div class="form-group">
-            <label for="cf-service">Service of Interest</label>
-            <select id="cf-service" name="service" data-ocid="contact.select">
+            <label for="service">Service of Interest</label>
+            <select id="service" name="service" data-ocid="contact.select">
               <option value="">Select a service...</option>
               <option value="cybersecurity">Cybersecurity</option>
               <option value="pm">Project Management</option>
@@ -947,15 +947,11 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="cf-message">Message <span aria-hidden="true">*</span></label>
-            <textarea id="cf-message" name="message" rows="4" placeholder="Tell us about your project or requirements..." required data-ocid="contact.textarea"></textarea>
+            <label for="message">Message <span aria-hidden="true">*</span></label>
+            <textarea id="message" name="message" rows="4" placeholder="Tell us about your project or requirements..." required data-ocid="contact.textarea"></textarea>
           </div>
-          <button type="submit" class="btn-primary btn-full" data-ocid="contact.submit_button">Send Message</button>
-          <div id="form-spinner" role="status" aria-live="polite" aria-label="Sending your message…" style="display:none">
-            <span class="spinner-ring"></span>
-            <span>Sending your message…</span>
-          </div>
-          <p id="home-form-status" aria-live="polite" style="margin-top:10px;font-size:14px;min-height:20px;"></p>
+          <button type="submit" id="submitBtn" class="btn-primary btn-full" data-ocid="contact.submit_button">Send Message</button>
+          <p id="formStatus" aria-live="polite" style="margin-top:10px;font-size:14px;min-height:20px;"></p>
         </form>
       </div>
 
@@ -1060,71 +1056,5 @@
 </footer>
 
 <script src="nav.js"></script>
-<script>
-(function () {
-  'use strict';
-
-  var form      = document.getElementById('contact-form');
-  var spinner   = document.getElementById('form-spinner');
-  var success   = document.getElementById('form-success');
-  var formPanel = document.getElementById('form-panel');
-  var status    = document.getElementById('home-form-status');
-
-  if (!form) return;
-
-  // Hide spinner and status on load
-  if (spinner) spinner.style.display = 'none';
-  if (status)  status.textContent = '';
-
-  form.addEventListener('submit', async function (e) {
-    e.preventDefault();
-
-    // Show spinner
-    if (spinner) spinner.style.display = 'flex';
-    if (status)  status.textContent = 'Sending...';
-    var submitBtn = form.querySelector('[type="submit"]');
-    if (submitBtn) submitBtn.disabled = true;
-
-    var data = {
-      name:    document.getElementById('cf-name').value,
-      email:   document.getElementById('cf-email').value,
-      phone:   document.getElementById('cf-phone').value,
-      service: document.getElementById('cf-service').value,
-      message: document.getElementById('cf-message').value
-    };
-
-    try {
-      var res = await fetch('https://88u9fepasd.execute-api.us-west-2.amazonaws.com/prd/sendemail', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'x-api-key': 'c24dEdgMp89VoU488eOxhazdZpOI9Yw4VPZPZ8Jj'
-        },
-        body: JSON.stringify(data)
-      });
-
-      if (spinner) spinner.style.display = 'none';
-
-      if (res.ok) {
-        if (status) status.textContent = '';
-        // Hide the form panel, show thank-you
-        if (formPanel) formPanel.style.display = 'none';
-        if (success)   success.style.display   = 'flex';
-        form.reset();
-      } else {
-        var result = await res.json().catch(function () { return {}; });
-        console.error('Send failed:', result);
-        if (submitBtn) submitBtn.disabled = false;
-        if (status) status.textContent = '❌ Failed to send message. Please try again.';
-      }
-    } catch (err) {
-      console.error('Network error:', err);
-      if (spinner)   spinner.style.display = 'none';
-      if (submitBtn) submitBtn.disabled = false;
-      if (status) status.textContent = '⚠️ Network error. Please check your connection and try again.';
-    }
-  });
-})();
-</script>
 </body>
 </html>

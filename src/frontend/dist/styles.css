@@ -5291,4 +5291,44 @@ button[type="submit"]:disabled {
   }
 }
 
+/* ============================================================
+   Services Deep Dive — Photo Image Override
+   Reuses .solution-split-card layout from Solutions page.
+   .dd-photo-panel replaces the gradient SVG panel with a real
+   photo, keeping the same 50/50 proportions and min-height.
+   ============================================================ */
+.dd-photo-panel {
+  background: #0a2540;
+  padding: 0;
+  overflow: hidden;
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+.dd-split-photo {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 50px;
+  display: block;
+  padding: 16px;
+}
+
+/* On tablet/mobile the card stacks, image goes full width */
+@media (max-width: 900px) {
+  .dd-split-photo {
+    height: 300px;
+    border-radius: 30px;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dd-split-photo {
+    height: 220px;
+    border-radius: 20px;
+    padding: 8px;
+  }
+}
+
 

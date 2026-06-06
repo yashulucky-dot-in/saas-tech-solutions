@@ -216,27 +216,27 @@
       <div class="form-wrapper" id="form-panel">
         <div class="form-panel" data-ocid="contact.dialog">
 
-          <form id="contact-form" action="#" novalidate>
+          <form id="contactForm" action="#" novalidate>
 
             <div class="form-group">
-              <label class="form-label" for="contact-name">Full Name <span class="required-star" aria-hidden="true">*</span></label>
-              <input class="form-input" type="text" id="contact-name" name="name" placeholder="Your Name" required data-ocid="contact.input" />
+              <label class="form-label" for="name">Full Name <span class="required-star" aria-hidden="true">*</span></label>
+              <input class="form-input" type="text" id="name" name="name" placeholder="Your Name" required data-ocid="contact.input" />
             </div>
 
             <div class="form-row">
               <div class="form-group">
-                <label class="form-label" for="contact-email">Email Address <span class="required-star" aria-hidden="true">*</span></label>
-                <input class="form-input" type="email" id="contact-email" name="email" placeholder="Your Email" required data-ocid="contact.email_input" />
+                <label class="form-label" for="email">Email Address <span class="required-star" aria-hidden="true">*</span></label>
+                <input class="form-input" type="email" id="email" name="email" placeholder="Your Email" required data-ocid="contact.email_input" />
               </div>
               <div class="form-group">
-                <label class="form-label" for="contact-phone">Phone Number</label>
-                <input class="form-input" type="tel" id="contact-phone" name="phone" placeholder="Phone Number" data-ocid="contact.phone_input" />
+                <label class="form-label" for="phone">Phone Number</label>
+                <input class="form-input" type="tel" id="phone" name="phone" placeholder="Phone Number" data-ocid="contact.phone_input" />
               </div>
             </div>
 
             <div class="form-group">
-              <label class="form-label" for="contact-service">Service of Interest</label>
-              <select class="form-input form-select" id="contact-service" name="service" data-ocid="contact.select">
+              <label class="form-label" for="service">Service of Interest</label>
+              <select class="form-input form-select" id="service" name="service" data-ocid="contact.select">
                 <option value="">Select a Service</option>
                 <option value="cybersecurity">Cybersecurity</option>
                 <option value="project-management">Project Management</option>
@@ -249,20 +249,17 @@
             </div>
 
             <div class="form-group">
-              <label class="form-label" for="contact-message">Message <span class="required-star" aria-hidden="true">*</span></label>
-              <textarea class="form-textarea" id="contact-message" name="message" rows="5" placeholder="Your Message" required data-ocid="contact.textarea"></textarea>
+              <label class="form-label" for="message">Message <span class="required-star" aria-hidden="true">*</span></label>
+              <textarea class="form-textarea" id="message" name="message" rows="5" placeholder="Your Message" required data-ocid="contact.textarea"></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary btn-lg btn-full" data-ocid="contact.submit_button">
+            <button type="submit" id="submitBtn" class="btn btn-primary btn-lg btn-full" data-ocid="contact.submit_button">
               <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/>
               </svg>
               Send Message
             </button>
-            <div id="form-spinner" role="status" aria-live="polite" aria-label="Sending your message…">
-              <span class="spinner-ring"></span>
-              <span>Sending your message…</span>
-            </div>
+            <p id="formStatus" aria-live="polite" style="margin-top:10px;font-size:14px;min-height:20px;"></p>
           </form>
         </div>
 
@@ -516,75 +513,6 @@
       }
     });
   });
-</script>
-<script>
-(function () {
-  'use strict';
-
-  var form      = document.getElementById('contact-form');
-  var spinner   = document.getElementById('form-spinner');
-  var success   = document.getElementById('form-success');
-  var errorEl   = document.getElementById('form-error');
-  var formPanel = document.getElementById('form-panel');
-
-  if (!form) return;
-
-  // Hide status panels on load
-  if (spinner)  spinner.style.display  = 'none';
-  if (success)  success.style.display  = 'none';
-  if (errorEl)  errorEl.style.display  = 'none';
-
-  form.addEventListener('submit', async function (e) {
-    e.preventDefault();
-
-    // Show spinner
-    if (spinner) spinner.style.display = 'flex';
-    if (errorEl) errorEl.style.display = 'none';
-    var submitBtn = form.querySelector('[type="submit"]');
-    if (submitBtn) submitBtn.disabled = true;
-
-    var data = {
-      name:    document.getElementById('contact-name').value,
-      email:   document.getElementById('contact-email').value,
-      phone:   document.getElementById('contact-phone').value,
-      service: document.getElementById('contact-service').value,
-      message: document.getElementById('contact-message').value
-    };
-
-    try {
-      var res = await fetch('https://88u9fepasd.execute-api.us-west-2.amazonaws.com/prd/sendemail', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'x-api-key': 'c24dEdgMp89VoU488eOxhazdZpOI9Yw4VPZPZ8Jj'
-        },
-        body: JSON.stringify(data)
-      });
-
-      if (spinner) spinner.style.display = 'none';
-
-      if (res.ok) {
-        // Hide form panel, show thank-you
-        if (formPanel) formPanel.style.display = 'none';
-        if (success)   success.style.display   = 'flex';
-        form.reset();
-      } else {
-        var result = await res.json().catch(function () { return {}; });
-        console.error('Send failed:', result);
-        if (submitBtn) submitBtn.disabled = false;
-        if (errorEl)   errorEl.style.display = 'block';
-      }
-    } catch (error) {
-      console.error('Network error:', error);
-      if (spinner) spinner.style.display = 'none';
-      if (submitBtn) submitBtn.disabled = false;
-      if (errorEl) {
-        errorEl.style.display = 'block';
-        errorEl.querySelector('p').textContent = 'Network error. Please check your connection and try again, or email us directly at hr@ekansolutionsinc.awsapps.com';
-      }
-    }
-  });
-})();
 </script>
 </body>
 </html>

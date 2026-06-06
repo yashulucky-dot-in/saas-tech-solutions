@@ -286,129 +286,6 @@ function initTabs() {
 }
 
 /* ============================================================
-   Contact Form Handler — AWS Lambda email API
-   ============================================================ */
-function initContactForm() {
-  const form = document.getElementById('contact-form');
-  if (!form) return;
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    const submitBtn    = form.querySelector('[type="submit"]');
-    const spinner      = document.getElementById('form-spinner');
-    const formPanel    = document.getElementById('form-panel');
-    const successPanel = document.getElementById('form-success');
-    const errorPanel   = document.getElementById('form-error');
-
-    // --- Show loading state ---
-    if (submitBtn) {
-      submitBtn.disabled = true;
-      // Replace button text with "Sending…" while keeping any SVG icon intact
-      const btnTextNode = Array.from(submitBtn.childNodes).find(n => n.nodeType === Node.TEXT_NODE);
-      if (btnTextNode) {
-        btnTextNode.textContent = ' Sending…';
-      } else {
-        submitBtn.dataset.originalHtml = submitBtn.innerHTML;
-        submitBtn.innerHTML = '<span class="btn-spinner" aria-hidden="true"></span> Sending…';
-      }
-    }
-    if (spinner) spinner.classList.add('visible');
-
-    // Clear any previous inline error
-    const prevErr = form.querySelector('.form-submit-error');
-    if (prevErr) prevErr.remove();
-    if (errorPanel) errorPanel.classList.remove('visible');
-
-    try {
-      const name    = form.querySelector('[name="name"]')?.value    ?? '';
-      const email   = form.querySelector('[name="email"]')?.value   ?? '';
-      const phone   = form.querySelector('[name="phone"]')?.value   ?? '';
-      const service = form.querySelector('[name="service"]')?.value ?? '';
-      const message = form.querySelector('[name="message"]')?.value ?? '';
-
-      const objectKey = [
-        'submissions',
-        encodeURIComponent(name),
-        encodeURIComponent(email),
-        encodeURIComponent(phone),
-        encodeURIComponent(service),
-        encodeURIComponent(message),
-      ].join('/');
-
-      const payload = {
-        Records: [
-          {
-            s3: {
-              bucket: { name: 'contact-form-submissions' },
-              object: { key: objectKey },
-            },
-          },
-        ],
-      };
-
-      const response = await fetch('https://88u9fepasd.execute-api.us-west-2.amazonaws.com/prd/sendemail', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'x-api-key': 'c24dEdgMp89VoU488eOxhazdZpOI9Yw4VPZPZ8Jj',
-        },
-        body: JSON.stringify(payload),
-      });
-
-      if (spinner) spinner.classList.remove('visible');
-
-      if (response.ok) {
-        // Hide the form panel, show persistent Thank You message
-        if (formPanel)    formPanel.style.display = 'none';
-        if (successPanel) successPanel.classList.add('visible');
-        form.reset();
-        // Scroll the success message into view
-        if (successPanel) successPanel.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      } else {
-        // Re-enable button and show error
-        _resetSubmitBtn(submitBtn);
-        _showFormError(form, errorPanel, 'Something went wrong. Please try again or email us directly at hr@ekansolutionsinc.awsapps.com.');
-      }
-    } catch (_err) {
-      if (spinner) spinner.classList.remove('visible');
-      _resetSubmitBtn(submitBtn);
-      _showFormError(form, errorPanel, 'Network error. Please check your connection and try again.');
-    }
-  });
-}
-
-function _resetSubmitBtn(submitBtn) {
-  if (!submitBtn) return;
-  submitBtn.disabled = false;
-  // Restore original HTML if we replaced it wholesale, otherwise just fix text node
-  if (submitBtn.dataset.originalHtml) {
-    submitBtn.innerHTML = submitBtn.dataset.originalHtml;
-    delete submitBtn.dataset.originalHtml;
-  } else {
-    const btnTextNode = Array.from(submitBtn.childNodes).find(n => n.nodeType === Node.TEXT_NODE);
-    if (btnTextNode) btnTextNode.textContent = btnTextNode.textContent.replace('Sending…', 'Send Message');
-  }
-}
-
-function _showFormError(form, errorPanel, message) {
-  if (errorPanel) {
-    const errP = errorPanel.querySelector('p');
-    if (errP) errP.textContent = message;
-    errorPanel.classList.add('visible');
-    errorPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  } else {
-    let errMsg = form.querySelector('.form-submit-error');
-    if (!errMsg) {
-      errMsg = document.createElement('p');
-      errMsg.className = 'form-submit-error';
-      form.appendChild(errMsg);
-    }
-    errMsg.textContent = message;
-  }
-}
-
-/* ============================================================
    Main init
    ============================================================ */
 function initNav() {
@@ -420,7 +297,6 @@ function initNav() {
   initScrollAnimations();
   initSmoothScroll();
   initTabs();
-  initContactForm();
 }
 
 if (document.readyState === 'loading') {
@@ -428,3 +304,72 @@ if (document.readyState === 'loading') {
 } else {
   initNav();
 }
+
+// ===== CONTACT FORM START =====
+document.addEventListener("DOMContentLoaded", function () {
+
+  const form = document.getElementById("contactForm");
+  const btn = document.getElementById("submitBtn");
+  const status = document.getElementById("formStatus");
+
+  // Safety check
+  if (!form) return;
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    // Loading state
+    btn.disabled = true;
+    btn.innerText = "Sending...";
+    status.innerText = "";
+
+    // Collect form data
+    const payload = {
+      name: document.getElementById("name").value.trim(),
+      email: document.getElementById("email").value.trim(),
+      phone: document.getElementById("phone").value.trim(),
+      service: document.getElementById("service").value,
+      message: document.getElementById("message").value.trim()
+    };
+
+    try {
+      const response = await fetch(
+        "https://9i0e1bal1a.execute-api.us-west-2.amazonaws.com/sendemail",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(payload)
+        }
+      );
+
+      const data = await response.json();
+
+      if (response.ok) {
+        // Success UI
+        form.innerHTML = `
+          <div style="text-align:center; padding:30px;">
+            <h3 style="color:#1ABC9C;">Thank You!</h3>
+            <p>Your message has been sent successfully. We'll contact you soon.</p>
+          </div>
+        `;
+      } else {
+        // API error
+        status.innerText = data.message || "Something went wrong.";
+        btn.disabled = false;
+        btn.innerText = "Send Message";
+      }
+
+    } catch (error) {
+      console.error("Fetch Error:", error);
+
+      // Network / CORS error
+      status.innerText = "Network error. Please try again.";
+      btn.disabled = false;
+      btn.innerText = "Send Message";
+    }
+  });
+
+});
+// ===== CONTACT FORM END =====
